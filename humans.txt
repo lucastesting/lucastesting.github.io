@@ -1,0 +1,10 @@
+# humanstxt.org/
+
+# TEAM
+
+    Lucas Parry @lucas_parry
+
+# TECHNOLOGY COLOPHON
+
+    ES2015, HTML5, CSS3
+    React, Normalize.css
