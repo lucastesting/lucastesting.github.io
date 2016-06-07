@@ -1,0 +1,367 @@
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #272B30;
+  color: #c8c8c8;
+  font-family: 'Roboto','Helvetica',sans-serif;
+}
+
+.Layout {
+  margin: 0 auto;
+}
+
+.Layout a {
+  color: #fff;
+  text-decoration: none
+}
+
+.Layout a:hover {
+  color: #c8c8c8;
+  text-decoration: underline;
+}
+
+.moreLink {
+  float: right;
+  margin-bottom: 50px;
+  margin-right: 70px;
+}
+
+@media (min-width: 375px) {
+  .Layout {
+    width: calc(375px - 18px);
+  }
+
+  img {
+    max-width: calc(375px - 80px);
+  }
+}
+
+@media (min-width: 768px) {
+  .Layout {
+    width: calc(768px - 22px);
+  }
+
+  img {
+    max-width: calc(768px - 80px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .Layout {
+    width: calc(1280px - 30px);
+  }
+  img {
+    max-width: calc(1280px - 80px);
+  }
+}
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+.navbar {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a9196), color-stop(60%, #7a8288), color-stop(60%, #70787d));
+  background-image: -webkit-linear-gradient(#8a9196, #7a8288 60%, #70787d);
+  background-image: -o-linear-gradient(#8a9196, #7a8288 60%, #70787d);
+  background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);
+  height: 50px;
+  color: #c8c8c8;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  font-weight: 700;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navContainer {
+  height: 100%;
+  width: calc(1280px - 30px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbarheader {
+}
+
+.navigation {
+  padding: 0;
+  margin: 0;
+}
+
+.navigationLink {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  color: #c8c8c8;
+  text-decoration: none;
+  cursor: pointer;
+  height: 100%
+}
+
+.navigationLink:hover {
+  color: white;
+}
+
+.navbar:after {
+  clear: both;
+}
+
+.navigation:last-of-type {
+  border-right: transparent;
+  border-right-width: 0px;
+}
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+.Link {
+
+}
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+.flickrImage {
+  text-align: center;
+}
+
+.flickrImage .flickrImage__container {
+  display: inline-block;
+  background: white;
+  -webkit-box-shadow: 2px 2px 2px 0px #111;
+          box-shadow: 2px 2px 2px 0px #111;
+}
+
+.flickrImage .flickrImage__container img {
+  padding: 1px;
+}
+
+.flickrImage .flickrImage__container a {
+  font-family: 'Swanky and Moo Moo', fantasy, cursive;
+  color: #000;
+  text-decoration: none;
+}
+
+.flickrImage .flickrImage__container a .flickrImageCaption {
+  // text-shadow: 0px 0px 10px #fff;
+  color: #c8c8c8;
+  text-shadow:  1px  1px 0.5px black,
+                     -1px -1px 0.5px black,
+                      1px -1px 0.5px black,
+                     -1px  1px 0.5px black;
+  margin: -50px 0px 7px 0;
+  font-size: x-large;
+  font-style: italic;
+  text-align: center;
+}
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+.blogPost p {
+  text-align: justify;
+}
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+hr.divider {
+  clear: both;
+  border: 0;
+  height: 1px;
+  background: #272B30;
+  background-image: -webkit-gradient(linear, left top, right top, from(#272B30), color-stop(#484848), to(#272B30));
+  background-image: -webkit-linear-gradient(left, #272B30, #484848, #272B30);
+  background-image: -o-linear-gradient(left, #272B30, #484848, #272B30);
+  background-image: linear-gradient(to right, #272B30, #484848, #272B30);
+  margin: 30px 0 50px 0;
+}
+
+.blogPostSummary p {
+  text-align: justify;
+}
+
+.blogPostSummary:last-of-type hr.divider {
+  display: none;
+}
+
+.date {
+  font-size: x-small;
+  margin-top: -15px;
+}
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+.blogLinkHeading a {
+
+    text-transform: capitalize;
+
+    text-decoration: none;
+
+    font-size: xx-large;
+
+    color: #fff
+}
+
+.blogLinkHeading a:hover {
+
+    color: #c8c8c8
+}
