@@ -45,7 +45,7 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-  __webpack_require__(118);
+  __webpack_require__(113);
   module.exports = __webpack_require__(109);
 
 
@@ -69,9 +69,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(111);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  // import "./BlogPost.scss"
 
   exports.default = function (_ref) {
     var intro = _ref.intro;
@@ -97,7 +97,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _flickr_manifest = __webpack_require__(117);
+  var _flickr_manifest = __webpack_require__(112);
 
   var _flickr_manifest2 = _interopRequireDefault(_flickr_manifest);
 
@@ -105,9 +105,9 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(113);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  // import "./FlickrImageLegacy.scss"
 
   var FlickrImageLegacy = function FlickrImageLegacy(_ref) {
     var linkUrl = _ref.linkUrl;
@@ -185,9 +185,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(115);
+  __webpack_require__(111);
 
-  var _Location = __webpack_require__(8);
+  var _Location = __webpack_require__(7);
 
   var _Location2 = _interopRequireDefault(_Location);
 
@@ -299,8 +299,6 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(112);
-
   var _Link = __webpack_require__(4);
 
   var _Link2 = _interopRequireDefault(_Link);
@@ -310,6 +308,9 @@ module.exports =
   var _BlogLink2 = _interopRequireDefault(_BlogLink);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  // import "./styles.scss"
+
 
   var BlogPostSummary = function BlogPostSummary(_ref) {
     var path = _ref.path;
@@ -357,71 +358,71 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   var map = {
-  	"./2013-03-26-twenty-years-from-now.jsx": 9,
-  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 10,
-  	"./2013-04-22-target-40-litres.jsx": 11,
-  	"./2013-05-07-last-minute-bag-choices.jsx": 12,
-  	"./2013-05-12-its-go-time.jsx": 13,
-  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 14,
-  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 15,
-  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 16,
-  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 17,
-  	"./2013-05-24-last-day-in-hcmc.jsx": 18,
-  	"./2013-05-29-ha-ha-business.jsx": 19,
-  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 20,
-  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 21,
-  	"./2013-06-27-airport-security-in-india.jsx": 22,
-  	"./2013-06-29-wake-up-call.jsx": 23,
-  	"./2013-06-30-thailand.jsx": 24,
-  	"./2013-08-13-frustration-india-part-1.jsx": 25,
-  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 26,
-  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 27,
-  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 28,
-  	"./2013-09-03-travelling-light-or-not.jsx": 29,
-  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 30,
-  	"./2013-09-16-south-africa.jsx": 31,
-  	"./2013-09-23-zanzibar-tanzania.jsx": 32,
-  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 33,
-  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 34,
-  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 35,
-  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 36,
-  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 37,
-  	"./2013-12-05-spreepark-berlin.jsx": 38,
-  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 39,
-  	"./2014-01-03-istanbul-turkey.jsx": 40,
-  	"./2014-02-06-turkey.jsx": 41,
-  	"./2014-02-14-the-greek-islands-and-athens.jsx": 42,
-  	"./2014-03-02-england-the-home-of-real-ale.jsx": 43,
-  	"./2014-04-06-berlin-part-1.jsx": 44,
-  	"./2014-04-15-berlin-part-2.jsx": 45,
-  	"./2014-04-23-berlin-part-3.jsx": 46,
-  	"./2014-05-03-barcelona-spain.jsx": 47,
-  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 48,
-  	"./2014-05-26-granada.jsx": 49,
-  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 50,
-  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 51,
-  	"./2014-07-01-poi-love-camp.jsx": 52,
-  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 53,
-  	"./2014-07-29-uvita-costa-rica.jsx": 54,
-  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 55,
-  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 56,
-  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 57,
-  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 58,
-  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 59,
-  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 60,
-  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 61,
-  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 62,
-  	"./2015-03-30-antigua-guatemala.jsx": 63,
-  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 64,
-  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 65,
-  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 66,
-  	"./2015-05-11-more-schooling-in-xela.jsx": 67,
-  	"./2015-05-13-two-years-later.jsx": 68,
-  	"./2015-05-21-back-to-lake-atitlan.jsx": 69,
-  	"./2015-05-26-semuc-champey.jsx": 70,
-  	"./2015-06-01-tikal.jsx": 71,
-  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 72,
-  	"./2015-08-17-san-francisco-before-the-burn.jsx": 73
+  	"./2013-03-26-twenty-years-from-now.jsx": 8,
+  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 9,
+  	"./2013-04-22-target-40-litres.jsx": 10,
+  	"./2013-05-07-last-minute-bag-choices.jsx": 11,
+  	"./2013-05-12-its-go-time.jsx": 12,
+  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 13,
+  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 14,
+  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 15,
+  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 16,
+  	"./2013-05-24-last-day-in-hcmc.jsx": 17,
+  	"./2013-05-29-ha-ha-business.jsx": 18,
+  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 19,
+  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 20,
+  	"./2013-06-27-airport-security-in-india.jsx": 21,
+  	"./2013-06-29-wake-up-call.jsx": 22,
+  	"./2013-06-30-thailand.jsx": 23,
+  	"./2013-08-13-frustration-india-part-1.jsx": 24,
+  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 25,
+  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 26,
+  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 27,
+  	"./2013-09-03-travelling-light-or-not.jsx": 28,
+  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 29,
+  	"./2013-09-16-south-africa.jsx": 30,
+  	"./2013-09-23-zanzibar-tanzania.jsx": 31,
+  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 32,
+  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 33,
+  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 34,
+  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 35,
+  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 36,
+  	"./2013-12-05-spreepark-berlin.jsx": 37,
+  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 38,
+  	"./2014-01-03-istanbul-turkey.jsx": 39,
+  	"./2014-02-06-turkey.jsx": 40,
+  	"./2014-02-14-the-greek-islands-and-athens.jsx": 41,
+  	"./2014-03-02-england-the-home-of-real-ale.jsx": 42,
+  	"./2014-04-06-berlin-part-1.jsx": 43,
+  	"./2014-04-15-berlin-part-2.jsx": 44,
+  	"./2014-04-23-berlin-part-3.jsx": 45,
+  	"./2014-05-03-barcelona-spain.jsx": 46,
+  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 47,
+  	"./2014-05-26-granada.jsx": 48,
+  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 49,
+  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 50,
+  	"./2014-07-01-poi-love-camp.jsx": 51,
+  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 52,
+  	"./2014-07-29-uvita-costa-rica.jsx": 53,
+  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 54,
+  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 55,
+  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 56,
+  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 57,
+  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 58,
+  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 59,
+  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 60,
+  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 61,
+  	"./2015-03-30-antigua-guatemala.jsx": 62,
+  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 63,
+  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 64,
+  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 65,
+  	"./2015-05-11-more-schooling-in-xela.jsx": 66,
+  	"./2015-05-13-two-years-later.jsx": 67,
+  	"./2015-05-21-back-to-lake-atitlan.jsx": 68,
+  	"./2015-05-26-semuc-champey.jsx": 69,
+  	"./2015-06-01-tikal.jsx": 70,
+  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 71,
+  	"./2015-08-17-san-francisco-before-the-burn.jsx": 72
   };
   function webpackContext(req) {
   	return __webpack_require__(webpackContextResolve(req));
@@ -439,62 +440,6 @@ module.exports =
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
-
-  /*
-  	MIT License http://www.opensource.org/licenses/mit-license.php
-  	Author Tobias Koppers @sokra
-  */
-  // css base code, injected by the css-loader
-  module.exports = function() {
-  	var list = [];
-
-  	// return the list of modules as css string
-  	list.toString = function toString() {
-  		var result = [];
-  		for(var i = 0; i < this.length; i++) {
-  			var item = this[i];
-  			if(item[2]) {
-  				result.push("@media " + item[2] + "{" + item[1] + "}");
-  			} else {
-  				result.push(item[1]);
-  			}
-  		}
-  		return result.join("");
-  	};
-
-  	// import a list of modules into the list
-  	list.i = function(modules, mediaQuery) {
-  		if(typeof modules === "string")
-  			modules = [[null, modules, ""]];
-  		var alreadyImportedModules = {};
-  		for(var i = 0; i < this.length; i++) {
-  			var id = this[i][0];
-  			if(typeof id === "number")
-  				alreadyImportedModules[id] = true;
-  		}
-  		for(i = 0; i < modules.length; i++) {
-  			var item = modules[i];
-  			// skip already imported module
-  			// this implementation is not 100% perfect for weird media query combinations
-  			//  when a module is imported multiple times with different media queries.
-  			//  I hope this will never occur (Hey this way we have smaller bundles)
-  			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-  				if(mediaQuery && !item[2]) {
-  					item[2] = mediaQuery;
-  				} else if(mediaQuery) {
-  					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-  				}
-  				list.push(item);
-  			}
-  		}
-  	};
-  	return list;
-  };
-
-
-/***/ },
-/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -505,15 +450,15 @@ module.exports =
 
   var _ExecutionEnvironment = __webpack_require__(74);
 
-  var _createBrowserHistory = __webpack_require__(121);
+  var _createBrowserHistory = __webpack_require__(116);
 
   var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
-  var _createMemoryHistory = __webpack_require__(122);
+  var _createMemoryHistory = __webpack_require__(117);
 
   var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-  var _useQueries = __webpack_require__(123);
+  var _useQueries = __webpack_require__(118);
 
   var _useQueries2 = _interopRequireDefault(_useQueries);
 
@@ -530,7 +475,7 @@ module.exports =
   exports.default = location;
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -608,7 +553,7 @@ module.exports =
   };
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -694,7 +639,7 @@ module.exports =
   };
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -791,7 +736,7 @@ module.exports =
   };
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -911,7 +856,7 @@ module.exports =
   };
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1001,7 +946,7 @@ module.exports =
   };
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1145,7 +1090,7 @@ module.exports =
   };
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1242,7 +1187,7 @@ module.exports =
   };
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1363,7 +1308,7 @@ module.exports =
   };
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1476,7 +1421,7 @@ module.exports =
   };
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1556,7 +1501,7 @@ module.exports =
   };
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1690,7 +1635,7 @@ module.exports =
   };
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2310,7 +2255,7 @@ module.exports =
   };
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2807,7 +2752,7 @@ module.exports =
   };
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3016,7 +2961,7 @@ module.exports =
   };
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3151,7 +3096,7 @@ module.exports =
   };
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3487,7 +3432,7 @@ module.exports =
   };
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3716,7 +3661,7 @@ module.exports =
   };
 
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3883,7 +3828,7 @@ module.exports =
   };
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4050,7 +3995,7 @@ module.exports =
   };
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4254,7 +4199,7 @@ module.exports =
   };
 
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4354,7 +4299,7 @@ module.exports =
   };
 
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4616,7 +4561,7 @@ module.exports =
   };
 
 /***/ },
-/* 31 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4902,7 +4847,7 @@ module.exports =
   };
 
 /***/ },
-/* 32 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5251,7 +5196,7 @@ module.exports =
   };
 
 /***/ },
-/* 33 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5601,7 +5546,7 @@ module.exports =
   };
 
 /***/ },
-/* 34 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5975,7 +5920,7 @@ module.exports =
   };
 
 /***/ },
-/* 35 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6202,7 +6147,7 @@ module.exports =
   };
 
 /***/ },
-/* 36 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6264,7 +6209,7 @@ module.exports =
   };
 
 /***/ },
-/* 37 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6519,7 +6464,7 @@ module.exports =
   };
 
 /***/ },
-/* 38 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6695,7 +6640,7 @@ module.exports =
   };
 
 /***/ },
-/* 39 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6764,7 +6709,7 @@ module.exports =
   };
 
 /***/ },
-/* 40 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6972,7 +6917,7 @@ module.exports =
   };
 
 /***/ },
-/* 41 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7328,7 +7273,7 @@ module.exports =
   };
 
 /***/ },
-/* 42 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7548,7 +7493,7 @@ module.exports =
   };
 
 /***/ },
-/* 43 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7953,7 +7898,7 @@ module.exports =
   };
 
 /***/ },
-/* 44 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8153,7 +8098,7 @@ module.exports =
   };
 
 /***/ },
-/* 45 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8366,7 +8311,7 @@ module.exports =
   };
 
 /***/ },
-/* 46 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8602,7 +8547,7 @@ module.exports =
   };
 
 /***/ },
-/* 47 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8895,7 +8840,7 @@ module.exports =
   };
 
 /***/ },
-/* 48 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9015,7 +8960,7 @@ module.exports =
   };
 
 /***/ },
-/* 49 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9377,7 +9322,7 @@ module.exports =
   };
 
 /***/ },
-/* 50 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9637,7 +9582,7 @@ module.exports =
   };
 
 /***/ },
-/* 51 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10012,7 +9957,7 @@ module.exports =
   };
 
 /***/ },
-/* 52 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10260,7 +10205,7 @@ module.exports =
   };
 
 /***/ },
-/* 53 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10633,7 +10578,7 @@ module.exports =
   };
 
 /***/ },
-/* 54 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10848,7 +10793,7 @@ module.exports =
   };
 
 /***/ },
-/* 55 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11035,7 +10980,7 @@ module.exports =
   };
 
 /***/ },
-/* 56 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11254,7 +11199,7 @@ module.exports =
   };
 
 /***/ },
-/* 57 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11606,7 +11551,7 @@ module.exports =
   };
 
 /***/ },
-/* 58 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11773,7 +11718,7 @@ module.exports =
   };
 
 /***/ },
-/* 59 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12103,7 +12048,7 @@ module.exports =
   };
 
 /***/ },
-/* 60 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12301,7 +12246,7 @@ module.exports =
   };
 
 /***/ },
-/* 61 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12565,7 +12510,7 @@ module.exports =
   };
 
 /***/ },
-/* 62 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12736,7 +12681,7 @@ module.exports =
   };
 
 /***/ },
-/* 63 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12919,7 +12864,7 @@ module.exports =
   };
 
 /***/ },
-/* 64 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13192,7 +13137,7 @@ module.exports =
   };
 
 /***/ },
-/* 65 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13378,7 +13323,7 @@ module.exports =
   };
 
 /***/ },
-/* 66 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13546,7 +13491,7 @@ module.exports =
   };
 
 /***/ },
-/* 67 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13656,7 +13601,7 @@ module.exports =
   };
 
 /***/ },
-/* 68 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13749,7 +13694,7 @@ module.exports =
   };
 
 /***/ },
-/* 69 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13932,7 +13877,7 @@ module.exports =
   };
 
 /***/ },
-/* 70 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14085,7 +14030,7 @@ module.exports =
   };
 
 /***/ },
-/* 71 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14258,7 +14203,7 @@ module.exports =
   };
 
 /***/ },
-/* 72 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14428,7 +14373,7 @@ module.exports =
   };
 
 /***/ },
-/* 73 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14692,6 +14637,62 @@ module.exports =
   };
 
 /***/ },
+/* 73 */
+/***/ function(module, exports) {
+
+  /*
+  	MIT License http://www.opensource.org/licenses/mit-license.php
+  	Author Tobias Koppers @sokra
+  */
+  // css base code, injected by the css-loader
+  module.exports = function() {
+  	var list = [];
+
+  	// return the list of modules as css string
+  	list.toString = function toString() {
+  		var result = [];
+  		for(var i = 0; i < this.length; i++) {
+  			var item = this[i];
+  			if(item[2]) {
+  				result.push("@media " + item[2] + "{" + item[1] + "}");
+  			} else {
+  				result.push(item[1]);
+  			}
+  		}
+  		return result.join("");
+  	};
+
+  	// import a list of modules into the list
+  	list.i = function(modules, mediaQuery) {
+  		if(typeof modules === "string")
+  			modules = [[null, modules, ""]];
+  		var alreadyImportedModules = {};
+  		for(var i = 0; i < this.length; i++) {
+  			var id = this[i][0];
+  			if(typeof id === "number")
+  				alreadyImportedModules[id] = true;
+  		}
+  		for(i = 0; i < modules.length; i++) {
+  			var item = modules[i];
+  			// skip already imported module
+  			// this implementation is not 100% perfect for weird media query combinations
+  			//  when a module is imported multiple times with different media queries.
+  			//  I hope this will never occur (Hey this way we have smaller bundles)
+  			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+  				if(mediaQuery && !item[2]) {
+  					item[2] = mediaQuery;
+  				} else if(mediaQuery) {
+  					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+  				}
+  				list.push(item);
+  			}
+  		}
+  	};
+  	return list;
+  };
+
+
+/***/ },
 /* 74 */
 /***/ function(module, exports) {
 
@@ -14715,9 +14716,9 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(110);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  // import "./BlogLink.scss"
 
   var BlogLink = function BlogLink(props) {
     return _react2.default.createElement(
@@ -14751,7 +14752,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(114);
+  __webpack_require__(110);
 
   var _Navigation = __webpack_require__(77);
 
@@ -14798,13 +14799,17 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(116);
-
   var _Link = __webpack_require__(4);
 
   var _Link2 = _interopRequireDefault(_Link);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  /**
+   * React Static Boilerplate
+   * https://github.com/koistya/react-static-boilerplate
+   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+   */
 
   var NavLink = function NavLink(_ref) {
     var href = _ref.href;
@@ -14814,11 +14819,8 @@ module.exports =
       { className: "navigationLink", to: href },
       children
     );
-  }; /**
-      * React Static Boilerplate
-      * https://github.com/koistya/react-static-boilerplate
-      * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-      */
+  };
+  // import "./styles.scss"
 
   NavLink.propTypes = {
     href: _react.PropTypes.string.isRequired,
@@ -16766,13 +16768,13 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(124);
+  var _reactDom = __webpack_require__(119);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
   var _ExecutionEnvironment = __webpack_require__(74);
 
-  var _Location = __webpack_require__(8);
+  var _Location = __webpack_require__(7);
 
   var _Location2 = _interopRequireDefault(_Location);
 
@@ -16789,8 +16791,8 @@ module.exports =
    * https://github.com/koistya/react-static-boilerplate
    * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
    */
-  __webpack_require__(119);
-  __webpack_require__(120);
+  __webpack_require__(114);
+  __webpack_require__(115);
 
 
   var routes = {
@@ -16799,135 +16801,135 @@ module.exports =
     }, '/500': function _() {
       return __webpack_require__(79).default;
     }, '/2013/03/26/twenty-years-from-now': function twentyYearsFromNow() {
-      return __webpack_require__(9).default;
+      return __webpack_require__(8).default;
     }, '/2013/04/08/the-little-things-that-make-up-a-life': function theLittleThingsThatMakeUpALife() {
-      return __webpack_require__(10).default;
+      return __webpack_require__(9).default;
     }, '/2013/04/22/target-40-litres': function target40Litres() {
-      return __webpack_require__(11).default;
+      return __webpack_require__(10).default;
     }, '/2013/05/07/last-minute-bag-choices': function lastMinuteBagChoices() {
-      return __webpack_require__(12).default;
+      return __webpack_require__(11).default;
     }, '/2013/05/12/it-s-go-time': function itSGoTime() {
-      return __webpack_require__(13).default;
+      return __webpack_require__(12).default;
     }, '/2013/05/14/day-1-melbourne-to-saigon': function day1MelbourneToSaigon() {
-      return __webpack_require__(14).default;
+      return __webpack_require__(13).default;
     }, '/2013/05/22/day-2-ho-chi-minh-city': function day2HoChiMinhCity() {
-      return __webpack_require__(15).default;
+      return __webpack_require__(14).default;
     }, '/2013/05/22/day-3-cu-chi-tunnels': function day3CuChiTunnels() {
-      return __webpack_require__(16).default;
+      return __webpack_require__(15).default;
     }, '/2013/05/22/day-4-motorbikes-in-hcmc': function day4MotorbikesInHcmc() {
-      return __webpack_require__(17).default;
+      return __webpack_require__(16).default;
     }, '/2013/05/24/last-day-in-hcmc': function lastDayInHcmc() {
-      return __webpack_require__(18).default;
+      return __webpack_require__(17).default;
     }, '/2013/05/29/ha-ha-business': function haHaBusiness() {
-      return __webpack_require__(19).default;
+      return __webpack_require__(18).default;
     }, '/2013/05/30/phu-qouc-island-vietnam': function phuQoucIslandVietnam() {
-      return __webpack_require__(20).default;
+      return __webpack_require__(19).default;
     }, '/2013/06/14/mountain-biking-in-siem-reap': function mountainBikingInSiemReap() {
-      return __webpack_require__(21).default;
+      return __webpack_require__(20).default;
     }, '/2013/06/27/airport-security-in-india': function airportSecurityInIndia() {
-      return __webpack_require__(22).default;
+      return __webpack_require__(21).default;
     }, '/2013/06/29/wake-up-call': function wakeUpCall() {
-      return __webpack_require__(23).default;
+      return __webpack_require__(22).default;
     }, '/2013/06/30/thailand': function thailand() {
-      return __webpack_require__(24).default;
+      return __webpack_require__(23).default;
     }, '/2013/08/13/frustration-india-part-1': function frustrationIndiaPart1() {
-      return __webpack_require__(25).default;
+      return __webpack_require__(24).default;
     }, '/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2': function trainStationsPartiesUntilTheLittleHoursOfTheNightIndiaPart2() {
-      return __webpack_require__(26).default;
+      return __webpack_require__(25).default;
     }, '/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3': function threeGirlsAGuyAndATourGuidePart3() {
-      return __webpack_require__(27).default;
+      return __webpack_require__(26).default;
     }, '/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4': function indiaFlyingSoloAtOneWithTheChaosIndiaPart4() {
-      return __webpack_require__(28).default;
+      return __webpack_require__(27).default;
     }, '/2013/09/03/travelling-light-or-not': function travellingLightOrNot() {
-      return __webpack_require__(29).default;
+      return __webpack_require__(28).default;
     }, '/2013/09/09/johannesburg-to-victoria-falls-and-back': function johannesburgToVictoriaFallsAndBack() {
-      return __webpack_require__(30).default;
+      return __webpack_require__(29).default;
     }, '/2013/09/16/south-africa': function southAfrica() {
-      return __webpack_require__(31).default;
+      return __webpack_require__(30).default;
     }, '/2013/09/23/zanzibar-tanzania': function zanzibarTanzania() {
-      return __webpack_require__(32).default;
+      return __webpack_require__(31).default;
     }, '/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater': function serengetiNationalParkAndTheNgorongoroCrater() {
-      return __webpack_require__(33).default;
+      return __webpack_require__(32).default;
     }, '/2013/10/07/kenya-the-masai-mara-and-lake-nakuru': function kenyaTheMasaiMaraAndLakeNakuru() {
-      return __webpack_require__(34).default;
+      return __webpack_require__(33).default;
     }, '/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans': function ugandaWhiteWaterRaftingTrackingChimpsAndTeachingOrphans() {
-      return __webpack_require__(35).default;
+      return __webpack_require__(34).default;
     }, '/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa': function theSignsAndSightsOfTheStreetsOfEastAfrica() {
-      return __webpack_require__(36).default;
+      return __webpack_require__(35).default;
     }, '/2013/11/24/rwanda-gorillas-genocide': function rwandaGorillasGenocide() {
-      return __webpack_require__(37).default;
+      return __webpack_require__(36).default;
     }, '/2013/12/05/spreepark-berlin': function spreeparkBerlin() {
-      return __webpack_require__(38).default;
+      return __webpack_require__(37).default;
     }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
-      return __webpack_require__(39).default;
+      return __webpack_require__(38).default;
     }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
-      return __webpack_require__(40).default;
+      return __webpack_require__(39).default;
     }, '/2014/02/06/turkey': function turkey() {
-      return __webpack_require__(41).default;
+      return __webpack_require__(40).default;
     }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
-      return __webpack_require__(42).default;
+      return __webpack_require__(41).default;
     }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
-      return __webpack_require__(43).default;
+      return __webpack_require__(42).default;
     }, '/2014/04/06/berlin-part-1': function berlinPart1() {
-      return __webpack_require__(44).default;
+      return __webpack_require__(43).default;
     }, '/2014/04/15/berlin-part-2': function berlinPart2() {
-      return __webpack_require__(45).default;
+      return __webpack_require__(44).default;
     }, '/2014/04/23/berlin-part-3': function berlinPart3() {
-      return __webpack_require__(46).default;
+      return __webpack_require__(45).default;
     }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
-      return __webpack_require__(47).default;
+      return __webpack_require__(46).default;
     }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
-      return __webpack_require__(48).default;
+      return __webpack_require__(47).default;
     }, '/2014/05/26/granada': function granada() {
-      return __webpack_require__(49).default;
+      return __webpack_require__(48).default;
     }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
-      return __webpack_require__(50).default;
+      return __webpack_require__(49).default;
     }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
-      return __webpack_require__(51).default;
+      return __webpack_require__(50).default;
     }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
-      return __webpack_require__(52).default;
+      return __webpack_require__(51).default;
     }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
-      return __webpack_require__(53).default;
+      return __webpack_require__(52).default;
     }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
-      return __webpack_require__(54).default;
+      return __webpack_require__(53).default;
     }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
-      return __webpack_require__(55).default;
+      return __webpack_require__(54).default;
     }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
-      return __webpack_require__(56).default;
+      return __webpack_require__(55).default;
     }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
-      return __webpack_require__(57).default;
+      return __webpack_require__(56).default;
     }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
-      return __webpack_require__(58).default;
+      return __webpack_require__(57).default;
     }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
-      return __webpack_require__(59).default;
+      return __webpack_require__(58).default;
     }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
-      return __webpack_require__(60).default;
+      return __webpack_require__(59).default;
     }, '/2015/01/03/firedrums-2014-and-san-francisco': function firedrums2014AndSanFrancisco() {
-      return __webpack_require__(61).default;
+      return __webpack_require__(60).default;
     }, '/2015/02/26/honduras-mainland-lago-yejoa-copan': function hondurasMainlandLagoYejoaCopan() {
-      return __webpack_require__(62).default;
+      return __webpack_require__(61).default;
     }, '/2015/03/30/antigua-guatemala': function antiguaGuatemala() {
-      return __webpack_require__(63).default;
+      return __webpack_require__(62).default;
     }, '/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala': function sanMarcosLaLagunaLakeAtitlanGuatemala() {
-      return __webpack_require__(64).default;
+      return __webpack_require__(63).default;
     }, '/2015/04/27/quezaltenango-xela-guatemala': function quezaltenangoXelaGuatemala() {
-      return __webpack_require__(65).default;
+      return __webpack_require__(64).default;
     }, '/2015/05/04/revisiting-antigua-and-earth-lodge': function revisitingAntiguaAndEarthLodge() {
-      return __webpack_require__(66).default;
+      return __webpack_require__(65).default;
     }, '/2015/05/11/more-schooling-in-xela': function moreSchoolingInXela() {
-      return __webpack_require__(67).default;
+      return __webpack_require__(66).default;
     }, '/2015/05/13/two-years-later': function twoYearsLater() {
-      return __webpack_require__(68).default;
+      return __webpack_require__(67).default;
     }, '/2015/05/21/back-to-lake-atitlan': function backToLakeAtitlan() {
-      return __webpack_require__(69).default;
+      return __webpack_require__(68).default;
     }, '/2015/05/26/semuc-champey': function semucChampey() {
-      return __webpack_require__(70).default;
+      return __webpack_require__(69).default;
     }, '/2015/06/01/tikal': function tikal() {
-      return __webpack_require__(71).default;
+      return __webpack_require__(70).default;
     }, '/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala': function rioDulceLivingstonAndTryingToLeaveGuatemala() {
-      return __webpack_require__(72).default;
+      return __webpack_require__(71).default;
     }, '/2015/08/17/san-francisco-before-the-burn': function sanFranciscoBeforeTheBurn() {
-      return __webpack_require__(73).default;
+      return __webpack_require__(72).default;
     }, '/': function _() {
       return __webpack_require__(80).default;
     }, '/page/10': function page10() {
@@ -17067,63 +17069,7 @@ module.exports =
 /* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(7)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.blogLinkHeading a {\n\n    text-transform: capitalize;\n\n    text-decoration: none;\n\n    font-size: xx-large;\n\n    color: #fff\n}\n\n.blogLinkHeading a:hover {\n\n    color: #c8c8c8\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 111 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(7)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.blogPost p {\n  text-align: justify;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 112 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(7)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhr.divider {\n  clear: both;\n  border: 0;\n  height: 1px;\n  background: #272B30;\n  background-image: -webkit-gradient(linear, left top, right top, from(#272B30), color-stop(#484848), to(#272B30));\n  background-image: -webkit-linear-gradient(left, #272B30, #484848, #272B30);\n  background-image: -o-linear-gradient(left, #272B30, #484848, #272B30);\n  background-image: linear-gradient(to right, #272B30, #484848, #272B30);\n  margin: 30px 0 50px 0;\n}\n\n.blogPostSummary p {\n  text-align: justify;\n}\n\n.blogPostSummary:last-of-type hr.divider {\n  display: none;\n}\n\n.date {\n  font-size: x-small;\n  margin-top: -15px;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 113 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(7)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.flickrImage {\n  text-align: center;\n}\n\n.flickrImage .flickrImage__container {\n  display: inline-block;\n  background: white;\n  -webkit-box-shadow: 2px 2px 2px 0px #111;\n          box-shadow: 2px 2px 2px 0px #111;\n}\n\n.flickrImage .flickrImage__container img {\n  padding: 1px;\n}\n\n.flickrImage .flickrImage__container a {\n  font-family: 'Swanky and Moo Moo', fantasy, cursive;\n  color: #000;\n  text-decoration: none;\n}\n\n.flickrImage .flickrImage__container a .flickrImageCaption {\n  // text-shadow: 0px 0px 10px #fff;\n  color: #c8c8c8;\n  text-shadow:  1px  1px 0.5px black,\n                     -1px -1px 0.5px black,\n                      1px -1px 0.5px black,\n                     -1px  1px 0.5px black;\n  margin: -50px 0px 7px 0;\n  font-size: x-large;\n  font-style: italic;\n  text-align: center;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 114 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(7)();
+  exports = module.exports = __webpack_require__(73)();
   // imports
 
 
@@ -17134,10 +17080,10 @@ module.exports =
 
 
 /***/ },
-/* 115 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(7)();
+  exports = module.exports = __webpack_require__(73)();
   // imports
 
 
@@ -17148,21 +17094,7 @@ module.exports =
 
 
 /***/ },
-/* 116 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(7)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.navbar {\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a9196), color-stop(60%, #7a8288), color-stop(60%, #70787d));\n  background-image: -webkit-linear-gradient(#8a9196, #7a8288 60%, #70787d);\n  background-image: -o-linear-gradient(#8a9196, #7a8288 60%, #70787d);\n  background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);\n  height: 50px;\n  color: #c8c8c8;\n  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);\n  font-weight: 700;\n  font-size: 18px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-justify-content: space-around;\n      -ms-flex-pack: distribute;\n          justify-content: space-around;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.navContainer {\n  height: 100%;\n  width: calc(1280px - 30px);\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.navbarheader {\n}\n\n.navigation {\n  padding: 0;\n  margin: 0;\n}\n\n.navigationLink {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-justify-content: space-around;\n      -ms-flex-pack: distribute;\n          justify-content: space-around;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 0;\n  color: #c8c8c8;\n  text-decoration: none;\n  cursor: pointer;\n  height: 100%\n}\n\n.navigationLink:hover {\n  color: white;\n}\n\n.navbar:after {\n  clear: both;\n}\n\n.navigation:last-of-type {\n  border-right: transparent;\n  border-right-width: 0px;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 117 */
+/* 112 */
 /***/ function(module, exports) {
 
   module.exports = {
@@ -21504,43 +21436,43 @@ module.exports =
   };
 
 /***/ },
-/* 118 */
+/* 113 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-loader");
 
 /***/ },
-/* 119 */
+/* 114 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-polyfill");
 
 /***/ },
-/* 120 */
+/* 115 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-register");
 
 /***/ },
-/* 121 */
+/* 116 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 122 */
+/* 117 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 123 */
+/* 118 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 124 */
+/* 119 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
