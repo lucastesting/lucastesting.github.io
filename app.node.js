@@ -45,8 +45,8 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-  __webpack_require__(91);
-  module.exports = __webpack_require__(80);
+  __webpack_require__(256);
+  module.exports = __webpack_require__(93);
 
 
 /***/ },
@@ -69,11 +69,163 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _TagCloud = __webpack_require__(5);
+  __webpack_require__(249);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  var _BlogLink = __webpack_require__(75);
+
+  var _BlogLink2 = _interopRequireDefault(_BlogLink);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var BlogPostSummary = function BlogPostSummary(_ref) {
+    var path = _ref.path;
+    var title = _ref.title;
+    var formattedDate = _ref.formattedDate;
+    var content = _ref.content;
+    return _react2.default.createElement(
+      "div",
+      { className: "blogPostSummary" },
+      _react2.default.createElement(
+        _BlogLink2.default,
+        { path: path },
+        title
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "date" },
+        formattedDate
+      ),
+      content,
+      _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: path },
+          "Read More..."
+        )
+      ),
+      _react2.default.createElement("hr", { className: "divider" })
+    );
+  };
+
+  BlogPostSummary.propTypes = {
+    path: _react.PropTypes.string.isRequired,
+    title: _react.PropTypes.string.isRequired,
+    formattedDate: _react.PropTypes.string.isRequired,
+    content: _react.PropTypes.node.isRequired
+  };
+
+  exports.default = BlogPostSummary;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+  var map = {
+  	"./2013-03-26-twenty-years-from-now.jsx": 9,
+  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 10,
+  	"./2013-04-22-target-40-litres.jsx": 11,
+  	"./2013-05-07-last-minute-bag-choices.jsx": 12,
+  	"./2013-05-12-its-go-time.jsx": 13,
+  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 14,
+  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 15,
+  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 16,
+  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 17,
+  	"./2013-05-24-last-day-in-hcmc.jsx": 18,
+  	"./2013-05-29-ha-ha-business.jsx": 19,
+  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 20,
+  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 21,
+  	"./2013-06-27-airport-security-in-india.jsx": 22,
+  	"./2013-06-29-wake-up-call.jsx": 23,
+  	"./2013-06-30-thailand.jsx": 24,
+  	"./2013-08-13-frustration-india-part-1.jsx": 25,
+  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 26,
+  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 27,
+  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 28,
+  	"./2013-09-03-travelling-light-or-not.jsx": 29,
+  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 30,
+  	"./2013-09-16-south-africa.jsx": 31,
+  	"./2013-09-23-zanzibar-tanzania.jsx": 32,
+  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 33,
+  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 34,
+  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 35,
+  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 36,
+  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 37,
+  	"./2013-12-05-spreepark-berlin.jsx": 38,
+  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 39,
+  	"./2014-01-03-istanbul-turkey.jsx": 40,
+  	"./2014-02-06-turkey.jsx": 41,
+  	"./2014-02-14-the-greek-islands-and-athens.jsx": 42,
+  	"./2014-03-02-england-the-home-of-real-ale.jsx": 43,
+  	"./2014-04-06-berlin-part-1.jsx": 44,
+  	"./2014-04-15-berlin-part-2.jsx": 45,
+  	"./2014-04-23-berlin-part-3.jsx": 46,
+  	"./2014-05-03-barcelona-spain.jsx": 47,
+  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 48,
+  	"./2014-05-26-granada.jsx": 49,
+  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 50,
+  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 51,
+  	"./2014-07-01-poi-love-camp.jsx": 52,
+  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 53,
+  	"./2014-07-29-uvita-costa-rica.jsx": 54,
+  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 55,
+  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 56,
+  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 57,
+  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 58,
+  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 59,
+  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 60,
+  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 61,
+  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 62,
+  	"./2015-03-30-antigua-guatemala.jsx": 63,
+  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 64,
+  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 65,
+  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 66,
+  	"./2015-05-11-more-schooling-in-xela.jsx": 67,
+  	"./2015-05-13-two-years-later.jsx": 68,
+  	"./2015-05-21-back-to-lake-atitlan.jsx": 69,
+  	"./2015-05-26-semuc-champey.jsx": 70,
+  	"./2015-06-01-tikal.jsx": 71,
+  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 72,
+  	"./2015-08-17-san-francisco-before-the-burn.jsx": 73
+  };
+  function webpackContext(req) {
+  	return __webpack_require__(webpackContextResolve(req));
+  };
+  function webpackContextResolve(req) {
+  	return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+  };
+  webpackContext.keys = function webpackContextKeys() {
+  	return Object.keys(map);
+  };
+  webpackContext.resolve = webpackContextResolve;
+  module.exports = webpackContext;
+  webpackContext.id = 3;
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _TagCloud = __webpack_require__(7);
 
   var _TagCloud2 = _interopRequireDefault(_TagCloud);
 
-  __webpack_require__(82);
+  __webpack_require__(248);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -126,7 +278,7 @@ module.exports =
   exports.default = BlogPost;
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -139,15 +291,15 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _flickr_manifest = __webpack_require__(89);
+  var _flickr_manifest = __webpack_require__(255);
 
   var _flickr_manifest2 = _interopRequireDefault(_flickr_manifest);
 
-  var _Link = __webpack_require__(4);
+  var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(84);
+  __webpack_require__(250);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -210,7 +362,7 @@ module.exports =
   exports.default = FlickrImageLegacy;
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -227,9 +379,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(86);
+  __webpack_require__(252);
 
-  var _Location = __webpack_require__(6);
+  var _Location = __webpack_require__(8);
 
   var _Location2 = _interopRequireDefault(_Location);
 
@@ -324,7 +476,7 @@ module.exports =
   exports.default = Link;
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -337,11 +489,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _Link = __webpack_require__(4);
+  var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(88);
+  __webpack_require__(254);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -383,7 +535,7 @@ module.exports =
   exports.default = TagCloud;
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -392,21 +544,21 @@ module.exports =
     value: true
   });
 
-  var _ExecutionEnvironment = __webpack_require__(72);
+  var _ExecutionEnvironment = __webpack_require__(74);
 
-  var _createBrowserHistory = __webpack_require__(94);
+  var _createBrowserHistory = __webpack_require__(259);
 
   var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
-  var _createMemoryHistory = __webpack_require__(95);
+  var _createMemoryHistory = __webpack_require__(260);
 
   var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-  var _useQueries = __webpack_require__(96);
+  var _useQueries = __webpack_require__(261);
 
   var _useQueries2 = _interopRequireDefault(_useQueries);
 
-  var _scrollBehavior = __webpack_require__(98);
+  var _scrollBehavior = __webpack_require__(263);
 
   var _scrollBehavior2 = _interopRequireDefault(_scrollBehavior);
 
@@ -417,7 +569,7 @@ module.exports =
   exports.default = location;
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -431,11 +583,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -495,7 +647,7 @@ module.exports =
   };
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -509,11 +661,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -581,7 +733,7 @@ module.exports =
   };
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -595,11 +747,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -678,7 +830,7 @@ module.exports =
   };
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -692,11 +844,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -798,7 +950,7 @@ module.exports =
   };
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -812,11 +964,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -888,7 +1040,7 @@ module.exports =
   };
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -902,11 +1054,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -1032,7 +1184,7 @@ module.exports =
   };
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1046,11 +1198,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -1129,7 +1281,7 @@ module.exports =
   };
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1143,11 +1295,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -1250,7 +1402,7 @@ module.exports =
   };
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1264,11 +1416,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -1363,7 +1515,7 @@ module.exports =
   };
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1377,11 +1529,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -1443,7 +1595,7 @@ module.exports =
   };
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1457,11 +1609,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -1577,7 +1729,7 @@ module.exports =
   };
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1591,11 +1743,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -2197,7 +2349,7 @@ module.exports =
   };
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2211,11 +2363,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -2694,7 +2846,7 @@ module.exports =
   };
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2708,11 +2860,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -2903,7 +3055,7 @@ module.exports =
   };
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2917,11 +3069,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -3038,7 +3190,7 @@ module.exports =
   };
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3052,11 +3204,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -3374,7 +3526,7 @@ module.exports =
   };
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3388,11 +3540,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -3603,7 +3755,7 @@ module.exports =
   };
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3617,11 +3769,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -3770,7 +3922,7 @@ module.exports =
   };
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3784,11 +3936,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -3937,7 +4089,7 @@ module.exports =
   };
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3951,11 +4103,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -4141,7 +4293,7 @@ module.exports =
   };
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4155,11 +4307,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -4241,7 +4393,7 @@ module.exports =
   };
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4255,11 +4407,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -4503,7 +4655,7 @@ module.exports =
   };
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4517,11 +4669,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -4789,7 +4941,7 @@ module.exports =
   };
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4803,11 +4955,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -5138,7 +5290,7 @@ module.exports =
   };
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5152,11 +5304,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -5488,7 +5640,7 @@ module.exports =
   };
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5502,11 +5654,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -5862,7 +6014,7 @@ module.exports =
   };
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5876,11 +6028,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -6089,7 +6241,7 @@ module.exports =
   };
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6103,11 +6255,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -6151,7 +6303,7 @@ module.exports =
   };
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6165,11 +6317,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -6406,7 +6558,7 @@ module.exports =
   };
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6420,11 +6572,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -6582,7 +6734,7 @@ module.exports =
   };
 
 /***/ },
-/* 37 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6596,11 +6748,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -6651,7 +6803,7 @@ module.exports =
   };
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6665,11 +6817,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -6859,7 +7011,7 @@ module.exports =
   };
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6873,11 +7025,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -7211,7 +7363,7 @@ module.exports =
   };
 
 /***/ },
-/* 40 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7225,11 +7377,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -7431,7 +7583,7 @@ module.exports =
   };
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7445,11 +7597,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -7836,7 +7988,7 @@ module.exports =
   };
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7850,11 +8002,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -8036,7 +8188,7 @@ module.exports =
   };
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8050,11 +8202,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -8249,7 +8401,7 @@ module.exports =
   };
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8263,11 +8415,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -8485,7 +8637,7 @@ module.exports =
   };
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8499,11 +8651,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -8778,7 +8930,7 @@ module.exports =
   };
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8792,11 +8944,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -8898,7 +9050,7 @@ module.exports =
   };
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8912,11 +9064,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -9260,7 +9412,7 @@ module.exports =
   };
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9274,11 +9426,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -9520,7 +9672,7 @@ module.exports =
   };
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9534,11 +9686,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -9891,7 +10043,7 @@ module.exports =
   };
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9905,11 +10057,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -10127,7 +10279,7 @@ module.exports =
   };
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10141,11 +10293,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -10500,7 +10652,7 @@ module.exports =
   };
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10514,11 +10666,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -10715,7 +10867,7 @@ module.exports =
   };
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10729,11 +10881,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -10902,7 +11054,7 @@ module.exports =
   };
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10916,11 +11068,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -11121,7 +11273,7 @@ module.exports =
   };
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11135,11 +11287,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -11473,7 +11625,7 @@ module.exports =
   };
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11487,11 +11639,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -11640,7 +11792,7 @@ module.exports =
   };
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11654,11 +11806,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -11970,7 +12122,7 @@ module.exports =
   };
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11984,11 +12136,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -12164,7 +12316,7 @@ module.exports =
   };
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12178,11 +12330,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -12428,7 +12580,7 @@ module.exports =
   };
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12442,11 +12594,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -12599,7 +12751,7 @@ module.exports =
   };
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12613,11 +12765,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -12782,7 +12934,7 @@ module.exports =
   };
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12796,11 +12948,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13055,7 +13207,7 @@ module.exports =
   };
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13069,11 +13221,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13241,7 +13393,7 @@ module.exports =
   };
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13255,11 +13407,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13409,7 +13561,7 @@ module.exports =
   };
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13423,11 +13575,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13519,7 +13671,7 @@ module.exports =
   };
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13533,11 +13685,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13612,7 +13764,7 @@ module.exports =
   };
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13626,11 +13778,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13795,7 +13947,7 @@ module.exports =
   };
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13809,11 +13961,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -13948,7 +14100,7 @@ module.exports =
   };
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13962,11 +14114,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -14121,7 +14273,7 @@ module.exports =
   };
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14135,11 +14287,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -14291,7 +14443,7 @@ module.exports =
   };
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14305,11 +14457,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FlickrImageLegacy = __webpack_require__(3);
+  var _FlickrImageLegacy = __webpack_require__(5);
 
   var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
 
-  var _BlogPost = __webpack_require__(2);
+  var _BlogPost = __webpack_require__(4);
 
   var _BlogPost2 = _interopRequireDefault(_BlogPost);
 
@@ -14551,13 +14703,13 @@ module.exports =
   };
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/ExecutionEnvironment");
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14570,11 +14722,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _Link = __webpack_require__(4);
+  var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(81);
+  __webpack_require__(247);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14597,7 +14749,7 @@ module.exports =
   exports.default = BlogLink;
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14610,76 +14762,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(83);
+  __webpack_require__(251);
 
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  var _BlogLink = __webpack_require__(73);
-
-  var _BlogLink2 = _interopRequireDefault(_BlogLink);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var BlogPostSummary = function BlogPostSummary(_ref) {
-    var path = _ref.path;
-    var title = _ref.title;
-    var formattedDate = _ref.formattedDate;
-    var content = _ref.content;
-    return _react2.default.createElement(
-      "div",
-      { className: "blogPostSummary" },
-      _react2.default.createElement(
-        _BlogLink2.default,
-        { path: path },
-        title
-      ),
-      _react2.default.createElement(
-        "div",
-        { className: "date" },
-        formattedDate
-      ),
-      content,
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: path },
-          "Read More..."
-        )
-      ),
-      _react2.default.createElement("hr", { className: "divider" })
-    );
-  };
-
-  BlogPostSummary.propTypes = {
-    path: _react.PropTypes.string.isRequired,
-    title: _react.PropTypes.string.isRequired,
-    formattedDate: _react.PropTypes.string.isRequired,
-    content: _react.PropTypes.node.isRequired
-  };
-
-  exports.default = BlogPostSummary;
-
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  __webpack_require__(85);
-
-  var _Navigation = __webpack_require__(76);
+  var _Navigation = __webpack_require__(77);
 
   var _Navigation2 = _interopRequireDefault(_Navigation);
 
@@ -14707,7 +14792,7 @@ module.exports =
   exports.default = Layout;
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14720,9 +14805,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(87);
+  __webpack_require__(253);
 
-  var _Link = __webpack_require__(4);
+  var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
@@ -14803,7 +14888,7 @@ module.exports =
   exports.default = Navigation;
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -14861,7 +14946,7 @@ module.exports =
   exports.default = _class;
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -14922,7 +15007,7 @@ module.exports =
   exports.default = _class;
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14935,15 +15020,783 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _BlogPostSummary = __webpack_require__(74);
+  var _BlogPostSummary = __webpack_require__(2);
 
   var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
 
-  var _Link = __webpack_require__(4);
+  var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  var _TagCloud = __webpack_require__(5);
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx", "formattedDate": "September 2nd 2013, 4:06:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On my first morning alone in Udaipur I went for a bit of an aimless wander around, and ended up at the zoo, which with my typical travel luck, was closed that day. I had a bit of a walk around the gardens surrounding it which were very nice, and sat in the shade reading a book for a few hours." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9582177058", "linkUrl": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", "caption": "Just my luck" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I took a very round about walk back into town and stumbled across quite a long street market which was full of colour and activity, so I spent quite a while taking photos." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", "tags": ["India", "Mumbai"], "title": "India Flying solo, at one with the chaos - India Part 4" }, { "file": "2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx", "formattedDate": "August 26th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "The next morning half the tour group boarded a train heading to Delhi to finish up their tour, but the 4 of us staying on and Moon went and got a local bus heading to a little village called Nimaj Bagh. The place were were staying was an old palace turned into a hotel, with beautifully painted trims on all the doorways, arches and windows. The place also had a pool which we hung out in all afternoon, making the heat a whole lot more bearable." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9582067500", "linkUrl": "/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3", "caption": "Our Hotel was beautifully decorated" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3", "tags": ["India"], "title": "Three girls, a guy and a tour guide - Part 3" }, { "file": "2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx", "formattedDate": "August 19th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "The overnight train the second time around, from Varanasi to near Agra, was a bit of an ordeal. We showed up at the station at 21:00, one hour before the train was scheduled to depart at 22:00, and were soon told that the train had been delayed a few hours, now expected at 00:00. We went into the upper class and sleeper class reserved seating area to sit and wait and found it was full of people sleeping on the benches. One of the guys checking people were allowed to be in there went around and woke some people up, clearing enough seats so everyone could at least sit down." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We soon noticed what appeared to be rats lurking in the shadows underneath benches, occasionally making dashes in and out of the toilets. The toilets were a sight to not be seen. Wreaking of shit, the guys toilets consisted of three squats one of which had leaking plumbing that sprayed water at you as you first walked in the door, or went near the basin to wash your hands. How lovely!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2", "tags": ["India", "Trains"], "title": "Train stations parties until the little hours of the night - India Part 2" }, { "file": "2013-08-13-frustration-india-part-1.jsx", "formattedDate": "August 13th 2013, 1:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm going to prefix this by apologising that it's ridiculously long; I really understand that quote \"I'm sorry for the length of this letter but I didn't have time to write a shorter one\". I'm struggling to keep up, this will probably be the last post I write in this format, which is probably for the best. I'm going to post this as 4 parts as I get the chance, photos will have to wait until I'm somewhere with reasonable internets." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I arrived in Delhi quite late at night, about 1am, and was very glad to have an airport transfer already organised. The roads of India didn't seem too crazy at that time of night, or at least no worse than Vietnam or Cambodia; how little did I know back then. I checked into my hotel, Hotel Perfect, and went straight to bed." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I woke the next day and went out in search of an ATM so I could get some Rupees and some breakfast. The ATM was easy enough, although the maximum withdrawal was less than AUD $200, another win for my overseas-transaction-fee free credit card. I'd hate to be getting socked with $5-10 foreign ATM fees for every $200 I needed." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Breakfast wasn't so easy to find. The area the hotel was in, Karol Barg, seemed to be mostly closed, which seemed a bit silly in a country where it gets so hot to be shut for the coolest part of the day." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/13/frustration-india-part-1", "tags": ["India"], "title": "Frustration - India Part 1" }, { "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }], "pageNo": 10, "nextPage": "/page/11", "previousPage": "/page/9", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 81 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2013-06-29-wake-up-call.jsx", "formattedDate": "June 29th 2013, 4:27:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On this day, one year ago today, I woke up a little bit late." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I rode to work in a bit of a hurry, and on my way got cut off by a car. Getting cut off by cars happens pretty much every day, but on this day I had new brakes that I was unfamiliar with, which were significantly more effective than my old ones. That combined with rushing to not be late, meant that braking hard got me up on just the front wheel and then sent me over the handle bars, landing hard enough on my knees that I got several fractures in my acetabulum (ie. my Hip socket/pelvis)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This moment, at five to nine in the morning on a Friday, changed my life in a number of unexpected ways. Being completely crippled and dependant on others got me seriously thinking about the things I'd like to do but had been putting off until \"the right time\", many of which are dependant on being able-bodied, and I wondered a lot about how well I would recover and how those things I'd like to do might now never happen." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/29/wake-up-call", "tags": ["Introspection", "Inspiration"], "title": "Wake Up Call" }, { "file": "2013-06-27-airport-security-in-india.jsx", "formattedDate": "June 27th 2013, 2:19:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "The \"ticket desk\"" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/27/airport-security-in-india", "tags": ["Flying", "Airports", "India", "Security Theater"], "title": "Airport security in India" }, { "file": "2013-06-14-mountain-biking-in-siem-reap.jsx", "formattedDate": "June 14th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "My bike in front of Angkor Wat" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "Angkor Thom's east gate" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/14/mountain-biking-in-siem-reap", "tags": ["Cambodia", "Bikes", "Monkeys", "Ruins"], "title": "Mountain Biking in Siem Reap" }, { "file": "2013-05-30-phu-qouc-island-vietnam.jsx", "formattedDate": "May 30th 2013, 1:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Upon arriving at Duong Dong Airport in Phu Quoc I got a taxi to my hotel, the A74. I checked in and was shown to my room by a very friendly concierge. The room smelt a bit funny so went back down and asked if I could change rooms and they put me in a much bigger room, which still has some odd odour in it that I cant identify but I guess the whole place might have that smell." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I did some washing in the bathroom sink and nearly accidentally tore it off the wall. it turns out it was only held up by the plumbing and two flimsy little brackets, which I bent a bit (and then bent back as well as I could)." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/30/phu-qouc-island-vietnam", "tags": ["Vietnam", "Phu Quoc"], "title": "Phu Qouc Island, Vietnam" }, { "file": "2013-05-29-ha-ha-business.jsx", "formattedDate": "May 29th 2013, 2:04:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "a", "key": null, "ref": null, "props": { "href": "/2013/05/29/ha-ha-business/", "children": [{ "type": "img", "key": null, "ref": null, "props": { "src": "http://www.quickmeme.com/img/5d/5d8664cf92e4ce604998ebc905667d3186818aee1c8786b9cfd51712eead636e.jpg", "className": "img-responsive" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "HA HA! BUSINESS!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For the trip to Phu Quoc I decided to fly since it was only $80 and it would save me many many hours on buses and ferries. For a laugh I looked at business class prices and they were only $30 more. I'd never flown business class before so I thought \"[YOLO!](http://www.youtube.com/watch?v=z5Otla5157c)\" and booked myself a business class ticket." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/29/ha-ha-business", "tags": ["Flying", "Business", "Vietnam"], "title": "HA HA! BUSINESS!" }], "pageNo": 11, "nextPage": "/page/12", "previousPage": "/page/10", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2013-05-24-last-day-in-hcmc.jsx", "formattedDate": "May 24th 2013, 3:51:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "For my final morning in Saigon I got up and ventured out north in search of something different for breakfast than the noodles and mystery meat I'd been having. I stopped along the way a few times to sit in tiny plastic chairs with the locals and drink iced coffee while the traffic did it's crazy thing. I ended up buying a half kilo of mangostein for breakfast with which I made a huge mess before the owner of one of the coffee stand I was sitting at came over with a knife and helped me out. Ugly fruit, but so very tasty." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/05/24/last-day-in-hcmc", "tags": ["Vietnam", "HCMC"], "title": "Last Day in HCMC" }, { "file": "2013-05-22-day-4-motorbikes-in-hcmc.jsx", "formattedDate": "May 22nd 2013, 3:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On the third day I finally took first motorbike taxi, which was a fun, cheap and fast way of getting the War Remnants Museum (Previously knows as the American War Crimes museum), plus the breeze from zooming around is nice and cooling. Why was I walking everywhere like a schmuck!? And yes Mum, I wore a helmet, although they're all so small in Vietnam I half think it might actually make things worse if there was actually an accident, concentrating the force in a ring around the top of my head." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The war museum was interesting, but not catered to someone who knows next to nothing about the history of the war. There was lots of stuff about the specifics that happened, but very little about the motives of either side. There was a load of stuff about the after effects of agent orange on people of both sides of the war, but I needed to look up it up online to find it was a herbicide being sprayed to kill off all the vegetation so the Viet Cong couldn't hide among it." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9689702796", "linkUrl": "/2013/05/22/day-4-motorbikes-in-hcmc", "caption": "A Chinook helicopter" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-4-motorbikes-in-hcmc", "tags": ["Vietnam", "HCMC", "Motorbikes"], "title": "Day 4 Motorbikes in HCMC" }, { "file": "2013-05-22-day-3-cu-chi-tunnels.jsx", "formattedDate": "May 22nd 2013, 2:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On day 2 I headed to the Cu Chi tunnels on a tour booked through my hostel. Our guide was a very interesting half-Filipino, half Vietnamese man who fought in the war on the USA side. It sounded like he'd had a pretty horrific life, with both his wife and mother killed in the war, and his siblings fleeing the country. It was nice to have someone who was actually involved and from Vietnam tell us that most of what the Vietnamese museums state as truth is horribly biased propaganda, but that the USA is just as full of shit with their telling of events. Both sides did messed up things and there was no real winner." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "When we arrived at the tunnels we sat and watched a video that was so nationalistic/anti-American it was painful to watch; how the evil Americans were out to prevent Vietnam re-unifying (completely ignoring that, as I understand it, the south wasn't actually supportive of that, hence why the war didn't end when America and Co pulled out), and how this guy, that guy and another guy was awarded the killing Americans bravery awards for killing Americans, killing American this, killing Americans that. At one point I'm sure that every sentence spoken for a few minutes had \"killing Americans\" in it at least twice." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9686554053", "linkUrl": "/2013/05/22/day-3-cu-chi-tunnels", "caption": "Our guide briefing us.jpg" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": {}, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The after the propaganda film we moved onto the actual site, were shown huge B-52 bomb craters which were all over the place. We were shown one of the \"manhole\" entrances to the tunnels. People were allowed to hop in for a photo but the hole looked crazy small and I didnt think my shoulders would fit through so I didn't give it a go. Next we saw a variety of different booby traps they used with the intention of perforating the Viet Cong's enemy soldiers and dogs; they were pretty vicious looking contraptions." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-3-cu-chi-tunnels", "tags": ["Vietnam", "Cu Chi Tunnels"], "title": "Day 3 - Cu Chi Tunnels" }, { "file": "2013-05-22-day-2-ho-chi-minh-city.jsx", "formattedDate": "May 22nd 2013, 2:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On my first morning in Vietnam I woke, packed my stuff in my private room into my bags and checked out to walk 30M around the corner to the dorm style accommodation I have booked for the rest of my stay here. I wasnt able to check in until 1pm, so I left my big bag and took just my day pack with all the valuable stuff in it. Even with just a tiny laptop and an MFT system camera, valuables still weigh a ton." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went out onto the main road to try some delicious baked goods from the bakery recommended to me by the first hostel. They had some pretty tasty stuff, but the place was a big franchise and felt very much like Breadtop back home. I sat outside eating my coffee bun and croissant and a little older Vietnamese lady who was there eating started to talk to me. She asked me where I was from, how long I had been travelling, etc. Then she offered me a massage. I could already see where this was going and told her no, but just in case I had missed her meaning she repeated she would give me massage and \"boom boom\". At 10am. At a franchise bakery. It seems that being a single male in Vietnam leads to the locals assuming you're a sex tourist." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-2-ho-chi-minh-city", "tags": ["Vietnam", "HCMC"], "title": "Day 2 - Ho Chi Minh City" }, { "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }], "pageNo": 12, "nextPage": "/page/13", "previousPage": "/page/11", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2013-05-12-its-go-time.jsx", "formattedDate": "May 12th 2013, 10:35:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My bags are packed, almost all my things are sold/donated/given away. Tomorrow morning I get up early to head to the airport, say good bye to Melbourne and fly off to Vietnam to start my trip." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'm feeling a mixture of excitement, sadness, terror and exhaustion. It's been a busy week sorting out the last of my things and catching up with people for the last time. The past 3 days I've been doing stuff pretty much non-stop; now I finally get to sit down and not feel like there's something else I need to be doing." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It's going to be different not being able to regularly see and hang out with people I've known for more than a few days. I'm hoping that with practice I get better at small talk and meeting new people, so maybe that'll be less of an issue." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I guess there's not much more I can do right now, but strap in and wait for this wild ride to start..." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/12/it-s-go-time", "tags": ["Pre Trip"], "title": "It's go time!" }, { "file": "2013-05-07-last-minute-bag-choices.jsx", "formattedDate": "May 7th 2013, 12:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So I bought the 40L bag I'd been eyeing off last week. After doing a few trial packs with it, I've decided that I cant fit everything I want in it well enough, so tomorrow I'm taking it back to see what my other options are." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I can just about fit everything in the 40L bag, but it's stuffed so tight that I have concerns about my laptop getting cracked if the bag were dropped, or something was dropped on it; and it doesnt give me any excess room whatsoever." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/07/last-minute-bag-choices", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Last minute bag choices" }, { "file": "2013-04-22-target-40-litres.jsx", "formattedDate": "April 22nd 2013, 12:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So when I was last in the adventure district looking at travel gadgets and clothing, I was talking to one of the staff in the store and he put the idea in my head that travelling with just a small backpack would make a lot of things easier." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It means you can keep your bag with you in a lot of situations where you'd otherwise have to leave it in the luggage section and hope it doesn't get searched through too much by dodgy characters, and it allows you to use crowded public transport much easier, or even just walk distances that you wouldnt want to get stuck lugging a heavy pack." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/04/22/target-40-litres", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Target 40 Litres" }, { "file": "2013-04-08-the-little-things-that-make-up-a-life.jsx", "formattedDate": "April 8th 2013, 12:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "The hardest part so far of packing my life into a bag and heading off for an indefinite period has been trying to get rid of the huge amount of stuff I own. A lot of the big/valuable stuff has been easy to let go of, and find buyers for, but once you remove all that stuff from your life you're left with a massive amount of \"little things\"." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/04/08/the-little-things-that-make-up-a-life", "tags": ["Pre Trip", "Packing", "Streamlining"], "title": "The little things that make up a life" }, { "file": "2013-03-26-twenty-years-from-now.jsx", "formattedDate": "March 26th 2013, 5:55:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": [{ "type": "div", "key": null, "ref": null, "props": { "className": "quote", "children": "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover." }, "_owner": null, "_store": {} }, { "type": "div", "key": null, "ref": null, "props": { "className": "quote-attribution", "children": "Mark Twain" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/03/26/twenty-years-from-now", "tags": ["Quote", "Inspiration"], "title": "Twenty years from now" }], "pageNo": 13, "nextPage": null, "previousPage": "/page/12", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2015-05-13-two-years-later.jsx", "formattedDate": "May 13th 2015, 2:33:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17568248432", "linkUrl": "/2015/05/13/two-years-later", "caption": "Roatan Sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": ["So today marks two years since ", { "type": "a", "key": null, "ref": null, "props": { "href": "/2013/05/12/its-go-time/", "children": "I last set foot in Australia" }, "_owner": null, "_store": {} }, "."] }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/13/two-years-later", "tags": ["Retrospective"], "title": "Two Years Later" }, { "file": "2015-05-11-more-schooling-in-xela.jsx", "formattedDate": "May 11th 2015, 5:37:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17031479206", "linkUrl": "/2015/05/11/more-schooling-in-xela", "caption": "Xela by night" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/11/more-schooling-in-xela", "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"], "title": "More Schooling in Xela" }, { "file": "2015-05-04-revisiting-antigua-and-earth-lodge.jsx", "formattedDate": "May 4th 2015, 3:47:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16870814889", "linkUrl": "/2015/05/04/revisiting-antigua-and-earth-lodge", "caption": "Pimped chickenbus, got a wave from the conductor" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/04/revisiting-antigua-and-earth-lodge", "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"], "title": "Revisiting Antigua and Earth Lodge" }, { "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }], "pageNo": 2, "nextPage": "/page/3", "previousPage": "/", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2015-03-30-antigua-guatemala.jsx", "formattedDate": "March 30th 2015, 6:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16337477493", "linkUrl": "/2015/03/30/antigua-guatemala", "caption": "Markets in front of epic ruins" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/03/30/antigua-guatemala", "tags": ["Antigua", "Guatemala", "Ruins", "Volcanoes"], "title": "Antigua Guatemala" }, { "file": "2015-02-26-honduras-mainland-lago-yejoa-copan.jsx", "formattedDate": "February 26th 2015, 6:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15852033030", "linkUrl": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "caption": "Waterfall near Lago Yejoa" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"], "title": "Honduras Mainland - Lago Yejoa, Copan" }, { "file": "2015-01-03-firedrums-2014-and-san-francisco.jsx", "formattedDate": "January 3rd 2015, 5:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15419365423", "linkUrl": "/2015/01/03/firedrums-2014-and-san-francisco", "caption": "FireDrums 2014 Fire Circle" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/01/03/firedrums-2014-and-san-francisco", "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"], "title": "FireDrums 2014 and San Francisco" }, { "file": "2014-12-16-the-bay-islands-of-honduras.jsx", "formattedDate": "December 16th 2014, 9:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16036987811", "linkUrl": "/2014/12/16/the-bay-islands-of-honduras", "caption": "Utila's beach" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After making a one night stay in San Pedro Sula, home of the worlds worst murder rate, I headed over to the coast and got a ferry to Utila; one of the Bay Islands of Honduras." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/12/16/the-bay-islands-of-honduras", "tags": ["Diving", "Utila", "Roatan", "Honduras"], "title": "The Bay Islands of Honduras" }, { "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }], "pageNo": 3, "nextPage": "/page/4", "previousPage": null, "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2014-10-30-nicaragua-all-over-the-place.jsx", "formattedDate": "October 30th 2014, 7:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15614210236", "linkUrl": "/2014/10/30/nicaragua-all-over-the-place", "caption": "Volcan Concepcion from Finca Magdelena" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving La Mariposa, I headed to the island of Ometepe and met up with some friends from La Mariposa who were staying at an old farm house called Finca Magdelena. It was just $6 a night for a private room, and they made amazing French toast that I had for breakfast most days." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/30/nicaragua-all-over-the-place", "tags": ["Ometepe", "Jinotega", "Somoto Canyon", "Nicaragua"], "title": "Nicaragua, all over the place" }, { "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }, { "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }, { "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }, { "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"], "title": "Uvita, Costa Rica" }], "pageNo": 4, "nextPage": "/page/5", "previousPage": "/page/3", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2014-07-18-corcovado-national-park-costa-rica.jsx", "formattedDate": "July 18th 2014, 4:54:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14512293446", "linkUrl": "/2014/07/18/corcovado-national-park-costa-rica", "caption": "Puerto Jiminez" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Poi Love Camp finished up I ended up travelling around Costa Rica for a while with a guy I'll just call 'T', together with a friend of his from France who I'll just call 'A'. We headed up to San Jose to meet up with 'A' at the airport, then got a very long bus all the way down to the south eastern end of the country to Golfito, where we stayed a night before getting a ferry over to Puerto Jiminez the next day. The ferry was actually a cramped tiny little boat, with so little room that our bags just got put up on the roof with no rope to tie them down or railings to keep them up there. I was very pleased there were still there when we reached the other side." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/18/corcovado-national-park-costa-rica", "tags": ["Corcovado", "Costa Rica", "Hiking"], "title": "Corcovado National Park, Costa Rica" }, { "file": "2014-07-01-poi-love-camp.jsx", "formattedDate": "July 1st 2014, 8:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14327186196", "linkUrl": "/2014/07/01/poi-love-camp", "caption": "Poi Love Camp group shot minus Jonathan" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Poi Love Camp was an 11 day retreat focused on becoming better poi spinners, held in Costa Rica, and run by Nick Woolsey, the man behind [PlayPoi](http://www.playpoi.com). Also teaching there was one of the spinners who has inspired me the most: Jonathan Alvarez, and also the mind-bendingly talented Alien Jon." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The retreat had been on my radar for a little while, but it wasn't until a few days before Christmas when I decided that I really wanted to get out of the European winter that I started seriously thought about going. A day later I had bought flights and tickets to what ended up being one of the most fun fortnights I've ever had. Impulsive travel planning at it's best." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/01/poi-love-camp", "tags": ["Costa Rica", "Finca Mia", "Poi", "Retreat"], "title": "Poi Love Camp" }, { "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }, { "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }, { "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }], "pageNo": 5, "nextPage": "/page/6", "previousPage": "/page/4", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2014-05-13-happy-travel-birthday-to-me.jsx", "formattedDate": "May 13th 2014, 2:46:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "img", "key": null, "ref": null, "props": { "src": "/images/first-birthday-cake.jpg", "alt": "birthday cake", "className": "img-responsive" }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So today marks my first travel birthday. One year ago today I boarded my first flight of this trip, leaving my home in Melbourne and headed out to see the world. Actually, because time zones are always a pain in the ass, it was actually more like 1 year and 16 hours or something but one year rolls of the tongue better. It's the longest period I've ever been away from Australia by at least a few months now." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/13/happy-travel-birthday-to-me", "tags": ["Humblebrag", "Retrospective"], "title": "Happy travel birthday to me!" }, { "file": "2014-05-03-barcelona-spain.jsx", "formattedDate": "May 3rd 2014, 2:15:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Even in winter the weather is Barcelona is lovely. As soon as I landed and got through customs, I put my heavy winter jacket away and was quite comfortable in just a T-shirt. It seemed like the warm weather would be great for helping me kick a cold that had been hanging around for my last few weeks in Berlin, which had left me sniffing and congested for far too long." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13809549773", "linkUrl": "/2014/05/03/barcelona-spain", "caption": "La Sagrada Familia" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/03/barcelona-spain", "tags": ["Spain", "Barcelona", "Tapas"], "title": "Barcelona, Spain" }, { "file": "2014-04-23-berlin-part-3.jsx", "formattedDate": "April 23rd 2014, 3:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "One very cold a miserable morning I went to see Sachsenhausen concentration camp, out at Oranienburg. The camp was about a two kilometre walk from the station in literally freezing cold mist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13574136123", "linkUrl": "/2014/04/23/berlin-part-3", "caption": "Sachsenhausen concentration camp" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/23/berlin-part-3", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 3" }, { "file": "2014-04-15-berlin-part-2.jsx", "formattedDate": "April 15th 2014, 7:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I did a huge amount of exploration around Berlin appreciating the street art, probably at least 4-5 days whole days worth in total if you added it all up. I did a few \"self guided\" walking tours (as in I had an itinerary or stuff to look for that I found somewhere online), A ton of randomly wandering after spotting a cool piece by chance, and a \"Real Berlin\" free walking tour that turned out to be quite heavily street art focused." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13567379395", "linkUrl": "/2014/04/15/berlin-part-2", "caption": "Rainbow paint drips" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/15/berlin-part-2", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 2" }, { "file": "2014-04-06-berlin-part-1.jsx", "formattedDate": "April 6th 2014, 4:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Once I'd gotten into Berlin and checked into my hostel I got in contact with my friend Erin, an American who I met in South Africa who lives in Berlin on a semi-regular basis. We arranged to meet up for dinner and she offered to give me an introductory tour of the city. It was pretty lucky timing as Erin was leaving Berlin for a month just a few days after I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13575837835", "linkUrl": "/2014/04/06/berlin-part-1", "caption": "Alexanderplatz S-Bahn Station" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We  walked all around the city, past the museum island, Potsdamer Platz, Brandenburger Tor, The Jewish Memorial, and loads of other sites around the city. It was quite the whirlwind introduction to the city, we even visited a small Christmas market that was up and runing very early and got to have some gluhwein! Delicious spiced wine served hot, perfect for the cold nights leading up to Christmas. It was lovely to see Erin again and it felt like a really nice way to get to know the city being shown around by someone who obviously loves the place." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/06/berlin-part-1", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 1" }], "pageNo": 6, "nextPage": "/page/7", "previousPage": "/page/5", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }, { "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }, { "file": "2014-02-06-turkey.jsx", "formattedDate": "February 6th 2014, 11:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After Istanbul our next stop was in Göreme, where Amanda, Luke, and I, stayed in a fairy chimney hotel. These were rock formation that had been eroded away into conical shapes, that had rooms carved into them, with some brickwork to divide up the space." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11922915693", "linkUrl": "/2014/02/06/turkey", "caption": "Me in front of my cave hotel in Göreme" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/06/turkey", "tags": ["Turkey", "Mediterranean"], "title": "Turkey" }, { "file": "2014-01-03-istanbul-turkey.jsx", "formattedDate": "January 3rd 2014, 3:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After flying into Istanbul Attaturk airport we spent the morning hiding out at the airport in the air conditioning and waiting for the time we'd agree to meet at our apartment with our AirBNB host. We got a taxi from the airport and my first impressions of Istanbul proper were that everything appeared so clean, modern and organised. The highways were multi-lane, there was nobody wandering out trying to sell things to passing traffic, traffic flowed very quickly and efficiently, people drove on the correct side of the road and actually stayed in their lanes for the most part. It's amazing how much your direct prior experiences can colour your perceptions of a place, the Turkey we were seeing was at odds to the reputation that the place generally has for it's drivers." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11436642894", "linkUrl": "/2014/01/03/istanbul-turkey", "caption": "The beautiful view of the Bosphorus from our apartment" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The apartment we stayed in was located very close to Taksim Square, consisting of the whole top floor of the building and a rooftop courtyard and a fantastic view of the Bosporus. Having modern conveniences like a fridge, a washing machine and air conditioning felt very luxurious after having just spent 5 weeks camping in tents." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/03/istanbul-turkey", "tags": ["Turkey", "Istanbul"], "title": "Istanbul, Turkey" }, { "file": "2014-01-01-a-new-blog-for-the-new-year.jsx", "formattedDate": "January 1st 2014, 2:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "It's 2014 and you'll probably notice things look quite a bit different. I've done what any good procrastinator would do when faced with little to no internet and a lot of time to spare; I've completely revamped my blog so it's nicer to work with when I dont have internet, and have a copy that works without relying on the existance of tumblr. (Sorry Amanda, I bet you thought I was going to actually have written a post about Turkey at last :P)" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Anyhow, comments from the old site should migrate over in the next 24 hours. Let me know if you notice anything that looks broken." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/01/a-new-blog-for-the-new-year", "tags": ["Blog"], "title": "A New Blog For The New Year" }], "pageNo": 7, "nextPage": "/page/8", "previousPage": "/page/6", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 90 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2013-12-05-spreepark-berlin.jsx", "formattedDate": "December 5th 2013, 8:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Breaking chronology for a change because I love these photos so much." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11224500606", "linkUrl": "/2013/12/05/spreepark-berlin", "caption": "Swan boat on the grass with the ferris wheel in the distance" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/12/05/spreepark-berlin", "tags": ["Germany", "Berlin", "Abandoned", "Theme Park"], "title": "Spreepark, Berlin" }, { "file": "2013-11-24-rwanda-gorillas-genocide.jsx", "formattedDate": "November 24th 2013, 6:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "As we approached Rwanda, the terrain started getting a lot more hilly than that of Uganda. We got to the border and queued up to hand in our passports and get our visa, all the while with locals trying to cut in line. I got given some minor grief over not having printed out the acceptance letter for my visa. I did have it in digital form and the letter has a giant bar code that one would assume they'd scan, but apparently it's easier to put bar codes on letters than it is to put bar code scanners at the border." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10914653853", "linkUrl": "/2013/11/24/rwanda-gorillas-genocide", "caption": "Welcome to the republic of Rwanda" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This was our single slowest border crossing, taking over 90 minutes to get some simple ink stamp \"visas\" put in our passports. Most of the truck was starving by the time we finally got our passports back, but there was still more driving to do before we arrived in Ruhengeri and stopped to make lunch. We were staying in dorm rooms so nobody had to put up tents for a change!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/24/rwanda-gorillas-genocide", "tags": ["Rwanda", "Gorillas", "Africa"], "title": "Rwanda, Gorillas, Genocide" }, { "file": "2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx", "formattedDate": "November 15th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "10676737816", "linkUrl": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", "caption": "Thumbs up" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It's impossible to put into words what it's like out on the streets of Africa. They're like no other place I've been. Towards the end of the trip I started taking a LOT of photos out the window in the hope it might capture even just a small fraction of the weird and wonderful things you see out the truck window. Click the photo to go to the full flickr set. Feel free to be distracted, and not notice that I haven't posted about gorillas yet too :P" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", "tags": ["Africa", "Signs"], "title": "The signs and sights of the streets of East Africa" }, { "file": "2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx", "formattedDate": "November 1st 2013, 7:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10421378166", "linkUrl": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "caption": "Our rafting group" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"], "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans" }, { "file": "2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx", "formattedDate": "October 7th 2013, 10:43:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10124599493", "linkUrl": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "caption": "Border cricket" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "tags": ["Kenya", "Masai Mara", "Lake Nakuru", "Africa"], "title": "Kenya: The Masai Mara and Lake Nakuru" }], "pageNo": 8, "nextPage": "/page/9", "previousPage": "/page/7", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 91 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var pageData = { "blogPosts": [{ "file": "2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx", "formattedDate": "September 30th 2013, 3:14:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10000707374", "linkUrl": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "caption": "The Serengeti" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "tags": ["Tanzania", "Serengeti", "Ngorongoro Crater", "Africa"], "title": "Serengeti National Park and the Ngorongoro Crater" }, { "file": "2013-09-23-zanzibar-tanzania.jsx", "formattedDate": "September 23rd 2013, 12:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My arrival in Dar Es Salaam was pretty smooth and trouble free. I applied for my visa on arrival, along with probably 60% of the people on the flight. I was a bit slow filling out the forms and was probably one of the last people to hand in the paperwork, but it seemed like they used a LIFO queue (last in, first out) to process things so my name was soon called and I had to squeeze my way through the crowd of people waiting and get my passport." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went to queue up in the immigration line, proud to show off my fancy new visa sticker, but a guy came up and told me to just walk on through. So I walked straight past the desk where they check your passport without showing them anything, and nobody batted an eyelid. It really feels like you could get into the country without a visa very easily if you just walked on through with a bit of confidence, although I'm sure you'd have trouble leaving." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9852999483", "linkUrl": "/2013/09/23/zanzibar-tanzania", "caption": "Dar Es Salaam Sunset" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/23/zanzibar-tanzania", "tags": ["Africa", "Tanzania", "Zanzibar"], "title": "Zanzibar & Tanzania" }, { "file": "2013-09-16-south-africa.jsx", "formattedDate": "September 16th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9760054951", "linkUrl": "/2013/09/16/south-africa", "caption": "Totes safe" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/16/south-africa", "tags": ["Africa", "South Africa", "Johannesburg", "Cape Town"], "title": "South Africa" }, { "file": "2013-09-09-johannesburg-to-victoria-falls-and-back.jsx", "formattedDate": "September 9th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9661702941", "linkUrl": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "caption": "Stunning Sunrise in Botswana" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "tags": ["Africa", "Victoria Falls", "Johannesburg", "South Africa"], "title": "Johannesburg to Victoria Falls and back" }, { "file": "2013-09-03-travelling-light-or-not.jsx", "formattedDate": "September 3rd 2013, 8:17:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So I set out on this trip aiming to travel light, with just a 46 Litre backpack and a daypack, but after nearly 4 months on the road I put up the white flag." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Up until I hit Africa I managed ok, but almost always had an overflow bag clipped on to make packing a bit less of a pain day to day, but I could squeeze everything in when I needed to fly." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Doing Africa overland demanded that I buy a sleeping bag, and air mattress, which meant I could no longer squeeze just into the two bags. I tried strapping a now quite heavy overflow bag on the back of my pack, but it just mean that weight distribution was terrible and I wasn't carrying any less shit." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/03/travelling-light-or-not", "tags": ["Bags"], "title": "Travelling light... or not" }], "pageNo": 9, "nextPage": "/page/10", "previousPage": "/page/8", "lastPageNo": 13 };
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      }),
+      pageData.previousPage && _react2.default.createElement(
+        "div",
+        { className: "previousLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.previousPage },
+          "< Newer Stories"
+        )
+      ),
+      pageData.nextPage && _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: pageData.nextPage },
+          "Older Stories >"
+        )
+      )
+    );
+  };
+
+/***/ },
+/* 92 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  var _TagCloud = __webpack_require__(7);
 
   var _TagCloud2 = _interopRequireDefault(_TagCloud);
 
@@ -14967,7 +15820,7 @@ module.exports =
           path: path,
           title: title,
           formattedDate: formattedDate,
-          content: __webpack_require__(90)("./" + file).intro
+          content: __webpack_require__(3)("./" + file).intro
         });
       }),
       _react2.default.createElement(
@@ -14984,7 +15837,7 @@ module.exports =
   };
 
 /***/ },
-/* 80 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14997,17 +15850,17 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(97);
+  var _reactDom = __webpack_require__(262);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  var _ExecutionEnvironment = __webpack_require__(72);
+  var _ExecutionEnvironment = __webpack_require__(74);
 
-  var _Location = __webpack_require__(6);
+  var _Location = __webpack_require__(8);
 
   var _Location2 = _interopRequireDefault(_Location);
 
-  var _Layout = __webpack_require__(75);
+  var _Layout = __webpack_require__(76);
 
   var _Layout2 = _interopRequireDefault(_Layout);
 
@@ -15015,147 +15868,477 @@ module.exports =
 
   function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
 
-  __webpack_require__(92);
-  __webpack_require__(93);
+  __webpack_require__(257);
+  __webpack_require__(258);
 
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(77).default;
-    }, '/500': function _() {
       return __webpack_require__(78).default;
-    }, '/2013/03/26/twenty-years-from-now': function twentyYearsFromNow() {
-      return __webpack_require__(7).default;
-    }, '/2013/04/08/the-little-things-that-make-up-a-life': function theLittleThingsThatMakeUpALife() {
-      return __webpack_require__(8).default;
-    }, '/2013/04/22/target-40-litres': function target40Litres() {
-      return __webpack_require__(9).default;
-    }, '/2013/05/07/last-minute-bag-choices': function lastMinuteBagChoices() {
-      return __webpack_require__(10).default;
-    }, '/2013/05/12/it-s-go-time': function itSGoTime() {
-      return __webpack_require__(11).default;
-    }, '/2013/05/14/day-1-melbourne-to-saigon': function day1MelbourneToSaigon() {
-      return __webpack_require__(12).default;
-    }, '/2013/05/22/day-2-ho-chi-minh-city': function day2HoChiMinhCity() {
-      return __webpack_require__(13).default;
-    }, '/2013/05/22/day-3-cu-chi-tunnels': function day3CuChiTunnels() {
-      return __webpack_require__(14).default;
-    }, '/2013/05/22/day-4-motorbikes-in-hcmc': function day4MotorbikesInHcmc() {
-      return __webpack_require__(15).default;
-    }, '/2013/05/24/last-day-in-hcmc': function lastDayInHcmc() {
-      return __webpack_require__(16).default;
-    }, '/2013/05/29/ha-ha-business': function haHaBusiness() {
-      return __webpack_require__(17).default;
-    }, '/2013/05/30/phu-qouc-island-vietnam': function phuQoucIslandVietnam() {
-      return __webpack_require__(18).default;
-    }, '/2013/06/14/mountain-biking-in-siem-reap': function mountainBikingInSiemReap() {
-      return __webpack_require__(19).default;
-    }, '/2013/06/27/airport-security-in-india': function airportSecurityInIndia() {
-      return __webpack_require__(20).default;
-    }, '/2013/06/29/wake-up-call': function wakeUpCall() {
-      return __webpack_require__(21).default;
-    }, '/2013/06/30/thailand': function thailand() {
-      return __webpack_require__(22).default;
-    }, '/2013/08/13/frustration-india-part-1': function frustrationIndiaPart1() {
-      return __webpack_require__(23).default;
-    }, '/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2': function trainStationsPartiesUntilTheLittleHoursOfTheNightIndiaPart2() {
-      return __webpack_require__(24).default;
-    }, '/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3': function threeGirlsAGuyAndATourGuidePart3() {
-      return __webpack_require__(25).default;
-    }, '/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4': function indiaFlyingSoloAtOneWithTheChaosIndiaPart4() {
-      return __webpack_require__(26).default;
-    }, '/2013/09/03/travelling-light-or-not': function travellingLightOrNot() {
-      return __webpack_require__(27).default;
-    }, '/2013/09/09/johannesburg-to-victoria-falls-and-back': function johannesburgToVictoriaFallsAndBack() {
-      return __webpack_require__(28).default;
-    }, '/2013/09/16/south-africa': function southAfrica() {
-      return __webpack_require__(29).default;
-    }, '/2013/09/23/zanzibar-tanzania': function zanzibarTanzania() {
-      return __webpack_require__(30).default;
-    }, '/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater': function serengetiNationalParkAndTheNgorongoroCrater() {
-      return __webpack_require__(31).default;
-    }, '/2013/10/07/kenya-the-masai-mara-and-lake-nakuru': function kenyaTheMasaiMaraAndLakeNakuru() {
-      return __webpack_require__(32).default;
-    }, '/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans': function ugandaWhiteWaterRaftingTrackingChimpsAndTeachingOrphans() {
-      return __webpack_require__(33).default;
-    }, '/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa': function theSignsAndSightsOfTheStreetsOfEastAfrica() {
-      return __webpack_require__(34).default;
-    }, '/2013/11/24/rwanda-gorillas-genocide': function rwandaGorillasGenocide() {
-      return __webpack_require__(35).default;
-    }, '/2013/12/05/spreepark-berlin': function spreeparkBerlin() {
-      return __webpack_require__(36).default;
-    }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
-      return __webpack_require__(37).default;
-    }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
-      return __webpack_require__(38).default;
-    }, '/2014/02/06/turkey': function turkey() {
-      return __webpack_require__(39).default;
-    }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
-      return __webpack_require__(40).default;
-    }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
-      return __webpack_require__(41).default;
-    }, '/2014/04/06/berlin-part-1': function berlinPart1() {
-      return __webpack_require__(42).default;
-    }, '/2014/04/15/berlin-part-2': function berlinPart2() {
-      return __webpack_require__(43).default;
-    }, '/2014/04/23/berlin-part-3': function berlinPart3() {
-      return __webpack_require__(44).default;
-    }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
-      return __webpack_require__(45).default;
-    }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
-      return __webpack_require__(46).default;
-    }, '/2014/05/26/granada': function granada() {
-      return __webpack_require__(47).default;
-    }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
-      return __webpack_require__(48).default;
-    }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
-      return __webpack_require__(49).default;
-    }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
-      return __webpack_require__(50).default;
-    }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
-      return __webpack_require__(51).default;
-    }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
-      return __webpack_require__(52).default;
-    }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
-      return __webpack_require__(53).default;
-    }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
-      return __webpack_require__(54).default;
-    }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
-      return __webpack_require__(55).default;
-    }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
-      return __webpack_require__(56).default;
-    }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
-      return __webpack_require__(57).default;
-    }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
-      return __webpack_require__(58).default;
-    }, '/2015/01/03/firedrums-2014-and-san-francisco': function firedrums2014AndSanFrancisco() {
-      return __webpack_require__(59).default;
-    }, '/2015/02/26/honduras-mainland-lago-yejoa-copan': function hondurasMainlandLagoYejoaCopan() {
-      return __webpack_require__(60).default;
-    }, '/2015/03/30/antigua-guatemala': function antiguaGuatemala() {
-      return __webpack_require__(61).default;
-    }, '/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala': function sanMarcosLaLagunaLakeAtitlanGuatemala() {
-      return __webpack_require__(62).default;
-    }, '/2015/04/27/quezaltenango-xela-guatemala': function quezaltenangoXelaGuatemala() {
-      return __webpack_require__(63).default;
-    }, '/2015/05/04/revisiting-antigua-and-earth-lodge': function revisitingAntiguaAndEarthLodge() {
-      return __webpack_require__(64).default;
-    }, '/2015/05/11/more-schooling-in-xela': function moreSchoolingInXela() {
-      return __webpack_require__(65).default;
-    }, '/2015/05/13/two-years-later': function twoYearsLater() {
-      return __webpack_require__(66).default;
-    }, '/2015/05/21/back-to-lake-atitlan': function backToLakeAtitlan() {
-      return __webpack_require__(67).default;
-    }, '/2015/05/26/semuc-champey': function semucChampey() {
-      return __webpack_require__(68).default;
-    }, '/2015/06/01/tikal': function tikal() {
-      return __webpack_require__(69).default;
-    }, '/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala': function rioDulceLivingstonAndTryingToLeaveGuatemala() {
-      return __webpack_require__(70).default;
-    }, '/2015/08/17/san-francisco-before-the-burn': function sanFranciscoBeforeTheBurn() {
-      return __webpack_require__(71).default;
-    }, '/': function _() {
+    }, '/500': function _() {
       return __webpack_require__(79).default;
+    }, '/2013/03/26/twenty-years-from-now': function twentyYearsFromNow() {
+      return __webpack_require__(9).default;
+    }, '/2013/04/08/the-little-things-that-make-up-a-life': function theLittleThingsThatMakeUpALife() {
+      return __webpack_require__(10).default;
+    }, '/2013/04/22/target-40-litres': function target40Litres() {
+      return __webpack_require__(11).default;
+    }, '/2013/05/07/last-minute-bag-choices': function lastMinuteBagChoices() {
+      return __webpack_require__(12).default;
+    }, '/2013/05/12/it-s-go-time': function itSGoTime() {
+      return __webpack_require__(13).default;
+    }, '/2013/05/14/day-1-melbourne-to-saigon': function day1MelbourneToSaigon() {
+      return __webpack_require__(14).default;
+    }, '/2013/05/22/day-2-ho-chi-minh-city': function day2HoChiMinhCity() {
+      return __webpack_require__(15).default;
+    }, '/2013/05/22/day-3-cu-chi-tunnels': function day3CuChiTunnels() {
+      return __webpack_require__(16).default;
+    }, '/2013/05/22/day-4-motorbikes-in-hcmc': function day4MotorbikesInHcmc() {
+      return __webpack_require__(17).default;
+    }, '/2013/05/24/last-day-in-hcmc': function lastDayInHcmc() {
+      return __webpack_require__(18).default;
+    }, '/2013/05/29/ha-ha-business': function haHaBusiness() {
+      return __webpack_require__(19).default;
+    }, '/2013/05/30/phu-qouc-island-vietnam': function phuQoucIslandVietnam() {
+      return __webpack_require__(20).default;
+    }, '/2013/06/14/mountain-biking-in-siem-reap': function mountainBikingInSiemReap() {
+      return __webpack_require__(21).default;
+    }, '/2013/06/27/airport-security-in-india': function airportSecurityInIndia() {
+      return __webpack_require__(22).default;
+    }, '/2013/06/29/wake-up-call': function wakeUpCall() {
+      return __webpack_require__(23).default;
+    }, '/2013/06/30/thailand': function thailand() {
+      return __webpack_require__(24).default;
+    }, '/2013/08/13/frustration-india-part-1': function frustrationIndiaPart1() {
+      return __webpack_require__(25).default;
+    }, '/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2': function trainStationsPartiesUntilTheLittleHoursOfTheNightIndiaPart2() {
+      return __webpack_require__(26).default;
+    }, '/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3': function threeGirlsAGuyAndATourGuidePart3() {
+      return __webpack_require__(27).default;
+    }, '/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4': function indiaFlyingSoloAtOneWithTheChaosIndiaPart4() {
+      return __webpack_require__(28).default;
+    }, '/2013/09/03/travelling-light-or-not': function travellingLightOrNot() {
+      return __webpack_require__(29).default;
+    }, '/2013/09/09/johannesburg-to-victoria-falls-and-back': function johannesburgToVictoriaFallsAndBack() {
+      return __webpack_require__(30).default;
+    }, '/2013/09/16/south-africa': function southAfrica() {
+      return __webpack_require__(31).default;
+    }, '/2013/09/23/zanzibar-tanzania': function zanzibarTanzania() {
+      return __webpack_require__(32).default;
+    }, '/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater': function serengetiNationalParkAndTheNgorongoroCrater() {
+      return __webpack_require__(33).default;
+    }, '/2013/10/07/kenya-the-masai-mara-and-lake-nakuru': function kenyaTheMasaiMaraAndLakeNakuru() {
+      return __webpack_require__(34).default;
+    }, '/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans': function ugandaWhiteWaterRaftingTrackingChimpsAndTeachingOrphans() {
+      return __webpack_require__(35).default;
+    }, '/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa': function theSignsAndSightsOfTheStreetsOfEastAfrica() {
+      return __webpack_require__(36).default;
+    }, '/2013/11/24/rwanda-gorillas-genocide': function rwandaGorillasGenocide() {
+      return __webpack_require__(37).default;
+    }, '/2013/12/05/spreepark-berlin': function spreeparkBerlin() {
+      return __webpack_require__(38).default;
+    }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
+      return __webpack_require__(39).default;
+    }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
+      return __webpack_require__(40).default;
+    }, '/2014/02/06/turkey': function turkey() {
+      return __webpack_require__(41).default;
+    }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
+      return __webpack_require__(42).default;
+    }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
+      return __webpack_require__(43).default;
+    }, '/2014/04/06/berlin-part-1': function berlinPart1() {
+      return __webpack_require__(44).default;
+    }, '/2014/04/15/berlin-part-2': function berlinPart2() {
+      return __webpack_require__(45).default;
+    }, '/2014/04/23/berlin-part-3': function berlinPart3() {
+      return __webpack_require__(46).default;
+    }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
+      return __webpack_require__(47).default;
+    }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
+      return __webpack_require__(48).default;
+    }, '/2014/05/26/granada': function granada() {
+      return __webpack_require__(49).default;
+    }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
+      return __webpack_require__(50).default;
+    }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
+      return __webpack_require__(51).default;
+    }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
+      return __webpack_require__(52).default;
+    }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
+      return __webpack_require__(53).default;
+    }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
+      return __webpack_require__(54).default;
+    }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
+      return __webpack_require__(55).default;
+    }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
+      return __webpack_require__(56).default;
+    }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
+      return __webpack_require__(57).default;
+    }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
+      return __webpack_require__(58).default;
+    }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
+      return __webpack_require__(59).default;
+    }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
+      return __webpack_require__(60).default;
+    }, '/2015/01/03/firedrums-2014-and-san-francisco': function firedrums2014AndSanFrancisco() {
+      return __webpack_require__(61).default;
+    }, '/2015/02/26/honduras-mainland-lago-yejoa-copan': function hondurasMainlandLagoYejoaCopan() {
+      return __webpack_require__(62).default;
+    }, '/2015/03/30/antigua-guatemala': function antiguaGuatemala() {
+      return __webpack_require__(63).default;
+    }, '/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala': function sanMarcosLaLagunaLakeAtitlanGuatemala() {
+      return __webpack_require__(64).default;
+    }, '/2015/04/27/quezaltenango-xela-guatemala': function quezaltenangoXelaGuatemala() {
+      return __webpack_require__(65).default;
+    }, '/2015/05/04/revisiting-antigua-and-earth-lodge': function revisitingAntiguaAndEarthLodge() {
+      return __webpack_require__(66).default;
+    }, '/2015/05/11/more-schooling-in-xela': function moreSchoolingInXela() {
+      return __webpack_require__(67).default;
+    }, '/2015/05/13/two-years-later': function twoYearsLater() {
+      return __webpack_require__(68).default;
+    }, '/2015/05/21/back-to-lake-atitlan': function backToLakeAtitlan() {
+      return __webpack_require__(69).default;
+    }, '/2015/05/26/semuc-champey': function semucChampey() {
+      return __webpack_require__(70).default;
+    }, '/2015/06/01/tikal': function tikal() {
+      return __webpack_require__(71).default;
+    }, '/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala': function rioDulceLivingstonAndTryingToLeaveGuatemala() {
+      return __webpack_require__(72).default;
+    }, '/2015/08/17/san-francisco-before-the-burn': function sanFranciscoBeforeTheBurn() {
+      return __webpack_require__(73).default;
+    }, '/': function _() {
+      return __webpack_require__(92).default;
+    }, '/page/10': function page10() {
+      return __webpack_require__(80).default;
+    }, '/page/11': function page11() {
+      return __webpack_require__(81).default;
+    }, '/page/12': function page12() {
+      return __webpack_require__(82).default;
+    }, '/page/13': function page13() {
+      return __webpack_require__(83).default;
+    }, '/page/2': function page2() {
+      return __webpack_require__(84).default;
+    }, '/page/3': function page3() {
+      return __webpack_require__(85).default;
+    }, '/page/4': function page4() {
+      return __webpack_require__(86).default;
+    }, '/page/5': function page5() {
+      return __webpack_require__(87).default;
+    }, '/page/6': function page6() {
+      return __webpack_require__(88).default;
+    }, '/page/7': function page7() {
+      return __webpack_require__(89).default;
+    }, '/page/8': function page8() {
+      return __webpack_require__(90).default;
+    }, '/page/9': function page9() {
+      return __webpack_require__(91).default;
+    }, '/tags/abandoned': function tagsAbandoned() {
+      return __webpack_require__(94).default;
+    }, '/tags/africa': function tagsAfrica() {
+      return __webpack_require__(95).default;
+    }, '/tags/airplanes': function tagsAirplanes() {
+      return __webpack_require__(96).default;
+    }, '/tags/airports': function tagsAirports() {
+      return __webpack_require__(97).default;
+    }, '/tags/alcatraz': function tagsAlcatraz() {
+      return __webpack_require__(98).default;
+    }, '/tags/alhambra': function tagsAlhambra() {
+      return __webpack_require__(99).default;
+    }, '/tags/andalusia': function tagsAndalusia() {
+      return __webpack_require__(100).default;
+    }, '/tags/antigua': function tagsAntigua() {
+      return __webpack_require__(101).default;
+    }, '/tags/athens': function tagsAthens() {
+      return __webpack_require__(102).default;
+    }, '/tags/bags': function tagsBags() {
+      return __webpack_require__(103).default;
+    }, '/tags/barcelona': function tagsBarcelona() {
+      return __webpack_require__(104).default;
+    }, '/tags/bath': function tagsBath() {
+      return __webpack_require__(105).default;
+    }, '/tags/beer': function tagsBeer() {
+      return __webpack_require__(106).default;
+    }, '/tags/berlin': function tagsBerlin() {
+      return __webpack_require__(107).default;
+    }, '/tags/bikes': function tagsBikes() {
+      return __webpack_require__(108).default;
+    }, '/tags/blog': function tagsBlog() {
+      return __webpack_require__(109).default;
+    }, '/tags/boats': function tagsBoats() {
+      return __webpack_require__(110).default;
+    }, '/tags/bristol': function tagsBristol() {
+      return __webpack_require__(111).default;
+    }, '/tags/business': function tagsBusiness() {
+      return __webpack_require__(112).default;
+    }, '/tags/cambodia': function tagsCambodia() {
+      return __webpack_require__(113).default;
+    }, '/tags/cano-island': function tagsCanoIsland() {
+      return __webpack_require__(114).default;
+    }, '/tags/cape-town': function tagsCapeTown() {
+      return __webpack_require__(115).default;
+    }, '/tags/caves': function tagsCaves() {
+      return __webpack_require__(116).default;
+    }, '/tags/chicken-buses': function tagsChickenBuses() {
+      return __webpack_require__(117).default;
+    }, '/tags/chimpanzees': function tagsChimpanzees() {
+      return __webpack_require__(118).default;
+    }, '/tags/christmas': function tagsChristmas() {
+      return __webpack_require__(119).default;
+    }, '/tags/copan': function tagsCopan() {
+      return __webpack_require__(120).default;
+    }, '/tags/corcovado': function tagsCorcovado() {
+      return __webpack_require__(121).default;
+    }, '/tags/cordoba': function tagsCordoba() {
+      return __webpack_require__(122).default;
+    }, '/tags/costa-rica': function tagsCostaRica() {
+      return __webpack_require__(123).default;
+    }, '/tags/cu-chi-tunnels': function tagsCuChiTunnels() {
+      return __webpack_require__(124).default;
+    }, '/tags/diving': function tagsDiving() {
+      return __webpack_require__(125).default;
+    }, '/tags/dogs': function tagsDogs() {
+      return __webpack_require__(126).default;
+    }, '/tags/earth-lodge': function tagsEarthLodge() {
+      return __webpack_require__(127).default;
+    }, '/tags/edinburgh': function tagsEdinburgh() {
+      return __webpack_require__(128).default;
+    }, '/tags/england': function tagsEngland() {
+      return __webpack_require__(129).default;
+    }, '/tags/festivals': function tagsFestivals() {
+      return __webpack_require__(130).default;
+    }, '/tags/finca-mia': function tagsFincaMia() {
+      return __webpack_require__(131).default;
+    }, '/tags/flores': function tagsFlores() {
+      return __webpack_require__(132).default;
+    }, '/tags/flying': function tagsFlying() {
+      return __webpack_require__(133).default;
+    }, '/tags/germany': function tagsGermany() {
+      return __webpack_require__(134).default;
+    }, '/tags/gorillas': function tagsGorillas() {
+      return __webpack_require__(135).default;
+    }, '/tags/graffiti': function tagsGraffiti() {
+      return __webpack_require__(136).default;
+    }, '/tags/granada': function tagsGranada() {
+      return __webpack_require__(137).default;
+    }, '/tags/greece': function tagsGreece() {
+      return __webpack_require__(138).default;
+    }, '/tags/guatemala-city': function tagsGuatemalaCity() {
+      return __webpack_require__(139).default;
+    }, '/tags/guatemala': function tagsGuatemala() {
+      return __webpack_require__(140).default;
+    }, '/tags/hcmc': function tagsHcmc() {
+      return __webpack_require__(141).default;
+    }, '/tags/hiking': function tagsHiking() {
+      return __webpack_require__(142).default;
+    }, '/tags/homestay': function tagsHomestay() {
+      return __webpack_require__(143).default;
+    }, '/tags/honduras': function tagsHonduras() {
+      return __webpack_require__(144).default;
+    }, '/tags/horseback-riding': function tagsHorsebackRiding() {
+      return __webpack_require__(145).default;
+    }, '/tags/hot-springs': function tagsHotSprings() {
+      return __webpack_require__(146).default;
+    }, '/tags/humblebrag': function tagsHumblebrag() {
+      return __webpack_require__(147).default;
+    }, '/tags/ikaria': function tagsIkaria() {
+      return __webpack_require__(148).default;
+    }, '/tags/india': function tagsIndia() {
+      return __webpack_require__(149).default;
+    }, '/tags/inspiration': function tagsInspiration() {
+      return __webpack_require__(150).default;
+    }, '/tags/introspection': function tagsIntrospection() {
+      return __webpack_require__(151).default;
+    }, '/tags/istanbul': function tagsIstanbul() {
+      return __webpack_require__(152).default;
+    }, '/tags/jinja': function tagsJinja() {
+      return __webpack_require__(153).default;
+    }, '/tags/jinotega': function tagsJinotega() {
+      return __webpack_require__(154).default;
+    }, '/tags/johannesburg': function tagsJohannesburg() {
+      return __webpack_require__(155).default;
+    }, '/tags/kenya': function tagsKenya() {
+      return __webpack_require__(156).default;
+    }, '/tags/koh-tao': function tagsKohTao() {
+      return __webpack_require__(157).default;
+    }, '/tags/la-boquita': function tagsLaBoquita() {
+      return __webpack_require__(158).default;
+    }, '/tags/la-mariposa': function tagsLaMariposa() {
+      return __webpack_require__(159).default;
+    }, '/tags/lago-yejoa': function tagsLagoYejoa() {
+      return __webpack_require__(160).default;
+    }, '/tags/laguna-apoyo': function tagsLagunaApoyo() {
+      return __webpack_require__(161).default;
+    }, '/tags/lake-atitlan': function tagsLakeAtitlan() {
+      return __webpack_require__(162).default;
+    }, '/tags/lake-nakuru': function tagsLakeNakuru() {
+      return __webpack_require__(163).default;
+    }, '/tags/lanquin': function tagsLanquin() {
+      return __webpack_require__(164).default;
+    }, '/tags/leon': function tagsLeon() {
+      return __webpack_require__(165).default;
+    }, '/tags/little-corn-island': function tagsLittleCornIsland() {
+      return __webpack_require__(166).default;
+    }, '/tags/livingston': function tagsLivingston() {
+      return __webpack_require__(167).default;
+    }, '/tags/london': function tagsLondon() {
+      return __webpack_require__(168).default;
+    }, '/tags/malaga': function tagsMalaga() {
+      return __webpack_require__(169).default;
+    }, '/tags/managua': function tagsManagua() {
+      return __webpack_require__(170).default;
+    }, '/tags/masai-mara': function tagsMasaiMara() {
+      return __webpack_require__(171).default;
+    }, '/tags/meditation': function tagsMeditation() {
+      return __webpack_require__(172).default;
+    }, '/tags/mediterranean': function tagsMediterranean() {
+      return __webpack_require__(173).default;
+    }, '/tags/melbourne': function tagsMelbourne() {
+      return __webpack_require__(174).default;
+    }, '/tags/monkeys': function tagsMonkeys() {
+      return __webpack_require__(175).default;
+    }, '/tags/montezuma': function tagsMontezuma() {
+      return __webpack_require__(176).default;
+    }, '/tags/motorbikes': function tagsMotorbikes() {
+      return __webpack_require__(177).default;
+    }, '/tags/mumbai': function tagsMumbai() {
+      return __webpack_require__(178).default;
+    }, '/tags/museums': function tagsMuseums() {
+      return __webpack_require__(179).default;
+    }, '/tags/mykonos': function tagsMykonos() {
+      return __webpack_require__(180).default;
+    }, '/tags/ngorongoro-crater': function tagsNgorongoroCrater() {
+      return __webpack_require__(181).default;
+    }, '/tags/nicaragua': function tagsNicaragua() {
+      return __webpack_require__(182).default;
+    }, '/tags/nicoya-peninsula': function tagsNicoyaPeninsula() {
+      return __webpack_require__(183).default;
+    }, '/tags/nottingham': function tagsNottingham() {
+      return __webpack_require__(184).default;
+    }, '/tags/nye': function tagsNye() {
+      return __webpack_require__(185).default;
+    }, '/tags/ometepe': function tagsOmetepe() {
+      return __webpack_require__(186).default;
+    }, '/tags/outdoors': function tagsOutdoors() {
+      return __webpack_require__(187).default;
+    }, '/tags/packing': function tagsPacking() {
+      return __webpack_require__(188).default;
+    }, '/tags/panajachel': function tagsPanajachel() {
+      return __webpack_require__(189).default;
+    }, '/tags/phu-quoc': function tagsPhuQuoc() {
+      return __webpack_require__(190).default;
+    }, '/tags/poi': function tagsPoi() {
+      return __webpack_require__(191).default;
+    }, '/tags/pre-trip': function tagsPreTrip() {
+      return __webpack_require__(192).default;
+    }, '/tags/quezaltenango': function tagsQuezaltenango() {
+      return __webpack_require__(193).default;
+    }, '/tags/quote': function tagsQuote() {
+      return __webpack_require__(194).default;
+    }, '/tags/retreat': function tagsRetreat() {
+      return __webpack_require__(195).default;
+    }, '/tags/retrospective': function tagsRetrospective() {
+      return __webpack_require__(196).default;
+    }, '/tags/rio-dulce': function tagsRioDulce() {
+      return __webpack_require__(197).default;
+    }, '/tags/roatan': function tagsRoatan() {
+      return __webpack_require__(198).default;
+    }, '/tags/ruins': function tagsRuins() {
+      return __webpack_require__(199).default;
+    }, '/tags/rwanda': function tagsRwanda() {
+      return __webpack_require__(200).default;
+    }, '/tags/salsa': function tagsSalsa() {
+      return __webpack_require__(201).default;
+    }, '/tags/samos': function tagsSamos() {
+      return __webpack_require__(202).default;
+    }, '/tags/san-francisco': function tagsSanFrancisco() {
+      return __webpack_require__(203).default;
+    }, '/tags/san-juan': function tagsSanJuan() {
+      return __webpack_require__(204).default;
+    }, '/tags/san-marcos': function tagsSanMarcos() {
+      return __webpack_require__(205).default;
+    }, '/tags/san-pedro': function tagsSanPedro() {
+      return __webpack_require__(206).default;
+    }, '/tags/santa-cruz': function tagsSantaCruz() {
+      return __webpack_require__(207).default;
+    }, '/tags/santa-teresa': function tagsSantaTeresa() {
+      return __webpack_require__(208).default;
+    }, '/tags/santiago': function tagsSantiago() {
+      return __webpack_require__(209).default;
+    }, '/tags/scotland': function tagsScotland() {
+      return __webpack_require__(210).default;
+    }, '/tags/security-theater': function tagsSecurityTheater() {
+      return __webpack_require__(211).default;
+    }, '/tags/semuc-champey': function tagsSemucChampey() {
+      return __webpack_require__(212).default;
+    }, '/tags/serengeti': function tagsSerengeti() {
+      return __webpack_require__(213).default;
+    }, '/tags/seville': function tagsSeville() {
+      return __webpack_require__(214).default;
+    }, '/tags/signs': function tagsSigns() {
+      return __webpack_require__(215).default;
+    }, '/tags/singapore': function tagsSingapore() {
+      return __webpack_require__(216).default;
+    }, '/tags/somoto-canyon': function tagsSomotoCanyon() {
+      return __webpack_require__(217).default;
+    }, '/tags/south-africa': function tagsSouthAfrica() {
+      return __webpack_require__(218).default;
+    }, '/tags/spain': function tagsSpain() {
+      return __webpack_require__(219).default;
+    }, '/tags/spanish-schools': function tagsSpanishSchools() {
+      return __webpack_require__(220).default;
+    }, '/tags/stonehenge': function tagsStonehenge() {
+      return __webpack_require__(221).default;
+    }, '/tags/streamlining': function tagsStreamlining() {
+      return __webpack_require__(222).default;
+    }, '/tags/surfing': function tagsSurfing() {
+      return __webpack_require__(223).default;
+    }, '/tags/syros': function tagsSyros() {
+      return __webpack_require__(224).default;
+    }, '/tags/tanzania': function tagsTanzania() {
+      return __webpack_require__(225).default;
+    }, '/tags/tapas': function tagsTapas() {
+      return __webpack_require__(226).default;
+    }, '/tags/thailand': function tagsThailand() {
+      return __webpack_require__(227).default;
+    }, '/tags/theme-park': function tagsThemePark() {
+      return __webpack_require__(228).default;
+    }, '/tags/tikal': function tagsTikal() {
+      return __webpack_require__(229).default;
+    }, '/tags/trains': function tagsTrains() {
+      return __webpack_require__(230).default;
+    }, '/tags/travelling': function tagsTravelling() {
+      return __webpack_require__(231).default;
+    }, '/tags/turkey': function tagsTurkey() {
+      return __webpack_require__(232).default;
+    }, '/tags/uganda': function tagsUganda() {
+      return __webpack_require__(233).default;
+    }, '/tags/usa': function tagsUsa() {
+      return __webpack_require__(234).default;
+    }, '/tags/utila': function tagsUtila() {
+      return __webpack_require__(235).default;
+    }, '/tags/uvita': function tagsUvita() {
+      return __webpack_require__(236).default;
+    }, '/tags/victoria-falls': function tagsVictoriaFalls() {
+      return __webpack_require__(237).default;
+    }, '/tags/vietnam': function tagsVietnam() {
+      return __webpack_require__(238).default;
+    }, '/tags/visa-run': function tagsVisaRun() {
+      return __webpack_require__(239).default;
+    }, '/tags/volcan-masaya': function tagsVolcanMasaya() {
+      return __webpack_require__(240).default;
+    }, '/tags/volcanoes': function tagsVolcanoes() {
+      return __webpack_require__(241).default;
+    }, '/tags/waterfalls': function tagsWaterfalls() {
+      return __webpack_require__(242).default;
+    }, '/tags/white-water-rafting': function tagsWhiteWaterRafting() {
+      return __webpack_require__(243).default;
+    }, '/tags/xela': function tagsXela() {
+      return __webpack_require__(244).default;
+    }, '/tags/yoga': function tagsYoga() {
+      return __webpack_require__(245).default;
+    }, '/tags/zanzibar': function tagsZanzibar() {
+      return __webpack_require__(246).default;
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function () {
@@ -15234,55 +16417,7705 @@ module.exports =
   exports.default = { route: route, routes: routes };
 
 /***/ },
-/* 81 */
+/* 94 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-12-05-spreepark-berlin.jsx", "formattedDate": "December 5th 2013, 8:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Breaking chronology for a change because I love these photos so much." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11224500606", "linkUrl": "/2013/12/05/spreepark-berlin", "caption": "Swan boat on the grass with the ferris wheel in the distance" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/12/05/spreepark-berlin", "tags": ["Germany", "Berlin", "Abandoned", "Theme Park"], "title": "Spreepark, Berlin" }];
+  var tag = "Abandoned";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-24-rwanda-gorillas-genocide.jsx", "formattedDate": "November 24th 2013, 6:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "As we approached Rwanda, the terrain started getting a lot more hilly than that of Uganda. We got to the border and queued up to hand in our passports and get our visa, all the while with locals trying to cut in line. I got given some minor grief over not having printed out the acceptance letter for my visa. I did have it in digital form and the letter has a giant bar code that one would assume they'd scan, but apparently it's easier to put bar codes on letters than it is to put bar code scanners at the border." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10914653853", "linkUrl": "/2013/11/24/rwanda-gorillas-genocide", "caption": "Welcome to the republic of Rwanda" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This was our single slowest border crossing, taking over 90 minutes to get some simple ink stamp \"visas\" put in our passports. Most of the truck was starving by the time we finally got our passports back, but there was still more driving to do before we arrived in Ruhengeri and stopped to make lunch. We were staying in dorm rooms so nobody had to put up tents for a change!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/24/rwanda-gorillas-genocide", "tags": ["Rwanda", "Gorillas", "Africa"], "title": "Rwanda, Gorillas, Genocide" }, { "file": "2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx", "formattedDate": "November 15th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "10676737816", "linkUrl": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", "caption": "Thumbs up" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It's impossible to put into words what it's like out on the streets of Africa. They're like no other place I've been. Towards the end of the trip I started taking a LOT of photos out the window in the hope it might capture even just a small fraction of the weird and wonderful things you see out the truck window. Click the photo to go to the full flickr set. Feel free to be distracted, and not notice that I haven't posted about gorillas yet too :P" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", "tags": ["Africa", "Signs"], "title": "The signs and sights of the streets of East Africa" }, { "file": "2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx", "formattedDate": "November 1st 2013, 7:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10421378166", "linkUrl": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "caption": "Our rafting group" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"], "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans" }, { "file": "2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx", "formattedDate": "October 7th 2013, 10:43:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10124599493", "linkUrl": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "caption": "Border cricket" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "tags": ["Kenya", "Masai Mara", "Lake Nakuru", "Africa"], "title": "Kenya: The Masai Mara and Lake Nakuru" }, { "file": "2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx", "formattedDate": "September 30th 2013, 3:14:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10000707374", "linkUrl": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "caption": "The Serengeti" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "tags": ["Tanzania", "Serengeti", "Ngorongoro Crater", "Africa"], "title": "Serengeti National Park and the Ngorongoro Crater" }, { "file": "2013-09-23-zanzibar-tanzania.jsx", "formattedDate": "September 23rd 2013, 12:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My arrival in Dar Es Salaam was pretty smooth and trouble free. I applied for my visa on arrival, along with probably 60% of the people on the flight. I was a bit slow filling out the forms and was probably one of the last people to hand in the paperwork, but it seemed like they used a LIFO queue (last in, first out) to process things so my name was soon called and I had to squeeze my way through the crowd of people waiting and get my passport." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went to queue up in the immigration line, proud to show off my fancy new visa sticker, but a guy came up and told me to just walk on through. So I walked straight past the desk where they check your passport without showing them anything, and nobody batted an eyelid. It really feels like you could get into the country without a visa very easily if you just walked on through with a bit of confidence, although I'm sure you'd have trouble leaving." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9852999483", "linkUrl": "/2013/09/23/zanzibar-tanzania", "caption": "Dar Es Salaam Sunset" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/23/zanzibar-tanzania", "tags": ["Africa", "Tanzania", "Zanzibar"], "title": "Zanzibar & Tanzania" }, { "file": "2013-09-16-south-africa.jsx", "formattedDate": "September 16th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9760054951", "linkUrl": "/2013/09/16/south-africa", "caption": "Totes safe" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/16/south-africa", "tags": ["Africa", "South Africa", "Johannesburg", "Cape Town"], "title": "South Africa" }, { "file": "2013-09-09-johannesburg-to-victoria-falls-and-back.jsx", "formattedDate": "September 9th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9661702941", "linkUrl": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "caption": "Stunning Sunrise in Botswana" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "tags": ["Africa", "Victoria Falls", "Johannesburg", "South Africa"], "title": "Johannesburg to Victoria Falls and back" }];
+  var tag = "Africa";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }];
+  var tag = "Airplanes";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }, { "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }, { "file": "2013-06-27-airport-security-in-india.jsx", "formattedDate": "June 27th 2013, 2:19:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "The \"ticket desk\"" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/27/airport-security-in-india", "tags": ["Flying", "Airports", "India", "Security Theater"], "title": "Airport security in India" }, { "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }];
+  var tag = "Airports";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 98 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-08-17-san-francisco-before-the-burn.jsx", "formattedDate": "August 17th 2015, 2:10:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "19918806662", "linkUrl": "/2015/08/17/san-francisco-before-the-burn", "caption": "SF from the water" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/08/17/san-francisco-before-the-burn", "tags": ["San Francisco", "USA", "Museums", "Alcatraz"], "title": "San Francisco, before the burn" }];
+  var tag = "Alcatraz";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }];
+  var tag = "Alhambra";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }, { "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }];
+  var tag = "Andalusia";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-04-revisiting-antigua-and-earth-lodge.jsx", "formattedDate": "May 4th 2015, 3:47:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16870814889", "linkUrl": "/2015/05/04/revisiting-antigua-and-earth-lodge", "caption": "Pimped chickenbus, got a wave from the conductor" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/04/revisiting-antigua-and-earth-lodge", "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"], "title": "Revisiting Antigua and Earth Lodge" }, { "file": "2015-03-30-antigua-guatemala.jsx", "formattedDate": "March 30th 2015, 6:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16337477493", "linkUrl": "/2015/03/30/antigua-guatemala", "caption": "Markets in front of epic ruins" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/03/30/antigua-guatemala", "tags": ["Antigua", "Guatemala", "Ruins", "Volcanoes"], "title": "Antigua Guatemala" }];
+  var tag = "Antigua";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 102 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }];
+  var tag = "Athens";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 103 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-03-travelling-light-or-not.jsx", "formattedDate": "September 3rd 2013, 8:17:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So I set out on this trip aiming to travel light, with just a 46 Litre backpack and a daypack, but after nearly 4 months on the road I put up the white flag." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Up until I hit Africa I managed ok, but almost always had an overflow bag clipped on to make packing a bit less of a pain day to day, but I could squeeze everything in when I needed to fly." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Doing Africa overland demanded that I buy a sleeping bag, and air mattress, which meant I could no longer squeeze just into the two bags. I tried strapping a now quite heavy overflow bag on the back of my pack, but it just mean that weight distribution was terrible and I wasn't carrying any less shit." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/03/travelling-light-or-not", "tags": ["Bags"], "title": "Travelling light... or not" }, { "file": "2013-05-07-last-minute-bag-choices.jsx", "formattedDate": "May 7th 2013, 12:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So I bought the 40L bag I'd been eyeing off last week. After doing a few trial packs with it, I've decided that I cant fit everything I want in it well enough, so tomorrow I'm taking it back to see what my other options are." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I can just about fit everything in the 40L bag, but it's stuffed so tight that I have concerns about my laptop getting cracked if the bag were dropped, or something was dropped on it; and it doesnt give me any excess room whatsoever." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/07/last-minute-bag-choices", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Last minute bag choices" }, { "file": "2013-04-22-target-40-litres.jsx", "formattedDate": "April 22nd 2013, 12:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So when I was last in the adventure district looking at travel gadgets and clothing, I was talking to one of the staff in the store and he put the idea in my head that travelling with just a small backpack would make a lot of things easier." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It means you can keep your bag with you in a lot of situations where you'd otherwise have to leave it in the luggage section and hope it doesn't get searched through too much by dodgy characters, and it allows you to use crowded public transport much easier, or even just walk distances that you wouldnt want to get stuck lugging a heavy pack." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/04/22/target-40-litres", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Target 40 Litres" }];
+  var tag = "Bags";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 104 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-05-03-barcelona-spain.jsx", "formattedDate": "May 3rd 2014, 2:15:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Even in winter the weather is Barcelona is lovely. As soon as I landed and got through customs, I put my heavy winter jacket away and was quite comfortable in just a T-shirt. It seemed like the warm weather would be great for helping me kick a cold that had been hanging around for my last few weeks in Berlin, which had left me sniffing and congested for far too long." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13809549773", "linkUrl": "/2014/05/03/barcelona-spain", "caption": "La Sagrada Familia" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/03/barcelona-spain", "tags": ["Spain", "Barcelona", "Tapas"], "title": "Barcelona, Spain" }];
+  var tag = "Barcelona";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 105 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "Bath";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "Beer";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-04-23-berlin-part-3.jsx", "formattedDate": "April 23rd 2014, 3:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "One very cold a miserable morning I went to see Sachsenhausen concentration camp, out at Oranienburg. The camp was about a two kilometre walk from the station in literally freezing cold mist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13574136123", "linkUrl": "/2014/04/23/berlin-part-3", "caption": "Sachsenhausen concentration camp" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/23/berlin-part-3", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 3" }, { "file": "2014-04-15-berlin-part-2.jsx", "formattedDate": "April 15th 2014, 7:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I did a huge amount of exploration around Berlin appreciating the street art, probably at least 4-5 days whole days worth in total if you added it all up. I did a few \"self guided\" walking tours (as in I had an itinerary or stuff to look for that I found somewhere online), A ton of randomly wandering after spotting a cool piece by chance, and a \"Real Berlin\" free walking tour that turned out to be quite heavily street art focused." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13567379395", "linkUrl": "/2014/04/15/berlin-part-2", "caption": "Rainbow paint drips" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/15/berlin-part-2", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 2" }, { "file": "2014-04-06-berlin-part-1.jsx", "formattedDate": "April 6th 2014, 4:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Once I'd gotten into Berlin and checked into my hostel I got in contact with my friend Erin, an American who I met in South Africa who lives in Berlin on a semi-regular basis. We arranged to meet up for dinner and she offered to give me an introductory tour of the city. It was pretty lucky timing as Erin was leaving Berlin for a month just a few days after I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13575837835", "linkUrl": "/2014/04/06/berlin-part-1", "caption": "Alexanderplatz S-Bahn Station" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We  walked all around the city, past the museum island, Potsdamer Platz, Brandenburger Tor, The Jewish Memorial, and loads of other sites around the city. It was quite the whirlwind introduction to the city, we even visited a small Christmas market that was up and runing very early and got to have some gluhwein! Delicious spiced wine served hot, perfect for the cold nights leading up to Christmas. It was lovely to see Erin again and it felt like a really nice way to get to know the city being shown around by someone who obviously loves the place." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/06/berlin-part-1", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 1" }, { "file": "2013-12-05-spreepark-berlin.jsx", "formattedDate": "December 5th 2013, 8:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Breaking chronology for a change because I love these photos so much." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11224500606", "linkUrl": "/2013/12/05/spreepark-berlin", "caption": "Swan boat on the grass with the ferris wheel in the distance" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/12/05/spreepark-berlin", "tags": ["Germany", "Berlin", "Abandoned", "Theme Park"], "title": "Spreepark, Berlin" }];
+  var tag = "Berlin";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 108 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-14-mountain-biking-in-siem-reap.jsx", "formattedDate": "June 14th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "My bike in front of Angkor Wat" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "Angkor Thom's east gate" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/14/mountain-biking-in-siem-reap", "tags": ["Cambodia", "Bikes", "Monkeys", "Ruins"], "title": "Mountain Biking in Siem Reap" }];
+  var tag = "Bikes";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 109 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-01-01-a-new-blog-for-the-new-year.jsx", "formattedDate": "January 1st 2014, 2:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "It's 2014 and you'll probably notice things look quite a bit different. I've done what any good procrastinator would do when faced with little to no internet and a lot of time to spare; I've completely revamped my blog so it's nicer to work with when I dont have internet, and have a copy that works without relying on the existance of tumblr. (Sorry Amanda, I bet you thought I was going to actually have written a post about Turkey at last :P)" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Anyhow, comments from the old site should migrate over in the next 24 hours. Let me know if you notice anything that looks broken." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/01/a-new-blog-for-the-new-year", "tags": ["Blog"], "title": "A New Blog For The New Year" }];
+  var tag = "Blog";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }];
+  var tag = "Boats";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "Bristol";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 112 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-29-ha-ha-business.jsx", "formattedDate": "May 29th 2013, 2:04:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "a", "key": null, "ref": null, "props": { "href": "/2013/05/29/ha-ha-business/", "children": [{ "type": "img", "key": null, "ref": null, "props": { "src": "http://www.quickmeme.com/img/5d/5d8664cf92e4ce604998ebc905667d3186818aee1c8786b9cfd51712eead636e.jpg", "className": "img-responsive" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "HA HA! BUSINESS!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For the trip to Phu Quoc I decided to fly since it was only $80 and it would save me many many hours on buses and ferries. For a laugh I looked at business class prices and they were only $30 more. I'd never flown business class before so I thought \"[YOLO!](http://www.youtube.com/watch?v=z5Otla5157c)\" and booked myself a business class ticket." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/29/ha-ha-business", "tags": ["Flying", "Business", "Vietnam"], "title": "HA HA! BUSINESS!" }];
+  var tag = "Business";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-14-mountain-biking-in-siem-reap.jsx", "formattedDate": "June 14th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "My bike in front of Angkor Wat" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "Angkor Thom's east gate" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/14/mountain-biking-in-siem-reap", "tags": ["Cambodia", "Bikes", "Monkeys", "Ruins"], "title": "Mountain Biking in Siem Reap" }];
+  var tag = "Cambodia";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"], "title": "Uvita, Costa Rica" }];
+  var tag = "Cano Island";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 115 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-16-south-africa.jsx", "formattedDate": "September 16th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9760054951", "linkUrl": "/2013/09/16/south-africa", "caption": "Totes safe" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/16/south-africa", "tags": ["Africa", "South Africa", "Johannesburg", "Cape Town"], "title": "South Africa" }];
+  var tag = "Cape Town";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 116 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-26-semuc-champey.jsx", "formattedDate": "May 26th 2015, 12:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16883863607", "linkUrl": "/2015/05/26/semuc-champey", "caption": "Semuc Champey" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/26/semuc-champey", "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"], "title": "Semuc Champey" }];
+  var tag = "Caves";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 117 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-04-revisiting-antigua-and-earth-lodge.jsx", "formattedDate": "May 4th 2015, 3:47:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16870814889", "linkUrl": "/2015/05/04/revisiting-antigua-and-earth-lodge", "caption": "Pimped chickenbus, got a wave from the conductor" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/04/revisiting-antigua-and-earth-lodge", "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"], "title": "Revisiting Antigua and Earth Lodge" }];
+  var tag = "Chicken Buses";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 118 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx", "formattedDate": "November 1st 2013, 7:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10421378166", "linkUrl": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "caption": "Our rafting group" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"], "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans" }];
+  var tag = "Chimpanzees";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 119 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }];
+  var tag = "Christmas";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 120 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-02-26-honduras-mainland-lago-yejoa-copan.jsx", "formattedDate": "February 26th 2015, 6:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15852033030", "linkUrl": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "caption": "Waterfall near Lago Yejoa" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"], "title": "Honduras Mainland - Lago Yejoa, Copan" }];
+  var tag = "Copan";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 121 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-18-corcovado-national-park-costa-rica.jsx", "formattedDate": "July 18th 2014, 4:54:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14512293446", "linkUrl": "/2014/07/18/corcovado-national-park-costa-rica", "caption": "Puerto Jiminez" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Poi Love Camp finished up I ended up travelling around Costa Rica for a while with a guy I'll just call 'T', together with a friend of his from France who I'll just call 'A'. We headed up to San Jose to meet up with 'A' at the airport, then got a very long bus all the way down to the south eastern end of the country to Golfito, where we stayed a night before getting a ferry over to Puerto Jiminez the next day. The ferry was actually a cramped tiny little boat, with so little room that our bags just got put up on the roof with no rope to tie them down or railings to keep them up there. I was very pleased there were still there when we reached the other side." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/18/corcovado-national-park-costa-rica", "tags": ["Corcovado", "Costa Rica", "Hiking"], "title": "Corcovado National Park, Costa Rica" }];
+  var tag = "Corcovado";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 122 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }];
+  var tag = "Cordoba";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }, { "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }, { "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"], "title": "Uvita, Costa Rica" }, { "file": "2014-07-18-corcovado-national-park-costa-rica.jsx", "formattedDate": "July 18th 2014, 4:54:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14512293446", "linkUrl": "/2014/07/18/corcovado-national-park-costa-rica", "caption": "Puerto Jiminez" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Poi Love Camp finished up I ended up travelling around Costa Rica for a while with a guy I'll just call 'T', together with a friend of his from France who I'll just call 'A'. We headed up to San Jose to meet up with 'A' at the airport, then got a very long bus all the way down to the south eastern end of the country to Golfito, where we stayed a night before getting a ferry over to Puerto Jiminez the next day. The ferry was actually a cramped tiny little boat, with so little room that our bags just got put up on the roof with no rope to tie them down or railings to keep them up there. I was very pleased there were still there when we reached the other side." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/18/corcovado-national-park-costa-rica", "tags": ["Corcovado", "Costa Rica", "Hiking"], "title": "Corcovado National Park, Costa Rica" }, { "file": "2014-07-01-poi-love-camp.jsx", "formattedDate": "July 1st 2014, 8:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14327186196", "linkUrl": "/2014/07/01/poi-love-camp", "caption": "Poi Love Camp group shot minus Jonathan" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Poi Love Camp was an 11 day retreat focused on becoming better poi spinners, held in Costa Rica, and run by Nick Woolsey, the man behind [PlayPoi](http://www.playpoi.com). Also teaching there was one of the spinners who has inspired me the most: Jonathan Alvarez, and also the mind-bendingly talented Alien Jon." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The retreat had been on my radar for a little while, but it wasn't until a few days before Christmas when I decided that I really wanted to get out of the European winter that I started seriously thought about going. A day later I had bought flights and tickets to what ended up being one of the most fun fortnights I've ever had. Impulsive travel planning at it's best." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/01/poi-love-camp", "tags": ["Costa Rica", "Finca Mia", "Poi", "Retreat"], "title": "Poi Love Camp" }];
+  var tag = "Costa Rica";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 124 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-22-day-3-cu-chi-tunnels.jsx", "formattedDate": "May 22nd 2013, 2:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On day 2 I headed to the Cu Chi tunnels on a tour booked through my hostel. Our guide was a very interesting half-Filipino, half Vietnamese man who fought in the war on the USA side. It sounded like he'd had a pretty horrific life, with both his wife and mother killed in the war, and his siblings fleeing the country. It was nice to have someone who was actually involved and from Vietnam tell us that most of what the Vietnamese museums state as truth is horribly biased propaganda, but that the USA is just as full of shit with their telling of events. Both sides did messed up things and there was no real winner." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "When we arrived at the tunnels we sat and watched a video that was so nationalistic/anti-American it was painful to watch; how the evil Americans were out to prevent Vietnam re-unifying (completely ignoring that, as I understand it, the south wasn't actually supportive of that, hence why the war didn't end when America and Co pulled out), and how this guy, that guy and another guy was awarded the killing Americans bravery awards for killing Americans, killing American this, killing Americans that. At one point I'm sure that every sentence spoken for a few minutes had \"killing Americans\" in it at least twice." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9686554053", "linkUrl": "/2013/05/22/day-3-cu-chi-tunnels", "caption": "Our guide briefing us.jpg" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": {}, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The after the propaganda film we moved onto the actual site, were shown huge B-52 bomb craters which were all over the place. We were shown one of the \"manhole\" entrances to the tunnels. People were allowed to hop in for a photo but the hole looked crazy small and I didnt think my shoulders would fit through so I didn't give it a go. Next we saw a variety of different booby traps they used with the intention of perforating the Viet Cong's enemy soldiers and dogs; they were pretty vicious looking contraptions." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-3-cu-chi-tunnels", "tags": ["Vietnam", "Cu Chi Tunnels"], "title": "Day 3 - Cu Chi Tunnels" }];
+  var tag = "Cu Chi Tunnels";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2014-12-16-the-bay-islands-of-honduras.jsx", "formattedDate": "December 16th 2014, 9:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16036987811", "linkUrl": "/2014/12/16/the-bay-islands-of-honduras", "caption": "Utila's beach" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After making a one night stay in San Pedro Sula, home of the worlds worst murder rate, I headed over to the coast and got a ferry to Utila; one of the Bay Islands of Honduras." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/12/16/the-bay-islands-of-honduras", "tags": ["Diving", "Utila", "Roatan", "Honduras"], "title": "The Bay Islands of Honduras" }, { "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"], "title": "Uvita, Costa Rica" }, { "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }];
+  var tag = "Diving";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }];
+  var tag = "Dogs";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-04-revisiting-antigua-and-earth-lodge.jsx", "formattedDate": "May 4th 2015, 3:47:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16870814889", "linkUrl": "/2015/05/04/revisiting-antigua-and-earth-lodge", "caption": "Pimped chickenbus, got a wave from the conductor" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/04/revisiting-antigua-and-earth-lodge", "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"], "title": "Revisiting Antigua and Earth Lodge" }];
+  var tag = "Earth Lodge";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 128 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }];
+  var tag = "Edinburgh";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 129 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }, { "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "England";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-01-03-firedrums-2014-and-san-francisco.jsx", "formattedDate": "January 3rd 2015, 5:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15419365423", "linkUrl": "/2015/01/03/firedrums-2014-and-san-francisco", "caption": "FireDrums 2014 Fire Circle" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/01/03/firedrums-2014-and-san-francisco", "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"], "title": "FireDrums 2014 and San Francisco" }, { "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"], "title": "Uvita, Costa Rica" }];
+  var tag = "Festivals";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-01-poi-love-camp.jsx", "formattedDate": "July 1st 2014, 8:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14327186196", "linkUrl": "/2014/07/01/poi-love-camp", "caption": "Poi Love Camp group shot minus Jonathan" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Poi Love Camp was an 11 day retreat focused on becoming better poi spinners, held in Costa Rica, and run by Nick Woolsey, the man behind [PlayPoi](http://www.playpoi.com). Also teaching there was one of the spinners who has inspired me the most: Jonathan Alvarez, and also the mind-bendingly talented Alien Jon." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The retreat had been on my radar for a little while, but it wasn't until a few days before Christmas when I decided that I really wanted to get out of the European winter that I started seriously thought about going. A day later I had bought flights and tickets to what ended up being one of the most fun fortnights I've ever had. Impulsive travel planning at it's best." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/01/poi-love-camp", "tags": ["Costa Rica", "Finca Mia", "Poi", "Retreat"], "title": "Poi Love Camp" }];
+  var tag = "Finca Mia";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 132 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-01-tikal.jsx", "formattedDate": "June 1st 2015, 7:40:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17225779282", "linkUrl": "/2015/06/01/tikal", "caption": "Temple V at Tikal" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/01/tikal", "tags": ["Tikal", "Flores", "Guatemala", "Ruins"], "title": "Tikal" }];
+  var tag = "Flores";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 133 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }, { "file": "2013-06-27-airport-security-in-india.jsx", "formattedDate": "June 27th 2013, 2:19:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "The \"ticket desk\"" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/27/airport-security-in-india", "tags": ["Flying", "Airports", "India", "Security Theater"], "title": "Airport security in India" }, { "file": "2013-05-29-ha-ha-business.jsx", "formattedDate": "May 29th 2013, 2:04:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "a", "key": null, "ref": null, "props": { "href": "/2013/05/29/ha-ha-business/", "children": [{ "type": "img", "key": null, "ref": null, "props": { "src": "http://www.quickmeme.com/img/5d/5d8664cf92e4ce604998ebc905667d3186818aee1c8786b9cfd51712eead636e.jpg", "className": "img-responsive" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "HA HA! BUSINESS!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For the trip to Phu Quoc I decided to fly since it was only $80 and it would save me many many hours on buses and ferries. For a laugh I looked at business class prices and they were only $30 more. I'd never flown business class before so I thought \"[YOLO!](http://www.youtube.com/watch?v=z5Otla5157c)\" and booked myself a business class ticket." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/29/ha-ha-business", "tags": ["Flying", "Business", "Vietnam"], "title": "HA HA! BUSINESS!" }];
+  var tag = "Flying";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-04-23-berlin-part-3.jsx", "formattedDate": "April 23rd 2014, 3:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "One very cold a miserable morning I went to see Sachsenhausen concentration camp, out at Oranienburg. The camp was about a two kilometre walk from the station in literally freezing cold mist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13574136123", "linkUrl": "/2014/04/23/berlin-part-3", "caption": "Sachsenhausen concentration camp" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/23/berlin-part-3", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 3" }, { "file": "2014-04-15-berlin-part-2.jsx", "formattedDate": "April 15th 2014, 7:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I did a huge amount of exploration around Berlin appreciating the street art, probably at least 4-5 days whole days worth in total if you added it all up. I did a few \"self guided\" walking tours (as in I had an itinerary or stuff to look for that I found somewhere online), A ton of randomly wandering after spotting a cool piece by chance, and a \"Real Berlin\" free walking tour that turned out to be quite heavily street art focused." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13567379395", "linkUrl": "/2014/04/15/berlin-part-2", "caption": "Rainbow paint drips" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/15/berlin-part-2", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 2" }, { "file": "2014-04-06-berlin-part-1.jsx", "formattedDate": "April 6th 2014, 4:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Once I'd gotten into Berlin and checked into my hostel I got in contact with my friend Erin, an American who I met in South Africa who lives in Berlin on a semi-regular basis. We arranged to meet up for dinner and she offered to give me an introductory tour of the city. It was pretty lucky timing as Erin was leaving Berlin for a month just a few days after I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13575837835", "linkUrl": "/2014/04/06/berlin-part-1", "caption": "Alexanderplatz S-Bahn Station" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We  walked all around the city, past the museum island, Potsdamer Platz, Brandenburger Tor, The Jewish Memorial, and loads of other sites around the city. It was quite the whirlwind introduction to the city, we even visited a small Christmas market that was up and runing very early and got to have some gluhwein! Delicious spiced wine served hot, perfect for the cold nights leading up to Christmas. It was lovely to see Erin again and it felt like a really nice way to get to know the city being shown around by someone who obviously loves the place." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/06/berlin-part-1", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 1" }, { "file": "2013-12-05-spreepark-berlin.jsx", "formattedDate": "December 5th 2013, 8:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Breaking chronology for a change because I love these photos so much." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11224500606", "linkUrl": "/2013/12/05/spreepark-berlin", "caption": "Swan boat on the grass with the ferris wheel in the distance" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/12/05/spreepark-berlin", "tags": ["Germany", "Berlin", "Abandoned", "Theme Park"], "title": "Spreepark, Berlin" }];
+  var tag = "Germany";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-24-rwanda-gorillas-genocide.jsx", "formattedDate": "November 24th 2013, 6:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "As we approached Rwanda, the terrain started getting a lot more hilly than that of Uganda. We got to the border and queued up to hand in our passports and get our visa, all the while with locals trying to cut in line. I got given some minor grief over not having printed out the acceptance letter for my visa. I did have it in digital form and the letter has a giant bar code that one would assume they'd scan, but apparently it's easier to put bar codes on letters than it is to put bar code scanners at the border." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10914653853", "linkUrl": "/2013/11/24/rwanda-gorillas-genocide", "caption": "Welcome to the republic of Rwanda" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This was our single slowest border crossing, taking over 90 minutes to get some simple ink stamp \"visas\" put in our passports. Most of the truck was starving by the time we finally got our passports back, but there was still more driving to do before we arrived in Ruhengeri and stopped to make lunch. We were staying in dorm rooms so nobody had to put up tents for a change!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/24/rwanda-gorillas-genocide", "tags": ["Rwanda", "Gorillas", "Africa"], "title": "Rwanda, Gorillas, Genocide" }];
+  var tag = "Gorillas";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-01-03-firedrums-2014-and-san-francisco.jsx", "formattedDate": "January 3rd 2015, 5:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15419365423", "linkUrl": "/2015/01/03/firedrums-2014-and-san-francisco", "caption": "FireDrums 2014 Fire Circle" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/01/03/firedrums-2014-and-san-francisco", "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"], "title": "FireDrums 2014 and San Francisco" }, { "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "Graffiti";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }, { "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }];
+  var tag = "Granada";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }];
+  var tag = "Greece";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }];
+  var tag = "Guatemala City";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }, { "file": "2015-06-01-tikal.jsx", "formattedDate": "June 1st 2015, 7:40:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17225779282", "linkUrl": "/2015/06/01/tikal", "caption": "Temple V at Tikal" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/01/tikal", "tags": ["Tikal", "Flores", "Guatemala", "Ruins"], "title": "Tikal" }, { "file": "2015-05-26-semuc-champey.jsx", "formattedDate": "May 26th 2015, 12:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16883863607", "linkUrl": "/2015/05/26/semuc-champey", "caption": "Semuc Champey" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/26/semuc-champey", "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"], "title": "Semuc Champey" }, { "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2015-05-11-more-schooling-in-xela.jsx", "formattedDate": "May 11th 2015, 5:37:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17031479206", "linkUrl": "/2015/05/11/more-schooling-in-xela", "caption": "Xela by night" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/11/more-schooling-in-xela", "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"], "title": "More Schooling in Xela" }, { "file": "2015-05-04-revisiting-antigua-and-earth-lodge.jsx", "formattedDate": "May 4th 2015, 3:47:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16870814889", "linkUrl": "/2015/05/04/revisiting-antigua-and-earth-lodge", "caption": "Pimped chickenbus, got a wave from the conductor" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/04/revisiting-antigua-and-earth-lodge", "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"], "title": "Revisiting Antigua and Earth Lodge" }, { "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }, { "file": "2015-03-30-antigua-guatemala.jsx", "formattedDate": "March 30th 2015, 6:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16337477493", "linkUrl": "/2015/03/30/antigua-guatemala", "caption": "Markets in front of epic ruins" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/03/30/antigua-guatemala", "tags": ["Antigua", "Guatemala", "Ruins", "Volcanoes"], "title": "Antigua Guatemala" }];
+  var tag = "Guatemala";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-24-last-day-in-hcmc.jsx", "formattedDate": "May 24th 2013, 3:51:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "For my final morning in Saigon I got up and ventured out north in search of something different for breakfast than the noodles and mystery meat I'd been having. I stopped along the way a few times to sit in tiny plastic chairs with the locals and drink iced coffee while the traffic did it's crazy thing. I ended up buying a half kilo of mangostein for breakfast with which I made a huge mess before the owner of one of the coffee stand I was sitting at came over with a knife and helped me out. Ugly fruit, but so very tasty." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/05/24/last-day-in-hcmc", "tags": ["Vietnam", "HCMC"], "title": "Last Day in HCMC" }, { "file": "2013-05-22-day-4-motorbikes-in-hcmc.jsx", "formattedDate": "May 22nd 2013, 3:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On the third day I finally took first motorbike taxi, which was a fun, cheap and fast way of getting the War Remnants Museum (Previously knows as the American War Crimes museum), plus the breeze from zooming around is nice and cooling. Why was I walking everywhere like a schmuck!? And yes Mum, I wore a helmet, although they're all so small in Vietnam I half think it might actually make things worse if there was actually an accident, concentrating the force in a ring around the top of my head." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The war museum was interesting, but not catered to someone who knows next to nothing about the history of the war. There was lots of stuff about the specifics that happened, but very little about the motives of either side. There was a load of stuff about the after effects of agent orange on people of both sides of the war, but I needed to look up it up online to find it was a herbicide being sprayed to kill off all the vegetation so the Viet Cong couldn't hide among it." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9689702796", "linkUrl": "/2013/05/22/day-4-motorbikes-in-hcmc", "caption": "A Chinook helicopter" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-4-motorbikes-in-hcmc", "tags": ["Vietnam", "HCMC", "Motorbikes"], "title": "Day 4 Motorbikes in HCMC" }, { "file": "2013-05-22-day-2-ho-chi-minh-city.jsx", "formattedDate": "May 22nd 2013, 2:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On my first morning in Vietnam I woke, packed my stuff in my private room into my bags and checked out to walk 30M around the corner to the dorm style accommodation I have booked for the rest of my stay here. I wasnt able to check in until 1pm, so I left my big bag and took just my day pack with all the valuable stuff in it. Even with just a tiny laptop and an MFT system camera, valuables still weigh a ton." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went out onto the main road to try some delicious baked goods from the bakery recommended to me by the first hostel. They had some pretty tasty stuff, but the place was a big franchise and felt very much like Breadtop back home. I sat outside eating my coffee bun and croissant and a little older Vietnamese lady who was there eating started to talk to me. She asked me where I was from, how long I had been travelling, etc. Then she offered me a massage. I could already see where this was going and told her no, but just in case I had missed her meaning she repeated she would give me massage and \"boom boom\". At 10am. At a franchise bakery. It seems that being a single male in Vietnam leads to the locals assuming you're a sex tourist." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-2-ho-chi-minh-city", "tags": ["Vietnam", "HCMC"], "title": "Day 2 - Ho Chi Minh City" }];
+  var tag = "HCMC";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 142 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-18-corcovado-national-park-costa-rica.jsx", "formattedDate": "July 18th 2014, 4:54:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14512293446", "linkUrl": "/2014/07/18/corcovado-national-park-costa-rica", "caption": "Puerto Jiminez" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Poi Love Camp finished up I ended up travelling around Costa Rica for a while with a guy I'll just call 'T', together with a friend of his from France who I'll just call 'A'. We headed up to San Jose to meet up with 'A' at the airport, then got a very long bus all the way down to the south eastern end of the country to Golfito, where we stayed a night before getting a ferry over to Puerto Jiminez the next day. The ferry was actually a cramped tiny little boat, with so little room that our bags just got put up on the roof with no rope to tie them down or railings to keep them up there. I was very pleased there were still there when we reached the other side." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/18/corcovado-national-park-costa-rica", "tags": ["Corcovado", "Costa Rica", "Hiking"], "title": "Corcovado National Park, Costa Rica" }];
+  var tag = "Hiking";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }];
+  var tag = "Homestay";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-02-26-honduras-mainland-lago-yejoa-copan.jsx", "formattedDate": "February 26th 2015, 6:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15852033030", "linkUrl": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "caption": "Waterfall near Lago Yejoa" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"], "title": "Honduras Mainland - Lago Yejoa, Copan" }, { "file": "2014-12-16-the-bay-islands-of-honduras.jsx", "formattedDate": "December 16th 2014, 9:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16036987811", "linkUrl": "/2014/12/16/the-bay-islands-of-honduras", "caption": "Utila's beach" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After making a one night stay in San Pedro Sula, home of the worlds worst murder rate, I headed over to the coast and got a ferry to Utila; one of the Bay Islands of Honduras." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/12/16/the-bay-islands-of-honduras", "tags": ["Diving", "Utila", "Roatan", "Honduras"], "title": "The Bay Islands of Honduras" }];
+  var tag = "Honduras";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }];
+  var tag = "Horseback Riding";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }];
+  var tag = "Hot Springs";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-05-13-happy-travel-birthday-to-me.jsx", "formattedDate": "May 13th 2014, 2:46:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "img", "key": null, "ref": null, "props": { "src": "/images/first-birthday-cake.jpg", "alt": "birthday cake", "className": "img-responsive" }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So today marks my first travel birthday. One year ago today I boarded my first flight of this trip, leaving my home in Melbourne and headed out to see the world. Actually, because time zones are always a pain in the ass, it was actually more like 1 year and 16 hours or something but one year rolls of the tongue better. It's the longest period I've ever been away from Australia by at least a few months now." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/13/happy-travel-birthday-to-me", "tags": ["Humblebrag", "Retrospective"], "title": "Happy travel birthday to me!" }];
+  var tag = "Humblebrag";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }];
+  var tag = "Ikaria";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx", "formattedDate": "September 2nd 2013, 4:06:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On my first morning alone in Udaipur I went for a bit of an aimless wander around, and ended up at the zoo, which with my typical travel luck, was closed that day. I had a bit of a walk around the gardens surrounding it which were very nice, and sat in the shade reading a book for a few hours." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9582177058", "linkUrl": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", "caption": "Just my luck" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I took a very round about walk back into town and stumbled across quite a long street market which was full of colour and activity, so I spent quite a while taking photos." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", "tags": ["India", "Mumbai"], "title": "India Flying solo, at one with the chaos - India Part 4" }, { "file": "2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx", "formattedDate": "August 26th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "The next morning half the tour group boarded a train heading to Delhi to finish up their tour, but the 4 of us staying on and Moon went and got a local bus heading to a little village called Nimaj Bagh. The place were were staying was an old palace turned into a hotel, with beautifully painted trims on all the doorways, arches and windows. The place also had a pool which we hung out in all afternoon, making the heat a whole lot more bearable." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9582067500", "linkUrl": "/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3", "caption": "Our Hotel was beautifully decorated" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3", "tags": ["India"], "title": "Three girls, a guy and a tour guide - Part 3" }, { "file": "2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx", "formattedDate": "August 19th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "The overnight train the second time around, from Varanasi to near Agra, was a bit of an ordeal. We showed up at the station at 21:00, one hour before the train was scheduled to depart at 22:00, and were soon told that the train had been delayed a few hours, now expected at 00:00. We went into the upper class and sleeper class reserved seating area to sit and wait and found it was full of people sleeping on the benches. One of the guys checking people were allowed to be in there went around and woke some people up, clearing enough seats so everyone could at least sit down." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We soon noticed what appeared to be rats lurking in the shadows underneath benches, occasionally making dashes in and out of the toilets. The toilets were a sight to not be seen. Wreaking of shit, the guys toilets consisted of three squats one of which had leaking plumbing that sprayed water at you as you first walked in the door, or went near the basin to wash your hands. How lovely!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2", "tags": ["India", "Trains"], "title": "Train stations parties until the little hours of the night - India Part 2" }, { "file": "2013-08-13-frustration-india-part-1.jsx", "formattedDate": "August 13th 2013, 1:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm going to prefix this by apologising that it's ridiculously long; I really understand that quote \"I'm sorry for the length of this letter but I didn't have time to write a shorter one\". I'm struggling to keep up, this will probably be the last post I write in this format, which is probably for the best. I'm going to post this as 4 parts as I get the chance, photos will have to wait until I'm somewhere with reasonable internets." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I arrived in Delhi quite late at night, about 1am, and was very glad to have an airport transfer already organised. The roads of India didn't seem too crazy at that time of night, or at least no worse than Vietnam or Cambodia; how little did I know back then. I checked into my hotel, Hotel Perfect, and went straight to bed." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I woke the next day and went out in search of an ATM so I could get some Rupees and some breakfast. The ATM was easy enough, although the maximum withdrawal was less than AUD $200, another win for my overseas-transaction-fee free credit card. I'd hate to be getting socked with $5-10 foreign ATM fees for every $200 I needed." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Breakfast wasn't so easy to find. The area the hotel was in, Karol Barg, seemed to be mostly closed, which seemed a bit silly in a country where it gets so hot to be shut for the coolest part of the day." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/13/frustration-india-part-1", "tags": ["India"], "title": "Frustration - India Part 1" }, { "file": "2013-06-27-airport-security-in-india.jsx", "formattedDate": "June 27th 2013, 2:19:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "The \"ticket desk\"" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/27/airport-security-in-india", "tags": ["Flying", "Airports", "India", "Security Theater"], "title": "Airport security in India" }];
+  var tag = "India";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-29-wake-up-call.jsx", "formattedDate": "June 29th 2013, 4:27:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On this day, one year ago today, I woke up a little bit late." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I rode to work in a bit of a hurry, and on my way got cut off by a car. Getting cut off by cars happens pretty much every day, but on this day I had new brakes that I was unfamiliar with, which were significantly more effective than my old ones. That combined with rushing to not be late, meant that braking hard got me up on just the front wheel and then sent me over the handle bars, landing hard enough on my knees that I got several fractures in my acetabulum (ie. my Hip socket/pelvis)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This moment, at five to nine in the morning on a Friday, changed my life in a number of unexpected ways. Being completely crippled and dependant on others got me seriously thinking about the things I'd like to do but had been putting off until \"the right time\", many of which are dependant on being able-bodied, and I wondered a lot about how well I would recover and how those things I'd like to do might now never happen." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/29/wake-up-call", "tags": ["Introspection", "Inspiration"], "title": "Wake Up Call" }, { "file": "2013-03-26-twenty-years-from-now.jsx", "formattedDate": "March 26th 2013, 5:55:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": [{ "type": "div", "key": null, "ref": null, "props": { "className": "quote", "children": "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover." }, "_owner": null, "_store": {} }, { "type": "div", "key": null, "ref": null, "props": { "className": "quote-attribution", "children": "Mark Twain" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/03/26/twenty-years-from-now", "tags": ["Quote", "Inspiration"], "title": "Twenty years from now" }];
+  var tag = "Inspiration";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-29-wake-up-call.jsx", "formattedDate": "June 29th 2013, 4:27:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On this day, one year ago today, I woke up a little bit late." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I rode to work in a bit of a hurry, and on my way got cut off by a car. Getting cut off by cars happens pretty much every day, but on this day I had new brakes that I was unfamiliar with, which were significantly more effective than my old ones. That combined with rushing to not be late, meant that braking hard got me up on just the front wheel and then sent me over the handle bars, landing hard enough on my knees that I got several fractures in my acetabulum (ie. my Hip socket/pelvis)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This moment, at five to nine in the morning on a Friday, changed my life in a number of unexpected ways. Being completely crippled and dependant on others got me seriously thinking about the things I'd like to do but had been putting off until \"the right time\", many of which are dependant on being able-bodied, and I wondered a lot about how well I would recover and how those things I'd like to do might now never happen." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/29/wake-up-call", "tags": ["Introspection", "Inspiration"], "title": "Wake Up Call" }];
+  var tag = "Introspection";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-01-03-istanbul-turkey.jsx", "formattedDate": "January 3rd 2014, 3:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After flying into Istanbul Attaturk airport we spent the morning hiding out at the airport in the air conditioning and waiting for the time we'd agree to meet at our apartment with our AirBNB host. We got a taxi from the airport and my first impressions of Istanbul proper were that everything appeared so clean, modern and organised. The highways were multi-lane, there was nobody wandering out trying to sell things to passing traffic, traffic flowed very quickly and efficiently, people drove on the correct side of the road and actually stayed in their lanes for the most part. It's amazing how much your direct prior experiences can colour your perceptions of a place, the Turkey we were seeing was at odds to the reputation that the place generally has for it's drivers." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11436642894", "linkUrl": "/2014/01/03/istanbul-turkey", "caption": "The beautiful view of the Bosphorus from our apartment" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The apartment we stayed in was located very close to Taksim Square, consisting of the whole top floor of the building and a rooftop courtyard and a fantastic view of the Bosporus. Having modern conveniences like a fridge, a washing machine and air conditioning felt very luxurious after having just spent 5 weeks camping in tents." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/03/istanbul-turkey", "tags": ["Turkey", "Istanbul"], "title": "Istanbul, Turkey" }];
+  var tag = "Istanbul";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx", "formattedDate": "November 1st 2013, 7:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10421378166", "linkUrl": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "caption": "Our rafting group" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"], "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans" }];
+  var tag = "Jinja";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 154 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-30-nicaragua-all-over-the-place.jsx", "formattedDate": "October 30th 2014, 7:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15614210236", "linkUrl": "/2014/10/30/nicaragua-all-over-the-place", "caption": "Volcan Concepcion from Finca Magdelena" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving La Mariposa, I headed to the island of Ometepe and met up with some friends from La Mariposa who were staying at an old farm house called Finca Magdelena. It was just $6 a night for a private room, and they made amazing French toast that I had for breakfast most days." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/30/nicaragua-all-over-the-place", "tags": ["Ometepe", "Jinotega", "Somoto Canyon", "Nicaragua"], "title": "Nicaragua, all over the place" }];
+  var tag = "Jinotega";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-16-south-africa.jsx", "formattedDate": "September 16th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9760054951", "linkUrl": "/2013/09/16/south-africa", "caption": "Totes safe" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/16/south-africa", "tags": ["Africa", "South Africa", "Johannesburg", "Cape Town"], "title": "South Africa" }, { "file": "2013-09-09-johannesburg-to-victoria-falls-and-back.jsx", "formattedDate": "September 9th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9661702941", "linkUrl": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "caption": "Stunning Sunrise in Botswana" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "tags": ["Africa", "Victoria Falls", "Johannesburg", "South Africa"], "title": "Johannesburg to Victoria Falls and back" }];
+  var tag = "Johannesburg";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx", "formattedDate": "October 7th 2013, 10:43:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10124599493", "linkUrl": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "caption": "Border cricket" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "tags": ["Kenya", "Masai Mara", "Lake Nakuru", "Africa"], "title": "Kenya: The Masai Mara and Lake Nakuru" }];
+  var tag = "Kenya";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }];
+  var tag = "Koh Tao";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }];
+  var tag = "La Boquita";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }, { "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }];
+  var tag = "La Mariposa";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-02-26-honduras-mainland-lago-yejoa-copan.jsx", "formattedDate": "February 26th 2015, 6:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15852033030", "linkUrl": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "caption": "Waterfall near Lago Yejoa" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"], "title": "Honduras Mainland - Lago Yejoa, Copan" }];
+  var tag = "Lago Yejoa";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }];
+  var tag = "Laguna Apoyo";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "Lake Atitlan";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx", "formattedDate": "October 7th 2013, 10:43:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10124599493", "linkUrl": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "caption": "Border cricket" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "tags": ["Kenya", "Masai Mara", "Lake Nakuru", "Africa"], "title": "Kenya: The Masai Mara and Lake Nakuru" }];
+  var tag = "Lake Nakuru";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-26-semuc-champey.jsx", "formattedDate": "May 26th 2015, 12:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16883863607", "linkUrl": "/2015/05/26/semuc-champey", "caption": "Semuc Champey" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/26/semuc-champey", "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"], "title": "Semuc Champey" }];
+  var tag = "Lanquin";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }, { "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }];
+  var tag = "Leon";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }];
+  var tag = "Little Corn Island";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }];
+  var tag = "Livingston";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }, { "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "London";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }];
+  var tag = "Malaga";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }];
+  var tag = "Managua";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx", "formattedDate": "October 7th 2013, 10:43:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10124599493", "linkUrl": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "caption": "Border cricket" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", "tags": ["Kenya", "Masai Mara", "Lake Nakuru", "Africa"], "title": "Kenya: The Masai Mara and Lake Nakuru" }];
+  var tag = "Masai Mara";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "Meditation";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-06-turkey.jsx", "formattedDate": "February 6th 2014, 11:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After Istanbul our next stop was in Göreme, where Amanda, Luke, and I, stayed in a fairy chimney hotel. These were rock formation that had been eroded away into conical shapes, that had rooms carved into them, with some brickwork to divide up the space." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11922915693", "linkUrl": "/2014/02/06/turkey", "caption": "Me in front of my cave hotel in Göreme" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/06/turkey", "tags": ["Turkey", "Mediterranean"], "title": "Turkey" }];
+  var tag = "Mediterranean";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }];
+  var tag = "Melbourne";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }, { "file": "2013-06-14-mountain-biking-in-siem-reap.jsx", "formattedDate": "June 14th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "My bike in front of Angkor Wat" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "Angkor Thom's east gate" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/14/mountain-biking-in-siem-reap", "tags": ["Cambodia", "Bikes", "Monkeys", "Ruins"], "title": "Mountain Biking in Siem Reap" }];
+  var tag = "Monkeys";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }];
+  var tag = "Montezuma";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }, { "file": "2013-05-22-day-4-motorbikes-in-hcmc.jsx", "formattedDate": "May 22nd 2013, 3:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On the third day I finally took first motorbike taxi, which was a fun, cheap and fast way of getting the War Remnants Museum (Previously knows as the American War Crimes museum), plus the breeze from zooming around is nice and cooling. Why was I walking everywhere like a schmuck!? And yes Mum, I wore a helmet, although they're all so small in Vietnam I half think it might actually make things worse if there was actually an accident, concentrating the force in a ring around the top of my head." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The war museum was interesting, but not catered to someone who knows next to nothing about the history of the war. There was lots of stuff about the specifics that happened, but very little about the motives of either side. There was a load of stuff about the after effects of agent orange on people of both sides of the war, but I needed to look up it up online to find it was a herbicide being sprayed to kill off all the vegetation so the Viet Cong couldn't hide among it." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9689702796", "linkUrl": "/2013/05/22/day-4-motorbikes-in-hcmc", "caption": "A Chinook helicopter" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-4-motorbikes-in-hcmc", "tags": ["Vietnam", "HCMC", "Motorbikes"], "title": "Day 4 Motorbikes in HCMC" }];
+  var tag = "Motorbikes";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx", "formattedDate": "September 2nd 2013, 4:06:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On my first morning alone in Udaipur I went for a bit of an aimless wander around, and ended up at the zoo, which with my typical travel luck, was closed that day. I had a bit of a walk around the gardens surrounding it which were very nice, and sat in the shade reading a book for a few hours." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9582177058", "linkUrl": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", "caption": "Just my luck" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I took a very round about walk back into town and stumbled across quite a long street market which was full of colour and activity, so I spent quite a while taking photos." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", "tags": ["India", "Mumbai"], "title": "India Flying solo, at one with the chaos - India Part 4" }];
+  var tag = "Mumbai";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-08-17-san-francisco-before-the-burn.jsx", "formattedDate": "August 17th 2015, 2:10:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "19918806662", "linkUrl": "/2015/08/17/san-francisco-before-the-burn", "caption": "SF from the water" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/08/17/san-francisco-before-the-burn", "tags": ["San Francisco", "USA", "Museums", "Alcatraz"], "title": "San Francisco, before the burn" }];
+  var tag = "Museums";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }];
+  var tag = "Mykonos";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx", "formattedDate": "September 30th 2013, 3:14:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10000707374", "linkUrl": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "caption": "The Serengeti" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "tags": ["Tanzania", "Serengeti", "Ngorongoro Crater", "Africa"], "title": "Serengeti National Park and the Ngorongoro Crater" }];
+  var tag = "Ngorongoro Crater";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }, { "file": "2014-10-30-nicaragua-all-over-the-place.jsx", "formattedDate": "October 30th 2014, 7:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15614210236", "linkUrl": "/2014/10/30/nicaragua-all-over-the-place", "caption": "Volcan Concepcion from Finca Magdelena" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving La Mariposa, I headed to the island of Ometepe and met up with some friends from La Mariposa who were staying at an old farm house called Finca Magdelena. It was just $6 a night for a private room, and they made amazing French toast that I had for breakfast most days." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/30/nicaragua-all-over-the-place", "tags": ["Ometepe", "Jinotega", "Somoto Canyon", "Nicaragua"], "title": "Nicaragua, all over the place" }, { "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }, { "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }];
+  var tag = "Nicaragua";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 183 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }];
+  var tag = "Nicoya Peninsula";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }, { "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "Nottingham";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }];
+  var tag = "NYE";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-30-nicaragua-all-over-the-place.jsx", "formattedDate": "October 30th 2014, 7:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15614210236", "linkUrl": "/2014/10/30/nicaragua-all-over-the-place", "caption": "Volcan Concepcion from Finca Magdelena" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving La Mariposa, I headed to the island of Ometepe and met up with some friends from La Mariposa who were staying at an old farm house called Finca Magdelena. It was just $6 a night for a private room, and they made amazing French toast that I had for breakfast most days." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/30/nicaragua-all-over-the-place", "tags": ["Ometepe", "Jinotega", "Somoto Canyon", "Nicaragua"], "title": "Nicaragua, all over the place" }];
+  var tag = "Ometepe";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-26-semuc-champey.jsx", "formattedDate": "May 26th 2015, 12:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16883863607", "linkUrl": "/2015/05/26/semuc-champey", "caption": "Semuc Champey" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/26/semuc-champey", "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"], "title": "Semuc Champey" }];
+  var tag = "Outdoors";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-07-last-minute-bag-choices.jsx", "formattedDate": "May 7th 2013, 12:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So I bought the 40L bag I'd been eyeing off last week. After doing a few trial packs with it, I've decided that I cant fit everything I want in it well enough, so tomorrow I'm taking it back to see what my other options are." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I can just about fit everything in the 40L bag, but it's stuffed so tight that I have concerns about my laptop getting cracked if the bag were dropped, or something was dropped on it; and it doesnt give me any excess room whatsoever." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/07/last-minute-bag-choices", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Last minute bag choices" }, { "file": "2013-04-22-target-40-litres.jsx", "formattedDate": "April 22nd 2013, 12:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So when I was last in the adventure district looking at travel gadgets and clothing, I was talking to one of the staff in the store and he put the idea in my head that travelling with just a small backpack would make a lot of things easier." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It means you can keep your bag with you in a lot of situations where you'd otherwise have to leave it in the luggage section and hope it doesn't get searched through too much by dodgy characters, and it allows you to use crowded public transport much easier, or even just walk distances that you wouldnt want to get stuck lugging a heavy pack." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/04/22/target-40-litres", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Target 40 Litres" }, { "file": "2013-04-08-the-little-things-that-make-up-a-life.jsx", "formattedDate": "April 8th 2013, 12:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "The hardest part so far of packing my life into a bag and heading off for an indefinite period has been trying to get rid of the huge amount of stuff I own. A lot of the big/valuable stuff has been easy to let go of, and find buyers for, but once you remove all that stuff from your life you're left with a massive amount of \"little things\"." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/04/08/the-little-things-that-make-up-a-life", "tags": ["Pre Trip", "Packing", "Streamlining"], "title": "The little things that make up a life" }];
+  var tag = "Packing";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }];
+  var tag = "Panajachel";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-30-phu-qouc-island-vietnam.jsx", "formattedDate": "May 30th 2013, 1:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Upon arriving at Duong Dong Airport in Phu Quoc I got a taxi to my hotel, the A74. I checked in and was shown to my room by a very friendly concierge. The room smelt a bit funny so went back down and asked if I could change rooms and they put me in a much bigger room, which still has some odd odour in it that I cant identify but I guess the whole place might have that smell." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I did some washing in the bathroom sink and nearly accidentally tore it off the wall. it turns out it was only held up by the plumbing and two flimsy little brackets, which I bent a bit (and then bent back as well as I could)." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/30/phu-qouc-island-vietnam", "tags": ["Vietnam", "Phu Quoc"], "title": "Phu Qouc Island, Vietnam" }];
+  var tag = "Phu Quoc";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-01-03-firedrums-2014-and-san-francisco.jsx", "formattedDate": "January 3rd 2015, 5:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15419365423", "linkUrl": "/2015/01/03/firedrums-2014-and-san-francisco", "caption": "FireDrums 2014 Fire Circle" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/01/03/firedrums-2014-and-san-francisco", "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"], "title": "FireDrums 2014 and San Francisco" }, { "file": "2014-07-01-poi-love-camp.jsx", "formattedDate": "July 1st 2014, 8:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14327186196", "linkUrl": "/2014/07/01/poi-love-camp", "caption": "Poi Love Camp group shot minus Jonathan" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Poi Love Camp was an 11 day retreat focused on becoming better poi spinners, held in Costa Rica, and run by Nick Woolsey, the man behind [PlayPoi](http://www.playpoi.com). Also teaching there was one of the spinners who has inspired me the most: Jonathan Alvarez, and also the mind-bendingly talented Alien Jon." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The retreat had been on my radar for a little while, but it wasn't until a few days before Christmas when I decided that I really wanted to get out of the European winter that I started seriously thought about going. A day later I had bought flights and tickets to what ended up being one of the most fun fortnights I've ever had. Impulsive travel planning at it's best." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/01/poi-love-camp", "tags": ["Costa Rica", "Finca Mia", "Poi", "Retreat"], "title": "Poi Love Camp" }];
+  var tag = "Poi";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-12-its-go-time.jsx", "formattedDate": "May 12th 2013, 10:35:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My bags are packed, almost all my things are sold/donated/given away. Tomorrow morning I get up early to head to the airport, say good bye to Melbourne and fly off to Vietnam to start my trip." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'm feeling a mixture of excitement, sadness, terror and exhaustion. It's been a busy week sorting out the last of my things and catching up with people for the last time. The past 3 days I've been doing stuff pretty much non-stop; now I finally get to sit down and not feel like there's something else I need to be doing." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It's going to be different not being able to regularly see and hang out with people I've known for more than a few days. I'm hoping that with practice I get better at small talk and meeting new people, so maybe that'll be less of an issue." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I guess there's not much more I can do right now, but strap in and wait for this wild ride to start..." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/12/it-s-go-time", "tags": ["Pre Trip"], "title": "It's go time!" }, { "file": "2013-05-07-last-minute-bag-choices.jsx", "formattedDate": "May 7th 2013, 12:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So I bought the 40L bag I'd been eyeing off last week. After doing a few trial packs with it, I've decided that I cant fit everything I want in it well enough, so tomorrow I'm taking it back to see what my other options are." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I can just about fit everything in the 40L bag, but it's stuffed so tight that I have concerns about my laptop getting cracked if the bag were dropped, or something was dropped on it; and it doesnt give me any excess room whatsoever." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/07/last-minute-bag-choices", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Last minute bag choices" }, { "file": "2013-04-22-target-40-litres.jsx", "formattedDate": "April 22nd 2013, 12:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So when I was last in the adventure district looking at travel gadgets and clothing, I was talking to one of the staff in the store and he put the idea in my head that travelling with just a small backpack would make a lot of things easier." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It means you can keep your bag with you in a lot of situations where you'd otherwise have to leave it in the luggage section and hope it doesn't get searched through too much by dodgy characters, and it allows you to use crowded public transport much easier, or even just walk distances that you wouldnt want to get stuck lugging a heavy pack." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/04/22/target-40-litres", "tags": ["Pre Trip", "Packing", "Bags"], "title": "Target 40 Litres" }, { "file": "2013-04-08-the-little-things-that-make-up-a-life.jsx", "formattedDate": "April 8th 2013, 12:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "The hardest part so far of packing my life into a bag and heading off for an indefinite period has been trying to get rid of the huge amount of stuff I own. A lot of the big/valuable stuff has been easy to let go of, and find buyers for, but once you remove all that stuff from your life you're left with a massive amount of \"little things\"." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/04/08/the-little-things-that-make-up-a-life", "tags": ["Pre Trip", "Packing", "Streamlining"], "title": "The little things that make up a life" }];
+  var tag = "Pre Trip";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-11-more-schooling-in-xela.jsx", "formattedDate": "May 11th 2015, 5:37:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17031479206", "linkUrl": "/2015/05/11/more-schooling-in-xela", "caption": "Xela by night" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/11/more-schooling-in-xela", "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"], "title": "More Schooling in Xela" }, { "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }];
+  var tag = "Quezaltenango";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-03-26-twenty-years-from-now.jsx", "formattedDate": "March 26th 2013, 5:55:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": [{ "type": "div", "key": null, "ref": null, "props": { "className": "quote", "children": "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover." }, "_owner": null, "_store": {} }, { "type": "div", "key": null, "ref": null, "props": { "className": "quote-attribution", "children": "Mark Twain" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/03/26/twenty-years-from-now", "tags": ["Quote", "Inspiration"], "title": "Twenty years from now" }];
+  var tag = "Quote";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 195 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-01-poi-love-camp.jsx", "formattedDate": "July 1st 2014, 8:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14327186196", "linkUrl": "/2014/07/01/poi-love-camp", "caption": "Poi Love Camp group shot minus Jonathan" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Poi Love Camp was an 11 day retreat focused on becoming better poi spinners, held in Costa Rica, and run by Nick Woolsey, the man behind [PlayPoi](http://www.playpoi.com). Also teaching there was one of the spinners who has inspired me the most: Jonathan Alvarez, and also the mind-bendingly talented Alien Jon." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The retreat had been on my radar for a little while, but it wasn't until a few days before Christmas when I decided that I really wanted to get out of the European winter that I started seriously thought about going. A day later I had bought flights and tickets to what ended up being one of the most fun fortnights I've ever had. Impulsive travel planning at it's best." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/01/poi-love-camp", "tags": ["Costa Rica", "Finca Mia", "Poi", "Retreat"], "title": "Poi Love Camp" }];
+  var tag = "Retreat";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 196 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-13-two-years-later.jsx", "formattedDate": "May 13th 2015, 2:33:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17568248432", "linkUrl": "/2015/05/13/two-years-later", "caption": "Roatan Sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": ["So today marks two years since ", { "type": "a", "key": null, "ref": null, "props": { "href": "/2013/05/12/its-go-time/", "children": "I last set foot in Australia" }, "_owner": null, "_store": {} }, "."] }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/13/two-years-later", "tags": ["Retrospective"], "title": "Two Years Later" }, { "file": "2014-05-13-happy-travel-birthday-to-me.jsx", "formattedDate": "May 13th 2014, 2:46:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "img", "key": null, "ref": null, "props": { "src": "/images/first-birthday-cake.jpg", "alt": "birthday cake", "className": "img-responsive" }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So today marks my first travel birthday. One year ago today I boarded my first flight of this trip, leaving my home in Melbourne and headed out to see the world. Actually, because time zones are always a pain in the ass, it was actually more like 1 year and 16 hours or something but one year rolls of the tongue better. It's the longest period I've ever been away from Australia by at least a few months now." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/13/happy-travel-birthday-to-me", "tags": ["Humblebrag", "Retrospective"], "title": "Happy travel birthday to me!" }];
+  var tag = "Retrospective";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }];
+  var tag = "Rio Dulce";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-12-16-the-bay-islands-of-honduras.jsx", "formattedDate": "December 16th 2014, 9:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16036987811", "linkUrl": "/2014/12/16/the-bay-islands-of-honduras", "caption": "Utila's beach" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After making a one night stay in San Pedro Sula, home of the worlds worst murder rate, I headed over to the coast and got a ferry to Utila; one of the Bay Islands of Honduras." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/12/16/the-bay-islands-of-honduras", "tags": ["Diving", "Utila", "Roatan", "Honduras"], "title": "The Bay Islands of Honduras" }];
+  var tag = "Roatan";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 199 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-01-tikal.jsx", "formattedDate": "June 1st 2015, 7:40:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17225779282", "linkUrl": "/2015/06/01/tikal", "caption": "Temple V at Tikal" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/01/tikal", "tags": ["Tikal", "Flores", "Guatemala", "Ruins"], "title": "Tikal" }, { "file": "2015-05-04-revisiting-antigua-and-earth-lodge.jsx", "formattedDate": "May 4th 2015, 3:47:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16870814889", "linkUrl": "/2015/05/04/revisiting-antigua-and-earth-lodge", "caption": "Pimped chickenbus, got a wave from the conductor" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/04/revisiting-antigua-and-earth-lodge", "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"], "title": "Revisiting Antigua and Earth Lodge" }, { "file": "2015-03-30-antigua-guatemala.jsx", "formattedDate": "March 30th 2015, 6:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16337477493", "linkUrl": "/2015/03/30/antigua-guatemala", "caption": "Markets in front of epic ruins" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/03/30/antigua-guatemala", "tags": ["Antigua", "Guatemala", "Ruins", "Volcanoes"], "title": "Antigua Guatemala" }, { "file": "2015-02-26-honduras-mainland-lago-yejoa-copan.jsx", "formattedDate": "February 26th 2015, 6:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15852033030", "linkUrl": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "caption": "Waterfall near Lago Yejoa" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"], "title": "Honduras Mainland - Lago Yejoa, Copan" }, { "file": "2013-06-14-mountain-biking-in-siem-reap.jsx", "formattedDate": "June 14th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "My bike in front of Angkor Wat" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "Angkor Thom's east gate" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/14/mountain-biking-in-siem-reap", "tags": ["Cambodia", "Bikes", "Monkeys", "Ruins"], "title": "Mountain Biking in Siem Reap" }];
+  var tag = "Ruins";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-24-rwanda-gorillas-genocide.jsx", "formattedDate": "November 24th 2013, 6:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "As we approached Rwanda, the terrain started getting a lot more hilly than that of Uganda. We got to the border and queued up to hand in our passports and get our visa, all the while with locals trying to cut in line. I got given some minor grief over not having printed out the acceptance letter for my visa. I did have it in digital form and the letter has a giant bar code that one would assume they'd scan, but apparently it's easier to put bar codes on letters than it is to put bar code scanners at the border." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10914653853", "linkUrl": "/2013/11/24/rwanda-gorillas-genocide", "caption": "Welcome to the republic of Rwanda" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "This was our single slowest border crossing, taking over 90 minutes to get some simple ink stamp \"visas\" put in our passports. Most of the truck was starving by the time we finally got our passports back, but there was still more driving to do before we arrived in Ruhengeri and stopped to make lunch. We were staying in dorm rooms so nobody had to put up tents for a change!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/24/rwanda-gorillas-genocide", "tags": ["Rwanda", "Gorillas", "Africa"], "title": "Rwanda, Gorillas, Genocide" }];
+  var tag = "Rwanda";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-11-more-schooling-in-xela.jsx", "formattedDate": "May 11th 2015, 5:37:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17031479206", "linkUrl": "/2015/05/11/more-schooling-in-xela", "caption": "Xela by night" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/11/more-schooling-in-xela", "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"], "title": "More Schooling in Xela" }, { "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }];
+  var tag = "Salsa";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }];
+  var tag = "Samos";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 203 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-08-17-san-francisco-before-the-burn.jsx", "formattedDate": "August 17th 2015, 2:10:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "19918806662", "linkUrl": "/2015/08/17/san-francisco-before-the-burn", "caption": "SF from the water" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/08/17/san-francisco-before-the-burn", "tags": ["San Francisco", "USA", "Museums", "Alcatraz"], "title": "San Francisco, before the burn" }, { "file": "2015-01-03-firedrums-2014-and-san-francisco.jsx", "formattedDate": "January 3rd 2015, 5:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15419365423", "linkUrl": "/2015/01/03/firedrums-2014-and-san-francisco", "caption": "FireDrums 2014 Fire Circle" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/01/03/firedrums-2014-and-san-francisco", "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"], "title": "FireDrums 2014 and San Francisco" }];
+  var tag = "San Francisco";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "San Juan";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 205 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "San Marcos";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "San Pedro";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "Santa Cruz";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }];
+  var tag = "Santa Teresa";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }];
+  var tag = "Santiago";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }];
+  var tag = "Scotland";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-27-airport-security-in-india.jsx", "formattedDate": "June 27th 2013, 2:19:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": [{ "type": "img", "key": null, "ref": null, "props": { "alt": "image", "src": "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "The \"ticket desk\"" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/27/airport-security-in-india", "tags": ["Flying", "Airports", "India", "Security Theater"], "title": "Airport security in India" }];
+  var tag = "Security Theater";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-26-semuc-champey.jsx", "formattedDate": "May 26th 2015, 12:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16883863607", "linkUrl": "/2015/05/26/semuc-champey", "caption": "Semuc Champey" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/26/semuc-champey", "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"], "title": "Semuc Champey" }];
+  var tag = "Semuc Champey";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx", "formattedDate": "September 30th 2013, 3:14:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10000707374", "linkUrl": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "caption": "The Serengeti" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "tags": ["Tanzania", "Serengeti", "Ngorongoro Crater", "Africa"], "title": "Serengeti National Park and the Ngorongoro Crater" }];
+  var tag = "Serengeti";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }];
+  var tag = "Seville";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx", "formattedDate": "November 15th 2013, 5:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "10676737816", "linkUrl": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", "caption": "Thumbs up" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "It's impossible to put into words what it's like out on the streets of Africa. They're like no other place I've been. Towards the end of the trip I started taking a LOT of photos out the window in the hope it might capture even just a small fraction of the weird and wonderful things you see out the truck window. Click the photo to go to the full flickr set. Feel free to be distracted, and not notice that I haven't posted about gorillas yet too :P" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", "tags": ["Africa", "Signs"], "title": "The signs and sights of the streets of East Africa" }];
+  var tag = "Signs";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }];
+  var tag = "Singapore";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-30-nicaragua-all-over-the-place.jsx", "formattedDate": "October 30th 2014, 7:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15614210236", "linkUrl": "/2014/10/30/nicaragua-all-over-the-place", "caption": "Volcan Concepcion from Finca Magdelena" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving La Mariposa, I headed to the island of Ometepe and met up with some friends from La Mariposa who were staying at an old farm house called Finca Magdelena. It was just $6 a night for a private room, and they made amazing French toast that I had for breakfast most days." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/30/nicaragua-all-over-the-place", "tags": ["Ometepe", "Jinotega", "Somoto Canyon", "Nicaragua"], "title": "Nicaragua, all over the place" }];
+  var tag = "Somoto Canyon";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-16-south-africa.jsx", "formattedDate": "September 16th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9760054951", "linkUrl": "/2013/09/16/south-africa", "caption": "Totes safe" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/16/south-africa", "tags": ["Africa", "South Africa", "Johannesburg", "Cape Town"], "title": "South Africa" }, { "file": "2013-09-09-johannesburg-to-victoria-falls-and-back.jsx", "formattedDate": "September 9th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9661702941", "linkUrl": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "caption": "Stunning Sunrise in Botswana" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "tags": ["Africa", "Victoria Falls", "Johannesburg", "South Africa"], "title": "Johannesburg to Victoria Falls and back" }];
+  var tag = "South Africa";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }, { "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }, { "file": "2014-05-03-barcelona-spain.jsx", "formattedDate": "May 3rd 2014, 2:15:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Even in winter the weather is Barcelona is lovely. As soon as I landed and got through customs, I put my heavy winter jacket away and was quite comfortable in just a T-shirt. It seemed like the warm weather would be great for helping me kick a cold that had been hanging around for my last few weeks in Berlin, which had left me sniffing and congested for far too long." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13809549773", "linkUrl": "/2014/05/03/barcelona-spain", "caption": "La Sagrada Familia" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/03/barcelona-spain", "tags": ["Spain", "Barcelona", "Tapas"], "title": "Barcelona, Spain" }];
+  var tag = "Spain";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-11-more-schooling-in-xela.jsx", "formattedDate": "May 11th 2015, 5:37:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17031479206", "linkUrl": "/2015/05/11/more-schooling-in-xela", "caption": "Xela by night" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/11/more-schooling-in-xela", "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"], "title": "More Schooling in Xela" }, { "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }, { "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }, { "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }];
+  var tag = "Spanish Schools";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }];
+  var tag = "Stonehenge";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-04-08-the-little-things-that-make-up-a-life.jsx", "formattedDate": "April 8th 2013, 12:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "The hardest part so far of packing my life into a bag and heading off for an indefinite period has been trying to get rid of the huge amount of stuff I own. A lot of the big/valuable stuff has been easy to let go of, and find buyers for, but once you remove all that stuff from your life you're left with a massive amount of \"little things\"." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/04/08/the-little-things-that-make-up-a-life", "tags": ["Pre Trip", "Packing", "Streamlining"], "title": "The little things that make up a life" }];
+  var tag = "Streamlining";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }];
+  var tag = "Surfing";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }];
+  var tag = "Syros";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx", "formattedDate": "September 30th 2013, 3:14:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10000707374", "linkUrl": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "caption": "The Serengeti" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", "tags": ["Tanzania", "Serengeti", "Ngorongoro Crater", "Africa"], "title": "Serengeti National Park and the Ngorongoro Crater" }, { "file": "2013-09-23-zanzibar-tanzania.jsx", "formattedDate": "September 23rd 2013, 12:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My arrival in Dar Es Salaam was pretty smooth and trouble free. I applied for my visa on arrival, along with probably 60% of the people on the flight. I was a bit slow filling out the forms and was probably one of the last people to hand in the paperwork, but it seemed like they used a LIFO queue (last in, first out) to process things so my name was soon called and I had to squeeze my way through the crowd of people waiting and get my passport." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went to queue up in the immigration line, proud to show off my fancy new visa sticker, but a guy came up and told me to just walk on through. So I walked straight past the desk where they check your passport without showing them anything, and nobody batted an eyelid. It really feels like you could get into the country without a visa very easily if you just walked on through with a bit of confidence, although I'm sure you'd have trouble leaving." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9852999483", "linkUrl": "/2013/09/23/zanzibar-tanzania", "caption": "Dar Es Salaam Sunset" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/23/zanzibar-tanzania", "tags": ["Africa", "Tanzania", "Zanzibar"], "title": "Zanzibar & Tanzania" }];
+  var tag = "Tanzania";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }, { "file": "2014-05-03-barcelona-spain.jsx", "formattedDate": "May 3rd 2014, 2:15:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Even in winter the weather is Barcelona is lovely. As soon as I landed and got through customs, I put my heavy winter jacket away and was quite comfortable in just a T-shirt. It seemed like the warm weather would be great for helping me kick a cold that had been hanging around for my last few weeks in Berlin, which had left me sniffing and congested for far too long." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13809549773", "linkUrl": "/2014/05/03/barcelona-spain", "caption": "La Sagrada Familia" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/03/barcelona-spain", "tags": ["Spain", "Barcelona", "Tapas"], "title": "Barcelona, Spain" }];
+  var tag = "Tapas";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-06-30-thailand.jsx", "formattedDate": "June 30th 2013, 4:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/06/30/thailand", "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"], "title": "Thailand" }];
+  var tag = "Thailand";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-12-05-spreepark-berlin.jsx", "formattedDate": "December 5th 2013, 8:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Breaking chronology for a change because I love these photos so much." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11224500606", "linkUrl": "/2013/12/05/spreepark-berlin", "caption": "Swan boat on the grass with the ferris wheel in the distance" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/12/05/spreepark-berlin", "tags": ["Germany", "Berlin", "Abandoned", "Theme Park"], "title": "Spreepark, Berlin" }];
+  var tag = "Theme Park";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-06-01-tikal.jsx", "formattedDate": "June 1st 2015, 7:40:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17225779282", "linkUrl": "/2015/06/01/tikal", "caption": "Temple V at Tikal" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/01/tikal", "tags": ["Tikal", "Flores", "Guatemala", "Ruins"], "title": "Tikal" }];
+  var tag = "Tikal";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx", "formattedDate": "August 19th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "The overnight train the second time around, from Varanasi to near Agra, was a bit of an ordeal. We showed up at the station at 21:00, one hour before the train was scheduled to depart at 22:00, and were soon told that the train had been delayed a few hours, now expected at 00:00. We went into the upper class and sleeper class reserved seating area to sit and wait and found it was full of people sleeping on the benches. One of the guys checking people were allowed to be in there went around and woke some people up, clearing enough seats so everyone could at least sit down." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We soon noticed what appeared to be rats lurking in the shadows underneath benches, occasionally making dashes in and out of the toilets. The toilets were a sight to not be seen. Wreaking of shit, the guys toilets consisted of three squats one of which had leaking plumbing that sprayed water at you as you first walked in the door, or went near the basin to wash your hands. How lovely!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2", "tags": ["India", "Trains"], "title": "Train stations parties until the little hours of the night - India Part 2" }];
+  var tag = "Trains";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }];
+  var tag = "Travelling";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-02-06-turkey.jsx", "formattedDate": "February 6th 2014, 11:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After Istanbul our next stop was in Göreme, where Amanda, Luke, and I, stayed in a fairy chimney hotel. These were rock formation that had been eroded away into conical shapes, that had rooms carved into them, with some brickwork to divide up the space." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11922915693", "linkUrl": "/2014/02/06/turkey", "caption": "Me in front of my cave hotel in Göreme" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/06/turkey", "tags": ["Turkey", "Mediterranean"], "title": "Turkey" }, { "file": "2014-01-03-istanbul-turkey.jsx", "formattedDate": "January 3rd 2014, 3:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After flying into Istanbul Attaturk airport we spent the morning hiding out at the airport in the air conditioning and waiting for the time we'd agree to meet at our apartment with our AirBNB host. We got a taxi from the airport and my first impressions of Istanbul proper were that everything appeared so clean, modern and organised. The highways were multi-lane, there was nobody wandering out trying to sell things to passing traffic, traffic flowed very quickly and efficiently, people drove on the correct side of the road and actually stayed in their lanes for the most part. It's amazing how much your direct prior experiences can colour your perceptions of a place, the Turkey we were seeing was at odds to the reputation that the place generally has for it's drivers." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11436642894", "linkUrl": "/2014/01/03/istanbul-turkey", "caption": "The beautiful view of the Bosphorus from our apartment" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The apartment we stayed in was located very close to Taksim Square, consisting of the whole top floor of the building and a rooftop courtyard and a fantastic view of the Bosporus. Having modern conveniences like a fridge, a washing machine and air conditioning felt very luxurious after having just spent 5 weeks camping in tents." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/03/istanbul-turkey", "tags": ["Turkey", "Istanbul"], "title": "Istanbul, Turkey" }];
+  var tag = "Turkey";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx", "formattedDate": "November 1st 2013, 7:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10421378166", "linkUrl": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "caption": "Our rafting group" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"], "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans" }];
+  var tag = "Uganda";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-08-17-san-francisco-before-the-burn.jsx", "formattedDate": "August 17th 2015, 2:10:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "19918806662", "linkUrl": "/2015/08/17/san-francisco-before-the-burn", "caption": "SF from the water" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/08/17/san-francisco-before-the-burn", "tags": ["San Francisco", "USA", "Museums", "Alcatraz"], "title": "San Francisco, before the burn" }, { "file": "2015-01-03-firedrums-2014-and-san-francisco.jsx", "formattedDate": "January 3rd 2015, 5:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15419365423", "linkUrl": "/2015/01/03/firedrums-2014-and-san-francisco", "caption": "FireDrums 2014 Fire Circle" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/01/03/firedrums-2014-and-san-francisco", "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"], "title": "FireDrums 2014 and San Francisco" }];
+  var tag = "USA";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-12-16-the-bay-islands-of-honduras.jsx", "formattedDate": "December 16th 2014, 9:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16036987811", "linkUrl": "/2014/12/16/the-bay-islands-of-honduras", "caption": "Utila's beach" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After making a one night stay in San Pedro Sula, home of the worlds worst murder rate, I headed over to the coast and got a ferry to Utila; one of the Bay Islands of Honduras." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/12/16/the-bay-islands-of-honduras", "tags": ["Diving", "Utila", "Roatan", "Honduras"], "title": "The Bay Islands of Honduras" }];
+  var tag = "Utila";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"], "title": "Uvita, Costa Rica" }];
+  var tag = "Uvita";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-09-johannesburg-to-victoria-falls-and-back.jsx", "formattedDate": "September 9th 2013, 12:02:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9661702941", "linkUrl": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "caption": "Stunning Sunrise in Botswana" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/09/johannesburg-to-victoria-falls-and-back", "tags": ["Africa", "Victoria Falls", "Johannesburg", "South Africa"], "title": "Johannesburg to Victoria Falls and back" }];
+  var tag = "Victoria Falls";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-05-30-phu-qouc-island-vietnam.jsx", "formattedDate": "May 30th 2013, 1:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Upon arriving at Duong Dong Airport in Phu Quoc I got a taxi to my hotel, the A74. I checked in and was shown to my room by a very friendly concierge. The room smelt a bit funny so went back down and asked if I could change rooms and they put me in a much bigger room, which still has some odd odour in it that I cant identify but I guess the whole place might have that smell." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I did some washing in the bathroom sink and nearly accidentally tore it off the wall. it turns out it was only held up by the plumbing and two flimsy little brackets, which I bent a bit (and then bent back as well as I could)." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/30/phu-qouc-island-vietnam", "tags": ["Vietnam", "Phu Quoc"], "title": "Phu Qouc Island, Vietnam" }, { "file": "2013-05-29-ha-ha-business.jsx", "formattedDate": "May 29th 2013, 2:04:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "a", "key": null, "ref": null, "props": { "href": "/2013/05/29/ha-ha-business/", "children": [{ "type": "img", "key": null, "ref": null, "props": { "src": "http://www.quickmeme.com/img/5d/5d8664cf92e4ce604998ebc905667d3186818aee1c8786b9cfd51712eead636e.jpg", "className": "img-responsive" }, "_owner": null, "_store": {} }, { "type": "em", "key": null, "ref": null, "props": { "children": "HA HA! BUSINESS!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For the trip to Phu Quoc I decided to fly since it was only $80 and it would save me many many hours on buses and ferries. For a laugh I looked at business class prices and they were only $30 more. I'd never flown business class before so I thought \"[YOLO!](http://www.youtube.com/watch?v=z5Otla5157c)\" and booked myself a business class ticket." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/29/ha-ha-business", "tags": ["Flying", "Business", "Vietnam"], "title": "HA HA! BUSINESS!" }, { "file": "2013-05-24-last-day-in-hcmc.jsx", "formattedDate": "May 24th 2013, 3:51:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": { "type": "p", "key": null, "ref": null, "props": { "children": "For my final morning in Saigon I got up and ventured out north in search of something different for breakfast than the noodles and mystery meat I'd been having. I stopped along the way a few times to sit in tiny plastic chairs with the locals and drink iced coffee while the traffic did it's crazy thing. I ended up buying a half kilo of mangostein for breakfast with which I made a huge mess before the owner of one of the coffee stand I was sitting at came over with a knife and helped me out. Ugly fruit, but so very tasty." }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, "path": "/2013/05/24/last-day-in-hcmc", "tags": ["Vietnam", "HCMC"], "title": "Last Day in HCMC" }, { "file": "2013-05-22-day-4-motorbikes-in-hcmc.jsx", "formattedDate": "May 22nd 2013, 3:11:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On the third day I finally took first motorbike taxi, which was a fun, cheap and fast way of getting the War Remnants Museum (Previously knows as the American War Crimes museum), plus the breeze from zooming around is nice and cooling. Why was I walking everywhere like a schmuck!? And yes Mum, I wore a helmet, although they're all so small in Vietnam I half think it might actually make things worse if there was actually an accident, concentrating the force in a ring around the top of my head." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The war museum was interesting, but not catered to someone who knows next to nothing about the history of the war. There was lots of stuff about the specifics that happened, but very little about the motives of either side. There was a load of stuff about the after effects of agent orange on people of both sides of the war, but I needed to look up it up online to find it was a herbicide being sprayed to kill off all the vegetation so the Viet Cong couldn't hide among it." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9689702796", "linkUrl": "/2013/05/22/day-4-motorbikes-in-hcmc", "caption": "A Chinook helicopter" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-4-motorbikes-in-hcmc", "tags": ["Vietnam", "HCMC", "Motorbikes"], "title": "Day 4 Motorbikes in HCMC" }, { "file": "2013-05-22-day-3-cu-chi-tunnels.jsx", "formattedDate": "May 22nd 2013, 2:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On day 2 I headed to the Cu Chi tunnels on a tour booked through my hostel. Our guide was a very interesting half-Filipino, half Vietnamese man who fought in the war on the USA side. It sounded like he'd had a pretty horrific life, with both his wife and mother killed in the war, and his siblings fleeing the country. It was nice to have someone who was actually involved and from Vietnam tell us that most of what the Vietnamese museums state as truth is horribly biased propaganda, but that the USA is just as full of shit with their telling of events. Both sides did messed up things and there was no real winner." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "When we arrived at the tunnels we sat and watched a video that was so nationalistic/anti-American it was painful to watch; how the evil Americans were out to prevent Vietnam re-unifying (completely ignoring that, as I understand it, the south wasn't actually supportive of that, hence why the war didn't end when America and Co pulled out), and how this guy, that guy and another guy was awarded the killing Americans bravery awards for killing Americans, killing American this, killing Americans that. At one point I'm sure that every sentence spoken for a few minutes had \"killing Americans\" in it at least twice." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9686554053", "linkUrl": "/2013/05/22/day-3-cu-chi-tunnels", "caption": "Our guide briefing us.jpg" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": {}, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The after the propaganda film we moved onto the actual site, were shown huge B-52 bomb craters which were all over the place. We were shown one of the \"manhole\" entrances to the tunnels. People were allowed to hop in for a photo but the hole looked crazy small and I didnt think my shoulders would fit through so I didn't give it a go. Next we saw a variety of different booby traps they used with the intention of perforating the Viet Cong's enemy soldiers and dogs; they were pretty vicious looking contraptions." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-3-cu-chi-tunnels", "tags": ["Vietnam", "Cu Chi Tunnels"], "title": "Day 3 - Cu Chi Tunnels" }, { "file": "2013-05-22-day-2-ho-chi-minh-city.jsx", "formattedDate": "May 22nd 2013, 2:22:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "On my first morning in Vietnam I woke, packed my stuff in my private room into my bags and checked out to walk 30M around the corner to the dorm style accommodation I have booked for the rest of my stay here. I wasnt able to check in until 1pm, so I left my big bag and took just my day pack with all the valuable stuff in it. Even with just a tiny laptop and an MFT system camera, valuables still weigh a ton." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went out onto the main road to try some delicious baked goods from the bakery recommended to me by the first hostel. They had some pretty tasty stuff, but the place was a big franchise and felt very much like Breadtop back home. I sat outside eating my coffee bun and croissant and a little older Vietnamese lady who was there eating started to talk to me. She asked me where I was from, how long I had been travelling, etc. Then she offered me a massage. I could already see where this was going and told her no, but just in case I had missed her meaning she repeated she would give me massage and \"boom boom\". At 10am. At a franchise bakery. It seems that being a single male in Vietnam leads to the locals assuming you're a sex tourist." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/22/day-2-ho-chi-minh-city", "tags": ["Vietnam", "HCMC"], "title": "Day 2 - Ho Chi Minh City" }, { "file": "2013-05-14-day-1-melbourne-to-saigon.jsx", "formattedDate": "May 14th 2013, 9:05:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11423926246", "linkUrl": "/2013/05/14/day-1-melbourne-to-saigon", "caption": "Packed bags" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/05/14/day-1-melbourne-to-saigon", "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"], "title": "Day 1: Melbourne to Saigon" }];
+  var tag = "Vietnam";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }];
+  var tag = "Visa Run";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"], "title": "Excursion highlights from La Mariposa" }];
+  var tag = "Volcan Masaya";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }, { "file": "2015-03-30-antigua-guatemala.jsx", "formattedDate": "March 30th 2015, 6:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16337477493", "linkUrl": "/2015/03/30/antigua-guatemala", "caption": "Markets in front of epic ruins" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/03/30/antigua-guatemala", "tags": ["Antigua", "Guatemala", "Ruins", "Volcanoes"], "title": "Antigua Guatemala" }, { "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }];
+  var tag = "Volcanoes";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-02-26-honduras-mainland-lago-yejoa-copan.jsx", "formattedDate": "February 26th 2015, 6:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15852033030", "linkUrl": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "caption": "Waterfall near Lago Yejoa" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/02/26/honduras-mainland-lago-yejoa-copan", "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"], "title": "Honduras Mainland - Lago Yejoa, Copan" }];
+  var tag = "Waterfalls";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx", "formattedDate": "November 1st 2013, 7:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "10421378166", "linkUrl": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "caption": "Our rafting group" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"], "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans" }];
+  var tag = "White Water Rafting";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-11-more-schooling-in-xela.jsx", "formattedDate": "May 11th 2015, 5:37:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17031479206", "linkUrl": "/2015/05/11/more-schooling-in-xela", "caption": "Xela by night" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/11/more-schooling-in-xela", "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"], "title": "More Schooling in Xela" }, { "file": "2015-04-27-quezaltenango-xela-guatemala.jsx", "formattedDate": "April 27th 2015, 1:12:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16436429083", "linkUrl": "/2015/04/27/quezaltenango-xela-guatemala", "caption": "Xela" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/27/quezaltenango-xela-guatemala", "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"], "title": "Quezaltenango (Xela), Guatemala" }];
+  var tag = "Xela";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }, { "file": "2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx", "formattedDate": "April 20th 2015, 2:24:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17002133052", "linkUrl": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "caption": "Cramped taxi boat" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"], "title": "San Marcos La Laguna, Lake Atitlan, Guatemala" }];
+  var tag = "Yoga";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _BlogPostSummary = __webpack_require__(2);
+
+  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var blogPosts = [{ "file": "2013-09-23-zanzibar-tanzania.jsx", "formattedDate": "September 23rd 2013, 12:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "My arrival in Dar Es Salaam was pretty smooth and trouble free. I applied for my visa on arrival, along with probably 60% of the people on the flight. I was a bit slow filling out the forms and was probably one of the last people to hand in the paperwork, but it seemed like they used a LIFO queue (last in, first out) to process things so my name was soon called and I had to squeeze my way through the crowd of people waiting and get my passport." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I went to queue up in the immigration line, proud to show off my fancy new visa sticker, but a guy came up and told me to just walk on through. So I walked straight past the desk where they check your passport without showing them anything, and nobody batted an eyelid. It really feels like you could get into the country without a visa very easily if you just walked on through with a bit of confidence, although I'm sure you'd have trouble leaving." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "9852999483", "linkUrl": "/2013/09/23/zanzibar-tanzania", "caption": "Dar Es Salaam Sunset" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2013/09/23/zanzibar-tanzania", "tags": ["Africa", "Tanzania", "Zanzibar"], "title": "Zanzibar & Tanzania" }];
+  var tag = "Zanzibar";
+
+  exports.default = function () {
+    return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "h1",
+        null,
+        "Posts tagged '",
+        tag,
+        "'"
+      ),
+      blogPosts.map(function (_ref, index) {
+        var file = _ref.file;
+        var formattedDate = _ref.formattedDate;
+        var path = _ref.path;
+        var title = _ref.title;
+        return _react2.default.createElement(_BlogPostSummary2.default, {
+          key: index,
+          path: path,
+          title: title,
+          formattedDate: formattedDate,
+          content: __webpack_require__(3)("./" + file).intro
+        });
+      })
+    );
+  };
+
+/***/ },
+/* 247 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 82 */
+/* 248 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 83 */
+/* 249 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 84 */
+/* 250 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 85 */
+/* 251 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 86 */
+/* 252 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 87 */
+/* 253 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 88 */
+/* 254 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 89 */
+/* 255 */
 /***/ function(module, exports) {
 
   module.exports = {
@@ -19624,134 +28457,49 @@ module.exports =
   };
 
 /***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-  var map = {
-  	"./2013-03-26-twenty-years-from-now.jsx": 7,
-  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 8,
-  	"./2013-04-22-target-40-litres.jsx": 9,
-  	"./2013-05-07-last-minute-bag-choices.jsx": 10,
-  	"./2013-05-12-its-go-time.jsx": 11,
-  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 12,
-  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 13,
-  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 14,
-  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 15,
-  	"./2013-05-24-last-day-in-hcmc.jsx": 16,
-  	"./2013-05-29-ha-ha-business.jsx": 17,
-  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 18,
-  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 19,
-  	"./2013-06-27-airport-security-in-india.jsx": 20,
-  	"./2013-06-29-wake-up-call.jsx": 21,
-  	"./2013-06-30-thailand.jsx": 22,
-  	"./2013-08-13-frustration-india-part-1.jsx": 23,
-  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 24,
-  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 25,
-  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 26,
-  	"./2013-09-03-travelling-light-or-not.jsx": 27,
-  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 28,
-  	"./2013-09-16-south-africa.jsx": 29,
-  	"./2013-09-23-zanzibar-tanzania.jsx": 30,
-  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 31,
-  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 32,
-  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 33,
-  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 34,
-  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 35,
-  	"./2013-12-05-spreepark-berlin.jsx": 36,
-  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 37,
-  	"./2014-01-03-istanbul-turkey.jsx": 38,
-  	"./2014-02-06-turkey.jsx": 39,
-  	"./2014-02-14-the-greek-islands-and-athens.jsx": 40,
-  	"./2014-03-02-england-the-home-of-real-ale.jsx": 41,
-  	"./2014-04-06-berlin-part-1.jsx": 42,
-  	"./2014-04-15-berlin-part-2.jsx": 43,
-  	"./2014-04-23-berlin-part-3.jsx": 44,
-  	"./2014-05-03-barcelona-spain.jsx": 45,
-  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 46,
-  	"./2014-05-26-granada.jsx": 47,
-  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 48,
-  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 49,
-  	"./2014-07-01-poi-love-camp.jsx": 50,
-  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 51,
-  	"./2014-07-29-uvita-costa-rica.jsx": 52,
-  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 53,
-  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 54,
-  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 55,
-  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 56,
-  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 57,
-  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 58,
-  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 59,
-  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 60,
-  	"./2015-03-30-antigua-guatemala.jsx": 61,
-  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 62,
-  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 63,
-  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 64,
-  	"./2015-05-11-more-schooling-in-xela.jsx": 65,
-  	"./2015-05-13-two-years-later.jsx": 66,
-  	"./2015-05-21-back-to-lake-atitlan.jsx": 67,
-  	"./2015-05-26-semuc-champey.jsx": 68,
-  	"./2015-06-01-tikal.jsx": 69,
-  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 70,
-  	"./2015-08-17-san-francisco-before-the-burn.jsx": 71
-  };
-  function webpackContext(req) {
-  	return __webpack_require__(webpackContextResolve(req));
-  };
-  function webpackContextResolve(req) {
-  	return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
-  };
-  webpackContext.keys = function webpackContextKeys() {
-  	return Object.keys(map);
-  };
-  webpackContext.resolve = webpackContextResolve;
-  module.exports = webpackContext;
-  webpackContext.id = 90;
-
-
-/***/ },
-/* 91 */
+/* 256 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-loader");
 
 /***/ },
-/* 92 */
+/* 257 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-polyfill");
 
 /***/ },
-/* 93 */
+/* 258 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-register");
 
 /***/ },
-/* 94 */
+/* 259 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 95 */
+/* 260 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 96 */
+/* 261 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 97 */
+/* 262 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
 
 /***/ },
-/* 98 */
+/* 263 */
 /***/ function(module, exports) {
 
   module.exports = require("scroll-behavior");
