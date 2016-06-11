@@ -16,25 +16,37 @@ html, body {
   background-color: #272B30;
   color: #c8c8c8;
   font-family: 'Roboto','Helvetica',sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
-.Layout {
-  margin: 0 auto;
-}
-
-.Layout a {
+a {
   color: #fff;
   text-decoration: none
 }
 
-.Layout a:hover {
+a:hover {
   color: #c8c8c8;
   text-decoration: underline;
 }
 
+.content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 30px;
+}
+
+.Layout {
+  margin: 0 auto 0 auto;
+}
+
 .moreLink {
   float: right;
-  margin-bottom: 50px;
   margin-right: 70px;
 }
 
@@ -198,6 +210,104 @@ html, body {
  * Media queries breakpoints
  * -------------------------------------------------------------------------- */
 
+.sidebar {
+  min-width: 300px;
+  max-width: 20%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.sidebar__well {
+  padding: 20px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #1C1E22;
+  margin: 20px 0;
+}
+
+.sidebar__well h3 {
+  margin-top: 0px;
+}
+
+.sidebar__tagBox {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.sidebar__about p {
+  font-size: smaller;
+  text-align: justify;
+}
+
+.sidebar__about img {
+  float: right;
+  margin: 0 0 0 15px;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+}
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
+.tagCloud__tags {
+  padding: 20px;
+}
+
+.tagCloud__title {
+  font-size: medium;
+  margin-right: 3px;
+  display: inline-block
+}
+
+.tagCloud__tag {
+  display: inline-block;
+  font-size: small;
+  padding: 0px 3px;
+  margin: 2px;
+  background: grey;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #5d5d5d
+}
+
+.tagCloud__tag:hover {
+  background: black;
+}
+/*
+ * Scaffolding
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+/*
+ * Media queries breakpoints
+ * -------------------------------------------------------------------------- */
+
 .flickrImage {
   text-align: center;
 }
@@ -243,30 +353,6 @@ html, body {
  * Media queries breakpoints
  * -------------------------------------------------------------------------- */
 
-.tagCloud__tags {
-  padding: 20px;
-}
-
-.tagCloud__tag {
-  display: inline-block;
-  padding: 3px 8px;
-  margin: 4px;
-  text-transform: capitalize;
-  background: grey;
-  border-radius: 6px;
-}
-/*
- * Scaffolding
- * -------------------------------------------------------------------------- */
-
-/*
- * Typography
- * -------------------------------------------------------------------------- */
-
-/*
- * Media queries breakpoints
- * -------------------------------------------------------------------------- */
-
 .blogPost__content {
   padding-bottom: 30px;
 }
@@ -275,17 +361,12 @@ html, body {
   text-align: justify;
 }
 
-.blogPost__tags {
-  padding: 20px;
+.blogPost__title {
+  text-transform: capitalize;
 }
 
-.blogPost__tag {
-  display: inline-block;
-  padding: 3px 8px;
-  margin: 4px;
-  text-transform: capitalize;
-  background: grey;
-  border-radius: 6px;
+.blogPost__tags {
+  padding: 20px 10px;
 }
 /*
  * Scaffolding
