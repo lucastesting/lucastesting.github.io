@@ -45,8 +45,8 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-  __webpack_require__(54);
-  module.exports = __webpack_require__(45);
+  __webpack_require__(91);
+  module.exports = __webpack_require__(80);
 
 
 /***/ },
@@ -69,19 +69,61 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(47);
+  var _TagCloud = __webpack_require__(5);
+
+  var _TagCloud2 = _interopRequireDefault(_TagCloud);
+
+  __webpack_require__(82);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  exports.default = function (_ref) {
-    var intro = _ref.intro;
-    var body = _ref.body;
+  var BlogPost = function BlogPost(props) {
+    var body = props.body;
+    var _props$metadata = props.metadata;
+    var title = _props$metadata.title;
+    var formattedDate = _props$metadata.formattedDate;
+    var tags = _props$metadata.tags;
+
     return _react2.default.createElement(
       "div",
-      { className: "blogPost" },
-      body
+      { className: "blogPost__content" },
+      _react2.default.createElement(
+        "h1",
+        { className: "blogLinkHeading" },
+        title
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "date" },
+        formattedDate
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "blogPost__body" },
+        body
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "blogPost__tags" },
+        _react2.default.createElement(
+          "div",
+          null,
+          "Tags"
+        ),
+        _react2.default.createElement(_TagCloud2.default, { tags: tags })
+      )
     );
   };
+  BlogPost.propTypes = {
+    body: _react.PropTypes.node,
+    metadata: _react.PropTypes.shape({
+      title: _react.PropTypes.string,
+      formattedDate: _react.PropTypes.string,
+      tags: _react.PropTypes.arrayOf(_react.PropTypes.string)
+    })
+  };
+
+  exports.default = BlogPost;
 
 /***/ },
 /* 3 */
@@ -97,7 +139,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _flickr_manifest = __webpack_require__(53);
+  var _flickr_manifest = __webpack_require__(89);
 
   var _flickr_manifest2 = _interopRequireDefault(_flickr_manifest);
 
@@ -105,7 +147,7 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(49);
+  __webpack_require__(84);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -185,9 +227,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(51);
+  __webpack_require__(86);
 
-  var _Location = __webpack_require__(7);
+  var _Location = __webpack_require__(6);
 
   var _Location2 = _interopRequireDefault(_Location);
 
@@ -199,11 +241,7 @@ module.exports =
 
   function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  */
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   function isLeftClickEvent(event) {
     return event.button === 0;
@@ -299,103 +337,53 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(48);
-
   var _Link = __webpack_require__(4);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  var _BlogLink = __webpack_require__(31);
-
-  var _BlogLink2 = _interopRequireDefault(_BlogLink);
+  __webpack_require__(88);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  var BlogPostSummary = function BlogPostSummary(_ref) {
-    var path = _ref.path;
-    var title = _ref.title;
-    var formattedDate = _ref.formattedDate;
-    var content = _ref.content;
+  function toTagUrl(tag) {
+    return "/tags/" + tag.toLowerCase().replace(/ /g, "-");
+  }
+
+  var Tag = function Tag(_ref) {
+    var tagName = _ref.tagName;
     return _react2.default.createElement(
-      "div",
-      { className: "blogPostSummary" },
-      _react2.default.createElement(
-        _BlogLink2.default,
-        { path: path },
-        title
-      ),
+      _Link2.default,
+      { to: toTagUrl(tagName) },
       _react2.default.createElement(
         "div",
-        { className: "date" },
-        formattedDate
-      ),
-      content,
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: path },
-          "Read More..."
-        )
-      ),
-      _react2.default.createElement("hr", { className: "divider" })
+        { className: "tagCloud__tag" },
+        tagName
+      )
     );
   };
-
-  BlogPostSummary.propTypes = {
-    path: _react.PropTypes.string.isRequired,
-    title: _react.PropTypes.string.isRequired,
-    formattedDate: _react.PropTypes.string.isRequired,
-    content: _react.PropTypes.string.isRequired
+  Tag.propTypes = {
+    tagName: _react.PropTypes.string
   };
 
-  exports.default = BlogPostSummary;
+  var TagCloud = function TagCloud(_ref2) {
+    var tags = _ref2.tags;
+    var index = _ref2.index;
+    return _react2.default.createElement(
+      "div",
+      { className: "tagCloud" },
+      tags.map(function (tag, index) {
+        return _react2.default.createElement(Tag, { key: index, tagName: tag });
+      })
+    );
+  };
+  TagCloud.propTypes = {
+    tags: _react.PropTypes.arrayOf(_react.PropTypes.string)
+  };
+
+  exports.default = TagCloud;
 
 /***/ },
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-  var map = {
-  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 8,
-  	"./2014-01-03-istanbul-turkey.jsx": 9,
-  	"./2014-02-06-turkey.jsx": 10,
-  	"./2014-02-14-the-greek-islands-and-athens.jsx": 11,
-  	"./2014-03-02-england-the-home-of-real-ale.jsx": 12,
-  	"./2014-04-06-berlin-part-1.jsx": 13,
-  	"./2014-04-15-berlin-part-2.jsx": 14,
-  	"./2014-04-23-berlin-part-3.jsx": 15,
-  	"./2014-05-03-barcelona-spain.jsx": 16,
-  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 17,
-  	"./2014-05-26-granada.jsx": 18,
-  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 19,
-  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 20,
-  	"./2014-07-01-poi-love-camp.jsx": 21,
-  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 22,
-  	"./2014-07-29-uvita-costa-rica.jsx": 23,
-  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 24,
-  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 25,
-  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 26,
-  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 27,
-  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 28,
-  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 29
-  };
-  function webpackContext(req) {
-  	return __webpack_require__(webpackContextResolve(req));
-  };
-  function webpackContextResolve(req) {
-  	return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
-  };
-  webpackContext.keys = function webpackContextKeys() {
-  	return Object.keys(map);
-  };
-  webpackContext.resolve = webpackContextResolve;
-  module.exports = webpackContext;
-  webpackContext.id = 6;
-
-
-/***/ },
-/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -404,31 +392,107 @@ module.exports =
     value: true
   });
 
-  var _ExecutionEnvironment = __webpack_require__(30);
+  var _ExecutionEnvironment = __webpack_require__(72);
 
-  var _createBrowserHistory = __webpack_require__(57);
+  var _createBrowserHistory = __webpack_require__(94);
 
   var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
-  var _createMemoryHistory = __webpack_require__(58);
+  var _createMemoryHistory = __webpack_require__(95);
 
   var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-  var _useQueries = __webpack_require__(59);
+  var _useQueries = __webpack_require__(96);
 
   var _useQueries2 = _interopRequireDefault(_useQueries);
 
+  var _scrollBehavior = __webpack_require__(98);
+
+  var _scrollBehavior2 = _interopRequireDefault(_scrollBehavior);
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  /**
-   * React Static Boilerplate
-   * https://github.com/koistya/react-static-boilerplate
-   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-   */
-
-  var location = (0, _useQueries2.default)(_ExecutionEnvironment.canUseDOM ? _createBrowserHistory2.default : _createMemoryHistory2.default)();
+  var location = (0, _scrollBehavior2.default)((0, _useQueries2.default)(_ExecutionEnvironment.canUseDOM ? _createBrowserHistory2.default : _createMemoryHistory2.default)());
 
   exports.default = location;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Twenty years from now",
+    "date": "2013-03-26 05:55",
+    "oldBlogUrl": "/post/46320033660/twenty-years-from-now-you-will-be-more",
+    "tags": ["Quote", "Inspiration"],
+    "travel_dates": "",
+    "formattedDate": "March 26th 2013, 5:55:00 am",
+    "canonicalPath": "/2013/03/26/twenty-years-from-now"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "div",
+        { className: "quote" },
+        "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover."
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "quote-attribution" },
+        "Mark Twain"
+      )
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "div",
+        { className: "quote" },
+        "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover."
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "quote-attribution" },
+        "Mark Twain"
+      )
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
 
 /***/ },
 /* 8 */
@@ -456,9 +520,6096 @@ module.exports =
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   var metadata = exports.metadata = {
+    "title": "The little things that make up a life",
+    "date": "2013-04-08 12:21",
+    "oldBlogUrl": "/post/47452066649/the-little-things-that-make-up-a-life",
+    "tags": ["Pre Trip", "Packing", "Streamlining"],
+    "travel_dates": "",
+    "formattedDate": "April 8th 2013, 12:21:00 pm",
+    "canonicalPath": "/2013/04/08/the-little-things-that-make-up-a-life"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "The hardest part so far of packing my life into a bag and heading off for an indefinite period has been trying to get rid of the huge amount of stuff I own. A lot of the big/valuable stuff has been easy to let go of, and find buyers for, but once you remove all that stuff from your life you're left with a massive amount of \"little things\"."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "The hardest part so far of packing my life into a bag and heading off for an indefinite period has been trying to get rid of the huge amount of stuff I own. A lot of the big/valuable stuff has been easy to let go of, and find buyers for, but once you remove all that stuff from your life you're left with a massive amount of \"little things\"."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Individually, almost all of it is probably worth less an $50 an item; a lot of it is probably not even worth $10 per piece. This makes it not worth trying to sell most of it. But the sheer amount of stuff matching that description means that it's actually hard to let go of. Some of it had a story behind it, some of it is just junk, but when you've got 200-300 odds and ends it ends up being a few thousand dollars worth of stuff that you need to get rid of (no point paying to store all that crap somewhere), but you pretty much cant sell."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "From the masses of clothing, to the miscellaneous electronic/computer cables/parts, medical supplies, doof survival gear, books, dvds... it all basically adds up to stuff I barely use and wouldn't miss if it was gone, but accepting that it's all going to waste is a little bit difficult, and seems to be something I'm prolonging a lot longer than I should or need to.  I'm expecting that a week or two before I leave I'm going to have to have everyone I know come over, go through all my stuff and take whatever they want, otherwise I'm going to end up with a small skip worth of stuff that needs to disappear so the next housemate can move in."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I've been finding it cathartic as each thing goes and my list of worldly possessions gets shorter, but the getting rid of all the small, unimportant stuff is definitely an out of proportion weight on my mind at the moment. I guess maybe it's me being a bit of a lazy hoarder, and letting it run unchecked for too long. When I last moved house I intended to get rid of a bunch of stuff because I was moving into a smaller room, but never got around to it. In the end I waited it out until I was living in a much larger room and still failed to get rid of much stuff until now."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm aiming to have little enough stuff I'm taking with me that I'll be able to fit into a 40L pack. I'm hoping I can get my life outside of that bag down to maybe 1 or 2 50cm",
+      _react2.default.createElement(
+        "sup",
+        null,
+        "3"
+      ),
+      " boxes that I need to find homes for, but at this point that seems like quite a challenge. Wish me Luck!"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Target 40 Litres",
+    "date": "2013-04-22 12:39",
+    "oldBlogUrl": "/post/48608538553/target-40-litres",
+    "tags": ["Pre Trip", "Packing", "Bags"],
+    "travel_dates": "",
+    "formattedDate": "April 22nd 2013, 12:39:00 pm",
+    "canonicalPath": "/2013/04/22/target-40-litres"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So when I was last in the adventure district looking at travel gadgets and clothing, I was talking to one of the staff in the store and he put the idea in my head that travelling with just a small backpack would make a lot of things easier."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It means you can keep your bag with you in a lot of situations where you'd otherwise have to leave it in the luggage section and hope it doesn't get searched through too much by dodgy characters, and it allows you to use crowded public transport much easier, or even just walk distances that you wouldnt want to get stuck lugging a heavy pack."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So when I was last in the adventure district looking at travel gadgets and clothing, I was talking to one of the staff in the store and he put the idea in my head that travelling with just a small backpack would make a lot of things easier."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It means you can keep your bag with you in a lot of situations where you'd otherwise have to leave it in the luggage section and hope it doesn't get searched through too much by dodgy characters, and it allows you to use crowded public transport much easier, or even just walk distances that you wouldnt want to get stuck lugging a heavy pack."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I've been looking at this bag in particular, the Osprey Farpoint 40:"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 191, flickrID: "11423921684", width: 135, src: "/cache/flickr/11/11423921684.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11423921684/", caption: "Osprey Farpoint 40" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's a 40L backpack small enough to be allowed on airplanes as cabin luggage. It seems pretty sturdy and from my searching, reviews seem to be generally positive. It's good a nice section in the front that holds a laptop & ereader. It's got a lifetime warranty, and the guy at the store was telling me they'd send you out a replacement bag to wherever you are at that time, if it broke for any reason."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "If I do get this bag, I'm planning on getting one of these neato dry daypacks:"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 175, flickrID: "11423899315", width: 147, src: "/cache/flickr/11/11423899315.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11423899315/", caption: "Sea To Summit Dry Daypack" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's a lightweight bag that I could use day to day for carrying my camera and a jacket, it's water proof and it folds down into a tiny little sack roughly the size of a tennis ball, so when I'm not using it, it would fit inside my main bag easily."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's 3 weeks from now until departure< day, and I think it's looking like I actually might meet my goal of fitting everything into 40 L. I'm not planning on taking too many clothes and my trial pack on the weekend made my 70L backpack look ridiculously large. I think I need to commit to the idea, get the bag and start making sure everything fits as well as I hope it will."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Last minute bag choices",
+    "date": "2013-05-07 12:35",
+    "oldBlogUrl": "/post/49851162795/last-minute-bag-choices",
+    "tags": ["Pre Trip", "Packing", "Bags"],
+    "travel_dates": "",
+    "formattedDate": "May 7th 2013, 12:35:00 pm",
+    "canonicalPath": "/2013/05/07/last-minute-bag-choices"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So I bought the 40L bag I'd been eyeing off last week. After doing a few trial packs with it, I've decided that I cant fit everything I want in it well enough, so tomorrow I'm taking it back to see what my other options are."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I can just about fit everything in the 40L bag, but it's stuffed so tight that I have concerns about my laptop getting cracked if the bag were dropped, or something was dropped on it; and it doesnt give me any excess room whatsoever."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So I bought the 40L bag I'd been eyeing off last week. After doing a few trial packs with it, I've decided that I cant fit everything I want in it well enough, so tomorrow I'm taking it back to see what my other options are."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I can just about fit everything in the 40L bag, but it's stuffed so tight that I have concerns about my laptop getting cracked if the bag were dropped, or something was dropped on it; and it doesnt give me any excess room whatsoever."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "If I pull out my laptop & camera bag, it feels like a better fit (still without a lot of room to spare, but I'm not scared stuff is going to get broken) so I think I'm giving up on keeping the possibility of doing carry-on only flights and resigning myself to having a separate daypack. With the laptop no longer in the 40L bag, it seems like a waste of space to have the separate front pocket & laptop pocket, hence why I'm looking at swapping the 40L bag too instead of just supplementing it with a proper day pack."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Options I'm considering now (looking mostly within the same brand) are:"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "## Osprey Porter 46 + Some decent day pack"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "15% larger, all in a single compartment rather than spit in two. This one still claims to be within maximum carry-on size allowed on most airlines. Not sure about which day pack to pair this with."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "## Osprey Farpoint 55"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I've read this is basically the bag I've got, except with a 15L daypack that attaches on the back making up the extra 15L. I'd want to have a look and see that it's not wasting space with another laptop pocket in the main bag, since that'll be in the day pack."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "## Osprey Waypoint 65"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "50L Pack + 15L daypack. I wonder if as long as I'm resigning myself to always having checked luggage, maybe I should just make the jump to a pack where I'll have quite a bit of space. Not so much so I can fill it up from the get go, but so I can maybe carry some useless stuff until I admit it's useless, and so I have some extra room to pick up junk along the way?"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I dont really know what path I want to go down at the moment; I've been reading so many people who say \"Take less clothes, you'll never regret it\" but clothing wise it already feels like I'm going pretty light, and it's all the other stuff that's taking up lots of space. I'm definitely not willing to consider leaving the 11\" Macbook Air or the camera stuff. The kindle seems pretty necessary. The spiky massage ball for my hip is not negotiable. I'm already down to a single set of poi and 4 juggling balls, so short of giving up one of those hobbies that are quite likely also good conversation starters there's nothing there to leave."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I guess I have to admit that I'm not willing to make the sacrifices needed to travel with only one compact bag. Maybe this is one of those mistakes you have to make for yourself, or maybe that level of minimilist travel just isn't for me."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "It's go time!",
+    "date": "2013-05-12 10:35",
+    "oldBlogUrl": "/post/50246508142/its-go-time",
+    "tags": ["Pre Trip"],
+    "travel_dates": "",
+    "formattedDate": "May 12th 2013, 10:35:00 am",
+    "canonicalPath": "/2013/05/12/it-s-go-time"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "My bags are packed, almost all my things are sold/donated/given away. Tomorrow morning I get up early to head to the airport, say good bye to Melbourne and fly off to Vietnam to start my trip."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm feeling a mixture of excitement, sadness, terror and exhaustion. It's been a busy week sorting out the last of my things and catching up with people for the last time. The past 3 days I've been doing stuff pretty much non-stop; now I finally get to sit down and not feel like there's something else I need to be doing."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's going to be different not being able to regularly see and hang out with people I've known for more than a few days. I'm hoping that with practice I get better at small talk and meeting new people, so maybe that'll be less of an issue."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I guess there's not much more I can do right now, but strap in and wait for this wild ride to start..."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "My bags are packed, almost all my things are sold/donated/given away. Tomorrow morning I get up early to head to the airport, say good bye to Melbourne and fly off to Vietnam to start my trip."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm feeling a mixture of excitement, sadness, terror and exhaustion. It's been a busy week sorting out the last of my things and catching up with people for the last time. The past 3 days I've been doing stuff pretty much non-stop; now I finally get to sit down and not feel like there's something else I need to be doing."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's going to be different not being able to regularly see and hang out with people I've known for more than a few days. I'm hoping that with practice I get better at small talk and meeting new people, so maybe that'll be less of an issue."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I guess there's not much more I can do right now, but strap in and wait for this wild ride to start..."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Day 1: Melbourne to Saigon",
+    "date": "2013-05-14 09:05",
+    "oldBlogUrl": "/post/50410030302/day-1-melbourne-to-saigon",
+    "tags": ["Airplanes", "Airports", "Travelling", "Vietnam", "Melbourne", "Singapore"],
+    "travel_dates": "",
+    "formattedDate": "May 14th 2013, 9:05:00 am",
+    "canonicalPath": "/2013/05/14/day-1-melbourne-to-saigon"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 612, flickrID: "11423926246", width: 816, src: "/cache/flickr/11/11423926246.jpg", linkUrl: "/2013/05/14/day-1-melbourne-to-saigon", caption: "Packed bags" })
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent my entire last night in Melbourne with my mind racing, completely unable to sleep. I think I nearly feel asleep for a bit at around 5am, and then was woken not long after by a notification on my phone lighting up the room."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "By 6:30am when I planned to get up I'd completely given up hope of getting any sleep and got up and made myself a coffee, then zipped up my bag fully packed."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 612, flickrID: "11423926246", width: 816, src: "/cache/flickr/11/11423926246.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11423926246/", caption: "Packed bags" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I decided at the last minute, that rather than throw out a bunch of socks and underwear that I didn't have room to bring, I'd take a throwaway back and my second piece of carry-on luggage filled with them, and then throw them out as I use them to ease into this having to do super regular washing."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "James generously offered to come and pick me up and drive me to the airport and even parked so he could come in to see me off through customs. What a champ!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In the midst of all the excitement I completely forgot about applying for the Tourist tax refund thingy until I was already through customs and had already checked in most of the stuff I was going to claim back. It was only going to be $50, but I'm still disappointed that I didn't think to go and get the reciept stamped while I had possession of the stuff so I could have got the money."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I bought 2 bottles of no-name brand water on the way through the airport, a bargain at $5. I'd already split my credit card and debit card into being stored in two separate places and only had my credit card in my wallet, and for the privilege of paying by credit card they gave me a sweet 10% surcharge, obviously because the profit margin on those 25c bottles of water was no where near enough to cover credit card fees."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got put in the very middle seat on the plane between two women, which meant both no view, and having to ask to get up every time I needed to go to the toilet. Still, it was better being between two small women that two large men as the arm rests were shared fairly rather than as some bullshit attempt to show who's got the biggest cock."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I took with me one of those neck pillow thingies, which I'm sure I'd used in the past and not found to be particularly great. I'd taken it because I figured it might be ok for one flight and I'd have no attachment getting rid of it as soon as needed. But it turned out the thing is amazing. Earlier in the year just on a flight to Wellington I'd gotten an incredibly sore neck trying to sleep on that short flight, but on the ~8 hours to Singapore I managed to sleep and sit lazily for the whole flight with my neck feeling great. So the pillow may not get turfed quite so early."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 480, flickrID: "11425205114", width: 640, src: "/cache/flickr/11/11425205114.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11425205114/", caption: "Neck pillow" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The stopover in Singapore was brief, only about 1 hour, so I didn't really get to look around, but they had free wifi so I checked the internets and filled in time. For a massive airport like that, the place felt like their aircon was hardly working. I reckon it must have been nearly 30ºC inside."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The flight to Ho Chi Minh City was uneventful, although arriving was a bit of a debacle. I (and what seemed like every other non-Vietnamese person in the airport) had organised a pre-approved visa on arrival. I lined up for 10 minutes to submit the letter and paperwork and sat and waited. and waited. and waited. After about 40 minutes, there were no seats left and new-commers started lining up at the collection window as though that was going to get theirs processed faster."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 612, flickrID: "11424065713", width: 816, src: "/cache/flickr/11/11424065713.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11424065713/", caption: "People waiting for visas" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After just over an hour they finally called my name and gave me my passport back, with which I could go through immigration and finally collect my bag, which had long since been pulled off the baggage collection belt and was sitting unattended with loads of other peoples stuff. It'd be a prime opportunity for someone dodgy to go through any bag they liked, but then I guess the only way to get to that part of the airport without being an official would be to take an international flight, so I guess that's a reasonable bar to stop it from happening often."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'd read about dodgy taxi's at the airport and had the name of a reputable company and an idea what the trip should cost. A guy approached me and I told him I wasn't interested and kept walking towards where the company had a person who did the booking. The guy pulled out some ID that claimed he was a driver for the same company I was looking for, so I asked if he'd use a meter. He said yes, but then as soon as I showed him where I wanted to go he told me 600,000 Dong, or more than 3x the cost of a fixed-rate taxi to anywhere in the city, so I told him again nope, I'll get a proper one thanks."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My taxi driver took me to the hostel I'd booked, and pointed me down a little lane way to it; Lucky too because without him I doubt I would have found the place. It was certainly tucked away."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The owner of the hostel sat me down and ran me through a map of everything there is to do nearby, and told me a good place to go and try pho bo (noodle soup). I went up to my room and had a quick shower to freshen up. First thing I did was brush my teeth with the tap water, right afterwards realising that pretty much everyone recommends against that. Oh well!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went and got some dinner from the pho bo place, and quickly realised I have no idea how to eat noodle soup. It came out as a bowl of noodle soup (duh!) and about 5-6 plates with various different things on them. I watched some Vietnamese people who I was sharing the table with and tried to copy them, chopsticks in my right hand and spoon in my left, but funnily enough found my left hand is way to unco for that so I ended up alternating between just the spoon and just the chopsticks. The soup was ok, but I think I'll stick to the non-soup dishes for the rest of my stay unless I can get someone to show me how it's done."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Not a bad first day."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Day 2 - Ho Chi Minh City",
+    "date": "2013-05-22 14:22",
+    "oldBlogUrl": "/post/51070375595/day-2-ho-chi-minh-city",
+    "tags": ["Vietnam", "HCMC"],
+    "travel_dates": "",
+    "formattedDate": "May 22nd 2013, 2:22:00 pm",
+    "canonicalPath": "/2013/05/22/day-2-ho-chi-minh-city"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my first morning in Vietnam I woke, packed my stuff in my private room into my bags and checked out to walk 30M around the corner to the dorm style accommodation I have booked for the rest of my stay here. I wasnt able to check in until 1pm, so I left my big bag and took just my day pack with all the valuable stuff in it. Even with just a tiny laptop and an MFT system camera, valuables still weigh a ton."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went out onto the main road to try some delicious baked goods from the bakery recommended to me by the first hostel. They had some pretty tasty stuff, but the place was a big franchise and felt very much like Breadtop back home. I sat outside eating my coffee bun and croissant and a little older Vietnamese lady who was there eating started to talk to me. She asked me where I was from, how long I had been travelling, etc. Then she offered me a massage. I could already see where this was going and told her no, but just in case I had missed her meaning she repeated she would give me massage and \"boom boom\". At 10am. At a franchise bakery. It seems that being a single male in Vietnam leads to the locals assuming you're a sex tourist."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my first morning in Vietnam I woke, packed my stuff in my private room into my bags and checked out to walk 30M around the corner to the dorm style accommodation I have booked for the rest of my stay here. I wasnt able to check in until 1pm, so I left my big bag and took just my day pack with all the valuable stuff in it. Even with just a tiny laptop and an MFT system camera, valuables still weigh a ton."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went out onto the main road to try some delicious baked goods from the bakery recommended to me by the first hostel. They had some pretty tasty stuff, but the place was a big franchise and felt very much like Breadtop back home. I sat outside eating my coffee bun and croissant and a little older Vietnamese lady who was there eating started to talk to me. She asked me where I was from, how long I had been travelling, etc. Then she offered me a massage. I could already see where this was going and told her no, but just in case I had missed her meaning she repeated she would give me massage and \"boom boom\". At 10am. At a franchise bakery. It seems that being a single male in Vietnam leads to the locals assuming you're a sex tourist."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 345, flickrID: "9686528133", width: 459, src: "/cache/flickr/96/9686528133.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686528133/", caption: "ABC Bakery" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I set out to explore the city on foot, finding that as a westerner you're expected to never want to walk anywhere. I was continuously hassled by motorbike taxis, who couldn't seem to accept my answer that I just wanted to walk around and get a feel for the place, constantly rebutting with \"Where do you want to go?\". I didn't want to go anywhere, I just wanted to look around without being accosted damn it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ended up at the Ho Chi Minh Museum, an old and massive palace with a marble floored underground bunker, filled with bits and pieces of Vietnam's history. Sadly the English translations left a lot to be desired so I didn't get all that much out of it, but it was a cool building."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9689649648", width: 1724, src: "/cache/flickr/96/9689649648.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9689649648/", caption: "Underground bunker door under Ho Chi Minh Museum" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I started to get too hot so I went looking for somewhere air conditioned to chill for a bit and found a fancy shopping centre. The place looked expensive, which gave me hope that I'd be able to break on of these stupid 500K Dong notes that the ATM gave me, that pretty much nobody ever has enough change for. I ended up getting lunch there, some fresh spring rolls, pork, eggs and \"broken\" rice, but the rice seems pretty normal to me. Then I bought a nice ice cream, sesame and tapioca, and sat int eh cool typing up a blog post."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I headed back to the hostel and checked in properly, took my stuff up to my room and then headed out in search of a massage. I ended up finding the place that the first hostel had recommended, which turned out to be run by the HCMC blind society. It was an odd experience being given a massage by a blind man who didn't speak a word of English, not being able to tell him \"harder please\" or \"focus on that right shoulder\", but it want bad and it was super cp."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I decided that I had gone two long without practicing poi, so I grabbed a set and went and found a spot over in the park across the road near my hostel. After about 5 minutes I had gathered a small crowd of onlookers and children watching me, and after 10 minutes I was dripping with sweat and needed a rest. Two teenagers from the rcowd approached me and wanted to know if I would talk with them for a while so they could practice their English. I agreed and ended up sitting with them for about an hour, talking and answering questions."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Day 3 - Cu Chi Tunnels",
+    "date": "2013-05-22 14:44",
+    "oldBlogUrl": "/post/51071392530/day-3-cu-chi-tunnels",
+    "tags": ["Vietnam", "Cu Chi Tunnels"],
+    "travel_dates": "",
+    "formattedDate": "May 22nd 2013, 2:44:00 pm",
+    "canonicalPath": "/2013/05/22/day-3-cu-chi-tunnels"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On day 2 I headed to the Cu Chi tunnels on a tour booked through my hostel. Our guide was a very interesting half-Filipino, half Vietnamese man who fought in the war on the USA side. It sounded like he'd had a pretty horrific life, with both his wife and mother killed in the war, and his siblings fleeing the country. It was nice to have someone who was actually involved and from Vietnam tell us that most of what the Vietnamese museums state as truth is horribly biased propaganda, but that the USA is just as full of shit with their telling of events. Both sides did messed up things and there was no real winner."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When we arrived at the tunnels we sat and watched a video that was so nationalistic/anti-American it was painful to watch; how the evil Americans were out to prevent Vietnam re-unifying (completely ignoring that, as I understand it, the south wasn't actually supportive of that, hence why the war didn't end when America and Co pulled out), and how this guy, that guy and another guy was awarded the killing Americans bravery awards for killing Americans, killing American this, killing Americans that. At one point I'm sure that every sentence spoken for a few minutes had \"killing Americans\" in it at least twice."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1179, flickrID: "9686554053", width: 1570, src: "/cache/flickr/96/9686554053.jpg", linkUrl: "/2013/05/22/day-3-cu-chi-tunnels", caption: "Our guide briefing us.jpg" }),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The after the propaganda film we moved onto the actual site, were shown huge B-52 bomb craters which were all over the place. We were shown one of the \"manhole\" entrances to the tunnels. People were allowed to hop in for a photo but the hole looked crazy small and I didnt think my shoulders would fit through so I didn't give it a go. Next we saw a variety of different booby traps they used with the intention of perforating the Viet Cong's enemy soldiers and dogs; they were pretty vicious looking contraptions."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On day 2 I headed to the Cu Chi tunnels on a tour booked through my hostel. Our guide was a very interesting half-Filipino, half Vietnamese man who fought in the war on the USA side. It sounded like he'd had a pretty horrific life, with both his wife and mother killed in the war, and his siblings fleeing the country. It was nice to have someone who was actually involved and from Vietnam tell us that most of what the Vietnamese museums state as truth is horribly biased propaganda, but that the USA is just as full of shit with their telling of events. Both sides did messed up things and there was no real winner."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When we arrived at the tunnels we sat and watched a video that was so nationalistic/anti-American it was painful to watch; how the evil Americans were out to prevent Vietnam re-unifying (completely ignoring that, as I understand it, the south wasn't actually supportive of that, hence why the war didn't end when America and Co pulled out), and how this guy, that guy and another guy was awarded the killing Americans bravery awards for killing Americans, killing American this, killing Americans that. At one point I'm sure that every sentence spoken for a few minutes had \"killing Americans\" in it at least twice."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1179, flickrID: "9686554053", width: 1570, src: "/cache/flickr/96/9686554053.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686554053/", caption: "Our guide briefing us.jpg" }),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The after the propaganda film we moved onto the actual site, were shown huge B-52 bomb craters which were all over the place. We were shown one of the \"manhole\" entrances to the tunnels. People were allowed to hop in for a photo but the hole looked crazy small and I didnt think my shoulders would fit through so I didn't give it a go. Next we saw a variety of different booby traps they used with the intention of perforating the Viet Cong's enemy soldiers and dogs; they were pretty vicious looking contraptions."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 345, flickrID: "9686439099", width: 459, src: "/cache/flickr/96/9686439099.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686439099/", caption: "Boobie traps" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw some ammunition making and hospital trenches/holes, then arrived at the shooting range. Having a shooting range on site means there's always the sound of gunfire in the trees, maybe giving the place an atmosphere somewhat like it would have been back in the war. I paid to fire 10 shots with an AK-47 at a whopping $1.60 per bullet. For a rifle that's claimed to be so reliable you can submerge it in water and it will still shoot, the one I had seemed to keep fucking up and not actually firing so we'd take the unfired bullet and put it back in the clip. Having seen the [youtube video by that guy fpsrussia where he slathers one in bacon and then slops soft serve all over it and it still fires](http://www.youtube.com/watch?v=4Ovyeoyl29I&list=PL9ED6B6AA7A8C2CDC&index=2), I can only assume the one I shot was incredibly old (maybe genuinely from the war?) and was overdue for retirement."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9686453205", width: 2296, src: "/cache/flickr/96/9686453205.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686453205/", caption: "Me shooting an AK-47" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the shooting range we went down into the enlarged tourist tunnels, and to be honest they were bigger than I expected. I thought we'd be forced to crawl on our hands and knees the whole way but we could walk bent over flat at the waist pretty OK. There was only one tight spot that required hands and knees. I guess in the real ones someone my size would have gone hands and knees all the time, and gotten stuck at the choke points."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Interesting fact we were told about the tunnels is that the Americans would apparently pump a bunch of gasoline into them and chuck in a match to try and flush out the Viet Cong, who would happily escape out to the river, but because the soil was all clay, the fire from the gasoline would effectively kiln the tunnel walls making them harder and the tunnels stronger."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The bus ride home was pretty uninteresting. About half-way back it started bucketing down with rain; it as nuts to see the motorbike's continue to zoom past the bus in water that must have been 15-20cm deep in places. The drains did not look to be coping at all."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Once we got back to HCMC I had a quick shower then headed down the lane and found a bar with tiny plastic chairs (the Vietnamese symbol for great stuff at cheap prices) and had a few beer hois at a price of 7000 VND, or about $0.30 AUD. I also bought some tiny little boiled eggs with some dipping sauce from a lady running a stall just next to the bar, which were very tasty but no idea what bird they were from (or even if they were from a bird for that matter.)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I lazily had dinner at some place that claimed they were recommended on trip advisor on their sign. I had a duck curry which was ok, but the place only had westerners eating there so either the food was bad or overpriced. I notice more and more how much American tastes and expectations differ from other western countries and wish that there was a way to filter out their reviews on such sites. Seeing a place in Vietnam get a high rating on trip advisor and then seeing the review say something like \"the cheeseburgers here are amazing, the burritos are good too!\" just makes me wonder why these people left home in the first place."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I looked up a good massage place and started walking over towards it when my attention was stolen by the smell of waffles. I traced it to a little old lady on the side of the road making these little pillows of waffle-like/pancake-ish deliciousness. I continued on my quest and eventually found the massage place. It was fairly pricey in comparison to the ones on the main strip, but the Swedish therapy massage I got was totally worth it. It was just like the fancy hotel massages you always see in movies."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Day 4 Motorbikes in HCMC",
+    "date": "2013-05-22 15:11",
+    "oldBlogUrl": "/post/51072652718/day-4-motorbikes-in-hcmc",
+    "tags": ["Vietnam", "HCMC", "Motorbikes"],
+    "travel_dates": "",
+    "formattedDate": "May 22nd 2013, 3:11:00 pm",
+    "canonicalPath": "/2013/05/22/day-4-motorbikes-in-hcmc"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the third day I finally took first motorbike taxi, which was a fun, cheap and fast way of getting the War Remnants Museum (Previously knows as the American War Crimes museum), plus the breeze from zooming around is nice and cooling. Why was I walking everywhere like a schmuck!? And yes Mum, I wore a helmet, although they're all so small in Vietnam I half think it might actually make things worse if there was actually an accident, concentrating the force in a ring around the top of my head."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The war museum was interesting, but not catered to someone who knows next to nothing about the history of the war. There was lots of stuff about the specifics that happened, but very little about the motives of either side. There was a load of stuff about the after effects of agent orange on people of both sides of the war, but I needed to look up it up online to find it was a herbicide being sprayed to kill off all the vegetation so the Viet Cong couldn't hide among it."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9689702796", width: 2296, src: "/cache/flickr/96/9689702796.jpg", linkUrl: "/2013/05/22/day-4-motorbikes-in-hcmc", caption: "A Chinook helicopter" })
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the third day I finally took first motorbike taxi, which was a fun, cheap and fast way of getting the War Remnants Museum (Previously knows as the American War Crimes museum), plus the breeze from zooming around is nice and cooling. Why was I walking everywhere like a schmuck!? And yes Mum, I wore a helmet, although they're all so small in Vietnam I half think it might actually make things worse if there was actually an accident, concentrating the force in a ring around the top of my head."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The war museum was interesting, but not catered to someone who knows next to nothing about the history of the war. There was lots of stuff about the specifics that happened, but very little about the motives of either side. There was a load of stuff about the after effects of agent orange on people of both sides of the war, but I needed to look up it up online to find it was a herbicide being sprayed to kill off all the vegetation so the Viet Cong couldn't hide among it."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9689702796", width: 2296, src: "/cache/flickr/96/9689702796.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9689702796/", caption: "A Chinook helicopter" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Not long after I arrived, so did a huge group of screaming primary school aged children. Just as annoying in any language. The children kept walking up to me and saying hello and then running off giggling, which felt a bit like being famous but got annoying very quickly. As a contrast, Later a group of boys that looked like they might be going to a military high school or something came through and they were silent and respectful. It must be a big job transforming the out of control kids into such upstanding citizens."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next I went to the reunification palace, where the president of the south used to live."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 967, flickrID: "9686719861", width: 2296, src: "/cache/flickr/96/9686719861.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686719861/", caption: "Reunification Palace" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's a pretty kitch old place with an underground bunker under it that's full of neat old equipment."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9686484873", width: 2296, src: "/cache/flickr/96/9686484873.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686484873/", caption: "The internet" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got a cyclo from there to the Notre Dame cathedral, which was fun for a bit, but then it got pretty hot being in the sun and not moving fast enough to get a breeze. The old guy pedalling was pretty stubborn that he'd take me to the next place I went to and I ended up having to slip the money into his shirt pocket and walking off to find a motorbike driver."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9689736570", width: 2296, src: "/cache/flickr/96/9689736570.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9689736570/", caption: "My cyclo driver was quite a character" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9686495603", width: 2296, src: "/cache/flickr/96/9686495603.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686495603/", caption: "Me being a lazy bastard in a Cyclo" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went from there to the Bitexco building, the tallest building in HCMC with an observation deck near the top. It gave a great view of the city, the most intersting part being a patch of land right near the city that was almost all flattened and growing vegetation, while the photos of the area showed houses that used to be there. I asked about it and apparently it's the site of the new business district that they're expecting to be completed in 15 years. It would be pretty eye opening to come back when it's done and see that area that's currently mostly grass and debris being a bustling mess of skyscrapers."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1216, flickrID: "9690013230", width: 3597, src: "/cache/flickr/96/9690013230.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9690013230/", caption: "The New Business District of HCMC" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went back to the hostel to rest for a bit, and than at 3 I went and met up with a nice HCMC local, Trinh, that I met through OK Cupid. She took me for a ride on her motorbike, went to a park where we sat and had iced Vietnamese coffee and talked for a while, answering a lot of the questions I'd wondered about things in Vietnam. Then went to a pho bo bar, and had some pho, this time with more instruction as to how to eat it. It was much better this time around, but I still think I'm a bigger fan of non-soup Vietnamese dishes."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9686509545", width: 1632, src: "/cache/flickr/96/9686509545.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9686509545/", caption: "Me and Trinh" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I chilled out at the hostel for a bit and the rain started bucketing down again, stranding me there for most of the evening. I sat in the common area and drank beers with an American dude who'd just come from Cambodia and I got some tips from him where to stay in Phnom Penh. Eventually the rain eased up so I quickly ducked out and got some pork buns and some other buns that I thought the woman said were beef, but instead has a yummy sweet paste in them."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Last Day in HCMC",
+    "date": "2013-05-24 15:51",
+    "oldBlogUrl": "/post/51229927949/last-day-in-hcmc",
+    "tags": ["Vietnam", "HCMC"],
+    "travel_dates": "",
+    "formattedDate": "May 24th 2013, 3:51:00 pm",
+    "canonicalPath": "/2013/05/24/last-day-in-hcmc"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "For my final morning in Saigon I got up and ventured out north in search of something different for breakfast than the noodles and mystery meat I'd been having. I stopped along the way a few times to sit in tiny plastic chairs with the locals and drink iced coffee while the traffic did it's crazy thing. I ended up buying a half kilo of mangostein for breakfast with which I made a huge mess before the owner of one of the coffee stand I was sitting at came over with a knife and helped me out. Ugly fruit, but so very tasty."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "For my final morning in Saigon I got up and ventured out north in search of something different for breakfast than the noodles and mystery meat I'd been having. I stopped along the way a few times to sit in tiny plastic chairs with the locals and drink iced coffee while the traffic did it's crazy thing. I ended up buying a half kilo of mangostein for breakfast with which I made a huge mess before the owner of one of the coffee stand I was sitting at came over with a knife and helped me out. Ugly fruit, but so very tasty."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I sat in the shade at the park for a bit and had another woman solicit me for a massage and \"boom boom\". Being a single guy in Asia gets all sorts of unwanted attention. Sex tourists have made it a lot less pleasant for the rest of us."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Later while sitting in the same spot I had a guy come and tell me my thongs needed cleaning. I told him no, please don't. I dont want you to clean my shoes but he was very insistent and got down with his brush near my feet. I pulled my foot away and accidentally kneed him in the head, after which I got up and quickly crossed the street and rushed away down the alley way my hostel is in."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To recover from such an incident, I stumbled into one of the legit spa/massage places and decided that I'd get my nails done, since they were pretty gross from trying to get into the mangostein and I'd never had a manicure done before. It cost a whole $2.50, which I assume is cheap for a manicure and pedicure. The ladies working there were greatly amused when I asked for it. My nails are now nicely clipped and cuticles and stuff removed, but there are 2-3 spots where they clipped too closely that have bled a little. Not sure if I should be worried about that or not :S"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After that it was time to grab my bags head to the airport."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "HA HA! BUSINESS!",
+    "date": "2013-05-29 14:04",
+    "oldBlogUrl": "/post/51642662499/ha-ha-business",
+    "tags": ["Flying", "Business", "Vietnam"],
+    "travel_dates": "",
+    "formattedDate": "May 29th 2013, 2:04:00 pm",
+    "canonicalPath": "/2013/05/29/ha-ha-business"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement(
+            "a",
+            { href: "/2013/05/29/ha-ha-business/" },
+            _react2.default.createElement("img", { src: "http://www.quickmeme.com/img/5d/5d8664cf92e4ce604998ebc905667d3186818aee1c8786b9cfd51712eead636e.jpg", className: "img-responsive" }),
+            _react2.default.createElement(
+              "em",
+              null,
+              "HA HA! BUSINESS!"
+            )
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "For the trip to Phu Quoc I decided to fly since it was only $80 and it would save me many many hours on buses and ferries. For a laugh I looked at business class prices and they were only $30 more. I'd never flown business class before so I thought \"[YOLO!](http://www.youtube.com/watch?v=z5Otla5157c)\" and booked myself a business class ticket."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement(
+            "a",
+            { href: "/2013/05/29/ha-ha-business/" },
+            _react2.default.createElement("img", { src: "http://www.quickmeme.com/img/5d/5d8664cf92e4ce604998ebc905667d3186818aee1c8786b9cfd51712eead636e.jpg", className: "img-responsive" }),
+            _react2.default.createElement(
+              "em",
+              null,
+              "HA HA! BUSINESS!"
+            )
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "For the trip to Phu Quoc I decided to fly since it was only $80 and it would save me many many hours on buses and ferries. For a laugh I looked at business class prices and they were only $30 more. I'd never flown business class before so I thought \"[YOLO!](http://www.youtube.com/watch?v=z5Otla5157c)\" and booked myself a business class ticket."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Compared to getting a taxi from the airport, getting one back was easy as pie. I walked out to the street, determined not to pay more than the 200k VND that fixed price taxis charged, and right away had a guy cross the street and ask me where I was going. I told him \"the airport\" and asked him how much and he offered me 180k, 20k less than what I was hoping to get the ride for, right off the bat, so I accepted it without bothering to haggle. He entertained me along the drive telling me all sorts of stuff in somewhat broken English (including a \"fuck you\" to the police as we drove past :P) so I ended up even giving him a tip."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When I got to the airport none of the normal desks for Vietnam airlines were open, only business class & VIP, So I got to go straight up and check in, headed through security and into the business class lounge. I got some free spring rolls and fried tofu and had a bunch of drinks and got to sit in a comfortable chair and use free WiFi in a nice peaceful environment as opposed to the noisy-ass airport where it looked like I would have needed to fight just to get even a hard uncomfortable chair."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When they called boarding I again got to skip the line and walk straight on and sit down. I noticed that in business class on Vietnam airlines none of the normal rules seem to get applied to you. The did the usual announcement about bags going in the overhead locker or under the seat in front. I had no seat in front of me but wanted to get some stuff out before the flight so I sat down with my bag and did so, leaving the bag in front of me, between me and my neighbour, expecting them to come and tell me it needed to be stowed, but they didn't seem to care. I was using my phone camera to take some photos as we took off and they didn't bother me about it (in fact, I saw one of the hostess' using their phone during take-off too.)"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We got up in the air, they came around and gave business class drinks and pretty much straight away the captain did the \"prepare the cabin for landing\" announcement (yeah, the flight was that short :P). Looking around it was funny watching all these people who'd got a beer struggling to chug them down quickly. Not a problem for an Australian like me :P"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We got off the plane and were put on a bus, which then basically did a u-turn and stopped in front of the terminal 30-40 metres away. I could have easily walked there in less time than I spent waiting on the bus if I'd realised that's where it was going."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Business class bags were already on the carousel so I grabbed mine and went to leave in my fastest trip through an airport ever, but at the door there was a woman checking that ticket stubs matched up to the bag you had. I ended up having to just about empty my bag to find the ticket stub; it's honestly lucky I even had it, I often leave them on the plane. NFI what would have happened then? It seems like a good idea, but it would have been nice to know about it before hand so I could have kept track of that stub better."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Phu Qouc Island, Vietnam",
+    "date": "2013-05-30 13:01",
+    "oldBlogUrl": "/post/51721236151/phu-qouc-island-vietnam",
+    "tags": ["Vietnam", "Phu Quoc"],
+    "travel_dates": "",
+    "formattedDate": "May 30th 2013, 1:01:00 pm",
+    "canonicalPath": "/2013/05/30/phu-qouc-island-vietnam"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "Upon arriving at Duong Dong Airport in Phu Quoc I got a taxi to my hotel, the A74. I checked in and was shown to my room by a very friendly concierge. The room smelt a bit funny so went back down and asked if I could change rooms and they put me in a much bigger room, which still has some odd odour in it that I cant identify but I guess the whole place might have that smell."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I did some washing in the bathroom sink and nearly accidentally tore it off the wall. it turns out it was only held up by the plumbing and two flimsy little brackets, which I bent a bit (and then bent back as well as I could)."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "Upon arriving at Duong Dong Airport in Phu Quoc I got a taxi to my hotel, the A74. I checked in and was shown to my room by a very friendly concierge. The room smelt a bit funny so went back down and asked if I could change rooms and they put me in a much bigger room, which still has some odd odour in it that I cant identify but I guess the whole place might have that smell."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I did some washing in the bathroom sink and nearly accidentally tore it off the wall. it turns out it was only held up by the plumbing and two flimsy little brackets, which I bent a bit (and then bent back as well as I could)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went for a walk towards the main part of town and stumbled across the night markets, where all kinds of fresh seafood was available to be purchases and BBQ'd up for you there on the spot, along with some fruit stalls and souvenir stalls."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/a244205bd4efddb9db28dd7b127fb0ce/tumblr_inline_mnkhc4W4ob1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The night markets"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I found a place that made avocado smoothies, one of the amazing discoveries from last time I was in Vietnam and was happy to find it was just as tasty as I remembered."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/1cafd4d42f7809e636f3b36dc6c56a39/tumblr_inline_mnkh8l1Tmb1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Avacado smoothies are da bomb"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I bought some squid that was fresh enough that you could poke it and it's skin pulsed through different colours and a garlic sea snail. The squid was divine but I'm not so sure about the texture of the sea snail."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/5db707df32f2d128da4bc6200bd8c698/tumblr_inline_mnkh9wd4A31qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Delicious BBQ squid"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The enthusiastic and friendly guy who talked me into buying from him told me he's a guide during the day and offered to take me around the island on his motorbike tomorrow. His name was Nsit and he seemed like a good guy so I agreed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After I ate I bought some fruit with a name I'm not sure of. As I was paying I got distracted by a very young beggar boy, who I ended up giving some of my change, but in the process forgot to actually take the fruit I paid for with me :("
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/fdea4440755bca3bcb7a7ef1a561eb66/tumblr_inline_mnkhfclDlK1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "I love fruit stalls in tropical countries"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got a motorbike home and chilled out in my room for the night. After about half an hour it bucketed down with rain, prompting me to check the forecast for the next day and it didn't look great. 70% chance of rain and thunderstorms. Maybe a day for me to go without my phone and camera, wear contacts and take a rain jacket and expect to get really wet!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I woke up the next morning and could hear from the traffic going past that the roads were still wet. I looked outside and saw that the sky was overcast and it was spitting a little. Bugger! I started to wonder if it was even worth going if it was going to be wet all day, but Nsit arrived at 8am as we'd agreed so I grabbed my bag + a rain jacket and jumped on the back of his bike. There were a few drops here and there but not enough to merit putting on the rain coat. It sure did look miserable though, but at least it was cooler."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "First stop was a winery that makes wine out of a fruit called the sim. I got to taste a few types, mostly very sweet wines. I felt a bit pressured to buy something, so bought a small bottle that was only $5. Nsit led me out into the orchard and we found some of the fresh fruit for me to try."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We got back on the bike and headed off down a red dirt road, which was a bit scary with the recent rain meaning lots of mud and puddles, but I'm told the rain actually makes the road better so I'd hate to see how it is normally."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/82aa08aa8132723f2d6875ccfe0c9a25/tumblr_inline_mnlae89zob1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Red dirt roads"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped at a pearl farm, and where shown some oysters being opened and the pearls cut out of them. I did the expected walk around with zero interest in buying anything. I'm not into jewellery in the in first place, but pearls just seem very old fashioned to me. We left that place went went down the road to another one which I wasnt at all interested in and ended up taking more interst in the beach the farm was next to and the sheer amound of rubbish on it. A sad sight to see, which makes me appreciate the hard work by the people who go along the main beaches each day picking up all the new rubbish that's washed to shore."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/0d937288ce13fa7929833feabd0cea59/tumblr_inline_mnlahbq6eR1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Pearls... BORING!"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The sun started to come out and we got back on the bike for a much longer ride to the coconut tree prison, which depicted horrible acts committed by the \"USA\" and the south. There were small barbed wire cages called \"tiger cages\" that they'd put prisoners in wearing very few clothes in the hot sun, so that pretty much any time they moved they got gashed by the barded wire. There were maniquens set up showing some of the torture they did, burning prisoners genitals, driving nails through ankles, crushing their chest between two boards and even removing their kneecaps. Pretty messed up stuff. There was also an impressive tunnel on display that prisoners had dug out in order to escape."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/35f4c501d79612fb90d08469a2a7eb8e/tumblr_inline_mnlam09tiu1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Coconut Prison"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/702e6abc3aff41f241474bde926c513b/tumblr_inline_mnlamvhAIr1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Tiger cages"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/aa74a286e8c0ccc16920a228689a9164/tumblr_inline_mnlaodBsTp1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Burning a guys junk"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next stop was right across the road, the fish sauce factory. It was interesting to see just how manual the processing there was. There were big open vats being filled so they could be filtered, and a person bottling the sauce by hand with a hose and a heat-gun to heatshrink the seals around the lids on."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/322da03ea17745443c8b6a5a4a9857ca/tumblr_inline_mnlaqvFtAF1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Vats of fish sauce. Right after this I jumped in for a swim."
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/69095a9c97e4aec66d5cdd1286b8a2f3/tumblr_inline_mnlaspgqDP1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Bottling by hand"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next stop was Sao beach. I walked up and down the beach taking a few photos, and found the sun had gotten really fierce now. I could hardly see at all without my sunglasses but I'd opted to wear contacts this day so there were not an option initially. Where all the sunglasses guys now, hey? I accidentally rubbed a contact out of my eye at one point, so i switched to prescription sunnies and things were a lot more pleasant. I went for a nice swim in the lovely warm water with a large number of Vietnamese tourists, and not another westerner to be seen. Afterward I set on a deck chair in the shade on the beach and had delicious shrimp and cashew nuts for lunch."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/7c5999a7e51831b94b2bc6d33a974d2b/tumblr_inline_mnlavlEARR1qz4rgp.jpg" })
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c59a56fa6c1f06a8bb1d51d7a10d7d98/tumblr_inline_mnlawsOr2U1qz4rgp.jpg" })
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/997ed48ce81cad41dfefeb31e218d619/tumblr_inline_mnlaxjFD8t1qz4rgp.jpg" })
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/1e0e0e74d826ac1819f54dc85cc36e8c/tumblr_inline_mnlay89ZUl1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "It was super bright!"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a few hours we headed off towards a temple along some rather sketchy roads, which I filmed a very shaky video of for a bit. The temple was in a beautiful location up on the hill overlooking the coast."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/ff2ee92ea62303948137444165701afe/tumblr_inline_mnlazcu2rj1qz4rgp.jpg" })
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/83a2a2c121a38324452b594ceb5f27c4/tumblr_inline_mnlb0pNAoR1qz4rgp.jpg" })
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/fefb8664f21be341f284a0b6a9edb097/tumblr_inline_mnlb1sOSgW1qz4rgp.jpg" })
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/e741b9586286704715ff1e5aab73494a/tumblr_inline_mnlb37FMQ61qz4rgp.jpg" })
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Last planned stop for the day was a pepper farm. I got to eat some green peppercorns fresh from the tree, which have quite a delayed kick to them. I nibbled on one and thought it wasn't that hot so I chewed on the rest of it and it suddenly got very hot indeed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/de93b3192f342c197b76a619855cce86/tumblr_inline_mnlbnhGAZZ1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Pepper!"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/43abb888732f533e856bfc40a7db423d/tumblr_inline_mnlb65HcXW1qz4rgp.jpg" })
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At one point a large group of Vietnamese tourist started trying to whack down some fruit from high up in a tree with piece of bamboo, which Nsit told me was apparently very sour. A little 11 year old boy shared some of the odd sour fruit with me and commented on my 1UP mushroom hanging off my bag, so later I got some ripe berries for him from one of the trees that were too high for anyone else to reach. He was from HCMC and spoke great English."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/d31fd26dcdb3f1d1e5acc0ccdd30fd50/tumblr_inline_mnlc3yegZI1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Sour fruit"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/52c67c0d65c1dda2e4093e203d48335b/tumblr_inline_mnlbq0Wk951qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Little dude!"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the way back to my hotel Nsit offered that we could visit his home. It was interesting to see how the locals live. The place was fairly basic but well cared for, and had cool fences surrounding the block made of cactus :)"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/5b83a2026f5c19635806d58bf357bb8b/tumblr_inline_mnm2ahXt7p1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Nsit's house"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c32f18f8a35061d7027ba414d66c0972/tumblr_inline_mnm2lazb5B1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Cactus fence"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "His family was very friendly, I got a nice photo of him and his dad who works as a snail fisherman. The house was built as lots of separate buildings of different ages, instead of one single dwelling that was added to over time. Nsit tells me he has 6 sibblings but only him and his brother are still at home with the parents, the rest have all married and moved out."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/fa317a301769df778d3a58e8b460f6e2/tumblr_inline_mnm3hoag1y1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Nsit and his father"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/f814420f509a6df14fe5df8be795b556/tumblr_inline_mnm2mr0Sad1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Nsit's fruit and veggie garden"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Nsit dropped me off at my hotel and I gave him some money. He'd told me the night before to pay what I thought at the end, and I'd had a good day so I ended up giving him 500K dong, which after spending a week in Vietnam I'd come to treat as a lot of money, but as a reality check is actually only about $25 AUD, but Nsit seemed very happy with it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c472a8fe5813b51adbe76100a85cfbce/tumblr_inline_mnm3bt9iZE1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Me and Nsit"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After resting in my room for a while I went for a walk down the beach, and on to the night market again. I stopped in at the pharmacy and bought more doxycylin (my anti-malaria stuff for while I'm in asia), which cost only $3 AUD for 100 capsules, compared to $14 aud for 30 back home, no prescription required."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the night market I had a delicious durian milkshake and then ate a mantis shrimp (to try and absorb it's [awesome powers](http://theoatmeal.com/comics/mantis_shrimp)) and a sea urchin for dinner. Both were really tasty!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/ca291f0be91f13788bb35f2ef8ef3ba7/tumblr_inline_mnm3fkDI3A1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Not as pretty as in the comic :/"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Each night on the walk I'd had a very smiliey man in a chef hat try and get me to eat in his restaurant, laughing in a friendly manner and telling me how much he loved Australians. I felt a little bad for him since most people (and myself) keep walking on to the night markets, but I was still a little hungry on the way home so I stopped in for some more shrimp BBQed with garlic and chilli which were amazing. All the food here is so great. While waiting for the food to come I met some older Aussie travellers, probably about my parents age, and we chatted for a bit."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After I ate I was pretty tired so I came home and slept."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the last day I decided to have a lazy day and give myself some time to actually write up these blog posts. I sat for about and hour and a half at a vietnamese coffee bar, observing how the locals drink their ice coffee very slowly so the ice melts and the flavour becomes a bit diluted; and generally lazed about enjoying the cool shade. I spent some time better organising my bag so that less frequently used stuff doesn't need to be unpacked all the time, and even went for a run along the beach right to the end. The perfect way to end my time in Vietnam."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Mountain Biking in Siem Reap",
+    "date": "2013-06-14 17:41",
+    "oldBlogUrl": "/post/52958429187/mountain-biking-in-siem-reap",
+    "tags": ["Cambodia", "Bikes", "Monkeys", "Ruins"],
+    "travel_dates": "",
+    "formattedDate": "June 14th 2013, 5:41:00 pm",
+    "canonicalPath": "/2013/06/14/mountain-biking-in-siem-reap"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "My bike in front of Angkor Wat"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Angkor Thom's east gate"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c46ec58347b75bfddc9ff1f90dee4ed0/tumblr_inline_modqtuu34O1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "My bike in front of Angkor Wat"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my last day in Siem Reap I decided to rent myself a mountain bike and pedal myself out to the ruins. The flatness of the countryside made riding a little easier, but the heat was certainly challenging. I rode in to Angkor Thom, the largest of all the ancient sites, and headed for the east gate (not the victory gate, which is also on the east wall, which is the one the roads pass through)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/be50972d0516e2bcc7b43a1a4cdc14fd/tumblr_inline_modqtj1cNW1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Angkor Thom's east gate"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The trail leading up to it was rough and bumpy with lots of large rocks and didn't seem like it got too much traffic. Upon reaching the gate, I was met by the spectacular sight of the massive gate poking out of the jungle, without a huge clearing around both sides as all the other gates seem to have. I got off my bike and explored for a bit, and sat down to reapply sunscreen and got hassled by a bunch of butterflies that just kept on landing on me and my stuff, the bullies!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/797308c9dd30edd23149e1f3b8b66404/tumblr_inline_modqu4xYgb1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Butterflies everywhere!"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Just as I was nearly leaving I saw the first other people since I left the main roads; what appeared to be two people and a tour guide, also on mountain bikes, heading off through the gate. This gave me confidence to continue down the path a few minutes later when I had my stuff together and was ready to leave."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The path got narrower and narrower, eventually getting to parts where I was going through mud, barely fitting the bike between bushes, and was dropping down flat with the handlebars to fit under branches. I started to think maybe I'd missed a turn or something, and wonder just how well cleared the area was of landmines, but I figured that an obvious path wouldn't be there if there were still mines about. Finally I found the paths end, coming out just down the road from Ta Promh, exactly where I wanted to go to next!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As I approached I noticed a dirt road along the south wall which I followed along to the south gate past some stunning sections of wall being slowly destroyed by trees. Since there was nobody there to stop me, I headed on into the temple grounds on my bike and followed some weaving tracks right in to the main ruins in the center, and then out again to the collapsed north gate."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/4954f6fd99a4f3730eeb8b3863847415/tumblr_inline_modr0mtuMr1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Trees make short work of man's feeble walls"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/f95779e0996c5104929786c899fca2d4/tumblr_inline_modqyjWKf91qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Trails inside Ta Promh's gates."
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/cc3c7a807ecca4d5f482b7d143f83b22/tumblr_inline_modqxsU4dd1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Trails inside Ta Promh's gates."
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/f06718f0e08e60d91aee638d248b44c4/tumblr_inline_modqze1kZS1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The collapsed north gate"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "By this time I was drenched with litres of sweat and feeling very dehydrated, so I made the drink sellers at one of the temple entrances happy by buying several bottles of water and a coconut. I sat and drank, and I took my shoe and socks off and hung the socks over the bike in a effort to dry them a bit while I rested. I need to remember to take spare socks if I do this sort of thing again."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I looked at my map to get my bearings, and decided to go to Preah Khan next. There was an obvious long way there via road, but there was also some roads the looked close together that I suspected I'd be able to find a trail between. Along my way to the road I passed another cycle tour going the other way and asked their guide if there were any trails linking the two roads on my map. At first he said I should go the long way because there was no road and I might get lost, but after I told him about my earlier adventures on tiny walking tracks he told me there was a walking trail but still warned I might get lost. This sounded like a challenge, and I actually don't mind being lost."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I headed along the actual road looking for a trail, I passed something that I thought might be it but wasn't sure, so i went a fair way past it until I hit a bridge from the map and knew I had gone to far, so I doubled back. Even the \"road\" was very rough with many huge rocks making for a bumpy ride, interspersed with sand that made the bike slide all over the place."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I headed into the jungle along the trail and it quickly became apparent that this one really was an infrequently used walking trail. The gaps in the foliage were even tighter here than the last off-road trail I followed, and a good number of steps made from large rocks gave the bikes suspension a good workout. Very glad I opted for the mountain bike at this point."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I came to a few forks in the road and tried to pick the ones that i thought would keep me going in generally the right direction, until eventually I came to a creek maybe 2 meters wide and 30-40 cm deep. There were a few small tree branches laid across it like a very shonky bridge, but even they were under a few cm of water."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/7171aec1e4c35a6eee2e7ab7cb2ce21f/tumblr_inline_modqubun8z1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The \"bridge\" I crossed"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Now was one of those moments where I thought I should really turn back, but stubbornly pushed on anyway. I definitely wasn't game to try and ride across, but I figured maybe I could walk across it carrying the bike. I rested the bike on its own log to trying and distribute the weight a bit and stop me breaking the one I was standing on. The logs flexed quite a bit and I was very thankful that my shoes were waterproof as they got pretty well submerged, but I made it across without any mishaps, and thought \"well, there's no turning back now\"."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After riding a little further the path started to widen up a bit and after a while longer I finally came to a wall. Hooray! I followed the wall for what seemed like a very long time, passing many ruined patches destroyed by beautiful trees, while the creek to my right got wider and wider until I must have been 15 metres across."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Part way along the wall I came across a section that was being reconstructed/restored by a group of ~20 Thai men, who at first seemed a bit startled that someone was coming from the direction I came from, and then greatly amused it was a foreigner. In hindsight I probably should have stopped and observed a bit more, and taken some photos of how they manage to move all the large blocks (not a crane in sight), but I felt like I was somewhere I probably wasn't supposed to be, in the middle of a construction site so I rode on until I finally found the entrance gate."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I entered, thinking it was odd that there was no ticket inspector at the gate, and rode on for a bit thinking that this didn't look anything like I remembered Preah Khan looking, and then realised too that I was riding on an actual bitumen road, so I definitely wasn't where I thought I was. I passed a roadside distance marker that indicated I was heading towards the Bayon temple; I had a look at my map and deduced I was now riding in the wrong direction along the \"long route\" that I chose not to follow earlier."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It turns out that the \"creek\" that I crossed is one of the now very narrow parts of the moat of Angkor Thom, and I had snuck into the old city without even realising. that section of the wall that I followed was 1.5KM by itself, compared to the 800M total length of the wall of Preah Khan that I thought I was following."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/3671653c34d95d549d5d5fabac7e9a9e/tumblr_inline_modqvt7e3W1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The creek under that bridge turned into this swampy moat"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I turned around and headed to Preah Khan, but they wouldn't let me take my bike inside so I had to lock it up outside. A bit of a bullshit double standard, when all the locals hawking shit are allowed in on their overburdened motorbikes. I don't think they should be allow in to hawk their shitty T-shirts and postcards at all, but that's a whole other rant."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/496434abe7a8088d8d9444a994e4d3ea/tumblr_inline_modqzyjpci1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Preah Khan"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/8f9c49b7f6ede42b80190de04f045c87/tumblr_inline_modquoE3p11qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Fallen over wall"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On this visit I almost completely avoided the inside of the center part of the temple, preferring to explore the other ruins, free from tourists and hawkers. I found some amazing tree roots with a gap tall enough for me to stand under with my arms stretched up, and another tree that completely covered the top of a building, surrounded by walls and rubble so I couldn't get a good view of it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/669eab9c71fb2cc61ccce61ced72600e/tumblr_inline_modqvbO9K41qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "These tree roots were epic!"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ended up scaling part of the inner wall about 3 metres high, behind a \"danger - do not pass\" sign, in order to get a good look and a photo. So keep in mind that if I die travelling, chances are it was me being curious and a little reckless, and probably my own fault :P"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/5b3132bc36f958a74024fd153192e3fb/tumblr_inline_modqziWrwc1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Tree covering the roof of a building."
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I rode back home, with a quick stop to watch some monkeys playing on some ruins inside Angkor Thom, which was very entertaining until the alpha male attacked another male in the group, leaving a huge bloody gash across it's face. A good reminder that they're not really as fun and playful as they often appear."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c8e517197e17652fac26b08201c9a49c/tumblr_inline_modqxdE5VH1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Naughty monkeys putting on a show"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/d13fea4e44e01807f1a9df49e347922b/tumblr_inline_modqxjHNDM1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Monkeys playing in the ruins of Angkor Thom"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That pretty much sums up my mountain bike adventures."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Here's some bonus photos of monkeys checking out my bike from earlier in the day :D"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/dafd0b1104eb9792b05e905792994c0d/tumblr_inline_modqw5aGIP1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Monkeys!"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/b2a2dea296e3a628b0acf212839f6364/tumblr_inline_modqwkSFOj1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Monkeys!"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/ab1f334b62645461a96f214051696fa9/tumblr_inline_modqx3HWSo1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Monkeys!"
+          )
+        )
+      )
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Airport security in India",
+    "date": "2013-06-27 14:19",
+    "oldBlogUrl": "/post/54015210788/airport-security-in-india",
+    "tags": ["Flying", "Airports", "India", "Security Theater"],
+    "travel_dates": "",
+    "formattedDate": "June 27th 2013, 2:19:00 pm",
+    "canonicalPath": "/2013/06/27/airport-security-in-india"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The \"ticket desk\""
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm jumping out of order for a bit for a quick story about the joys of security theater in Indian airports."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I get dropped off at the airport by a taxi and head towards the door in which I can see signs pointing to departures and arrivals. I go to enter and the security guy on the door, holding what I think was an MP-5 machine gun, wants to see ticket and passport. Having only booked my ticket online hours earlier and having no printer I had no ticket to show him. He says I can show him on my phone, I pull up Trip-It and show him the flight details and confirmation number but he's not happy because there's no name listed so he sends me around to the ticket desk to get a ticket printed. After trying the next two entrances in the direction he gestured I realise the desks are basically just invisible slots in the glass front of the building."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/c4788b345ab4feb2d6068e42b1a3a8af/tumblr_inline_mp223quYeM1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The \"ticket desk\""
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's a guy in there on his phone, but he doesn't look over when I say nameste, nor when I knock on the window. A rather stressed out looking Indian man comes over and tries as well but the guy inside completely ignores both of us. Nice to know it's not just because I'm a foreigner."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally, after waiting at the window for ages wondering if maybe I got there too late, another guy shows up in the window. I read out the confirmation number and he asks me to pass my phone in through the slot. I'm not keen on this, but don't have another option, and he gives it back after entering something in his computer. He disappears for 5 minutes, then comes back and asks for my passport. He writes some stuff on a scrap of paper, stamps it and hands it to me."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { alt: "image", src: "http://media.tumblr.com/02c46cf105235e680b369095becfc110/tumblr_inline_mp227gohr21qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "My \"ticket.\" Good enough for security!"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I go back to the front door (keeping in mind, everything so far has occurred with me being completely outside the airport) this time armed with my hand written piece of paper; and this time I'm allowed in."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I walk the 20 metres towards the departure check-in part of the airport, and a guy at the entrance stops me and asks to see my ticket and passport yet again. Obviously the guys out the front can't be trusted. He's concerned that the hand written scrap of paper only says Bombay on it and doesn't mention Udaipur. So another guy is called over to confirm that yes, my flight does actually leave from the airport I've shown up at. Phew!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I put my check-in bag on an x-ray machine conveyor belt, and at the other end it is stickered and looped with packing tape."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I finally get to the check-in desk. You know? The place where all of this stuff happens at real airports. There is no line. They take my hand written ticket and print me off a boarding pass. It sure is lucky they had security to check my hand-written unforgeable scrap of paper several times before letting me through here. I'd hate to think what horrible things might have occurred without all that \"security\"."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In order to get to the boarding area, I have to show my boarding pass and passport yet again. Surprisingly they're not interested in checking my hand written ticket here as well. They are, however, concerned that my carry on bag has no paper tag on it, so they stop me while they find one and attach it to my bag."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I put my bag, laptop and contents of my pockets in plastic trays and send them through the x-ray machine, then line up behind 2 other guys at the step through metal detector, which seems to be going off for everyone."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There is a second metal detector, but it's only for women, so I stand in this queue, starting to feel a bit uncomfortable how long my stuff is out of my sight and loose in a tray."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Each person in front of me sets off the metal detector, and then has to stand on a platform for a pat-down and a scan hand held metal detector that's so over-sensitive it goes off for zippers."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I walk through the metal detector and it doesn't go off. Huzzah! I'm still required to take the second metal detector scan and pat-down. Makes me wonder why they even have the step through one, but I already know the answer. Because more is obviously better."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At last I get over to the plastic tray containing my stuff, and find my bag has been taken aside. This means I have to wait for 10 minutes while one of the security people go through the bag of the man in front of me, and tell him to throw out his two containers of milk(?) in soft drink bottles. Meanwhile, 3 security people stand around doing nothing as there's no more bags to x-ray."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally it's my turn, I'm told to pull out _all_ electronics from my bag, and lighters. They're very certain I have a lighter and it needs to be scanned separately. I have no such lighter and I tell them several times, with them asking again probably 4-5 times."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My carry-on bag is nearly solely electronics. I empty everything out into a plastic tray, leaving some books and my passport wallet in the bag for them to rescan separately. Now I'm told it's ok to re-pack my bag. They stamp the paper tag and ask for my boarding pass in order to write something down in their report."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At boarding, my ticket is scanned by one person, then a metre later it is checked by another guy who also wants to see my passport, and then again as I enter the plane a third man wants to tear off the stub of the ticket."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Good work India, another terrorist plot of boarding an airplane without having to jump through lots of unnecessary hoops has been foiled! Inconvenience and the illusion of added security continues it's reign."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Wake Up Call",
+    "date": "2013-06-29 04:27",
+    "oldBlogUrl": "/post/54155961141/wake-up-call",
+    "tags": ["Introspection", "Inspiration"],
+    "travel_dates": "",
+    "formattedDate": "June 29th 2013, 4:27:00 am",
+    "canonicalPath": "/2013/06/29/wake-up-call"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On this day, one year ago today, I woke up a little bit late."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I rode to work in a bit of a hurry, and on my way got cut off by a car. Getting cut off by cars happens pretty much every day, but on this day I had new brakes that I was unfamiliar with, which were significantly more effective than my old ones. That combined with rushing to not be late, meant that braking hard got me up on just the front wheel and then sent me over the handle bars, landing hard enough on my knees that I got several fractures in my acetabulum (ie. my Hip socket/pelvis)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This moment, at five to nine in the morning on a Friday, changed my life in a number of unexpected ways. Being completely crippled and dependant on others got me seriously thinking about the things I'd like to do but had been putting off until \"the right time\", many of which are dependant on being able-bodied, and I wondered a lot about how well I would recover and how those things I'd like to do might now never happen."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On this day, one year ago today, I woke up a little bit late."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I rode to work in a bit of a hurry, and on my way got cut off by a car. Getting cut off by cars happens pretty much every day, but on this day I had new brakes that I was unfamiliar with, which were significantly more effective than my old ones. That combined with rushing to not be late, meant that braking hard got me up on just the front wheel and then sent me over the handle bars, landing hard enough on my knees that I got several fractures in my acetabulum (ie. my Hip socket/pelvis)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This moment, at five to nine in the morning on a Friday, changed my life in a number of unexpected ways. Being completely crippled and dependant on others got me seriously thinking about the things I'd like to do but had been putting off until \"the right time\", many of which are dependant on being able-bodied, and I wondered a lot about how well I would recover and how those things I'd like to do might now never happen."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My being such a burden put extra strain on my relationship with Kelly, and I believe at least in some part contributed to it's demise."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Right at the peak of things going to shit, Amanda and Miss Fish came around and cooked me dinner and tried to lift my spirits. In what was probably just an off-hand comment, trying to distract me Amanda said I should go to Africa with her and the small group that were planning on going in July 2013."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Having several times in the past put faith in Amanda organising awesome trips, which have always been amazing, I said I was interested without really thinking too much about the logistics of it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As the days went by and I read through the trip itinerary I decided it was exactly the sort of thing I needed at that time, something to look forward to, so I called up her travel agent and got signed up without even requesting annual leave from work first."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When I started thinking about leave, I realised that the 5 week trip was already a week more leave than I get in a whole year, and with my usual habit of taking a day or two off around festivals and a few days to visit my parents most years it was more like 2 years worth of leave; or a whole lot of unpaid leave."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Furthermore, it seemed like if I was paying all that money to get to Africa, it would be silly not to go and see and other nearby stuff, like visiting the pyramids and diving in the red sea. Once my mind was in Egypt, it seemed the next logical step would be that I should go visit my brother in France. And from France it was only a small hop to England to visit Matty Poppins. Being in Europe, I'd always wanted to spend some more time in Spain and try and learn Spanish... and by this point I was already thinking in large numbers of months of time required."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I thought for a long time if I should try and ask work for that much time off, or if I should scale back my plans, but both seemed to have major downsides. Either I'd miss out on doing some stuff I wanted to do, or I'd have a deadline to be back home by, meaning I wouldn't have the flexibility to chop and change my plans at the drop of a hat."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Eventually I decided that I should quit my job. That was an incredibly hard choice, because I actually really loved my job (although I'm sure I was hovering pretty close to burn-out), got along well with the people I worked with, and liked the company I worked for. In a world where it's common for people to hate what they have to do to get the money they need to live, it felt pretty irresponsible to leave such a comfortable position."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Having been on the road for over a little while now, I'm pretty certain it was the right choice. I'm  feeling tremendously privileged to be able put \"real life\" on the shelf for a while and treat life as the adventure it should be."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Twelve months on from that day in June, my life hardly even resembles what it used to be. I'm pretty much completely recovered from the injury (only occasional minor tight muscle pain these days and even that is lessening) and taking full advantage of that every day. Instead of worrying about being late for work or if the thing I was working on is going to get finished on time, my concerns today are along the lines of \"What should I spend my last day in India doing?\" and \"I hope I get a window seat for my flight to South Africa.\" I've always thrived under pressure and I almost feel like last year was life's way of saying \"Hurry up and do awesome things, you can't wait forever.\""
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I don't believe that the adventure I've set out on will solve all (or even any) of the problems in my life, but it certainly hasn't made things worse yet. Maybe when I'm old I'll look back and wish I'd been sensible, and invested my savings more wisely, so I could die having a larger sum of money to leave to the children I'm not really planning on having.... but I seriously doubt it."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Thailand",
+    "date": "2013-06-30 16:48",
+    "oldBlogUrl": "/post/54267962277/thailand",
+    "tags": ["Thailand", "Koh Tao", "Diving", "Boats", "Airports", "Motorbikes"],
+    "travel_dates": "",
+    "formattedDate": "June 30th 2013, 4:48:00 pm",
+    "canonicalPath": "/2013/06/30/thailand"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "My first day in Thailand I flew into Koh Saumi and got a minibus transfer to Chaweng beach. After looking at a few places that seems pretty average for the price, and generally remembering how nasty Chaweng was, I found some free wifi and looked up some places on Trip Advisor and decided to head to Lamai beach and try a few places there."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After having a few taxi's try and ask for ludicrous amounts for the trip to the first place on my list, claiming that the place I wanted to go was way past Lamai, I finally got a motorbike taxi who would take me for a reasonable price... until one of the asshole taxi drivers came over and told him that the place I wanted to go to wasn't in Lamai. But what I do know, I'm just a stupid foreigner who's got the address here stating it's in Lamai, and Google maps showing me it's there. In the end he agreed to take me for 50% more then we'd originally agreed, and I was fed up screwing around so I accepted."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Riding on the bag of a motorbike with a reasonably heavy pack making you back-heavy isn't all that fun, I spent the ride holding on like my life depended on it because it, no helmets for passengers in Thailand :/"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Some ominous dark clouds overhead started to dump down half way to Lamai so we stopped under the awning of a 7-11 for half an hour until it eased up (but didn't stop) and then rode on. As the sun was setting we went past a nice beach which I would later find out was Lamai, where I would end up staying, but first we needed to ride for another half hour off to the middle of nowhere to a place that had a similar but different name. Along the way the driver would stop and ask people on the side of the road direction, I'd show them the map on my phone indicated we'd passed it already and they'd tell the motorbike driver that it was still further on."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/432b7918eb3f5068412e504f32388f42/tumblr_inline_mp7sx6xLtN1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Rainy Koh Samui"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We finally got to the place that and I asked to lady at reception to please explain to the driver this was the wrong place, which she was amazingly helpful in doing so. So back on the bike in the rain for half an hour back in the other direction and I finally got to the first place I was planning on looking at. It was already 8:30pm so I didn't bother looking elsewhere. I paid the motorbike driver and he asked me for more \"for the extra driving\". I told him no way in hell, he'd already charged me 50% more and wasted most of my night taking me to the wrong place and ignoring me telling him we'd gone past it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The place was a pretty nice enough resort, not too crowded and almost entirely touristed by Germans. I spent a day just lazing around reading and relaxing in the cool sea breezes, a lovely contrast to the heat of Cambodia. Funnily enough I ate dinner that night at a market of street food vendors with a Welsh couple who had lived on Koh Samui for a few years now, who complained that it was too hot to do anything during the day and were out having a ride around the island at night because it was the only time they thought it was cool enough."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That day in Samui has changed my opinion of the place quite a bit. I still think Chaweng is an awful shithole, but Lamai seemed like a much nicer place and I would have happily spent quite a bit more time there. Maybe it was just because it was low season, but it seemed way more relaxed, and a lot more beautiful at Lamai and it makes me want to see what other parts of the island are like. Next time I guess!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/5cd8dc6100b3387093113618abd4ac3b/tumblr_inline_mp7src6bUq1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Me at a lookout above Lamai Beach"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I got the ferry to Koh Tao, and had a hard time trying to find any accommodation in my budget at all, let alone a nice place. I didn't realise at the time, but the full moon party had happened on Koh Pha Ngan the weekend before I arrived, after which the throngs of party goers flooded the nearby islands booking just about everywhere. Fuck full moon parties."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I found a \"resort\" that actually had a free room, but to call it a resort would be far to generous. The room was only half finished, nearly completely bare and very overpriced. There were no screens on the windows and it only had a fan, not a great combination for someone who mosquitoes love. To top that off, I seemed to be the only tenant."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went to the Koh Tao Central Hostel, and met one of the guys who run the place, Rolf, and he gave me a quick tour of the hostel which was significantly cheaper than where I was, was air conditioned, was only new (so everything is working and clean) and actually offered the chance to meet people, so I got myself booked in for the next available night."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/dd3a72a70ec8e073ad57a6c638b4f264/tumblr_inline_mp7sqhbuRQ1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Koh Tao Central Hostel"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I had a drink and wrote some stuff in my book at a bar over the road. While I was there a nice girl named Lianne sparked up a conversation and I found out she was learning to dive with crystal, the place I originally got certified at. She asked about accommodation, already planning where she'd stay after the free accommodation from the course ran out, and I gave the hostel a plug. A bit later after she'd left Rolf from the hostel came over and had a beer, wanting to know how I'd found out about the hostel and if I had any ideas for the place. Apparently it only opened a few weeks earlier, and he was quite keen to make it a success so he was asking for feedback or improvement ideas pretty much every time I saw him."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I started diving with master divers, the no. 1 rated outfit on Trip Advisor. It seemed priced a little bit high, but the price came down retrospectively the more dives you did with them. The staff there were lovely, but because they were a small shop and it was low season the boats only go out once a day, and mostly to open water suitable sites (almost nothing deeper than 18M)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a few days I decided to seek out shops day to day, based on where there boats were going. I went back to Crystal where I first learned to dive and got to Dive Chumphon Pinnacle, one of the nicest sites in Koh Tao, and the HTMS Sattakut a scuttled navy war ship. Saw loads of yellow tail barracuda, titan trigger fish, banner fish, angel fish... the list in my log book is too long to keep going."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/2455213b574ac25a9557f0524f6ad7eb/tumblr_inline_mp7srrvC5K1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Do Not Climb this Palm tree"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The day after I booked in with another little shop who were doing their weekly run out to Sail Rock, which is said to be the best site in the area, but it's a 2 hour boat trip to get to so the shops don't go there so regularly. Sea-sick tablets kept me feeling fine for the whole trip, the two dives there were awesome, although the visibility was much worse than anywhere closer to Koh Tao."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next shop I went to were once again going to Chumphon and Green rock. I managed to spot lots of very tiny sea-life on the rocks, and a few juvenile banner fish which were so damn cute. The staff were all super friendly and I expressed interest in going to South-West pinnacle, and they told me it was pencilled in for 2 days time so they put my name down for that and locked in that as the site for that day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "South-West was where I did my first deep dive during my Advanced Open Water, and revisiting it was just as I remembered it. A huge pinnacle covered in anemones, swarming with pink clown fish. We dropped right down to just above the sand and circled around a bit on the sea floor and managed to find some Cobias (They look like sharks, except they're technically a fish)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/accf41a869fbba77f6f09d15dddcf6d7/tumblr_inline_mp7sqct2ob1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "12 year old with crazy fire poi skills"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I liked the shop a lot and had been thinking about getting a few more certifications (since they're cheap on Koh Tao, and could be useful diving elsewhere), so when I found out they had a package for the very 3 specialities I'd been thinking about, plus accommodation at a cheaper price than anywhere else I'd been I decided it was meant to be. I did the 6 dives over 3 days and got my Deep speciality allowing me to go to 40M, my Nitrox speciality allowing me to use Air enriched with extra oxygen allowing longer dives without decompression, and my wreck speciality, allowing me to explore inside of wreck and taught me how to lay line in order to find my way out again in case of complete loss of visibility."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'd originally had vague intentions of diving on Koh Tao for 6-7 days, then heading to the Phuket side for the remaining part of my time, but after hearing how bad the weather was from a few people, and peoples general dislike of Phuket from a few people I ended up staying on Koh Tao for \"just one more night\" until the very day before my flight out, and got the night boat and a bus to get to Phuket and head straight to the airport."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The night boat was quite an experience! You show up and give them your ticket and they assign you a \"bed\", where the beds are numbered mattresses on the floor on either side of the boat, barely wide enough to lie down flat on without touching the shoulders of the person next to you. I got bed 1, which meant I only had a person on one side of me and some railings on the other side. I had a Valium and read for a while before getting drowsy and donning eye shades (best thing ever for a traveller, I got fancy shaped ones of ebay for $3 that don't actually touch your eyelids and black everything out) and promptly drifting off to sleep."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/453c5ec287a93f35c05636633231b796/tumblr_inline_mp7srjvVsa1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "The Night Boat"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I woke up a few times throughout the night and my gosh were the seas choppy. It felt like the boat was swaying around quite considerably and at one point a big wave hit the side of the boat and came in some of the windows at the other end, resulting in some suddenly awake screams of shock from some people who got wet by it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I noted at one point that I could see a few life-jackets, but also that I could see that the number I could see was far less than the 70-80 odd people on board. That's the sort of thing you notice and then try to ignore."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We arrived at Surat Thani safe and sound, and early! There was a minivan that took us too a bus stop where we waited for an hour. A tuk-tuk/jeep thingy finally arrived to take the passengers to Phuket, thankfully only for about 10 minutes to another shop where we could buy breakfast and wait for another hour for the bus."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The actual bus arrived, a nice coach, and proceeded to drive for another 10 minutes before stopping \"for more passengers\" (who never turned up) for another hour! Once we finally left there we continued on with no more stops, and the bus was so empty that I was able to lie down flat on one of the bench seats towards the back and sleep for a lot of the journey."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We arrived in Phuket town bus station, where it was pissing down with rain. I asked about shuttles to the airport and was told they left from further in town but I could get a taxi for nearly as much as the whole journey from Koh Tao had cost me."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went and got some lunch and waited for a few hours but the rain didn't ease up, and I didn't find anyone else wanting to go to the airport, so I eventually got a Taxi there myself."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Check-in was a bit of an ordeal. I'd looked up what desks were supposed to be for my flight to India, got a trolley and waited there reading, expecting to be first in line. As I waited, probably 100 noisy Indians in very large groups arrived, with mountains of luggage and flat screen TVs, and queued up at desks, but none of them behing me. I should have realised something was up, but I went and checked the screen a few times and the desk I was at was definitely supposed to be for my flight."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When the info finally came up on the screens above the desks it turned out my line was business class. Bugger! I figured I was screwed either way so I kept waiting there for the gates to open in the hope they might check me in anyway, but after they finally started checking in people, there was no staff member for the business class desk anyway, so I had to go to the back of the line; no offer from the huge groups who'd queue up well after me to check in my single passenger with a single bag."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After waiting for a while in a line that didn't move (it takes a long time to check in a group of 20) I got fed up and wandered over to the queueless desks for the same airline I was flying with that said \"all flights\" above them and asked if all flights included my flight, which seemed to had been singled out with its own desks for some reason."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I was extremely happy to find out it did, so I snuck back and grabbed my bags from the other queue and went and checked straight in, finishing before even the first group from the long queue was done! Huzzah for being observant and asking questions. Emergency row with extra legroom to boot!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Onward to India!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://media.tumblr.com/cdfbc4ee7269cd3df4e96e428155bad7/tumblr_inline_mp7sqn6o9G1qz4rgp.jpg" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Koh Tao Sunset"
+          )
+        )
+      )
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Frustration - India Part 1",
+    "date": "2013-08-13 13:24",
+    "oldBlogUrl": "/post/58148258248/frustration-india-part-1",
+    "tags": ["India"],
+    "travel_dates": "",
+    "formattedDate": "August 13th 2013, 1:24:00 pm",
+    "canonicalPath": "/2013/08/13/frustration-india-part-1"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm going to prefix this by apologising that it's ridiculously long; I really understand that quote \"I'm sorry for the length of this letter but I didn't have time to write a shorter one\". I'm struggling to keep up, this will probably be the last post I write in this format, which is probably for the best. I'm going to post this as 4 parts as I get the chance, photos will have to wait until I'm somewhere with reasonable internets."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I arrived in Delhi quite late at night, about 1am, and was very glad to have an airport transfer already organised. The roads of India didn't seem too crazy at that time of night, or at least no worse than Vietnam or Cambodia; how little did I know back then. I checked into my hotel, Hotel Perfect, and went straight to bed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I woke the next day and went out in search of an ATM so I could get some Rupees and some breakfast. The ATM was easy enough, although the maximum withdrawal was less than AUD $200, another win for my overseas-transaction-fee free credit card. I'd hate to be getting socked with $5-10 foreign ATM fees for every $200 I needed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Breakfast wasn't so easy to find. The area the hotel was in, Karol Barg, seemed to be mostly closed, which seemed a bit silly in a country where it gets so hot to be shut for the coolest part of the day."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm going to prefix this by apologising that it's ridiculously long; I really understand that quote \"I'm sorry for the length of this letter but I didn't have time to write a shorter one\". I'm struggling to keep up, this will probably be the last post I write in this format, which is probably for the best. I'm going to post this as 4 parts as I get the chance, photos will have to wait until I'm somewhere with reasonable internets."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I arrived in Delhi quite late at night, about 1am, and was very glad to have an airport transfer already organised. The roads of India didn't seem too crazy at that time of night, or at least no worse than Vietnam or Cambodia; how little did I know back then. I checked into my hotel, Hotel Perfect, and went straight to bed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I woke the next day and went out in search of an ATM so I could get some Rupees and some breakfast. The ATM was easy enough, although the maximum withdrawal was less than AUD $200, another win for my overseas-transaction-fee free credit card. I'd hate to be getting socked with $5-10 foreign ATM fees for every $200 I needed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Breakfast wasn't so easy to find. The area the hotel was in, Karol Barg, seemed to be mostly closed, which seemed a bit silly in a country where it gets so hot to be shut for the coolest part of the day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "A very persistent \"guide\" and his auto-rickshaw driver finally wore me down after following me for about 15 minutes while I walked and failed to find anywhere open with food. They took me to a south Indian street food place where I had dosa and vegetable curry, which was actually really good, so I decided to stick with them for a while and have them show me around Delhi. That turned out to be a bit of a mistake, the next place they took me to a \"handi-craft\" market."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Maybe it's just me, but on day one of visiting a country, before I've seen anything at all of the place, I have no interest in buying kitche souvenirs. Heck, on day 20 after having seen a bunch of the country I still don't have the slightest inclination to buy souvenirs, and even less so to buy stuff so generic that you could think it was from anywhere in Asia."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I did a quick walk through, still trying to be polite at this point, but really just wanted to get out of there. Each shopkeeper insisted that I look in his store, \"just looking is ok\", completely ignorant to the possibility that maybe I just didn't want to look at their tacky trinkets."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went back out to the rickshaw and asked them to take me to a real market, you know, the kind with the big baskets of spices and stuff that might make nice photos. They drove me to another shitty tourist shop (putting market on your sign does not make your shop a market). I was getting fed up with it at this point and didn't even get out of the tuk-tuk and asked to be taken somewhere I could buy a chai."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They instead took me to the tourist travel agent to get a \"free map\", which the guy inside told me cost 500 rupees, so I left empty handed. Next they took me to \"a great place for tea\", which was another air conditioned tourist shop selling packaged dried tea. I told the guide to stop wasting both our time with tourist traps as I just am not interested, and asked him to take me to the sort of place where he would actually drink chai of a morning. I think he got a bit pissy but the rickshaw driver seemed to finally get it and walked with me down the street 100m to a little hole in the wall where we had tiny little cups of chai masala. It was very yummy, but the plastic cups smaller than shot glasses were not very satisfying"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That night I met up with the tour guide, I guy from Udaipur named Mayank, or Moon, the English translation of his name, and the only other person starting the tour in Delhi, Nicolle. It turns out that most people on the tour would meet us in Varanasi, coming down form Nepal. We were briefed on what was planned for the next 2 weeks, filled out some forms and had an early night."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day we went on a tour of the old city, and visited a large mosque where they wouldn't let Nicolle in at all, and they wanted you to pay $12 to take in a camera, so I went in by myself with no camera for about 5 minutes to see a very plain and uninteresting structure with people who may well have been homeless sleeping all around inside of it and left. Sexism in the name of religion... another mark against Muslimism in my eyes."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We next went to a Sikh temple, which was much cleaner, more welcoming, more attractive to look at, and was happy to give free meals to anyone regardless of gender, faith or skin colour; a bit of a stark contrast to the Mosque. We learned about how Sikh believers always carry some sort of a knife or spear, and never cut their hair or beards because they believe it shows their wisdom, and how large turbans are actually full of lots of hair. I guess I have got some good beard wisdom going on, but not so good hair wisdom :P"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9075998621", width: 1500, src: "/cache/flickr/90/9075998621.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9075998621/", caption: "Me wearing a pink headscarf thingy" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then had breakfast in a little parantha shop that made some amazing food. I had a cashew nut parantha, a flat bread stuffed with cashews served with some vegetable curries, and it was really something special."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In the afternoon Nicolle and I  went in search of snacks for the overnight train, and made a trip to the police station to make a report about Nicolle's camera that was stolen from her the day before."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1136, flickrID: "9075995749", width: 1441, src: "/cache/flickr/90/9075995749.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9075995749/", caption: "McPunjabi's" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That night Moon took us to the train station where we boarded our overnight train where we had 3 beds out of a 6 berth sleeper carriage with a few regular Indian people in the other beds. For at least the first few hours the food and drink guys were constantly walking up and down the isle saying \"Chai, chai, chai! garam chai!\" (Hot tea) or \"Omlette, Omlette, Omlette\" and made it seem a bit pointless having brought our own snacks."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got a pretty decent nights sleep and in the morning (with the train running a few hours late) we arrived in Varanasi. We checked into our hotel and took some time to freshen up."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went and ate lunch at a very tasty restaurant, then walked down to the ghats. Nicolle and Moon went back to the hotel to relax, I decided to explore a bit more by myself."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I saw some guys getting their head shaved on one of the ghats, my hair was over due for a shaving so I thought why not. I tried to ask how much a few times but they kept replying \"yes, shaving!\" as though they didn't understand English and I figured even if they tried to charge me 4x it would still be cheap. The guy rubbed some water into my hair (thinking back, maybe it was holy Ganges water... I really hope not), opened a new razor in front of me and put it in the straight razor and started shaving away. Once he was done shaving he started insisting on giving me a head massage, then arms, then another one of the guys there started massaging my other arm telling me how lucky I was to be getting massaged by two men. Right..."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To be honest I wasn't really enjoying it and just wanted them to stop so I could leave already. When they finally finished, suddenly the guy could understood English much better and wanted 1000 rupees for him, and 1000 rupees for the other guy (about AUD$20 each). I told them where no way in polite terms. They gave me a spiel about how normal price for Indians in 800 rupees (a crock of shit) and that 1000 each was a good price, and more of them started crowding around."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At this point I'm feeling a bit intimidated since I know they all have cut-throat razors, so I pull out my wallet, and give them all the money in the notes section of my wallet, which because I separate big notes elsewhere, was only 300 rupees. Still a huge ripoff, but a much easier to stomach one. They tell me they're still not happy and want me to go to an ATM or to come with me to my hotel so I can get more money. At this point I'm starting to get pretty mad, but try and keep calm and tell them sorry but that all they're getting."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Their tone suddenly changes and they say OK, and ask me if I'm happy. I tell them no, I feel like you've ripped me off (because they have). They then make me to do a chant with the \"holy man\" sitting under their umbrella, repeating his words after him. For all I know they had me saying \"I'm a stupid white man and I promise to give you all my money\" in Hindi."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When he finishes he puts a red dot on my forehead as some sort of blessing. Surprise surprise, I'm now told I have to make a donation for the blessing. I've had enough with keeping calm, I tell them they've already stolen all my money (a lie, but I have no qualms about lying to a pack of thieving liars) and I've had enough of their scamming, I stand up and storm off, half expecting one of them to follow me and rob me."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I try and walk off my anger from being taken advantage of, but the chaotic streets of Varanasi aren't really a good setting for calming down so after storming around for a while I end up getting a taxi back to the hotel, going for a swim and writing the rest of the day off to read."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That evening we meet up with the rest of the group coming from Nepal at dinner."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we get up before sunrise and head to the Ganges for a sunrise boat ride. It's supposed to be a slow journey where we are taken down the river by the running water, but the light wind over-powers that and we stay pretty much stationary until after about 20 minutes of not moving the boat boys give up and turn on the boat engine and take us up the river past all of the ghats. A ghat is basically a set of stairs leading to water, from with the locals do many things including bathe, do laundry and cremate their dead."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9075992245", width: 1500, src: "/cache/flickr/90/9075992245.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9075992245/", caption: "Bathing Ghat" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 814, flickrID: "9075955635", width: 1500, src: "/cache/flickr/90/9075955635.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9075955635/", caption: "Drying clothes by the Ganges" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a quick Chai on the side of the Ganges when we get back, in single use disposable ceramic cups none the less, Nicolle and I decided to head to the monkey temple which as the name implies is home to a lot of monkeys. The temple was... really just another temple. But the monkeys were cute and awesome. Unfortunately you're not allowed to take cameras inside at all, which is a shame since I had zero interest in photographing their holy shrine of flaking paint, but would have loved to get some photos of the baby monkeys and their mothers."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Afterward we went for a wander about the street markets, where I took a photo of a guy charming a snake. I went to walk off and the guy stopped playing his flute, picked up his snake basket and started chasing after me and demanding money. I told him to put down the damn snake before giving him a few rupees."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1468, flickrID: "9075943413", width: 1102, src: "/cache/flickr/90/9075943413.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9075943413/", caption: "Snake charmer" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 937, flickrID: "9078167438", width: 1500, src: "/cache/flickr/90/9078167438.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9078167438/", caption: "Chilled out goats" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That evening we went on another boat ride where we attempted to float little leaf boats with wish candles in them down the river, but the wind quickly extinguished everyone's wishes. India can be a cruel place :P"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9078156802", width: 1500, src: "/cache/flickr/90/9078156802.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9078156802/", caption: "Offering Boats" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then came back and watched a prayer ceremony on the ghat from the boat"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 757, flickrID: "9075920423", width: 1347, src: "/cache/flickr/90/9075920423.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9075920423/", caption: "Prayer Ceremony" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9078141762", width: 1500, src: "/cache/flickr/90/9078141762.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9078141762/", caption: "Lotsa boats" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ended up deciding I was overdue for a \"weekend\" the next day, and it was a day leading into an overnight train to be followed by the Taj Mahal and the Red Fort in Agra, so I chose to sit by the pool (accommodation on this tour was far fancier than I'm used to) and read for the day to relax and recuperate."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Train stations parties until the little hours of the night - India Part 2",
+    "date": "2013-08-19 00:02",
+    "oldBlogUrl": "/post/58648380044/train-stations-parties-until-the-little-hours-of-the",
+    "tags": ["India", "Trains"],
+    "travel_dates": "",
+    "formattedDate": "August 19th 2013, 12:02:00 am",
+    "canonicalPath": "/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "The overnight train the second time around, from Varanasi to near Agra, was a bit of an ordeal. We showed up at the station at 21:00, one hour before the train was scheduled to depart at 22:00, and were soon told that the train had been delayed a few hours, now expected at 00:00. We went into the upper class and sleeper class reserved seating area to sit and wait and found it was full of people sleeping on the benches. One of the guys checking people were allowed to be in there went around and woke some people up, clearing enough seats so everyone could at least sit down."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We soon noticed what appeared to be rats lurking in the shadows underneath benches, occasionally making dashes in and out of the toilets. The toilets were a sight to not be seen. Wreaking of shit, the guys toilets consisted of three squats one of which had leaking plumbing that sprayed water at you as you first walked in the door, or went near the basin to wash your hands. How lovely!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "The overnight train the second time around, from Varanasi to near Agra, was a bit of an ordeal. We showed up at the station at 21:00, one hour before the train was scheduled to depart at 22:00, and were soon told that the train had been delayed a few hours, now expected at 00:00. We went into the upper class and sleeper class reserved seating area to sit and wait and found it was full of people sleeping on the benches. One of the guys checking people were allowed to be in there went around and woke some people up, clearing enough seats so everyone could at least sit down."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We soon noticed what appeared to be rats lurking in the shadows underneath benches, occasionally making dashes in and out of the toilets. The toilets were a sight to not be seen. Wreaking of shit, the guys toilets consisted of three squats one of which had leaking plumbing that sprayed water at you as you first walked in the door, or went near the basin to wash your hands. How lovely!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The station we were at is quite a busy interchange station, so pretty much every 5 seconds there was an announcement, each preceded by Microsoft's tada.wav sound. Not annoying in the slightest. I started watching my watch to measure the silence and got excited where there was no announcement for an entire minute! As 00:30 approached we got word there were further delays, and a later ETA, which when it came to be that time the train didn't show and we didn't get any new information. The guys who make sure that people in the waiting area are actually allowed there went home and suddenly the room was full of homeless people sleeping on the floor, even under the benches we were sitting on."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally at 03:30 our train arrived and we boarded, only 5.5 hours later than planned, and only a few hours before we were supposed to be arriving in Agra, which obviously wasn't going to happen. Completely exhausted and out of patience from staying up so late, you can imagine how overjoyed we were to find a guy sleeping in one of our assigned beds, and used blankets and pillows in most of the remaining ones. A conductor kicked the guy out and sorted us out with new bedding and so we could finally get to sleep."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Waking up the next day we were told the train was somehow now every later again so we probably wouldn't get to Agra until 16:30 so we'd be going to the Taj Mahal the next day instead, a fact that made Kim ecstatic as it meant we'd be there on her birthday!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At 14:30 we suddenly had to get up and get off the train as we'd arrived near Agra early-late somehow. We were given the option to visit the Red Fort that afternoon which nearly everyone chose to do."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was a shocking day in Agra, with dark clouds looming, so it was no surprise at all when it started to piss down with rain soon after we arrived at the Red Fort and not stop while we were there. The fort itself was an amazing building, and even seeing it under such awful conditions everyone still really enjoyed it and I personally found it way more impressive and interesting than the Taj Mahal."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1620, flickrID: "9582002724", width: 2157, src: "/cache/flickr/95/9582002724.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582002724/", caption: "Me at the Red Fort, Agra" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That night back at the hotel we met the final two additions to our tour group, Brad and Brad from Sydney and Melbourne."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day we got up extremely early and headed to the Taj Mahal. We were pretty much the first people there which gave as a great opportunity to get some nice photos without too many people in them. I found the Taj to be pretty impressive from a distance, but it didn't really have much more to it after that initial impression. I'm glad we got delayed the previous day, as I don't think my impression of the Taj would be as good as that of the Red Fort if we'd been to see it in the heavy rain."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 505, flickrID: "9582004172", width: 672, src: "/cache/flickr/95/9582004172.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582004172/", caption: "We felt highly valued at the Taj" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9582006666", width: 2296, src: "/cache/flickr/95/9582006666.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582006666/", caption: "Token Taj Mahal Photo" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Because of the previous days delays we didn't get the local bus that was on the schedule and instead got some private cars; definitely a bonus for what turned out to be a 6 hour drive to Tordi Garh, the old Palace in Tordi Village."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were greeted by the \"royal\" owner (maybe he was a prince or something? King doesn't sound familiar) and had a nice buffet dinner and drinks to celebrate Kim's birthday. I was sharing a room with one of the Brads, and not long after going to bed he started to lose his balance and get vertigo every time he laid down and started to freak out a bit exaggerating that he probably had a brain clot or something, so he went off to see our tour guide and came back 10 minutes later looking quite paniced, and told me he was being taken into Jaipur hospital. We're told he was ok, but he'd gone back to Delhi to head home so we didn't really get to spend much time with him in the tour group."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In the morning I got up early with a small group and we walked up the hill behind the palace to the site of the old fort to have a look, see the view and have some chai and biscuits. It was a surprisingly challenging walk, from the ground it looked like a 10 minute stroll, but it ended up taking an hour, and the humidity was so high that every inch of fabric I was wearing was drenched in sweat by the time I got back down to the palace."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1733, flickrID: "9582025236", width: 1168, src: "/cache/flickr/95/9582025236.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582025236/", caption: "Chai and biscuits!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After getting back we went for a walk through Tordi village guided by the royal dude. Tordi is a tiny little village a few hours outside of Jaipur; small enough that tourists coming to visit still cause the kids to crowd around excitedly, asking for \"one photo\" with their friends and siblings so that they can shyly look at themselves on the screen afterwards. I think in the whole time we were there I didn't get asked to buy anything even once, nor did I see a single piece of touristy crap for sale."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 684, flickrID: "9582030464", width: 913, src: "/cache/flickr/95/9582030464.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582030464/", caption: "The kids go crazy about having their photo's taken" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9579244859", width: 1224, src: "/cache/flickr/95/9579244859.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579244859/", caption: "Some kids from Tordi Village" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was explained to us how the money raised by allowing people to stay at the palace and from the meals served there is used to help keep the town going, and how they discouraged giving the children lollies or money so that they don't start expecting it, and preserve the awesome vibe the place currently has."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We made the drive back into Jaipur and checked into our hotel which was full of winding corridors and stair cases making it an interesting walk from the front door to the rooms that probably took more than 5 minutes."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1446, flickrID: "9582035842", width: 1085, src: "/cache/flickr/95/9582035842.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582035842/", caption: "Check out the mud-flaps on our Jeeps!" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1020, flickrID: "9579251861", width: 1632, src: "/cache/flickr/95/9579251861.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579251861/", caption: "Colourful stained glass at our hotel in Jaipur" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went on a quick tour around Jaipur to get our bearings, then headed to the local movie theatre to watch the current big Bollywood hit, \"Yeh Jawaani Hai Deewani\". The theatre itself was a very impressive building, especially on the inside, it felt like a palace. The movie was visually very colourful and entertaining to watch although I was surprised by how few songs there were; it was a 3 hour epic (with intermission) but I think there were only 3 songs in the whole thing. It was a bit tricky to follow what was happening at times since none of it was in English."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9579252371", width: 1632, src: "/cache/flickr/95/9579252371.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579252371/", caption: "The bollywoood cinema" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went to the toilet in the intermission and it was crazy. I think I've been in mosh pits less crowded than that tiny room was."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day we headed to the Jaipur palace, home to a king with 100 wives to look after his needs. There was a courtyard where him and his many wives would party, all but his first wife who had to stay in a room separate from the others and could only watch. It seemed like a pretty shitty deal for that first wife."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "9579254225", width: 2296, src: "/cache/flickr/95/9579254225.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579254225/", caption: "The Palace at Jaipur" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1166, flickrID: "9579266011", width: 2767, src: "/cache/flickr/95/9579266011.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579266011/", caption: "View from the Palace" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1631, flickrID: "9579273613", width: 2172, src: "/cache/flickr/95/9579273613.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579273613/", caption: "Getting the local bus back home" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We had our last dinner with the larger tour group that night at a rooftop restaurant that's speciality was meat. I had a plate of various BBQ'd meats and it was delicious."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Three girls, a guy and a tour guide - Part 3",
+    "date": "2013-08-26 00:02",
+    "oldBlogUrl": "/post/59347019752/three-girls-a-guy-and-a-tour-guide-part-3",
+    "tags": ["India"],
+    "travel_dates": "",
+    "formattedDate": "August 26th 2013, 12:02:00 am",
+    "canonicalPath": "/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning half the tour group boarded a train heading to Delhi to finish up their tour, but the 4 of us staying on and Moon went and got a local bus heading to a little village called Nimaj Bagh. The place were were staying was an old palace turned into a hotel, with beautifully painted trims on all the doorways, arches and windows. The place also had a pool which we hung out in all afternoon, making the heat a whole lot more bearable."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9582067500", width: 1224, src: "/cache/flickr/95/9582067500.jpg", linkUrl: "/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3", caption: "Our Hotel was beautifully decorated" })
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning half the tour group boarded a train heading to Delhi to finish up their tour, but the 4 of us staying on and Moon went and got a local bus heading to a little village called Nimaj Bagh. The place were were staying was an old palace turned into a hotel, with beautifully painted trims on all the doorways, arches and windows. The place also had a pool which we hung out in all afternoon, making the heat a whole lot more bearable."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9582067500", width: 1224, src: "/cache/flickr/95/9582067500.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582067500/", caption: "Our Hotel was beautifully decorated" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9582068494", width: 1632, src: "/cache/flickr/95/9582068494.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582068494/", caption: "The Pool" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We got taken on another village tour, which was quite similar to Tordi Garh, but there was a tiny bit more evidence of western influence and capitalism here, in the form of a few more general store type shops and one place selling tourist trinkets. The kids, however, were just as beautiful and innocent, wanting little more than to see themselves on the screen of our cameras."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 898, flickrID: "9579290593", width: 1596, src: "/cache/flickr/95/9579290593.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579290593/", caption: "Wise Babbas" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1327, flickrID: "9582081184", width: 1767, src: "/cache/flickr/95/9582081184.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582081184/", caption: "Kids love seeing themselves on your camera" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We also visited a temple that was decorated with carvings from before the time when Muslims had stated to influence India, with lots of carved women wearing nothing more than a sarong around their waist. It's actually a bit sad to think about the changes in India since that time. People are shocked and offended if a woman wears a singlet exposing their shoulders. The country responsible for the inception of the karma sutra is today inhabited by a generation of men who act like primary school boys, titillated by asking if you've had \"the sex\" with your past girlfriends and wanting to high five you. Quite frankly it's depressing to see a country that was once so far ahead of the curve in sexual liberation, today being completely sexually retarded and ridiculously conservative."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That evening we drove out to a hill with a lovely view of the sunset, where we had some chai. After the sun set we briefly went to a nearby lake and watched animals before it started to rain quite heavily and we headed back to our jeep and did the sides up before heading back to the hotel for a good nights sleep."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9579289073", width: 2296, src: "/cache/flickr/95/9579289073.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579289073/", caption: "Jeep'ing" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "From Nimaj Barh we headed to Jodpur, India's blue city. In the old town buildings are pretty much all painted indigo blue, apparently because it keeps the mosquitoes away. We spent the day exploring the Jodpur fort, which was fort-like, with Jodpur influences. Can you tell that my bullet point notes are lacking detail and my memory is failing?"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9582107740", width: 2296, src: "/cache/flickr/95/9582107740.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582107740/", caption: "Very pretty room in the Jodpur Fort" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1153, flickrID: "9582115536", width: 2050, src: "/cache/flickr/95/9582115536.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582115536/", caption: "Jodpur - The Blue City" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That night we went to a local bar called Rocks bar, where I tried a bunch of local whiskeys, most of which were pretty alright, followed by a bunch of dancing which even in a very drunken state I had a lot of trouble getting into. Oh, and some local guy serving for the navy asked me to go home with him after the music stopped... just your usual night our in India."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9579497335", width: 1224, src: "/cache/flickr/95/9579497335.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579497335/", caption: "So many puns" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The trip itinerary said the trip to Udaipur was by local bus, but we decided as a group that we'd done local buses already and would be happy to pay more to be able to make toilet stops wherever we pleased, and save a bunch of time. It also meant we'd be able to stop at a large Jain temple, the religion that our guide loosely follows. It's an interesting religion in that it's followers are supposed to shun technology; it's monks take it to extremes and only walk to get around, even bikes are apparently to much technology. I'm told that it means the religion hasn't spread very far around the world, simply because it's preachers won't board planes so can't easily spread their beliefs in other countries."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "During the drive it was very interesting to see how the landscape changed, starting off extremely dry and desert like, then becoming mountainous and rocky for a while, trailing into lush green rolling hills."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1020, flickrID: "9582022180", width: 1632, src: "/cache/flickr/95/9582022180.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582022180/", caption: "Desert Rajasthan" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1302, flickrID: "9582274586", width: 2083, src: "/cache/flickr/95/9582274586.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582274586/", caption: "Greener Rajasthan" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1219, flickrID: "9579488707", width: 2167, src: "/cache/flickr/95/9579488707.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579488707/", caption: "Traffic" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We finally arrived in Udaipur in the late afternoon and drove around the narrow hilly streets of the old city, where we went up lane way only wide enough for one car. As luck would have it a car was coming the other way and we had to back back down to the T-intersection to let it pass. Helpfully cars coming from the other two directions drove right up to our vehicle, stopped and every starting beeping their horns. Cars and tuk-tuks banked up behind them in both directions while impatient motorcycle rides forced their way through the narrow gaps. There was a lot of shouting, and a silly amount of horn usage as though they believed we were unaware they wanted to get past, and they didn't realise that other self-centred idiots had blocked us in from every side so until one of the honking idiots yielded, nobody was going anywhere."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Eventually cars and tuk-tuks manoeuvred enough for us to get out of the way of the car coming down the road we wanted to go up, and we did a loop around to the hotel where we were again impatiently honked at by a taxi while we got our bags out."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "With how impatient everyone on the roads seems to be, how little consideration people seem to have for how their actions are making things worse, and just how bullshit crazily people seem to drive, I'm honestly surprised that I didn't see any real road rage. Everyone is in a needless hurry, but people seem to keep their cool pretty well."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After checking into our hotel we took a quick walking tour of the surrounding area, and then went on a sunset boat cruise on the lake that took us out past the two \"floating\" hotels that looked very upmarket."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1655, flickrID: "9579479133", width: 2204, src: "/cache/flickr/95/9579479133.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579479133/", caption: "Me in front of one of the floating hotels" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1163, flickrID: "9579476777", width: 2067, src: "/cache/flickr/95/9579476777.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579476777/", caption: "Some boat. From James bond or something." }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1376, flickrID: "9582269354", width: 1035, src: "/cache/flickr/95/9582269354.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582269354/", caption: "Octopussy is showing everywhere, every night. Yet I still haven't seen it." }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Our guide invited us to come to his home for dinner that evening, where his wife and grandmother had prepared a divine selection of curries. Moon insisted that it was custom for guests to eat before the hosts, so we dug in as they brought the various dishes out, and his little old grandmother who didn't speak any English kept sneaking more naan onto our plates. Desert was goolab jamun, delicious doughy balls soaked in rosewater syrup."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9582261562", width: 1632, src: "/cache/flickr/95/9582261562.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582261562/", caption: "Delicious Meal at Moon's (Mayank's) Home" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "While in Udaipur we did a tour of the very beautiful palace, took the cable car up to a lookout where the girls were swarmed by Indians who wanted to take a photo with them (a few even asked me, it was like they'd never seen white people before), and took in a show of traditional music and dancing one of which involved a woman dancing with an ever growing stack of pots balanced on her head."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9579428207", width: 2296, src: "/cache/flickr/95/9579428207.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579428207/", caption: "Creepy Indian Paparazzi" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9579402697", width: 1294, src: "/cache/flickr/95/9579402697.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579402697/", caption: "Traditional Dancing" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1149, flickrID: "9579399107", width: 2043, src: "/cache/flickr/95/9579399107.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579399107/", caption: "So much colour!" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1889, flickrID: "9582180710", width: 1062, src: "/cache/flickr/95/9582180710.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582180710/", caption: "This is just silly" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was also some sort of kite flying festival going on while we were in Udaipur, so Moon invited us to his home yet again so would could get up on his roof and try out hand at kite flying, and fighting (trying to cut other people's kite string with ours). Quite a fun afternoon!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9582210206", width: 2296, src: "/cache/flickr/95/9582210206.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582210206/", caption: "Moon showing us how kite flying is done" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9582207622", width: 2296, src: "/cache/flickr/95/9582207622.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582207622/", caption: "Me having a turn flying our kite" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One morning we were booked in to do a cooking class but I felt extremely nauseated during breakfast and decided food preparation was probably not the best idea. By lunch I was feeling fine again and came to the conclusion that the nausea must have been caused by the doxycycline I'd taken that morning on an empty stomach, an amateur mistake."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent the morning doing research into how to spend my time in South Africa and found a budget tour from Johannesburg to Botswana, which nearly fitted into the time I was there but started a day early. I made some enquires about changing my flight and if there was an seat on the tour, and was soon off trying to get a refund on my overnight train ticket and booking flight to get me to Mumbai sooner to give me a little extra time there."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Moon and the girls still on the tour said our goodbyes and they headed off to get their overnight train back to Delhi, while I stayed on in Udaipur for a few extra days."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "India Flying solo, at one with the chaos - India Part 4",
+    "date": "2013-09-02 16:06",
+    "oldBlogUrl": "/post/60084606675/india-flying-solo-at-one-with-the-chaos-india-part-4",
+    "tags": ["India", "Mumbai"],
+    "travel_dates": "",
+    "formattedDate": "September 2nd 2013, 4:06:00 pm",
+    "canonicalPath": "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my first morning alone in Udaipur I went for a bit of an aimless wander around, and ended up at the zoo, which with my typical travel luck, was closed that day. I had a bit of a walk around the gardens surrounding it which were very nice, and sat in the shade reading a book for a few hours."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9582177058", width: 1632, src: "/cache/flickr/95/9582177058.jpg", linkUrl: "/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4", caption: "Just my luck" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I took a very round about walk back into town and stumbled across quite a long street market which was full of colour and activity, so I spent quite a while taking photos."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my first morning alone in Udaipur I went for a bit of an aimless wander around, and ended up at the zoo, which with my typical travel luck, was closed that day. I had a bit of a walk around the gardens surrounding it which were very nice, and sat in the shade reading a book for a few hours."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9582177058", width: 1632, src: "/cache/flickr/95/9582177058.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582177058/", caption: "Just my luck" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I took a very round about walk back into town and stumbled across quite a long street market which was full of colour and activity, so I spent quite a while taking photos."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9582154468", width: 2296, src: "/cache/flickr/95/9582154468.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582154468/", caption: "Colourful fruits" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1380, flickrID: "9582146398", width: 1838, src: "/cache/flickr/95/9582146398.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582146398/", caption: "Colourful spices" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1309, flickrID: "9582166292", width: 1744, src: "/cache/flickr/95/9582166292.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582166292/", caption: "All of the chilli" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I organised a taxi up to see the monsoon palace for sunset, right up on top of the hill overlooking Udaipur. The views of the city were fantastic, but the gloomy overcast afternoon made the sunset into a non-event."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9579543153", width: 2296, src: "/cache/flickr/95/9579543153.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579543153/", caption: "The monsoon palace" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I went back to see the zoo on a day that it is open, and instantly regretted coming. The few animals they had were in painfully small cages, which wreaked of shit; atrocious conditions that made me feel very sorry for the animals."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That afternoon/evening I got my flight to Mumbai on Air India. I've already ranted about how horribly over-the-top bureaucratic the whole thing was [here](http://www.lucasthenomad.com/post/54015210788/airport-security-in-india), but one thing of note that I didn't look into until after I landed safety was Air India's safety record. I found [this article](http://www.hindustantimes.com/business-news/SectorsAviation/Air-India-is-world-s-third-worst-airline/Article1-999533.aspx) claiming they are the 3rd least safe airline in the world, ignoring the ones so unsafe they don't count. Who needs bungee jumping when you've got dangerous airlines to travel with."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got a taxi from the airport to a hotel recommended in the lonely planet (I had nothing planned when my flight took off, so the lonely planet was my only real option), and it was this cute little old school style taxi, just like in old movies, with a bench seat across the front and a roof so low my head nearly touched the roof."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9582339682", width: 1632, src: "/cache/flickr/95/9582339682.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582339682/", caption: "Old Taxis remind me of Leisure Suit Larry" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 885, flickrID: "9649731853", width: 1180, src: "/cache/flickr/96/9649731853.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9649731853/", caption: "Badass!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When I arrived I found out that that hotel was full, but a helpful guy looking for a tip helped me find  a place around the corner that was nice and cheap, that was just a floor full of tiny shoebox private rooms, probably 1.5 metres by 2 metres. Good enough lodgings to spend a night, but the bathrooms were so horrible I didn't wasn't to stay more than the one night."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 640, flickrID: "9579540237", width: 480, src: "/cache/flickr/95/9579540237.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9579540237/", caption: "My shoebox. There are many like it but this one is mine. For tonight." }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I was hungry for some dinner so I went for a walk to find that just about everything around seemed to be closed already at 11pm, but after walking past hundreds of shut shops, I found Leopold Cafe; from the book \"Shantaram\", which saved me from having to stoop to visiting the golden arches I could see in the distance. The place for much larger and far busier than I had imagined it to be, with a whole team of waiters decked out wearing \"Leopold\" uniforms. I had a pretty nice curry there, then headed back to my shoebox to sleep for the evening."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent the next morning searching for a nicer hotel that I could afford and found a place that had a bit of an old mansion feel to it. I had a look at the room, it looked pretty nice and had an air conditioner so I agreed to stay, but later when I went to turn on the AC I was disappointed to find there was no power to it. I asked at reception about it and they told me it was an option extra which I wasn't very happy with, especially since there was no fly screens on the windows. I ended up deciding that I didn't really need the AC, and lucky for me there didn't seem to be any mosquitoes in Mumbai."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After sorting out my room, I went and looked into booking a tour of the slums with a company that had been strongly recommended that used the money raised to run a school in the slums to educate the kids there. I was lucky and there was a tour leaving that day in about an hour, so I booked in and went home to change from my flip-flops into closed shoes."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was a very interesting tour, showing how much industry goes on there from plastic recycling, where they sort the plastic by quality and colour and melt it down to make long strands which are cut into pellets to be shipped off to other countries to be made into all sort of stuff, to fabric recycling where old fabric is shredded and the fibres are spun into a thread which is then turned back into fabric, to burning off the paint from old oil drums and banging them back into shape to be repainted, refilled and reused. Apparently there are a few people making a ton of money from the slums, while the people who work and live there are in extreme poverty. A lot of the people actually sleep at night in the same factory that they work in during the day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were taken down a \"lane way\" that would have been only about the width of my shoulders and required us to bend down not because of a low roof, but because of low power lines, along which there were hundreds of tiny rooms each inhabited by a family. At one point we went past an area our guide had described as an open field used by the locals as a toilet. What it looked like, however, was a huge mound of garbage with some kids playing cricket on it not 10 metres away from another kid squatted down taking a dump. Lovely!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I took a boat to Elephanta Island, to see the cave temples carved out of the side of the hill. The boat ride there was pretty choppy on account of the extremely high tides. I had a sea sickness table beforehand so I was fine, but there were a lot of Indian women throwing up onto the side of the boat. That's not a typo, they weren't managing to get it over the edge in the slightest."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The steps up to the cave were lined on either side by stalls selling the generic tacky souvenirs available everywhere in India, and roofed with blue tarps that did little more than stop any change of a breeze to ease the humidity. I don't know how many people come all the way to Elephanta Island to buy their tacky jewelled elephant, or how they would pick any of those hundred basically identical stalls over another, but the shopkeepers obviously think it's worthwhile."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9645833277", width: 2296, src: "/cache/flickr/96/9645833277.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9645833277/", caption: "Shitty little trinket stalls lined both sides of the several hundred meters of steps up to the Elephanta caves" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The first cave was quite impressive, with huge chambers carved from the mountain with lots of statues carved into the walls, but the other unfinished caves were less impressive, and finding a part where the \"stone\" had fallen away to reveal steel concrete reinforcing made me wonder just how authentic the whole place was."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9645953003", width: 2296, src: "/cache/flickr/96/9645953003.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9645953003/", caption: "Elephanta Caves" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1693, flickrID: "9645926509", width: 1271, src: "/cache/flickr/96/9645926509.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9645926509/", caption: "Me at Elephanta Caves" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9646140047", width: 1724, src: "/cache/flickr/96/9646140047.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9646140047/", caption: "More exposed concrete reinforing… wtf?" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The boat back seemed to take a lot longer than the boat there, with a few burst of monsoon rain, so I didn't end up getting back until late in the afternoon and didn't do much else that day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My final day in Mumbai, and in India, was pretty packed full of stuff. I had a look through the museum in the morning before heading out to Mahalaxmi Dhobi Ghat, a huge open air laundry, full of little troughs of water where people bash clothes clean, roofs covered in clothes lines and sheds where they boil water for the washing. It was an interesting place to visit, and explained why hotel laundry in Mumbai needed to be dropped off so early in the day."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1349, flickrID: "9652857004", width: 1797, src: "/cache/flickr/96/9652857004.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9652857004/", caption: "Mahalaxmi Dhobi Ghat" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9652919362", width: 2296, src: "/cache/flickr/96/9652919362.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9652919362/", caption: "Clothes washing" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9652895050", width: 2296, src: "/cache/flickr/96/9652895050.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9652895050/", caption: "Clothes drying" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the Laundry, I walked down towards the Haji Ali Mosque, which is out on an island connected to the mainland by a long concrete walkway, with toxic Bombay water full of garbage on either side. I should have turned back when I noticed everyone coming back from the mosque was soaked from head to toe, but instead I took my chances and decided to try and time it right so I could get out to the mosque dry, timing my movement between waves. That was foolish and about half way out I got stuck in a crowd when a large wave hit the concrete wall, splashing up and soaking everything I was wearing with filthy water. It's a damn good thing I had my phone and camera in my dry bag at the time!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1030, flickrID: "9649761121", width: 2151, src: "/cache/flickr/96/9649761121.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9649761121/", caption: "Haji Ali Mosque" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I turned back without even getting to the mosque, and as I was leaving some heavy rain started to fall. While people ran for cover, I tried to find somewhere completely uncovered and took my hat off to try and get a bit rinsed off by the rain."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next I headed to the Gandhi museum, which in typical fashion was closed that day for pest spraying, so I headed down to nearby Chowpatty beach instead. There was a roped off area along the shore that I asked a local about, and was told it was there to stop people getting sprayed with the toxic seawater from waves... So it sounds like the water pollution issue isn't over-exaggerated at all."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I saw some kids jumping of a higher bit of sand doing flips and stuff, that I watched for a while before they dragged me over to sit with them and asked me questions and wanted me to take photos of them so they could see themselves."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1468, flickrID: "9582321880", width: 1101, src: "/cache/flickr/95/9582321880.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582321880/", caption: "Kids practising break-dancing" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 796, flickrID: "9582321470", width: 1061, src: "/cache/flickr/95/9582321470.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9582321470/", caption: "Kids doing flips" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my long walk along the coastline, back to where I was staying, I was hit by some more dark clouds and heavy rain that I welcomed with open arms. It's amazing how getting covered in filthy toxic seawater can change you opinion of how annoying monsoon rain is. I just walked along with a grin on my face, watching people run for cover when there was absolutely no cover to run towards."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I decided I needed a shower before I headed to the airport; I asked at my hotel but they told me there was no shower that I could use, so I went to a hostel around the corner and asked them how much it would cost just to use a shower. They ended up only charging 100 rupees, and I was happy to get cleaned up and changed into some clean clothes."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My taxi driver for the drive to the airport had Bollywood tunes that I could actually recognise playing on the radio, a fitting way to finish up my time in India."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I feel I will definitely be coming back at some point, probably in winter, well away from the monsoon. I can completely understand why the place is so love/hate with people. There's a bunch of things about the place that frustrate and confuse me, but the colourful nature of the place, the amazing food and the friendly people (who aren't trying to sell you shit) have won me over."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Travelling light... or not",
+    "date": "2013-09-03 08:17",
+    "oldBlogUrl": "/post/60162685055/travelling-light-or-not",
+    "tags": ["Bags"],
+    "travel_dates": "",
+    "formattedDate": "September 3rd 2013, 8:17:00 am",
+    "canonicalPath": "/2013/09/03/travelling-light-or-not"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So I set out on this trip aiming to travel light, with just a 46 Litre backpack and a daypack, but after nearly 4 months on the road I put up the white flag."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Up until I hit Africa I managed ok, but almost always had an overflow bag clipped on to make packing a bit less of a pain day to day, but I could squeeze everything in when I needed to fly."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Doing Africa overland demanded that I buy a sleeping bag, and air mattress, which meant I could no longer squeeze just into the two bags. I tried strapping a now quite heavy overflow bag on the back of my pack, but it just mean that weight distribution was terrible and I wasn't carrying any less shit."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So I set out on this trip aiming to travel light, with just a 46 Litre backpack and a daypack, but after nearly 4 months on the road I put up the white flag."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Up until I hit Africa I managed ok, but almost always had an overflow bag clipped on to make packing a bit less of a pain day to day, but I could squeeze everything in when I needed to fly."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Doing Africa overland demanded that I buy a sleeping bag, and air mattress, which meant I could no longer squeeze just into the two bags. I tried strapping a now quite heavy overflow bag on the back of my pack, but it just mean that weight distribution was terrible and I wasn't carrying any less shit."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'd planned on chucking out the sleeping bag and roll-mat after Africa, but I couldn't bring myself to do it knowing that day to day packing would still be a pain in the ass without the overflow bag, and they will probably come in handy couch surfing, and so I decided it was time to buy a bigger bag."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went on an epic search in Istanbul and found countless shitty quality hiking bags (top-loaders), and nearly gave up, before finding a Deuter distributer who had a 70+10L travel pack which can hold all my stuff without expanding it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The price I ended up paying is actually cheaper than it's listed on Amazon, which I was pretty happy with. I left my old bags with the hostel we were staying with, so hopefully the go on to help someone else out."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "What am I taking away from this? Travelling light is a great goal, but holidaying, and actually living out of a bag long term are two different things. If I was only going for a shorter, fixed period of time, with a predetermined list of destinations, I could probably be without a laptop, poi, juggling balls and a lot more easily fit into the smaller bag; but living on the road these aren't parts of my life I'm willing to give up for what could be quite a while."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Johannesburg to Victoria Falls and back",
+    "date": "2013-09-09 00:02",
+    "oldBlogUrl": "/post/60703705893/johannesburg-to-victoria-falls-and-back",
+    "tags": ["Africa", "Victoria Falls", "Johannesburg", "South Africa"],
+    "travel_dates": "",
+    "formattedDate": "September 9th 2013, 12:02:00 am",
+    "canonicalPath": "/2013/09/09/johannesburg-to-victoria-falls-and-back"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9661702941", width: 1500, src: "/cache/flickr/96/9661702941.jpg", linkUrl: "/2013/09/09/johannesburg-to-victoria-falls-and-back", caption: "Stunning Sunrise in Botswana" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "I changed my flight to South Africa to be a day sooner in order to get to Johannesburg in time on Monday morning to go on a week long tour up to Victoria Falls in Zimbabwe and back. Booking in on this tour was a bit of a spur of the moment thing, I'd only found out about it's existence the Wednesday beforehand; I checked if I could change my flights and if there was room on the bus, then got flights moved and got myself booked in."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9661702941", width: 1500, src: "/cache/flickr/96/9661702941.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9661702941/", caption: "Stunning Sunrise in Botswana" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I was picked up from the \"hostel\" I was staying in (It was really just a guys house that he let people stay in... you cant call it a hostel and only have one bathroom & toilet) at 5am. I had been told the day before where the keys were to open the front door, the front verandah cage and the massive padlock on the front gate, topped with an electric fence, and had been told to go out and unlock all the locks, then come inside and wait looking out the window for the bus to show up. At the time I'd though it must have been a terrible neighbourhood to merit all that security, but having spent more time in South Africa I've found that pretty much everywhere has crazy levels of security like that so I'm not so sure anymore."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The bus arrived on time and I was the first person to be picked up. Our guide David, an friendly guy with a goofy laugh and a missing front tooth, introduced himself and we headed off to pick up more people, two Australian sisters from Sydney, then two English guys, then two Swiss sisters and two American cousins. Quite a few pairs of relatives!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We drove for a while before stopping for breakfast at a large service station, where we met up with another mini-bus full of people also on the tour. I picked up some suspect biltong to snack on during the trip here, which may have been a huge mistake."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We drove another few hours before stopping for lunch, still in South Africa just before the Botswanan border. Just after lunch, while talking with some of the people from the other bus, I suddenly felt a bit dizzy and had to sit down. As the day went on I started to feel really bloated and got some really nasty stomach cramps; it felt like the symptoms of diarrhea except every time I went to the toilet I couldn't do any more than a fart."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The day dragged on and I felt worse and worse until we finally arrived at the camp ground at Elephant Sands at nearly 22:00... 17 hours on the road. I couldnt eat more than a bread roll at dinner and wasn't in the mood to fuck around putting up tents in the dark, so I \"upgraded\" to stay in a room that night. It cost way to much for a very basic room with no glass in the windows, only fly screens; but I would have paid any amount at the time because I was feeling so awful."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In the morning the room's attached toilet became a wonderful investment as yesterdays bloated constipation turned into a number 7 on the bristol stool scale. The bloating and some of the cramps went away which was a welcome relief. I went to grab my bags and head over to the other people from the tour having breakfast when I suddenly needed to dash back to the toilet. Eventually I made it over to the bus, but had to make yet another trip to the bathroom before we left."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "People say nothing compares to the thrill of bungee jumping, sky-diving and a host of other adrenaline based sports, but I don't think any of them could really compare to the thrill of having full blown diarrhea on a long road trip. The edge of your seat excitement, wondering if you'll make it to the next rest stop before your belly decides it's held things in long enough... It's a thrill that I wouldn't wish on anyone."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Thankfully I made it through the 8-9 hours of driving without any accidents with pure good luck, I swallowed a shit load of Imodium but it did nothing to the consistency of the filth spraying out of my behind at each rest stop we stopped at."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9665072956", width: 1500, src: "/cache/flickr/96/9665072956.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665072956/", caption: "Heading to Zimbabwe" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We set up our tents in the Victoria Falls Rest Camp and then headed to the actual falls themselves for a self-guided tour. When we arrived there was a stall trying to convince us to rent rain coats but none of us did. The sound of the falls is amazing, hearing tonnes of water per second smashing down onto rocks a hundred metres below makes a thunderous roar like you can only imagine."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9665101018", width: 1500, src: "/cache/flickr/96/9665101018.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665101018/", caption: "Victoria Falls" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "For the most part, we were fairly dry with only a bit of spray from the falls in places, but then towards the far end of the walking path the amount of water in the air shot up dramatically, cutting what we could see to very little and completely soaking us in the process. It's a good thing that winter days in zimbabwe are actually pretty warm and pleasant!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We watched someone bungee jump off the bridge over the falls, the same bridge where a bungee cord snapped a little while back while an Australian lady was jumping. She survived and now the bungee jump is run by a South African company and supposedly a whole lot safer now. I had been pretty keen on doing a bridge swing, but with my stomach how it was I decided that was completely off the table now."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went back to camp, with a stop in at the activities company to book in activities for the days we were there, and waited while dinner was being cooked... and waited... and waited. Apparently somebody had come and bought all the firewood, so the guides had had to buy some green wood and it wasn't burning well so dinner wasn't ready until after 10pm that night. Still feeling pretty awful, I went to bed before dinner was ready and only managed to eat because I got up to go the bathroom and saw it was ready."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I went and found a chemist, armed with my little book of how to deal with various travel illnesses, and got myself some antibiotics to kill whatever was in my gut. I took a double dose as recommended by the booklet and within just a few hours stared to feel a whole lot better. The cramps disappeared entirely and my belly stopped feeling constantly bloated. Lucky for me too, as I'd booked in for a helicopter flight that morning!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was the first time I'd ever been in a helicopter and I'd opted for the longer flight option that circled around over the Zambezi river as well as the falls. This turned out to be a good idea because it meant that there was only me and another girl from the tour, plus the pilot, in the helicopter, which mean that he only had to worry about putting on a good show for the one side of the helicopter. When we saw hippos, giraffes, and other wild animals, the pilot would circle around so we got a good view."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The view of the falls from the air was spectacular. It was incredible to see all the previous sites of the falls, a deep canyon that zig-zagged across the land, all now covered in thick vegetation with the river flowing deep below."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 843, flickrID: "9661888675", width: 1500, src: "/cache/flickr/96/9661888675.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9661888675/", caption: "Victoria falls from the air" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When we got back I noticed the next helicopter ride, one of the shorter flights, was packed to capacity... It looked like quite a squeeze with some very large gentlemen climbing on board."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "All over Victoria Falls town, there are guys trying to sell you the old Zimbabwe money, a product of the hyper-inflation that led to money that was worth more as kindling than it was as money. I got myself a 50 billion dollar note and was pretty chuffed, until I found that hyper-inflation had gone way past 50 billion and the largest bill was 100 trillion. I did manage to secure myself a 100 trillion dollar bill, and also a 1 dollar bill, both with an issue date only 1 year apart!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1018, flickrID: "9665189346", width: 1018, src: "/cache/flickr/96/9665189346.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665189346/", caption: "One hundred trillion and one dollars" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That afternoon I was booked in to go and ride an elephant, visit rhinos and go on a night game drive followed by a delicious African dinner, with the company of my Australian friends Phoebe and Victoria. On the elephant ride we saw a lot of impalas right at the start, but then disappointingly little aside from birds after that."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9661907751", width: 1500, src: "/cache/flickr/96/9661907751.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9661907751/", caption: "Riding a hefalump" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The rhinos were amazing, there would have probably been 10 or so gathered around the food thingy in their sanctuary (they're free to roam, but appear to be pretty reliant on the people looking after them and feeding them) and the cutest little baby rhino with them. The funny little squeaky sounds they make are not the sounds you'd expect from something as large as a rhino, and their little faces really look just like dinosaurs. We got to see a few confrontations between them too when one rhino would try and push its way into the food trough, and they would face each other off and charge towards one another."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9665159964", width: 1500, src: "/cache/flickr/96/9665159964.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665159964/", caption: "Daaaaw! Cute baby rhino" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The \"night\" game drive was spectacular until the sun went down. We had some spectacular scenes of elephants and giraffes with the African sun setting behind them in the first part of it, but after the sun went down it got cold very quickly, and we found practically no more animals once it was dark, even with the bright red spotlight the driver was scanning around with."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9665184778", width: 1500, src: "/cache/flickr/96/9665184778.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665184778/", caption: "Giraffe sunset silhouette" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Dinner was a buffet with some really night African style curry and vegetables, just the sort of nutrition I was in need of after several days where I could hardly eat. I was really glad that Phoebe and Victoria were there for dinner, or it would be just been me and a family eating together. The drive back from dinner was done in one of the open safari trucks and oh boy was it cold. The cold air blowing against my head felt like it was giving me an ice cream headache."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I crossed over into Zambia with the two English guys from the tour, Bernard and Steven. We walked to the border, and crossed over by foot (sadly no special stamp for walking border crossings), then got a taxi on the other side to Livingstone town, about 10km away. We didn't really have much of an idea what we wanted to do in Zambia so we had the taxi driver take us on a bit of a tour around the town, pointing out old buildings, hot night clubs and bustling markets."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9661958099", width: 1500, src: "/cache/flickr/96/9661958099.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9661958099/", caption: "Barbing centre" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "He stopped at a strip of tourist markets, where the shopkeep at every store wanted to stop you, shake you hand and say hello, and friendly-force you into there stalls for a look, \"Looking is free!\". After the 10th time I had had enough and sat down with the old ladies actually crafting things. The whole routine feels hospitable on the surface, but is thickly layered in desperation and annoyance and makes me not want to even look if I'm forced to look at everything. Even back home I avoid shops, I prefer to buy shit online and not have to deal with clueless sales staff, so being made to look inside a hundred stalls selling the African equivalent of tiny stuffed koalas and kangaroos is pretty much my version of hell."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That said, I did look in one shop that had some very unique paintings and I even bought one. They had cutesy African animals juxtaposed with unlikely tools and equipment. For example two giraffes sharing iPod headphones, a lion doing weights holding a barbell over its head, a parachuting hippopotamus and a leopard being shot out of a cannon; just like you see in the wild. I wish I'd taken photos, but I've just realised I didn't even photograph the one I bought so now I have to hope it makes it home in the post safely."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a stop in for some lunch we got a taxi back to the border, and Steven and Bernard crossed over as they were going swimming with crocodiles that afternoon. I stayed in Zambia and went to view the falls from that side. The view from Zambia was completely amazeballs. It just seemed like you could see more and get closer, without the mist in the air becoming opaque and blocking the view. Not that there wasn't a lot of water in the air, the Zambian side made the other side look positively dry. I started to worry that even with my camera in a white water rafting/diving dry bag it was going to get wet."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9665199670", width: 1500, src: "/cache/flickr/96/9665199670.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665199670/", caption: "Me @ Victoria falls from Zambia" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9665205990", width: 1500, src: "/cache/flickr/96/9665205990.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665205990/", caption: "Safety... pffft!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After getting thoroughly soaked I went for a walk down a different path in the national park that led to some fantastic views of the viewing bridge in front of the falls, and the boiling pot below where the Zambian white water rafting starts from."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9665212260", width: 1500, src: "/cache/flickr/96/9665212260.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665212260/", caption: "Immense power" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 844, flickrID: "9661999129", width: 1500, src: "/cache/flickr/96/9661999129.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9661999129/", caption: "That bridge is so damn wet, hence the lack of photos from over there" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I wish I'd had more time to take the walk down there to see the rapids up close but I got distracted by a tribe of baboons who came walking past that I followed and took a lot of photos of. At first I was a bit concerned being up so close, but they really didn't seem to even notice I was there so I followed them for about an hour taking photos. At one stage I used the flash and them a mother baboon started walking directly towards me and I got worried and walked backwards, but she just kept coming after me and many others following. I think they had coincidentally just decided to move further down the path right after my flash went off because they ended up going around me and continuing on down the path."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1126, flickrID: "9665303404", width: 1500, src: "/cache/flickr/96/9665303404.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665303404/", caption: "Baby baboon going for a ride" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I crossed back into Zimbabwe and headed back to camp for a shower, only to find that the water was not running for the 3rd day running. It seems that running water and electricity really are luxuries even in the tourist parts of Zimbabwe."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went as a group that night for dinner at a place called Mama Africa and I ate a traditional Zimbabwe hot pot that was supposedly spicy beef but I couldn't detect even a hint of spice, nor could someone else who ordered it. That's not to say it was bad, but it definitely wasn't the spicy meal the menu described it as."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we set off back to just across the Botswanan border to Chobe, a nice short drive compared to some of the previous ones. There we went on a game drive around the Chobe game lodge, a huge wildlife park teaming with wildlife. We drove along the river and saw loads of elephants and hippos heading to and from the water for a drink, and even a crocodile or two sunning themselves on the bank. Impalas frolicked, dashing about at a frantic pace leaping over ditches. Sadly the time of day meant we were driving towards the sun for almost the entire drive, and then away from a beautiful sunset; and also that all the cats were off sleeping, but it was still a great display of wildlife."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 437, flickrID: "9665353292", width: 2140, src: "/cache/flickr/96/9665353292.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9665353292/", caption: "Elephants and hippos drinking" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Botswana had running water and taking a shower after so many days was life changing."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The following day we did another very long drive, broken up by having to stop a few times to sanitize our shoes for foot and mouth disease at a few control points. This consisted of taking out shoes and wetting the soles of them with some sort of liquid that I was told was soda ash. This seems highly ineffective, considering we were also bringing tents with us covered in dirt and dust that did not need sanitizing."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We arrived at the camp ground for the night pretty late in the afternoon and we greeted by a man who looked a lot like an African version of Jack Sparrow from Pirates of the Caribbean. We had another buffet dinner, followed by drinking games, followed by the local entertainment of twp of the staff getting into a fight and one of the guys taking his pants off. I've seen sometimes where guys fight they'll take their shirt off, but stripping down to a shirt and underwear to fight is new to me."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The last day of the tour we had to get up stupidly early to get to the South African border before the churchies arrive and congest things. Apparently a lot of people in Botswana cross over into South Africa on a Sunday for church. The border crossing was trouble free, although we had to go and get something signed off after showing that we had our yellow fever shots because a few of us had been to Zambia, which slowed things down."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We had a nice breakfast at a town in South Africa before doing a group photo and saying out goodbyes, after which the two buses went different routes and the larger group was split. Another few hours of driving and we were back in Johannesburg and dropped off at the various hostels."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 997, flickrID: "9669468951", width: 1773, src: "/cache/flickr/96/9669468951.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9669468951/", caption: "Our tour group" })
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "South Africa",
+    "date": "2013-09-16 00:02",
+    "oldBlogUrl": "/post/61358245398/south-africa",
+    "tags": ["Africa", "South Africa", "Johannesburg", "Cape Town"],
+    "travel_dates": "",
+    "formattedDate": "September 16th 2013, 12:02:00 am",
+    "canonicalPath": "/2013/09/16/south-africa"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9760054951", width: 1224, src: "/cache/flickr/97/9760054951.jpg", linkUrl: "/2013/09/16/south-africa", caption: "Totes safe" })
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So while in South Africa I managed to see the two main places people go, Johannesburg and Cape Town, which are pretty much at opposite ends of any spectrum you can imagine. Safety, things to do, how pretty the city is... Johannesburg ranks very low and Cape Town generally ranks pretty well."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My time in Johannesburg was pretty whirlwind-ish. I'd already decided that I didn't really want to spend much time there and would rather get to Cape Town, but I wanted to see the Apartheid Museum and I needed to reconfirm that I was actually eligible for my Tanzanian Visa on arrival, otherwise I'd need to make the 100KM trip to Pretoria to visit their consulate."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The visa thing ended up being a pretty simple phone call. They urged me to apply before hand, I explained that I wasn't in Pretoria, they confirmed that I could get it on arrival. Booyah!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I asked quite a few locals about safety in Johannesburg and if the whole danger thing was as big of an issue as people make out and was told I'd be fine as long as I stuck to safe areas. So none of the aimless exploring that makes travelling fun; just stick to the touristy spots and you'll be fine... and feel like a tourist."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9760054951", width: 1224, src: "/cache/flickr/97/9760054951.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760054951/", caption: "Totes safe" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I decided the most cost effective way to get to the Apartheid Museum was to get on the city site-seeing bus which stopped there, and would also let me see a few other sites. The tour gave some interesting trivia, but felt like they were really stretching for content in a lot of places where they'd point out pretty but unimportant building X, and boarded up building Y."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9760170266", width: 1724, src: "/cache/flickr/97/9760170266.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760170266/", caption: "There were derelict buildings like this all over Johannesburg" }),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The Apartheid Museum was great, and I got very lucky with my timing as they had a special exhibit about Nelson Mandela on too. For those as ignorant as I was, the South African Apartheid was a system of segregation enforced by the government, dividing up the whites, the blacks and the coloured people, not allowing the groups to mix or mingle and giving a load of preferential treatment to the whites while treating the black people like shit. Oh, and this was happening right up into the early 90s; It's shocking to think that if I'd been born a South African I actually would have lived 1/3rd of my life under such a system. It made me wonder a lot about the white South Africans I was coming into contact with and wondering how they'd felt about the whole thing while it was privileging them. And about the black South Africans I met, and how I couldn't fault them for being extremely bitter about the whole thing, still so fresh but being told to get over it."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9760255074", width: 1632, src: "/cache/flickr/97/9760255074.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760255074/", caption: "Johannesburg. It's not exactly pretty" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my other day in Joburg I undertook the cultural experience of catching one of the local minibus' to East Gate shops in search of needed camp gear for my upcoming overland tour."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "These are basically your standard white minivan that you flag down and they'll give you a lift where they're going for less than $1. I was the only white guy on the minibus in both directions and it felt like having a white guy in there was a bit of a novelty. Someone from the bus actually came up and said hello to me in the shopping centre later, only adding to the feeling that white people don't really catch the minibus' often."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I met a friendly American named Erin at my Johannesburg hostel, who was heading to Cape Town a day earlier than me. She sent me a message after she arrived saying how great Cape Town was and how I should definitely spend my time there instead of Joburg. So I booked my flight for early the next morning and that was that!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When I arrived at my Cape Town hostel and walked in the door, I was nearly right away greeted by Phoebe and Victoria from my previous tour up to Victoria Falls. What a lovely coincidence!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "9760628495", width: 2296, src: "/cache/flickr/97/9760628495.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760628495/", caption: "Table Mountain, not the day we climbed it though. I stupidly forgot to get that photo so here's a cloudy one" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They were just about to head up Table Mountain, so I quickly chucked my stuff in a locker and joined them to share the taxi. It was an absolutely perfect day for it, clear skys and sunny; pretty much still air. The wind up there often gets in excess of 100 Km/h and they close it down, so to have such a nice still day in the middle of winter was fantastic. The terrain was visually very interesting, and we saw some strange little animals called a rock hyrax, a strange and unexpected relative to elephants."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9760597393", width: 1724, src: "/cache/flickr/97/9760597393.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760597393/", caption: "Phoebe and Victoria heading up the steep track" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 701, flickrID: "9760113741", width: 934, src: "/cache/flickr/97/9760113741.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760113741/", caption: "Rock Hyrax are cute little guys" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That evening they had a braai at the hostel, the South African take on BBQs, which was crazy delicious. I dunno what they do to their potatos but they're addictive, and those long boerewors sausages are great. Erin dropped around from her hostel around the corner and we hung out drinking beers for a while before I had to retire reasonably early for my shark cage diving the next morning."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got picked up at 5am and hopped into a minibus which I promptly fell asleep on and woke up a few hours later when we were arriving. They gave us a full english breakfast before fitting us with life jackets and getting us onto the boat and heading out to the site. The water around Cape Town in the middle of winter is hovering around 9-10ºC, so well-worn 7mm wetsuits were given out to us, which annoyingly meant that moving your arms too much would flush in new cold water into the suit."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They attract the sharks to swim by the cage by chumming the water with rotting fish guts and fish oil, and then lure them closer still with a fish head on a rope that they chuck in the water buy yank out of the sharks reach as it approaches. There's actually ",
+      _react2.default.createElement(
+        "a",
+        { href: "http://www.stopsharkcagediving.com/" },
+        "a movement against this kind of shark cage diving"
+      ),
+      ", which claims there are alternate methods of attracting them using \"audio sound vibration\". I don't know if the science checks out, but I do admit it felt \"not quite right\" attracting the sharks by teasing them, but it was still an unforgettable experience."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Diving is probably the wrong word for how this actually works. They have a cage hanging off the side of the boat in which 8 people hop in, and then drop down in the cage and breath-hold to see the sharks. I was in the first group in the water and we were pretty stoked to see quite a number of 2.5-3 metre Great Whites pass by and under the cage at close range. After about 45 minutes in the freezing water, we hopped out and let 8 more people jump in for a turn."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were some volunteers up on the top deck of the boat who were trying to identify the sharks to track how many unique sharks there were, and how they behaved (ie. if they were just passing by, attacking the bait, returned attempts etc). From their count, we saw 9 different Great whites that day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After all the customers had a turn in the cage they let staff & volunteers have a turn, and there were two extra spots so I jumped back in for another round. It turned out to be a fantastic decision on my part, as I while I was in the cage the second time a shark charged at the bait directly towards the cage and was too slow to turn after the bait was yoinked and it rammed right into the cage. Directly in front of me. It was fucking nuts, and the level of excitement in the cage was through the roof! Probably just as well it was mostly volunteers as I think some of the other people on the boat might have freaked the fuck out."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://2.media.collegehumor.cvcdn.com/96/27/921d080be5f1bc3745a4a993c2556db4-cigar-smoking-tommy-gun-wielding-bear-riding-a-shark-is-probably-the-b.jpg", className: "img-responsive" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "I didn't take my camera, but this is pretty much exactly what I saw"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Aside from the antics I witnessed from inside the cage, I was also privileged enough to see not one, but two sharks attacking seals on the surface (not sure if they got away, we didn't see much after the initial splash) and we had a whale come up 15 Metres from the boat (with a whale watching boat following it :P)."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the way back to shore we went through a channel called \"Shark Alley\". We didn't see any sharks, but the rocks along the side were covered in literally 1000's of seals! Everywhere you looked there was blubber flapping around. I can imagine it's like a buffet for the sharks!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://newswatch.nationalgeographic.com/files/2012/01/IMG_5963-950x585.jpg", className: "img-responsive" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "Seals in Shark Alley - Another shamelessly stolen image"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That evening I met up with Erin again for gelati, an odd choice for the middle of winter but it was her last night in Cape Town and it was a delicious choice."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 768, flickrID: "9761158144", width: 1024, src: "/cache/flickr/97/9761158144.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9761158144/", caption: "Me and Erin having Gelati" }),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I looked at a map and decided to walk to a strip of beach I heard was nice called Camps Bay. I walked for what must have been 2-3 hours along the coast line, and while it was a nice walk I was getting tired so I gave in and got a minibus for what turned out to be the second, much hillier half of the walk. Sort of wish I'd just gotten the minibus the whole way, but it really did look like a short walk on the map. When I got there I practiced juggling and poi in the shade for a while, and then headed back by minibus to Cape Town."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9760648433", width: 1632, src: "/cache/flickr/97/9760648433.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760648433/", caption: "Camp's Bay" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I also went on a tour of Langa township, one of the townships that they forced the non-whites to live in during the apartheid years. To be honest I didn't really feel comfortable there; the whole thing was a bit voyeuristic and I really didn't feel comfortable going into peoples homes to have a look, even when they insisted. It just felt completely different to the villages we visited in India, or even the slums; I just got the feeling that if I was one of these people I wouldn't want people coming to look at how shitty my living circumstances were. It was pretty heart breaking to see the poverty that these people are still living in; we saw one room of a \"hostel\" that was probably 3M x 3M, that was the home of three separate families."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9760585025", width: 1632, src: "/cache/flickr/97/9760585025.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760585025/", caption: "Nearly the only photo I felt happy to take in the township" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That afternoon I made it out to Robben island, where they kept Nelson Mandela and a lot of other political prisoners. The most interesting part out there was a talk given to us by an actual political prisoner. It was interesting to hear that amongst the prisoners they referred to the prison as \"the university\", since it was full of all the people the government didn't really want talking to one another, but the prisoners had sneaky ways of doing so anyway."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9760688123", width: 1724, src: "/cache/flickr/97/9760688123.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760688123/", caption: "Robben Island Prisoner telling us about how it was" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I met a pleasant Italian lady named Paola who was also travelling alone, and we decided to get the City Site-Seeing bus together to see some of the more distance sites of cape town. We made stops in at the botanical gardens for a walk about, at a winery for a tour and tasting, and at a bay called Houts bay, a surreal bay that feels like there's mountains surrounding you on all sides where we saw some seals frolicking in shallow water."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9760886255", width: 2296, src: "/cache/flickr/97/9760886255.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760886255/", caption: "Bird of paradise in the botanical gardens" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1487, flickrID: "9760903495", width: 1981, src: "/cache/flickr/97/9760903495.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760903495/", caption: "Wine tasting at Groot Constantia winery" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "9760987393", width: 2296, src: "/cache/flickr/97/9760987393.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760987393/", caption: "Hout's Bay" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9760927205", width: 2296, src: "/cache/flickr/97/9760927205.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760927205/", caption: "Seal's splashing around" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1499, flickrID: "9760724182", width: 1997, src: "/cache/flickr/97/9760724182.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760724182/", caption: "Paola and me on the siteseeing bus" }),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That evening we meet some friendly Germans who'd just arrived at our hostel, Anne and Sophie, who we have a few drinks at the hotel bar and convince to come on the other line of the site-seeing bus with us the next day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped off for a bit of a walk through the CBD and were a bit surprised by just how quite it was, hopped back on and drove through District 6 (The mixed-race surburb that was completely demolished, but then never rebuilt because of the backlash from the international community), then stopped at table mountain which was this time sadly blanketed in clouds. Sophie and Anne were keen to go up and hope for the best, Paola wasn't so keen, and I'd already been up, so Paola and I continued on around the loop, which turned out didn't actually have many more noteworthy stops before getting back to the waterfront considering the distance it covered."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1419, flickrID: "9761016813", width: 1889, src: "/cache/flickr/97/9761016813.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9761016813/", caption: "Me, Anne, Sophie and Paola in front of Lion's Head" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We had lunch at a nice brewery pub called Mitchell's Brewery, with a great range of their own beers. I got a sampler \"paddle\" of there beers and they had a few really great ones; I wish I'd found the place sooner, instead of on my last day there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1270, flickrID: "9760745581", width: 953, src: "/cache/flickr/97/9760745581.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760745581/", caption: "Tasting beers at Mitchell's Brewery" }),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After lunch I sorted my bags into a flight ready state and headed to the airport to fly to Johannesburg Airport, where I spent the night which saved me a little money and meant I didn't need to stress about getting there crazy early in the morning for my international flight to Dar Es Salaam the next morning. I set up camp near a group of English backpackers (safety in numbers ;)); I blew up my air mattress and rolled out my sleeping bag and tried to sleep, but being an airport meant incredibly bright lighting all night (which eye-shades dealt with fine) and loud music and regular \"don't leave you bag unattended announcements\" (which ear plugs failed to help much with) so I didn't actually sleep all that much."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9760751232", width: 1224, src: "/cache/flickr/97/9760751232.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9760751232/", caption: "Sleeping in Airports sucks nearly as much as sleeping on buses" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I noticed that one of the other English backpackers just plain refused to even try to sleep, and spent pretty much the whole night on his feet, drinking beers (that he couldn't take through cause of liquid restrictions) and quietly reading a book. What a lout! :P"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning, or rather later that night when I gave up trying to sleep, I was able to check in quite early (like 5 hours before the flight) and get through to the air-side of the airport and do my obligatory duty free booze buying and wait for my flight to Tanzania for my next adventure."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Zanzibar & Tanzania",
+    "date": "2013-09-23 00:03",
+    "oldBlogUrl": "/post/62012492702/zanzibar-tanzania",
+    "tags": ["Africa", "Tanzania", "Zanzibar"],
+    "travel_dates": "",
+    "formattedDate": "September 23rd 2013, 12:03:00 am",
+    "canonicalPath": "/2013/09/23/zanzibar-tanzania"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "My arrival in Dar Es Salaam was pretty smooth and trouble free. I applied for my visa on arrival, along with probably 60% of the people on the flight. I was a bit slow filling out the forms and was probably one of the last people to hand in the paperwork, but it seemed like they used a LIFO queue (last in, first out) to process things so my name was soon called and I had to squeeze my way through the crowd of people waiting and get my passport."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went to queue up in the immigration line, proud to show off my fancy new visa sticker, but a guy came up and told me to just walk on through. So I walked straight past the desk where they check your passport without showing them anything, and nobody batted an eyelid. It really feels like you could get into the country without a visa very easily if you just walked on through with a bit of confidence, although I'm sure you'd have trouble leaving."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 870, flickrID: "9852999483", width: 1546, src: "/cache/flickr/98/9852999483.jpg", linkUrl: "/2013/09/23/zanzibar-tanzania", caption: "Dar Es Salaam Sunset" })
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "My arrival in Dar Es Salaam was pretty smooth and trouble free. I applied for my visa on arrival, along with probably 60% of the people on the flight. I was a bit slow filling out the forms and was probably one of the last people to hand in the paperwork, but it seemed like they used a LIFO queue (last in, first out) to process things so my name was soon called and I had to squeeze my way through the crowd of people waiting and get my passport."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went to queue up in the immigration line, proud to show off my fancy new visa sticker, but a guy came up and told me to just walk on through. So I walked straight past the desk where they check your passport without showing them anything, and nobody batted an eyelid. It really feels like you could get into the country without a visa very easily if you just walked on through with a bit of confidence, although I'm sure you'd have trouble leaving."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 870, flickrID: "9852999483", width: 1546, src: "/cache/flickr/98/9852999483.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9852999483/", caption: "Dar Es Salaam Sunset" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I waited for a few hours for Kat's flight to arrive, after which we shared a taxi through some incredibly gridlocked traffic to the Hotel where Amanda, Luke, Leigh and Nicci were already checked in an waiting for us. I'd actually already had some advanced warning about the hotel's \"No Alcohol\" policy, but didn't remember to warn Kat to hide her duty-free booze until we arrived there, so she had to try and hide it behind a backpack as we went past the very prominent sign in the lobby. We managed to sneak in both our bottles of spirits without a hitch, and disrespectfully drank some of that booze in the hotel that night, the heathens we are."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "9853002513", width: 1224, src: "/cache/flickr/98/9853002513.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853002513/", caption: "Alcohol Strictly Prohibited in our hotel" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Having been travelling solo for a few months by this point, it was really good to be among friends again although I have to admit that it took a few days before I really felt \"right at home\" again. I couldn't really put a finger on exactly why that was; it was almost like reverse culture shock, except still submerged in yet another strange culture but with familiar friends."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Our hotel room was huge! Not at all what I was expecting in Tanzania. Not just 3rd world huge either, I reckon the lounge & dining area along would have been bigger than most hotel rooms I've ever stayed in back in Asutralia, even including their bedrooms and bathroom. And easily the fanciest place I've stayed in on this trip too!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After our one night stay in Dar, we headed to the ferry terminal in a very overloaded taxi and got ourselves some boat tickets to Zanzibar. The terminal itself if bustling with people, and seemed like there were lines to get through metal detectors and put luggage through xray machines, except there was a constant stream of porters with giant bales of luggage shoving by as though we weren't also trying to get through. \"Those fucking tourists, standing around near the metal detectors in my way! Why are they even here?\""
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After what was probably twice as long as if people hadn't constantly been pushing in, we got through onto the ferry where we were led upstairs to the first class area where we found all the other backpack-wielding foreigners and a bunch of tacky lounge furniture fulling every available space. The ferry ride was pretty uneventful, although the TV in the first class area provided some good talking points. It started off playing some sort of horrible wailing music (maybe prayers? It was awful), and then later was showing some crazy over-the-top afternoon TV drama."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We arrived at our hotel in Paje by taxi, about an hour from Stone Town, where the ferries arrive. Some guys were very quick to come over and welcome us, but then at the same time they appeared to not really be aware we were coming, even though Kat had been communicating with them right up to our arrival (They were supposed to do a transfer from the ferry terminal for us, but there was no-one there when we arrived and they stopped responding to message until we were already in a taxi). We needed to wait for an extra room to be made up because there weren't enough rooms ready."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "9852961356", width: 1632, src: "/cache/flickr/98/9852961356.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9852961356/", caption: "Paje Beach, Zanzibar" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We ordered some dinner that night, and it took hours to be prepared. I'll give them credit that it was probably the best meal they served us during out stay there, but the timeliness, or lack of it, was a sign of the week ahead of us."
+    ),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were told that breakfast would be at 8am. A few of us woke up early and went over to the eating area to read from about 7am, and were pleased to find the table already set. Sadly, that set a false expectation that we'd be eating soon! By 9:00 I was starting to get hunger pains from the light dinner and no lunch the day before. Finally at 9:30 breakfast came out. It consisted of some cold fried-eggs (with white yokes, which seemed to be common in East Africa), a few pieces of fruit (lots of paw paw), a pancake and a stale piece of break."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We quickly realised that for any time that our hotel gave us, we needed to add 90 minutes to it for it to be even remotely accurate."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Rant warning for luke, skip the next paragraph :P"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "You get warned about Africa time, and I went into this expecting things would be slow at times, But our hotel just shitted me. It wasn't occasionally slow. Ever interaction with them was always hours slow. To date, it's the most consistently slow service I've experience anywhere I've ever been in the world to date. I've been to restaurants where they forgot my order when they brought out everyone else's, and still gotten my food faster than I did here. And that's just the restaurant, then they seemed to turn off the power and water to the rooms at random times through out the day. At first we thought it was just the local infrastructure being flakey, and then we asked about it a few days in and they say \"ok, we'll turn it back on\". Rinse, lather, repeat. Over and over they'd turn off the water, and we'd over and over ask them to turn it back on. The idea that someone might want to... I dunno, have a shower during the day or flush a toilet at night seemed to escape the people running the place's minds. I could forgive it if the place was exceptionally cheap, but this place was the 2nd most expensive accommodation of my trip to date (the place in Dar was more I think), but it was shittier than any hostel dorm I've stayed in, and I've stayed in some real dives. In short, avoid the Jaribu Beach Hotel at all costs. Ignore the TripAdvisor reviews, the place is shit and there were so many places nearby that seemed so much nicer. Lucky for us, the other places didn't mind us coming and spending out money in their fine establishments, so that's what we did. End rant."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Amanda, Luke, Kat and I spent the day wandering up the beach and stopped in at one of the local bars \"Teddy's\" for a quick bite to eat. We noticed they had cheap long island ice tea's and ended up staying for quite a few of them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9853176176", width: 2296, src: "/cache/flickr/98/9853176176.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853176176/", caption: "Teddy's Place!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Eventually we headed back to see what Leigh and Nicci were up to and decided to head down the beach the other direction and have a late lunch at the restaurant at the end of the long pier, attached to one of the fancier hotels in the area. The food came out quickly and was by all accounts delicious! This hotel ended up becoming our go-to place for food when were were hungry; it cost a little more than other places but it was consistently quick and delicious."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "9853195803", width: 2296, src: "/cache/flickr/98/9853195803.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853195803/", caption: "The Pier, with a restaurant at the end" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We rounded off the afternoon by heading to the zombie bar for a few more drinks, where ironically they don't serve and had never even heard of the cocktail \"zombie.\""
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1121, flickrID: "9852991526", width: 1495, src: "/cache/flickr/98/9852991526.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9852991526/", caption: "Nicci planning to steal some African kids from the Zombie Bar" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "A few of us were hungry again by the time we got back to our hotel, so we ordered some pancakes with banana and chocolate as a going to bed snack. Except without banana because they were out of that. Oh, and no chocolate either, because that's obviously quite perishable and you don't want to keep too much of it on hand. We were offered sugar in place of the missing ingredients, we were hungry so we went with it. Ninety minutes later we had pancakes, which in our drunk state were pretty damn delicious, even lacking 2/3rds of the advertised ingredients."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The net day Amanda, Kat and I went on a walking tour of the local village, led by a guy named Jamu that Amanda had met on the beach early the day before. Everyone else decided they were too hungover to go along and stayed back to get more sleep, which I probably should really have done too. I was definitely feeling pretty average for most of that day, but I'd decided to go and I'm stubborn like that."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9852947334", width: 1724, src: "/cache/flickr/98/9852947334.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9852947334/", caption: "Amanda making building materials out of palm leaf" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Anyhow, the tour was quite good. We were shown how they braid the girls hair, which got demonstrated on the edge of my beard too. It was quite impressive how they make rope from the husks of a coconut, soaked in seawater for several weeks to soften it up. The finished product was really just like rope you'd buy at Bunnings! . We saw how palm tree leaves are thatched into building materials, and some very basic henna artwork."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9853070813", width: 2296, src: "/cache/flickr/98/9853070813.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853070813/", caption: "Me getting some beard braids" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Most days in that first week on Zanzibar followed a pretty similar schedule. Wake up, wait for ages for breakfast. Sit around reading and generally relaxing. Go somewhere for lunch. Relax some more. Sometime we'd go up to the fancy hotel to use their pool. It was a very chilled way to spend a week."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9853146836", width: 2296, src: "/cache/flickr/98/9853146836.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853146836/", caption: "Gin & Tonic, and a book by the ocean" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One other day of note was the day we went and had lunch at The Rock restaurant, which is as the name implies, a restaurant built on a rock! And that rock is in the ocean, so you have to get a boat there unless the tide is all the way out. It's extremely picturesque!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1218, flickrID: "9853098706", width: 1948, src: "/cache/flickr/98/9853098706.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853098706/", caption: "The Rock Restaurant" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The food there was fabulous. For an entrée I had some very tasty garlic queen prawns. For a main I shared \"The Rock Special\" with Kat, as the wait staff had made a big deal about how it was \"for two\". It came out with lobster, a huge king prawn, some Balmain bug, and some fish. Everything was really very tasty, but I could have devoured the whole meal by myself, and having looked at the menu beforehand had gone there expecting to. In the end I was cracking lobster legs, trying to get just every last bit of meat out to try and satisfy my hunger."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's a bit of a shame they made out it was enough for two people as my expectations for paying a fair bit for that meal had already been set and I would have been completely happy to order it for myself; but them pushing it as \"for two\" made all of us think it must have been heaps of food so everyone shared. In the end I think that they were just trying to get past the average person's aversion to spend a lot of money on a nice meal, which is unfortunate since we went away hungry having spent a lot less than what we went there expecting to spend."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "9853087865", width: 2296, src: "/cache/flickr/98/9853087865.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853087865/", caption: "Leaving The Rock by boat" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After lunch, we went out on a small boat with an outboard motor to a reef a few hundred meters along the coast line to do a bit of snorkelling, a totally safe activity after just eating and having had a few beers :P We managed to see a number of nice bannerfish, some black and some pink anemone fish (think nemo), some parrot fish, and what I thought was a huge pipefish 40cm long, but I've since discovered is called a trumpetfish."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After snorkelling, we came back to land and met a friendly Masai who called himself Mr Discount! He even claimed to have change! A rarity in Africa! If any of us had wanted a bracelet or other trinket, this is the guy we'd have bought it from."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1784, flickrID: "9853157923", width: 1339, src: "/cache/flickr/98/9853157923.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853157923/", caption: "Mr Discount!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After our very lazy week in Paje, we headed back to Stone Town to meet up with the Dragoman tour group that would be our family for the next 5 weeks. We very briefly met out English group leader Steve, before heading out to do a quick walking tour of Stone Town with our local guide for Zanzibar, Daniel."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We had some free time to explore the town that afternoon before meeting up with the group again that evening at the Africa Club Hotel for some drinks while we watched the sunset, where we got to have a better chat with Steve who bore a striking resemblance to our English mate Matty Poppins and found that he seemed to share a similar set of mannerisms and cheeky smile too. We also started getting to know a few of the other people on the tour, including Pete and Deb, a lovely pair of Australian's roughly my parents age who were both very much young at heart, and very easy to get along with."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Over the course of the trip I think these two became my favourite people on the tour, with Pete being a bit of a joker and making some insightful but almost Karl Pilkington like observations (and I say that in the kindest way, Karl is awesome) and Deb almost becoming like a bit of a mother to the group."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1286, flickrID: "9853073634", width: 2286, src: "/cache/flickr/98/9853073634.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853073634/", caption: "Not the sunset described above" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the Sun had set, everyone headed to the night seafood market for dinner. There were loads of stalls set up, trying to get your business, each with a table full of fresh seafood that you could pick and choose that they'd fry up for you to eat. I had a number of skewers with different kinds of fish and tandoori lobster and some octopus and felt very full but satisfied afterwards."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After dinner we moved on to a bar called Mercury Bar, named so because Freddy Mercury was apparently born on Zanzibar. I don't think anyone actually know for certain where he lived, but it doesn't stop them naming all kinds of things on Zanzibar \"Mercury this\" and \"Mercury that.\""
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day we did a bit of a local tour, we saw the site of the old slave markets (which the Christians craftily built a church at, so you can't visit without hearing a bunch of additional religious stuff as well), visited a real local fish and meat market, and went on a tour of a spice plantation where we got to smell and taste all sort of fresh spices. The biggest surprise for me was cinnamon roots, which smelt like tiger balm, while the bark and wood of the tree smelt... like cinnamon, how you'd expect it to smell."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1209, flickrID: "9853164744", width: 2150, src: "/cache/flickr/98/9853164744.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853164744/", caption: "Our local guide Daniel, with the statue at the site of the old slave market" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped in for lunch at Daniel's house for lunch, where one of his neighbours had cooked up a very tasty curry, with some nice mango as a desert. As seems to be the case with all construction in Africa, Daniel's house was still a work in progress with some of the rooms being finished off while other were still being worked on when he had the time and money to do some more work."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stayed the night at the north end of the island at a place called Nungwi beach, a much more sheltered bit of beach than where we'd been in Paje, and definitely a lot more frequented by tourist. It definitely felt a lot less 3rd world than we'd grown accustomed to, a very nice change before we switched over to sleeping in tents every night on the mainland!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We had a meeting that evening where were were given the low-down on trip kitty and such, and it became apparent that it wasn't going to be a simple matter of going to an ATM and withdrawing the required amount."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Money in Tanzania is a royal pain in the ass. Their largest note is 10,000 shillings, which sounds like heaps, but is actually less than USD $7. This means that getting out a few hundred dollars is a giant thick wad of cash. And nobody in Tanzania ever seems to have change, even though they're in the business of trying to sell you stuff. Apparently it's you the customer's job to have the right money, or just buy more stuff!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "9853184525", width: 2296, src: "/cache/flickr/98/9853184525.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853184525/", caption: "1.4M Tanzanian Shillings, next to 100T Zimbabwe Dollars" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Upon joining the trip we were told that the trip kitty is strongly preferred in USD, because although all these countries we are visiting have their own currency, they all charge park fees in the currency from a country on the other side of the planets, which of course is not readily available from ATMs. ATMs dispense local currency, in thick wads that only amount to about USD$200. The ATMs have a very low per-transaction limit (which I think is actually a physical limit, more money would not fit in the money dispensing slot), but then have a fairly low total per day limit too (about $600). Combined this with the large time difference between Africa and Australia, and our Australian banks daily withdrawal limits that reset based on Australian time-zones... let's just say it made getting the large sums of money needed for the kitty quite challenging. In the end it took probably 15-20 separate ATM withdrawals to get the money required(ignoring the attempts where the ATMs were just plain out of money, because an ATM can only hold so much paper, and when your biggest note is worth $7 an ATM really doesn't hold very much), and then a few visits to banks to actually get the USD (Leigh and Nicci managed to clean our a few money changing places of all their USD). I found it doubley annoying because I'd only just been in Zimbabwe a few weeks earlier, where the ATMs dispense USD and I could have stocked up there, but the trip notes had misled us into thinking local currency would be acceptable and it seemed a lot safer than carrying thousands of dollars in cash around South Africa."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "9853209666", width: 1724, src: "/cache/flickr/98/9853209666.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853209666/", caption: "Rolling in cash" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the plus side though, how often do you get the chance to literally roll around on a bed covered in millions of shillings in hundred of bills?"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day was a day of free time, so I got myself signed up to go out and do two dives with a shop called Spanish Dancer divers. It's a sort of funny name, but a spanish dancer is actually a kind of swimming nudibranch that looks a bit like the dress of a flamenco dancer when they swim."
+    ),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We took a speedboat out to the reef near Mnemba Island, and when we were nearly there we were lucky enough to have a pod of dolphins come swiming past us, so we jumped in with just fins and mask and got a bonus swim with the dolphins that day. They didn't hang around for long, but the whole pod did shoot past right underneath me which was very cool."
+    ),
+    _react2.default.createElement("p", null),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The dives themselves were fantastic! I saw some cool looking long-nose butterfly fish and some smaller blue bat-fish (which I looked up and are actually called a red lips triggerfish, which I think is a stupid name because I didn't even notice the red lips, but I sure did notice they were blue and swam like bats :P). I saw quite a large octopus strobe colours a bit at me, and then slunk away and hide under a rock, and we also found a turtle just chilling out on the reef, not phased by us in the slightest."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "http://upload.wikimedia.org/wikipedia/commons/2/2f/Redtoothed_triggerfish.jpg", width: "800", className: "img-responsive" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "A red lips triggerfish. See what I mean about the name being dumb? - stolen from wikimedia cause my camera doesnt like water"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After our time on Zanzibar was over, the tour group got the ferry back over to Dar, and then another local ferry to where our overland truck was waiting for us and we got our first look at the place we'd come to know as \"home\" over the next 5 weeks. It was a huge orange thing, sort of like what you'd get if a semi-trailer and a coach loved each other very much and made a baby. Except we weren't allowed to call it a bus, cause it doesn't like that and breaks down if you do."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Drivers in Tanzania are bad. Really bad. Steve told us they were the worst in African, and I agree whole heartedly. I'd probably say they're up there near the top of the board for worst drivers world-wide, and that's coming from someone who'd recently been through both Vietnam and India. After spending our first night in tents in Dar, we were up and ready to leave 5am to try and beat the traffic, and I would have hated to have seen it any later. It was near gridlock at 5-fucking-am. Traffic was backed up for ages at one point because someone had decided to park their bus in one of the lanes exiting a two lane roundabout. I saw quite a number of cars just driving right over the middle of the roundabout in order to push in front by 2-3 vehicles. And not this sissy roundabouts that you're supposed to drive over, this was the real deal with proper kerbs."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Ok, so none of that sounds all that bad, right? Well, within a period of about 5 minutes we actually had two very near misses because of fucktards driving buses trying to overtake us with imminent oncoming traffic. This wasn't like in India where everyone overtakes all the time but it works out because everyone chilled and there's always room to slow and let people in, and there's secretly three lanes where they've only marked two. Traffic was moving way too slowly for us to slow down to make a gap for the bus, so they solved their pending head-on collision by just pulling back into our lane while alongside us, quite literally running us off the road. If our driver David hadn't swerved off the road there definitely would have been a collision, which probably would have meant 3-vehicle pile up with the oncoming traffic. It's a good thing there was a level dirt shoulder next to the road and not a drainage ditch, otherwise we would have rolled over and I might have been writing this from a hospital bed, or maybe even not at all."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's only so many times you can get overtaken by a bus with a broken axle, that cant even drive straight proper, that feels like it must be doing +130-140% of your speed before you draw the conclusion it's not just a few deadshits, everyone in the country is seriously out to kill you."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One way they (and most other East African countries) try and deal with this is by liberally littering the roads with speed humps. Not just in low speed areas like we use them back home, carparks and the like, but on the highways. With no warning signs. And they're pretty much never painted so they stand out. They basically work like \"SURPRISE! HERE, LET ME FUCK UP YOUR SUSPENSION FOR YOU!\""
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I can't count the number of times the truck braked extremely hard to try soften the impact of these surprise speed humps. I actually find it mind-boggling that the sudden braking caused by the lack of signs doesn't itself cause accidents."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Anyway, after escaping the nightmare traffic, we found a gas station in the middle of nowhere where we could stop and have the first of many roadside meals. The process of everyone getting out the tables, cooking gear and stools, prepping food and is quite a sight to see, and got to be really quite efficient as we got in the swing of things. For side-of-the-road breakfast, it was pretty fancy. We had cooked eggs, cereal, baked beans and toast. A good sign of things to come from our jovial truck cook, Charles."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1157, flickrID: "9853307193", width: 2057, src: "/cache/flickr/98/9853307193.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/9853307193/", caption: "Our overland truck, setting up for roadside breakfast" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Bureaucracy anywhere is generally a nuisance set up to make someone feel important, and Tanzania has it's fair share of it. At one point during out travels we were waved through a weigh station by a policeman, then chased down the road 10KM by a weigh station official who wanted to know why we didn't go through. He didn't care that the cop waved us through and made to turn around on a very narrow road to go back and get weighed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "You can imagine how impressed Steve was when handed a sheet of old style printer paper, blank aside from a hand written number on it that was apparently our vehicle weight. Apparently they'd run out of ink, but it was vitally important that we have a impossible to forge handwritten note to show the next weigh station. Apparently."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Anyway, that's pretty much everything of interest we did in Tanzania. I think we also went to some park called the Serengeti too, which was just a bunch of yellow grass. Boring stuff, I'm sure you're not interested in hearing about that :P"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Serengeti National Park and the Ngorongoro Crater",
+    "date": "2013-09-30 15:14",
+    "oldBlogUrl": "/post/62720573154/serengeti-national-park-and-the-ngorongoro-crater",
+    "tags": ["Tanzania", "Serengeti", "Ngorongoro Crater", "Africa"],
+    "travel_dates": "",
+    "formattedDate": "September 30th 2013, 3:14:00 pm",
+    "canonicalPath": "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10000707374", width: 2296, src: "/cache/flickr/10/10000707374.jpg", linkUrl: "/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater", caption: "The Serengeti" })
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So the main draw card for visiting Tanzania was in fact not to go and laze about Zanzibar, rather it was to go and visit the Serengeti National Park and the Ngorongoro Crater, some of Africa's best known big game parks."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10000707374", width: 2296, src: "/cache/flickr/10/10000707374.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10000707374/", caption: "The Serengeti" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We left our overland truck behind and divided off into a number of safari Landrovers with just enough clothing and food for the few days we'd be in the parks."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10001160445", width: 1632, src: "/cache/flickr/10/10001160445.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10001160445/", caption: "Our safari Land Rovers that you can pop the tops on!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To get into the Serengeti we needed to drive up over the rim of the crater (but not into the crater), past where we would be camping the following night. As we drove up the temperature dropped quite noticeably, and at the top we stopped at a lookout point where there was a pretty spectacular view of the crater. We then descended down another side of the crater and into the Serengeti."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1181, flickrID: "10000698293", width: 3832, src: "/cache/flickr/10/10000698293.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10000698293/", caption: "The Horizon is not actual this wonky in real life." }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It had been very dry for quite some time apparently, which meant that vehicles going in and out kicked up heaps and heaps of dusk. A lot of the dirt roads leading up to the Serengeti park entrance was a very rich red, which made some beautiful vistas where you'd have a very pale green and yellow hill with a dark red line cut through it, with an almost painted looking red gradient fading down wind of the road for 10-15M and a few meters upwind of it. It's hard to really describe it well with words, so here's a photo!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 467, flickrID: "10000617295", width: 1515, src: "/cache/flickr/10/10000617295.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10000617295/", caption: "Red dirt roads cut through the landscape" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Anyhow, on our first day in the Serengeti we saw a ton of stuff. Not long after we got into the main part of the park we passed 4-5 lions sleeping, which had surprisingly few other vehicles stopped around them. In these parks you often seem to find the big 5 by just looking for the clusters of 4WDs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 598, flickrID: "10001008555", width: 796, src: "/cache/flickr/10/10001008555.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10001008555/", caption: "Lions chilling" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That is actually how we found two leopards sleeping in trees, so far from the road you couldn't see them with the naked eye. All the stopped vehicles got us to stop and try and work out what they were looking at, and then through binoculars you could make them out lying in the forks of trees and see their tail hanging down."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1163, flickrID: "10001138746", width: 2067, src: "/cache/flickr/10/10001138746.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10001138746/", caption: "Leopard spotting" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 682, flickrID: "10001336654", width: 908, src: "/cache/flickr/10/10001336654.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10001336654/", caption: "Might need to click through to the high res version on Flickr to actually see him" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Of course we saw a whole lot of the more common stuff too. We had a small herd of elephants that were approaching the road and walked right passed our Land Rover less than a few meters away. There were several hyenas roaming about, heaps and heaps of Grant's and Thompson's gazelles, a few heart beasts, and a lot of lovably ugly warthogs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10002412986", width: 2296, src: "/cache/flickr/10/10002412986.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10002412986/", caption: "Elephants, coming right for us!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That night we actually camped in the Serengeti. They do have dedicated camp areas there, but don't get the wrong impression. There are no fences and you really are camping out in the wild. We were instructed to set up out tents with a few meters gap between them, just in case elephants or hippos came through so that they'd have enough room to pass rather than just walking straight over tents; and not long before bed several people saw a hyena shaped silhouette with lit up eyes from the torchlight. Sadly, being a heavy sleeper, I slept through any animal sounds that may or may not have been made that night."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were instructed that if we woke up in the middle of the night and heard noises, to just stay in out tents and be quiet, and don't turn on any lights. If you need to go to the toilet, hold it. If you cant hold it, wake up your tent buddy, shine a torch outside the tent looking for eyes, then go right there next to the tent while your buddy keeps watch and deal with it in the morning. I was glad to be someone who very rarely needs to get up in the middle of the night!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were up well before sunrise the next day for one of the major trip highlights, hot air ballooning over the Serengeti! We were collected in 4WDs and driven to the site where they where getting things set up. It was interesting to see how they inflate the balloons with huge fans to start off with the basket on it's side. They then squeeze everyone into their compartments while it's still on it's side and you feel a bit like an astronaut about to blast off to the moon, lying flat to the ground looking up towards the moon in the still dark sky."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10014682903", width: 1632, src: "/cache/flickr/10/10014682903.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014682903/", caption: "A balloon being fan inflated" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The burners begin getting fired and the balloon slowly rises, eventually tipping the basket upright. The actual take-off was so gentle you don't even feel the balloon lift off, just all of a sudden you're no longer on the ground and moving. It's very surreal very surreal."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10014621696", width: 1632, src: "/cache/flickr/10/10014621696.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014621696/", caption: "Like spacemen about to take off" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Each balloon held 16 passengers and a pilot, and there were three balloons going up that morning. Our group was 15 people and we ended up getting a balloon to ourselve!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "10014699263", width: 2296, src: "/cache/flickr/10/10014699263.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014699263/", caption: "Hippos" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "During the balloon flight we saw our first hippos of the Serengeti, probably 20-30 of them concentrated in the water and dashing about nearby. From the roads the park feels like a completely flat and dry, yellow savannah; but from the air you see the gashes of green carved through the yellow where the waterways runs through, and there's actually quite a lot of animal activity in and around these parts."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10014611625", width: 2296, src: "/cache/flickr/10/10014611625.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014611625/", caption: "Green trees line the waterways" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We got to see the sun rise from the air, after which the balloon started casting a nice shadow silhouette on the ground."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10014727023", width: 2296, src: "/cache/flickr/10/10014727023.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014727023/", caption: "Balloon shadow" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As we flew further over the park we passed over a few lioness' and one very majestic male lion with a huge big mane who just sort of looked up at us, wondering what the heck we were I guess. I stupidly had my camera recording video so here's a photo ",
+      _react2.default.createElement(
+        "a",
+        { href: "https://www.facebook.com/david.fenton.507" },
+        "a friend"
+      ),
+      " took:"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 683, flickrID: "10020294715", width: 1024, src: "/cache/flickr/10/10020294715.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10020294715/", caption: "Photo stolen from David Fenton. Thanks Daaaave!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Most of the animals didn't seem to pay us much attention although we did manage to startle some buffalo when we were flying quite low, firing the burners caused them to look up suddenly and then dash off a short distance before realising we weren't a threat. At one point we were gliding so low that the basket actually skimmed over the top of an Acacia."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "10014714983", width: 1724, src: "/cache/flickr/10/10014714983.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014714983/", caption: "Our balloon Pilot, Jonathan" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Just as we were landing we spotted a hyena chasing down a gazelle. Everyone was pretty disappointed to be told we had to get back into the take off position for safety, where we were unable to keep watching. The landing was very smooth; not quite as unnoticeable as the take off, but still hardly a bump or drag along the ground and we were stopped on the ground, upright and everything. Our pilot had mad skills!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1399, flickrID: "10014641404", width: 1863, src: "/cache/flickr/10/10014641404.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014641404/", caption: "Obviously not actually the balloon I was in" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Upon landing we had a Champagne breakfast and were told the entertaining story about French ballooning pioneers, which rather than reinterpret I'll quote here:"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "excerpt" },
+        "The creation of the hot air balloon dates back to the 1700s, and the first flight occurred on Oct. 19, 1783 in France."
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "excerpt" },
+        "In 18th century France, there were educated people living in the city and there were landowners and peasants in the country. People in the rural areas often had little contact and connection to what was going on in the city."
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "excerpt" },
+        "So, picture this, you are a peasant working in the fields and all of the sudden you see this balloon floating through the air with fire coming out of it. Is it an alien? An attacker? For peasants who hadn't heard of hot air ballooning,  the sight of a balloon falling from the sky surprised and often frightened them; especially when they saw the pilot's face covered in black from ash and soot from the fire keeping the balloon aloft."
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "excerpt" },
+        "To avoid being attacked by the people they surprised, hot air balloon pilots carried Champagne or wine with them as a way to let onlookers know they were human and to thank them for the safe landing in their field."
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "So there you have it, Champagne is the way to settle down rowdy French farmers when you're trespassing on their property!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1111, flickrID: "10014645774", width: 1976, src: "/cache/flickr/10/10014645774.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014645774/", caption: "Champagne, breakfast of champions!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The breakfast was very fancy, even by western standards. As we approached the tables there was a guy with a basin and a jug of warm water who'd pour it so you could wash your hands, and them dry them with a real cotton towel! The table settings wouldn't have been at all out of place in a fancy restaurant, and as we got closer I could smell my old friend bacon, sizzling away somewhere."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Having not had bacon since leaving home, I would have been happy if they'd served me just a plate of bacon, but there were eggs, sausages, fruit, coffee and juice... It was like a real English breakfast and then some!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To make the day even better, when we got back to camp Charles had make us pancakes and bacon for brunch! Could a day be any more perfect!?!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After brunch we got back in the Land Rovers for an afternoon of game driving with a general meander towards the gate of the park, during which we managed to spot a log more awesome animals. We found 3 lion cubs sleeping in a crevice between some rocks, then a bit later we found a cheetah, and a bit later still two more cheetahs!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 381, flickrID: "10014685674", width: 506, src: "/cache/flickr/10/10014685674.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014685674/", caption: "Daaaaaw!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We also saw a lion that was standing up in long grass looking around, who then sat down and completely disappeared, making it very clear how hard it could be to spot these animals if they were trying to hide."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The drive out seemed like it was 10x as dusty as the drive in; even with large gaps between our vehicles and us rapidly closing our windows every time we passed another car, everything in the Land Rovers was covered in a thick coating of dust by the time we got out of the park."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10014838763", width: 2296, src: "/cache/flickr/10/10014838763.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014838763/", caption: "It was super dusty" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We headed back up to the crater rim to Simba Camp where we were staying the night. It was freezing cold that night and although there were showers with a hot tap, the water that came out was barely room temperature and even that quickly ran out leaving only icy water for those who wanted relief from the dust."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was so cold that night that I wore pretty much every layer I had plus my Goretex wind shell, and still wasn't particularly warm. I headed to bed pretty much straight after dinner and was thankful that our thick canvas tents held heat so well."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Simba camp was another unfenced camp ground, but again if there were animal sounds I managed to sleep right through them. We got up before dark and packed down camp in order to get to the Ngorongoro Crater park gates for opening, with a light drizzle of rain coming down on us."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As we descended into the crater the temperature rose very slightly, but the weather in that crater is completely different to that only a few KM outside of it and it remained pretty grey and cold all day."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10014793706", width: 2296, src: "/cache/flickr/10/10014793706.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014793706/", caption: "Light rays cutting through the grey" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Not long after passing the gate someone in out truck spotted some ears in the grass. We backed up to have a better look and found a small cat called a caracal. Were told they themselves aren't rare, but it's quite rare to see them. Steve had never seen one in all his years in Africa, and our driver who's in and out of the park all the time hadnt seen one in 4 years."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1151, flickrID: "10014711934", width: 1533, src: "/cache/flickr/10/10014711934.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014711934/", caption: "The caracal" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In contrast to the steep walls of the crater, the bottom of it was mostly quite flat, with lots of open plains, some forested areas and a few large watering holes."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 629, flickrID: "10014751114", width: 2296, src: "/cache/flickr/10/10014751114.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014751114/", caption: "Wildebeasts" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw several elands in the forests, and hundreds of wildebeast and zebra out roaming the plains."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "10014801006", width: 2296, src: "/cache/flickr/10/10014801006.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014801006/", caption: "Obligatory zebra crossing photo" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw a pair of birds call grey crowned cranes which our driver explained to us were married, as in they were paired for life, but if divorce statistics are to be believed that's probably no longer a great analogy."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 466, flickrID: "10014802936", width: 829, src: "/cache/flickr/10/10014802936.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014802936/", caption: "A pair of grey crowned cranes" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We did manage to spot one male lion sleeping in the grass, and several females sleeping in the distance, but because the weather was cold the big cats were mostly sleeping, and sadly for us were largely well away from the road."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 641, flickrID: "10014871603", width: 852, src: "/cache/flickr/10/10014871603.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014871603/", caption: "Sleepy male lion" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "What we didn't see in terms of big cats was largely made up for by the number of hyenas we saw around. We must have seen at least 4-5 separate individuals or groups, one of with was a full family with a number of cubs playing. Very cute for a part of \"the ugly 5\"!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 547, flickrID: "10014743874", width: 972, src: "/cache/flickr/10/10014743874.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014743874/", caption: "Family of hyena" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the drive out of the park, back to civilisation where we were camping that night, we learnt a few tidbits about the Masai culture that partly explained how it can be normal to have multiple wives without a huge gender imbalance, or a lot of men having no wives."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 629, flickrID: "10000755303", width: 1842, src: "/cache/flickr/10/10000755303.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10000755303/", caption: "Masai's are allowed to graze their cattle in the Serengeti" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The number of wives a Masai man has is directly related to how many cattle he has, so having lots of cattle means lots of wives. The interesting part we learnt about was that the non-monogamy/polyamory that goes on apparently works in both directions. A man has many wives, but if he goes to visit one and finds a spear dug in the ground outside of her house, it means she has a male guest \"visiting,\" and that the husband should go and find a different bed to stay in that night, we're told all with no jealousy!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I don't think that means that a woman actually has multiple husbands, but it does offer a bit of an explanation why wifeless men aren't rioting about there being no available women because of the greedy guys with all the cattle."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After we arrived at camp, and those of us camping had set up our tents, we were taken on a village tour of Mto Wa Mbu village. We took a very long walk though their farms, through large fields of beans, tomatoes, tapioca, rice, bananas, and numerous other food plants. We were shown the different materials that the people used to build their houses. The cheapest materials being mud houses, the mid-cost ones being made of red bricks, and the most expensive also being the most ugly, cement houses."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10014900033", width: 1632, src: "/cache/flickr/10/10014900033.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014900033/", caption: "walking through the farms" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were taken to a local art gallery, where the locals can get taught to paint for a living, and shown the two main styles of art common in Tanzania. And boy were they common, the paintings here were 90% the same largely generic ones we'd seen from Zanzibar onwards. There was a token guy putting the finishing touches on a piece, but as always seems to be the case the piece was pretty much done and he was putting a border on it, so for all we know the paintings are mass produced in a factory and then that guy paints a border on when tourists come past. They're all so same-y that I would not be surprised. It's a shame they're not teaching them to utilize their creative differences instead of teaching them how to be human photocopiers."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 878, flickrID: "10014844536", width: 1170, src: "/cache/flickr/10/10014844536.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014844536/", caption: "Boy could that guy paint straight black lines super good" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were one or two exceptions, painting completely unique from everything else on display. One of a one zebra really struck a chord with me, but I held off the urge to buy it because I didn't want to be stuck dragging it around with me for weeks until I got back to somewhere with a reliable postal system."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One detour to the normal tour itinerary was a visit to see the local nightclub. We saw the sign and were intrigued and asked about it, and they were all too happy to have us have a look inside at them cleaning and setting things up. It felt kind of like something out of rave movie from the 90s, completely with a dance pit, and raised up DJ booth, and also a cool bar made of concrete and beer bottle ends."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10014856956", width: 1632, src: "/cache/flickr/10/10014856956.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014856956/", caption: "Glowing like a 90s rave party" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The last point of interest on the tour was a stop at the local bar, to drink some of the locally made banana beer. It's made with a special type of banana and sprouted millet and fermented for a few days giving it a alcohol percentage of roughly 1-2%. The flavour was actually not particularly banana-ry, but the price was dirt cheap! 1000 Tanzanian shillings for 0.5L, or roughly $0.30!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10014826325", width: 1632, src: "/cache/flickr/10/10014826325.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014826325/", caption: "Hearing about banana beer at the end of a long long day" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "And that pretty much wraps up the time we spent in Tanzania. There was some fun to be had crossing the border into Kenya, but that's material for the next post :)"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10014871076", width: 1632, src: "/cache/flickr/10/10014871076.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10014871076/", caption: "For all your giraffe needs. Not sure how they fit in such a small shop?" })
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Kenya: The Masai Mara and Lake Nakuru",
+    "date": "2013-10-07 10:43",
+    "oldBlogUrl": "/post/63364021465/kenya-the-masai-mara-and-lake-nakuru",
+    "tags": ["Kenya", "Masai Mara", "Lake Nakuru", "Africa"],
+    "travel_dates": "",
+    "formattedDate": "October 7th 2013, 10:43:00 am",
+    "canonicalPath": "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1044, flickrID: "10124599493", width: 1392, src: "/cache/flickr/10/10124599493.jpg", linkUrl: "/2013/10/07/kenya-the-masai-mara-and-lake-nakuru", caption: "Border cricket" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "So after leaving Tanzania we were destined for Kenya to visit the Masai Mara, however we ran into a bit of trouble actually getting into Kenya. Everyone's visa got sorted out nice and quickly, but there was some sort of hold up involving the truck. Something to do with the truck's registration being changed over from English to Namibian and us not having the right [Carnet de Passage](http://en.wikipedia.org/wiki/Carnet_de_Passages) to go with it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To make better use of the time we set up the kitchen to make lunch there at the border, then after eating some of the group started having a game of cricket! The spectacle drew a small crowd of truck drivers watching, and trying to catch the long shots that went their way."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1044, flickrID: "10124599493", width: 1392, src: "/cache/flickr/10/10124599493.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124599493/", caption: "Border cricket" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a while Steve filled us in on things, apparently the registration was changed over a long time ago and the truck had been in and out of Kenya a bunch of times since then, but in the book they had always written down the old registration details, but because the border officials are so damn ethical they couldn't do that again for us this time."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were three options that Steve thought might get us out of our pickle:"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "1. We leave the truck and sort out other transport to Nairobi, and then hope the Carnet gets sorted out while we're in the Masai Mara (using smaller safari Land Cruisers again). 2. We pay a bond for the value of the truck, but apparently bond in Kenya don't work like real bonds; it's basically sunk money that you will never get back. Luckily the truck is on the books as being only worth $4k, instead of the probably 100K+ it would truly be worth. Still not a great option, we would need to dip into the kitty to cover it. 3. We pay a bribe to get them to make the entry in the book with the old registration, like every other time."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Eventually  after about 2 hours, we were able to pay a bribe of a few hundred dollars to get the paperwork fudged by that same very ethical and totally not corrupt border official. The bribe actually had to be negotiated by our Kenyan cook Charles, because the border officials were scared of dealing with Steve,  a white guy who can look mighty pissed off when he's not happy, and he really wasn't happy."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "And so, from the very start we were exposed to the best of Kenyan corruption, and it wouldn't be our last bribe in Kenyan either!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1090, flickrID: "10124606913", width: 1453, src: "/cache/flickr/10/10124606913.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124606913/", caption: "Kenya is proudly sponsored by hand painted Coca Cola signs" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The traffic coming into Nairobi was super congested; it took us hours to go what was probably only 20 kms. So slow in fact, and with nowhere to stop the truck, that someone on board could hold it no longer and needed to pee in a bucket! Fun times!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped at Galleria shopping center to shop for supplies and buy some dinner in. My first impression of the Kenya based on this mall was that it's a lot like South Africa. Everything seemed clean and modern, and generally much more developed than anywhere we went in Tanzania. It turned out however that a shopping mall is not very representative of a country; who would have thought it?!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we again left the truck behind and split up into safari 4WDs, this time with our whole Melbourne crew \"Team Toto\" in the same vehicle! Things were actually pretty disorganised, our driver didn't even know he was driving that day so he showed up quite late and had to stop to meet his wife along the way to get some clothes for the trip."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "10124579975", width: 1224, src: "/cache/flickr/10/10124579975.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124579975/", caption: "We care for your fillings, but not enough to actually have diesel" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a few hours drive we stopped in a small town near the Masai Mara to fuel up with diesel, expect every single service station in town was bone dry. We were actually pretty lucky in that we only waited for 2 hours for one of the stations to get refueled; Apparently the car at the front of the line had been waiting 2 days for fuel!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 910, flickrID: "10124551684", width: 1456, src: "/cache/flickr/10/10124551684.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124551684/", caption: "The line of cars waiting for the pumps to be refilled" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The road leading into the Masai Mara was a very poorly maintained dirt road, bumpy to the point where it just felt like we were driving over huge corrugations. That certainly didn't mean we had to drive along it slowly though, all the Land Cruisers flew along it at 90-100 km/h and feeling like we going to fly off the road at any moment. It probably didn't help that our Land Cruiser was 30 years old and felt like the suspension was all the original parts that came fitted on the car when it rolled off the lot. :P"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At one point we slowed down to a stop, our driver spoke with another driver for a bit and then let us know that the brakes had failed. Excellent! We went to continue anyway but then the car wouldn't start and we needed a push to get going again, thankfully a whole lot slower now that we weren't able to stop ourselves."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We drove to the park gate where they sorted out a replacement vehicle for us to go off in that afternoon while they got our one fixed up, so we didn't entirely miss our afternoon game drive."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Now if your thinking, \"Gee, that sounds like a pretty shitty day\" you'd be right at this point. So many things had gone wrong up till now that I felt like I would have been happy to just go to camp and forget the game drive, but I'm incredibly glad we ended up going because those 1-2 hours in the park that afternoon completely salvaged an otherwise terrible day and left us in great spirits for the evening!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We drove straight in to where a lot of cars were following a leopard that was walking around near some bushland. It felt a bit like a circus with so many cars circled around with so little respect for the animals personal space. Where in the Serengeti the drivers stick to the roads and you get to see what you can see from there, in the Masai Mara it's a free for all and they drive you right up to things, and the moment the animal moves so so all the vehicles in order to stay right up close. We pulled up probably only 2-3 meters away from the leopard, which honestly felt like we were getting way too close, but it made for some fantastic photos. It did mean that when the leopard glared in our direction, it really felt like it could just jump in the vehicle and kill the lot of us if it chose to."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1273, flickrID: "10124707306", width: 1695, src: "/cache/flickr/10/10124707306.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124707306/", caption: "Leopard, not so happy to see us" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the leopard got fed up with the circus and went into hiding we raced off and very briefly saw a cheetah sitting in too long a grass to really see much, so then we shot off again to see 2 lionesses & 6 cubs playing. Again we got right up close, front row seats, and turned the engines off. Up that close in near silence it was possible to forget the media circus that you were part of and really just enjoy watching the lion cubs play. It was beautiful!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 826, flickrID: "10124891973", width: 1469, src: "/cache/flickr/10/10124891973.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124891973/", caption: "So cute!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After about 15 minutes, all of the circus suddenly started their engines and we all raced away back to the road. Our driver told us that they'd heard that park rangers were on there way over and we wanted to get away without getting a \"big fine\" of 10,000 Kenyan Shillings, or about USD$120."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 906, flickrID: "10124756964", width: 1610, src: "/cache/flickr/10/10124756964.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124756964/", caption: "The family portrait" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The penalties for venturing off the roads are significantly lower in Kenya compared to Tanzania. In Tanzania the drivers would loose their licence as well as get a large fine, and hence be unable to work anymore, so in Tanzania everyone stays on the road. But in Kenya there's only the monetary penalty which they just pass on to the customers anyway, which is why they're willing to break the rules and go way off-road in the Masai Mara."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 685, flickrID: "10124824455", width: 912, src: "/cache/flickr/10/10124824455.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124824455/", caption: "Baby cubs!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm in two minds about the whole thing. On one hand it made the place feel a lot more zoo like, or that we were all just a part of some horrible media paparazzi, and if our driver had stayed back on the road it would only really be disadvantaging ourselves because no-one else was and they'd all get in the way of us seeing anything at all. But on the other hand it felt incredibly special getting up so close the animals, and as Steve pointed out, it's been like this for so long that the animals have never known it any differently so they're not at all phased by the cars."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Back at the campsite we happily drank some beers and recounted all the cool stuff we'd seen that afternoon and you would never have even known that it was the same day where all that stuff went wrong! The campsite had permanent tents for us to stay in so we didn't even have to set up tents that night, a huge luxury for us!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we were up early to get in the gate as soon as the park opened, on a hunt to find more big cats and the shining sun made for a great day for just that. From a long way away we spotted a lioness trying to hunt a bird and failing miserably, but it was actually really close to where the lions were the day before, so we headed over to investigate."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1058, flickrID: "10124907475", width: 1409, src: "/cache/flickr/10/10124907475.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124907475/", caption: "Big male lion" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Once we were closer we found a big male lion just sitting, being all majestic in the sun, and over behind him there were 2 lionesses eating and occasionally fighting over some sort of animal carcass."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 944, flickrID: "10124854754", width: 1257, src: "/cache/flickr/10/10124854754.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124854754/", caption: "Lionesses fighting over food" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "All of a sudden the females stopped what they were doing and stared in our direction. I was thinking, \"Shit, what have we done? They look mean and are probably going to eat us now\" but it turned out they were looking past us. A long way past us in fact, where probably 1000 meters away there was a large herd of wildebeests. At first none of us thought they could actually be what they had stopped so suddenly over, but then one lioness and the lion set off down a gully that separated us from the herd and then reappeared on the other side and continued towards them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 928, flickrID: "10124989066", width: 1485, src: "/cache/flickr/10/10124989066.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10124989066/", caption: "Wildebeest herd spotted" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We sped off the long way around the gully and then follow the two lions as they chased the heard and split it in two, then changed targets and chased after a different herd several more times, but never actually making an attack while we were watching."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 734, flickrID: "10125124843", width: 978, src: "/cache/flickr/10/10125124843.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125124843/", caption: "Stalking" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 622, flickrID: "10125067146", width: 828, src: "/cache/flickr/10/10125067146.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125067146/", caption: "Wildebeests fleeing" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We gave up on seeing those two hunt and ventured back to see what the others were doing, and we find 2 other lionesses with the cubs with at least 2 dying wildebeests in the large grassy plain, both still occasionally kicking."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 989, flickrID: "10125168873", width: 1318, src: "/cache/flickr/10/10125168873.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125168873/", caption: "Finishing off a wildebeest" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The lions were all focused on one wildebeest, and the circus of cars circled around to watch the lions and sort of gave the other wildebeest some cover. After several attempts it somehow managed to get back on its feet and tried to make a break for it, but somehow even through all the vehicles the lions spotted it and chased it down again to kill it. Sadly we missed the crucial moment because other cars pull in and obscured our view, but we did get to see the very end of the predation with the lion going for the wildebeest's neck."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 700, flickrID: "10125192723", width: 1244, src: "/cache/flickr/10/10125192723.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125192723/", caption: "Realising the other wildebeest has gotten back up" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We drove a long way further into the park, well away from the thick swaths of vans that you don't seem to be able to get away from near the main gate and saw plenty of cool small stuff and big stuff. An baby giraffe and it's mum, hippos lazing in the river while crocodiles slept on the bank."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 458, flickrID: "10125219283", width: 610, src: "/cache/flickr/10/10125219283.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125219283/", caption: "Mother and baby giraffe" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It seemed like we had probably seen all the big cats we were going to see that day, as they normally like to laze around in the sun in the warm afternoons, but today we got luck and saw even more cats in the afternoon!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We noticed a lone car quite a long way from the road and went over to investigate and were pleasantly surprised to find four cheetah on sitting around a rock, and as we pulled up the other car left and it was just us and the cheetahs! It was marvelous, but being the only car there made our driver nervous (much more likely to be fined when you're breaking the rules by yourself I guess) so we only stayed for a few minutes."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 797, flickrID: "10125289036", width: 1417, src: "/cache/flickr/10/10125289036.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125289036/", caption: "Cheetahs chilling" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went back to see what another car from out group was looking at and arrived just as another pair of cheetahs disappeared into the long grass! Our drivers had a discussion and we turned around to take the other car back to see our four cheetahs, and boy am I glad we did!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1304, flickrID: "10125368553", width: 1737, src: "/cache/flickr/10/10125368553.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125368553/", caption: "Cheetah close up" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When we got back there they had moved a bit further on and looked to be staring quite intently at something in the distance. We spotted a lone warthog and got excited that we might get to see some hunting, and sure enough two or three of the cheetahs started running towards it. But to our surprise, suddenly a whole lot of grass started to rustle and we could suddenly see  there was a whole pack of warthogs that were suddenly running for their lives!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 954, flickrID: "10125304546", width: 1696, src: "/cache/flickr/10/10125304546.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125304546/", caption: "Cheetah hunting" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The cheetahs managed to split one off from the pack and we were sure one of them chasing a lone warthog was going to get it, but in a split second the warthog went into long grass and the next thing we saw was like a Benny Hill movie and they were not running in the opposite direction with the warthog chasing the cheetah! I guess he must have remembered that he had bad ass big tusks and could just as easily gut the cheetah as it could chase him down. And so both the warthog and the cheetah both lived to see another day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On top of the cheetahs, Leigh managed to spot a lion sleeping by the waterhole, as in actually spotted the animal itself as there were no other vehicles around it. It was certainly waaaaaay nicer on these occasions where it felt like it was just us the and animals as opposed to the circus that went on elsewhere"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10125358466", width: 2296, src: "/cache/flickr/10/10125358466.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125358466/", caption: "Sleepy lion by the water" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On our last morning we were up early again for another sunrise game drive, and within about 10 minutes of entering the park we came across an absolutely huge herd of elephants. There must have been at least 40 of them roaming around together. Magical!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1231, flickrID: "10125247294", width: 2188, src: "/cache/flickr/10/10125247294.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125247294/", caption: "Huge elephant herd" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After some more driving around we found two bloody mouthed lions eating something they had killed with two small cubs, but they were in quite long grass with a paparazzi of people around them and we'd seen such awesome lions the day before we ventured on in hope of seeing something better."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We spent most of the morning in search of Rhinos to complete the big five, but unfortunately even after hours of driving we didn't seem much beyond the few random carcasses on the side of the road and a few jackal."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1060, flickrID: "10123522495", width: 796, src: "/cache/flickr/10/10123522495.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10123522495/", caption: "A bird. An ugly bird." }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The morning ended with a bit of a kufufle between Steve and the drivers about the game drive ending earlier than it was supposed to, and our driver not putting in the time to go look for some wild dogs one of the other vehicles had spotted. It was a real shame to mar what had been a pretty amazing few days in the Masai Mara by ending this way, but  I guess these things happen."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The drive back out to the bitumen road felt even longer and bumpier and bumpier than the way in and there was a cheer in the car when we were finally back on sealed roads, and could start making better time for the long drive back to Nairobi."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That day marked the end of that leg of the tour, and hence the start of the next leg: The gorilla loop! We were sad to lose some of our truck buddies and our fantastic cook Charles, but there were new people waiting to join us back at camp and our new cook Mash who turned out to be just as much of a wizard in the camp kitchen as Charles was. It was mind blowing the quality of the meals prepared in a kitchen that got setup and packed down into a few plastic tubs every day, and for 25 people each meal too. I have to hand it to Dragoman, they pick their crew very well!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1349, flickrID: "10125318624", width: 1012, src: "/cache/flickr/10/10125318624.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125318624/", caption: "Kat & Charles" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Some of us went out for dinner at Carnivore, a quite famous restaurant in Nairobi that gained it's fame by running an all you can eat grill with all sorts of exotic game meat. The place felt like some sort of movie world-like theme park, with the waiters dressed in very flarey garb and the adjoined night club cranking out loud music, it was very surreal to be at a place that felt like it would fit in well in Hollywood, but to know you were actually in Kenya."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 699, flickrID: "10125348805", width: 932, src: "/cache/flickr/10/10125348805.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125348805/", caption: "Carnivore staff, terrible iPhone photo sorry" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Unfortunately none of us had done our research very well, and so didn't know that Kenya had banned the sale of game meat quite a few years ago, and that the most exotic meats on the menu these days were ostrich and crocodile. They also served lamb, beef, chicken and pork, and a few out of the ordinary offal meats such as ox testicles and chicken liver. For those wondering ox testicles have a very soft, melt in your mouth texture and don't taste half bad!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was a nice night, a very memorable experience, and the meats we got to eat were generally all very tasty, but had I known I wasn't going to get to eat wildebeest and zebra I probably would have gone somewhere else."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we stopped again at the Galleria shops for supplies, where I spent the entirety of my free time dealing with ATM shenanigans, trying to get enough shillings to buy the USD I needed to pay for my trip kitty for this leg of the tour. Every single Automatic ATM Machine (trollololol) in the centre was completely empty, right up until about 10 minutes before we were supposed to meet up after I watched the very long process of filling the ATMs by hand from a big sack of cash."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1254, flickrID: "10125383875", width: 941, src: "/cache/flickr/10/10125383875.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125383875/", caption: "Refilling ATMs from a sack of loose cash" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I stayed there and maxed out my limit, before rushing back to the truck hoping I wouldn't be the last person back that everyone was waiting on. I got lucky and we had some extra time because the driver of the cab that Leigh left his phone in the night before was coming to drop it off. I managed to get to a bank and get it changed to USD and was finally able to pay the remaining part of my trip kitty. Such a huge relief after weeks of screwing about trying to obtain it!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Our next stop was Lake Nakuru, where it was raining quite heavily and the campsite had turned to mud. The truck got well bogged as well pulled in and we needed to get a giant tractor to get it pulled out. We took the easy way out that night and 6 of us upgraded to one of the bungalows instead of dealing with tents that night. Apparently it's the rainy season here, which was a shock to us since we were still in the southern hemisphere (ie. Technically winter, although not really cold) and I think most of use though it was going to be dry season everywhere we were going."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 918, flickrID: "10125534353", width: 1632, src: "/cache/flickr/10/10125534353.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125534353/", caption: "Big tractor towing the truck out" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went on another early morning game drive around Lake Nakuru and quickly saw that the heavy rain was not a one-off thing. The lake has been flooding for a long time now and it's banks are well broken, apparently there's nowhere for the water to drain so it just continues to expand, even blocking of the main entrance into the park. There was quite a large forest near the waters edge that was so waterlogged that most of the trees had just plain fallen over, roots and all, and nearly all the flamingos that the lake is famous for are gone because the algae they come to eat is too deep for them to get to now."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1333, flickrID: "10125582223", width: 1775, src: "/cache/flickr/10/10125582223.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125582223/", caption: "Lake Nakuru is well flooded" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw a heap of black rhinos, they seemed to be everywhere, which completed the big five for everyone who hadn't already done so."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 451, flickrID: "10125361804", width: 601, src: "/cache/flickr/10/10125361804.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125361804/", caption: "Rhino marking it's territory" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw some giraffes play fighting, bashing their necks but quite slowly and gently compared to when they're out for blood."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1030, flickrID: "10125433564", width: 1831, src: "/cache/flickr/10/10125433564.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125433564/", caption: "Lotsa giraffes" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We found a lion sleeping on a rock."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1270, flickrID: "10125541485", width: 1691, src: "/cache/flickr/10/10125541485.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125541485/", caption: "Sleepy lion on a rock" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "But the most memorable part of the morning was the epic bogging that occurred when we tried to pass a large puddle in the road. The first van of our went through  to one side and got stuck. We waited a while and someone came along and gave them a tow out."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1066, flickrID: "10125389144", width: 801, src: "/cache/flickr/10/10125389144.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125389144/", caption: "Van one gets bogged" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The second van in our convoy went in, the exact same path as the first, and predictably got bogged too."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1545, flickrID: "10125401404", width: 1160, src: "/cache/flickr/10/10125401404.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125401404/", caption: "Then van two gets bogged" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the drivers had gotten out and wondered how they were going to get the van out, our driver got bored waiting and tried to pass the other side of the puddle. We sped in with the engine redlining, and after a few very aggressive bumps we were out the other side with cheers all round."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Eventually a 4WD by and towed our other van out, so we were all finally past the obstacle, but then the 4WD itself tried to go through the puddle straight through the middle, where unbeknownst to us there was a very, very deep hole, and so it got completely stuck with one wheel floating up in the air. We all got out and sticky-beaked for a while, but since there was nothing we could do to help we went on to finish out game drive."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1172, flickrID: "10125408364", width: 1561, src: "/cache/flickr/10/10125408364.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10125408364/", caption: "The 4WD that helped tow the van out gets super bogged" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After Nakuru we made our way to the Ugandan border, uneventfully crossing the equator by land for the first time with little perceivable change in the weather even though it was now technically summer :P The border crossing into Uganda was much smoother than the on into Kenya, we paid our money, got our stamps and in we went!"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Uganda - White Water Rafting, Tracking Chimps and Teaching Orphans",
+    "date": "2013-11-01 19:02",
+    "oldBlogUrl": "/post/65711162014/uganda-white-water-rafting-tracking-chimps-and",
+    "tags": ["Uganda", "Jinja", "White Water Rafting", "Africa", "Chimpanzees"],
+    "travel_dates": "",
+    "formattedDate": "November 1st 2013, 7:02:00 pm",
+    "canonicalPath": "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421378166", width: 1270, src: "/cache/flickr/10/10421378166.jpg", linkUrl: "/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans", caption: "Our rafting group" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "After crossing into Uganda our first stop was Jinja, the second largest city in Uganda and its unofficial extreme sports capital. We had a free day here to do whatever activities took our fancy; some people went and played mini-golf, some went and played regular golf, but I opted for white water rafting down the White Nile."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "All up there was seven people from our Dragoman group who went along, who with our American guide Tyler made up a full raft of people. We got taken to the \"put in\" point where we were given some breakfast, sorted out with high-flotation life vests and paddles and then were led down to our raft for some basic training, which involved things like paddling in time, turning, getting down low in the raft, flipping the raft and climbing back in. It was all pretty straightforward stuff and the water was a lovely refreshing temperature. A lot of people struggled to get back into the raft unassisted, but I surprised myself by being one of the ones who could! I can't even do a single chin up, but I guess climbing back into a raft probably uses a lot of the same muscles that I built up last year being stuck on crutches for nearly 6 months."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421378166", width: 1270, src: "/cache/flickr/10/10421378166.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10421378166/", caption: "Our rafting group" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The first rapid of the day was one of the most fun and memorable ones, it was basically a three metre waterfall drop off, followed closely by two more pools of rapids. We went down the waterfall, which felt like a theme park flume log ride on steroids, then paddled as hard as we could for the bigger pool of rapids but the current was too strong and we ended up going down the less turbulent path."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421394005", width: 1270, src: "/cache/flickr/10/10421394005.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10421394005/", caption: "Weeeeeeeee!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "White water rapids are rated on a grading scale from one to five, with five being the biggest rapids, and we were told that all of the rapids we were going through that day would be between grade three to five. Perfect for someone like me who's never done it before :) It's not actually as scary as it sounds, because the White Nile river flow is very high volume, that means the rapids are really big, but they're also really deep so there's much less chance of coming into contact with rocks. Lots more exciting and safer to boot!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421405434", width: 1270, src: "/cache/flickr/10/10421405434.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10421405434/", caption: "Lots of white water" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "During the day we went through eight rapids in total, and having never been rafting before I was a bit surprised how much calm floating down the river was involved between most of them. When after the first two rapids Tyler told us we had about 45 minutes until the next rapid I initially thought he was joking. There was plenty of opportunities for us to jump in the river and just float along next to the raft."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the third rapid of the day the water surged right as we got into the biggest part of the rapid and flipped the whole raft. Finding myself suddenly underwater like that for the first time, I instantly forgot everything we were told about holding onto paddle and lost it right away. I tried to surface but kept coming up under the raft and its baffles. I started to panic a bit, but managed to calm myself down and realise that I can easily hold my breath for more than a few seconds, so I held my breath and fumbled my way to one of the sides of the raft and grabbed onto the rope. I struggled to keep my head above water while we were still in the rapids, but once we were past them it there was a pretty awesome wave of feeling alive!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421420636", width: 1270, src: "/cache/flickr/10/10421420636.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10421420636/", caption: "Past the point of no return" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I think pretty much everyone else who was doing it for the first time had similar experiences, many lost paddles were retrieved for us by the safety canoe guys."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were told how a dam that was built two years earlier has changed the river a lot. None of the old rapids still exist, and new ones have formed. We're told that it used to be the best white water rafting rapids in the world before the dam was built, the \"put in\" used to be at the actual campsite that we were staying at, but now the river running past that area is significantly deeper and there's no rapids along there at all, hence having to drive 40 minutes in the morning. I still thought it was fantastic fun, but it would have been great to be able to compare it to how it used to be."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421438276", width: 1270, src: "/cache/flickr/10/10421438276.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10421438276/", caption: "Riding the waves" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the last rapid of the day we were told that if we didn't get flipped anyway, Tyler would give the ok and we could all jump out into the surging white water if we wanted to. It was an awesome feeling being in the tumultuous water, this time being well clear of the boat. It felt like being in a giant washing machine, with the water dragging you in every direction, rapidly one after another. It really gave you an appreciation for the raw power of the river."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 846, flickrID: "10421446195", width: 1270, src: "/cache/flickr/10/10421446195.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10421446195/", caption: "Everyone made it back in one piece" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next point of interest was in the Budongo forest, where we went in with guides to track the chimpanzees that live there. The group was split in two since only 12 people are allowed in the forest at once, which was further split into two groups of 6 with a guide each. I thought that the forest felt quite a lot like the Australian rainforest around the area where I grew up on the Far North Coast of NSW."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "10440627725", width: 2296, src: "/cache/flickr/10/10440627725.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440627725/", caption: "Chimp tracking" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Not long after entering the forest we heard chimp sounds off in the distance, and saw several fresh nests that they apparently make to sleep in at night and use only once. After walking for a while longer we heard more chimp calls coming from behind us and realised we'd passed them somehow."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 766, flickrID: "10440748163", width: 1021, src: "/cache/flickr/10/10440748163.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440748163/", caption: "Chimpanzees walking off in the distance" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We headed back and found 6-7 chimps walking along one of the tracks away from us, one carrying a baby on it's back. One of them split off from the group and we got to watch it climb up a tree and eat some sort of fruit, dropping the seeds down just in front of us."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10440595526", width: 2296, src: "/cache/flickr/10/10440595526.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440595526/", caption: "Chimp eating up a tree" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We tracked down another one that was just sitting on the forest floor who seemed to be having something to eat and generally lazing about in the sun and spent quite a while watching."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 825, flickrID: "10440763863", width: 1099, src: "/cache/flickr/10/10440763863.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440763863/", caption: "Chimp lazing in the sun" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The forest was generally too thick and we were too far away to get great unobstructed photos, but it was really cool to get to see the chimpanzees in their natural habitat, with some of their movements and behaviours seeming so close to human."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next place of note was Queen Elizabeth the Second National Park. We went on a game drive here and saw some lions and gazelles and stuff, but nothing as cool as what we'd already seen. At one point we stopped in a village in the park by the lake, and got out to have a closer look at some hippos near the shore. Steve warned us not to get too close, but didn't specify how close. The general consensus was that \"inside a hippo\" was probably too close, but otherwise people were pretty fearless going right up to the edge of the water."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1318, flickrID: "10440658854", width: 1756, src: "/cache/flickr/10/10440658854.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440658854/", caption: "Hippo foot print" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The highlight for us was a sunset cruise which closely followed along one bank of the river (o channel between two lakes? I'm not certain). It was probably the most densely packed period of animal watching we got to do all trip. We saw countless hippos and tons of exotic birds, crocodiles, buffalo and countless other critters."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1062, flickrID: "10440960503", width: 1889, src: "/cache/flickr/10/10440960503.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440960503/", caption: "ALL OF THE ANIMALS" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw one hippo \"mark its territory\" by pooping while helicopter-ing it's tail around, with bits flying everywhere. An interesting technique to say the least."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10440952143", width: 2296, src: "/cache/flickr/10/10440952143.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440952143/", caption: "Hippo helicopter poopin" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were lots of old male buffalo, sitting in the water that had apparently been chased away from their herds by the younger, stronger males. This is sort of like retirement for them, although they can sometimes force their way back into a herd."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 994, flickrID: "10440781995", width: 1324, src: "/cache/flickr/10/10440781995.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440781995/", caption: "Retired buffalo" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "And we got to see lots of hippo yawns, enough to actually get a decent \"postcard\" photo at last!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 977, flickrID: "10440808526", width: 1301, src: "/cache/flickr/10/10440808526.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440808526/", caption: "Giant hippo yawn" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At camp that night there were a lot of hippos running around at night and eating near the tents, waking people up and terrifying them. I think I heard some noises off in the distance as I was getting to sleep, but being a heavy sleeper I managed to miss most of the commotion."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The last stop for us in Uganda (for this entry at least), was at Lake Bunyonyi where we stayed at a very scenic camp ground next to a very large and interesting lake. It has nearly 30 islands, its surface is nearly 2000 metres above sea level, and it's stupidly deep. [Wikipedia says it's rumoured to be between 44 metres (which seems like it should be shallow enough to prove or disprove) and 900 meters (now we're talking!)](http://en.wikipedia.org/wiki/Lake_Bunyonyi). The was a sign on the bank that claims it's 6,500 feet deep, or about 2000 meters, and since Wikipedia only lists \"rumoured depths\", I'm going with that since the sign is more of a citation than the Wikipedia page has."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10440854335", width: 1632, src: "/cache/flickr/10/10440854335.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440854335/", caption: "Deep lake" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "While there we went on a little tour though a local village, where we met a woman that our local guide described as \"a crazy old lady\" that didn't speak a word of English, but was very excited to meet everyone, giving everyone a squeeze on the butt, women got a good boob squeeze and men with beards got a stroking. The whole thing was very amusing."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1499, flickrID: "10440878195", width: 1126, src: "/cache/flickr/10/10440878195.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440878195/", caption: "Nic copping a feel" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We also visited a school for orphans between 3-8 years old, run by [Little Angels Uganda](http://www.littleangelsuganda.org/). We sat in on a class doing lessons for addition, subtraction, multiplication and spelling. We even got to get up do a bit of teaching ourselves, and nearly everything that happened in the class was followed by a song all the kids sang: \"(name), you're so good and precious\". It was pretty adorable."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10441045543", width: 2296, src: "/cache/flickr/10/10441045543.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10441045543/", caption: "Back in school again" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After class there was more singing and dancing out in the playground, largely led by a very confident little girl with a good sense of rhythm. The kids seemed quite curious about my beard, which led to me being picked to go into their circle to try and dance along with them, showing the world that I have zero rhythm :P"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "10440961594", width: 1724, src: "/cache/flickr/10/10440961594.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10440961594/", caption: "Little girl leading the school in song and dance" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then helped serve up some lunch for the children consisting of bread, bananas, rice, porridge, and orange drink. During lunch the teachers ran a sort of spelling bee, where if the kids spelt our words they got an extra piece of fruit. Seemed like a good motivator for learning."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10441175113", width: 2296, src: "/cache/flickr/10/10441175113.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10441175113/", caption: "Kids chowing down their lunch" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We made our way back to camp in dugout canoes, which felt like they might flip at any moment. I have to admit I feared a bit for my electronics until I was standing on land again."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "10441038505", width: 1724, src: "/cache/flickr/10/10441038505.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10441038505/", caption: "STROKE! STROKE! STROKE!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "That last night in Uganda we set up a mini-cinema around Steve's laptop and watched [Hotel Rwanda](http://www.imdb.com/title/tt0395169/), which is almost like an African Schindler's list. I'll admit my knowledge of the full extent of what happened in Rwanda way back when I was a child was pretty lacking, having a bit of context the night before we were crossing into Rwanda worked out perfectly for me."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day we were headed on to Rwanda for the trip highlight, tracking the mountain gorillas, but you'll probably have to wait months to read about that at the rate I'm going writing this stuff up :P Also, if you're interested there's loads more photos for each blog post up on [Flickr](http://www.flickr.com/photos/lucasthenomad/sets) (and Facebook), but these posts are probably already way too photo-heavy."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "The signs and sights of the streets of East Africa",
+    "date": "2013-11-15 17:41",
+    "oldBlogUrl": "/post/67069602780/the-signs-and-sights-of-the-streets-of-east-africa",
+    "tags": ["Africa", "Signs"],
+    "travel_dates": "",
+    "formattedDate": "November 15th 2013, 5:41:00 pm",
+    "canonicalPath": "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1088, flickrID: "10676737816", width: 797, src: "/cache/flickr/10/10676737816.jpg", linkUrl: "/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa", caption: "Thumbs up" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's impossible to put into words what it's like out on the streets of Africa. They're like no other place I've been. Towards the end of the trip I started taking a LOT of photos out the window in the hope it might capture even just a small fraction of the weird and wonderful things you see out the truck window. Click the photo to go to the full flickr set. Feel free to be distracted, and not notice that I haven't posted about gorillas yet too :P"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1088, flickrID: "10676737816", width: 797, src: "/cache/flickr/10/10676737816.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/sets/72157637321575513/", caption: "Thumbs up" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It's impossible to put into words what it's like out on the streets of Africa. They're like no other place I've been. Towards the end of the trip I started taking a LOT of photos out the window in the hope it might capture even just a small fraction of the weird and wonderful things you see out the truck window. Click the photo to go to the full flickr set. Feel free to be distracted, and not notice that I haven't posted about gorillas yet too :P"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Rwanda, Gorillas, Genocide",
+    "date": "2013-11-24 18:39",
+    "oldBlogUrl": "/post/67976058475/rwanda-gorillas-genocide",
+    "tags": ["Rwanda", "Gorillas", "Africa"],
+    "travel_dates": "",
+    "formattedDate": "November 24th 2013, 6:39:00 pm",
+    "canonicalPath": "/2013/11/24/rwanda-gorillas-genocide"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "As we approached Rwanda, the terrain started getting a lot more hilly than that of Uganda. We got to the border and queued up to hand in our passports and get our visa, all the while with locals trying to cut in line. I got given some minor grief over not having printed out the acceptance letter for my visa. I did have it in digital form and the letter has a giant bar code that one would assume they'd scan, but apparently it's easier to put bar codes on letters than it is to put bar code scanners at the border."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10914653853", width: 1632, src: "/cache/flickr/10/10914653853.jpg", linkUrl: "/2013/11/24/rwanda-gorillas-genocide", caption: "Welcome to the republic of Rwanda" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This was our single slowest border crossing, taking over 90 minutes to get some simple ink stamp \"visas\" put in our passports. Most of the truck was starving by the time we finally got our passports back, but there was still more driving to do before we arrived in Ruhengeri and stopped to make lunch. We were staying in dorm rooms so nobody had to put up tents for a change!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "As we approached Rwanda, the terrain started getting a lot more hilly than that of Uganda. We got to the border and queued up to hand in our passports and get our visa, all the while with locals trying to cut in line. I got given some minor grief over not having printed out the acceptance letter for my visa. I did have it in digital form and the letter has a giant bar code that one would assume they'd scan, but apparently it's easier to put bar codes on letters than it is to put bar code scanners at the border."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10914653853", width: 1632, src: "/cache/flickr/10/10914653853.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914653853/", caption: "Welcome to the republic of Rwanda" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This was our single slowest border crossing, taking over 90 minutes to get some simple ink stamp \"visas\" put in our passports. Most of the truck was starving by the time we finally got our passports back, but there was still more driving to do before we arrived in Ruhengeri and stopped to make lunch. We were staying in dorm rooms so nobody had to put up tents for a change!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we were all up early for the big day, gorilla trekking! We were all ready to go well before the sun was up. I'd woken to hear heavy rain during the night which had me a bit concerned about what the weather might be like but once the sun came up the weather stabilised as just mostly overcast."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The gorillas are only allowed one hour of visiting time per day, during which a group of a maximum of 8 people can come and see them. I think there was something like 10 groups of gorillas that tourists are allowed to trek to see, which means only about 80 people get to experience this on any given day. During the rest of the day there are people employed to track them from a distance to keep an eye on them and protect them from poachers until quite late at night, coming back again early in the morning to figure out where they have moved to."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We started with a very bumpy 40 minute drive to a village where the trek to our gorilla group began, from where we walked for another 40 or so minutes through farms, up the hill to the start of the national park and the mountain jungle."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10914352185", width: 1632, src: "/cache/flickr/10/10914352185.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914352185/", caption: "Walking through the village" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Our guide was apparently the best in Rwanda and had won an award to prove it. He later told us that he's taken Bill Gates and his family trekking the gorillas, along with some other famous people I didn't recognise. He had a very over-the-top level of enthusiasm that I thought felt pretty insincere, but as the day went on though, either I warmed up to him, or he started to drop the act and began behaving more genuinely; maybe it was just too early in the morning enough sleep?"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1046, flickrID: "10914498114", width: 786, src: "/cache/flickr/10/10914498114.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914498114/", caption: "Our guide showing us how gorillas sometimes eat eucalyptus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In addition to our guide we had some armed escorts, I like to think they were there to protect us from the wildlife, but it's also possible they were there to protect us from guerrillas from Congo. Eek!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1544, flickrID: "10914496524", width: 1159, src: "/cache/flickr/10/10914496524.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914496524/", caption: "Walking up the hill through farms" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Along the way our guide spotted a chameleon, the first one I've ever seen. It was very cool to see to see it move it's eyes independently and a whole lot smaller than I had expected. I always thought they were quite large, but all the ones we saw were tiny. It also turns out they take quite a while to change colour, so even though a few of us got to have him walk along our arms we didn't get to see him change colour."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10914509344", width: 2296, src: "/cache/flickr/10/10914509344.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914509344/", caption: "Chameleon!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After another 40 more minutes of trekking up along a fairly well established path through the national park we were finally near enough to where the gorillas were to go \"off path\". The forest around this point was extremely thick scrub consisting largely of stinging nettles, which were hacked and slashed at with machetes to make a narrow path for us. I can tell you for certain now that stinging nettles are able to sting through right through denim. If you're ever doing this trek I'd highly recommend getting some gaiters to protect your legs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10914527274", width: 2296, src: "/cache/flickr/10/10914527274.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914527274/", caption: "Into the thicker scrub" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We followed the newly slashed path for about 10 minutes before we sighted our first gorilla off in the distance."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10914394185", width: 2296, src: "/cache/flickr/10/10914394185.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914394185/", caption: "First gorilla sighting" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was quite a long way off but everyone was instantly pretty excited, but we were hurried along by the guide. Suddenly we look to our left and there's another gorilla right next to us, probably only 3-4 meters away at most. He's there just chilling, eating stuff. He looks over at us briefly but then goes back to chewing and ignoring us."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10914448356", width: 2296, src: "/cache/flickr/10/10914448356.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914448356/", caption: "Gorilla noticing there are guests" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We continue on into the scrub and found a few more sitting around eating."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1577, flickrID: "10914547334", width: 2101, src: "/cache/flickr/10/10914547334.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914547334/", caption: "Gorilla eating" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then came across the silverback of the group and got a few distant photos before he moved on."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10914746563", width: 2296, src: "/cache/flickr/10/10914746563.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914746563/", caption: "Big boss scratching" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "A mother gorilla with its baby came walking right towards us; we stood still as we had been instructed to do and they walked right past me, actually brushing against me. It was magical to be in such close proximity to such powerful creatures and have them seem to completely unfazed by our presence."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10914449615", width: 2296, src: "/cache/flickr/10/10914449615.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914449615/", caption: "Baby going for a ride" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We followed them to where they were going and found 8 gorillas lazing together. A few of them were grooming one another, while the silverback was lying back with his legs spread, a very dignified position for the big boss."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1315, flickrID: "10914782213", width: 1751, src: "/cache/flickr/10/10914782213.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914782213/", caption: "What are you looking at?" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The little baby was here as well, climbing all over the others, falling down, and rolling down the hill. So very cute."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1222, flickrID: "10914794413", width: 1629, src: "/cache/flickr/10/10914794413.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914794413/", caption: "Band of gorillas" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We found the \"Vice president\" silverback off to the side with one of the females, apparently trying to get her to \"service him\" while the big boss wasn't looking. Very naughty!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 751, flickrID: "10914628894", width: 564, src: "/cache/flickr/10/10914628894.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914628894/", caption: "The vice president" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm told we saw every gorilla from the group we trekked to, 18 in total, although with them moving around during our visit I didn't even attempt to count them for myself. It was definitely a very special experience that I feel quite privileged to have been able to take part in. It's easily sitting at No. 1 on my list of best things I've gotten to see or do so far and I'd highly recommend it to anyone who has the chance."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1501, flickrID: "10914485285", width: 1999, src: "/cache/flickr/10/10914485285.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10914485285/", caption: "Me and the silverback and his band" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After our hour was up we had to leave and start the very long walk back to the jeeps, along which we found lots more chameleons on the walk back, some of them extremely tiny and in a variety of colours!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1308, flickrID: "10915394443", width: 1740, src: "/cache/flickr/10/10915394443.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915394443/", caption: "Chameleon!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Once we got back to camp we spent the afternoon consuming some well earned celebratory beers."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The following day we made the short drive from Ruhengeri to Kigali through the mountains; it was Amazing to see how steep the land some of the farmers were utilizing was. I've never seen crops growing on such steep land every before!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped in to have a look around Hotel Des Mille Collines, the actual hotel that the Hotel Rwanda story was based on. It was pretty surreal to think of the 1000s of refuges holed up in there while people just outside the fences that wanted to kill them. Today it's all so modern and ritzy which it hard to comprehend that it's the same place."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 981, flickrID: "10915410983", width: 1308, src: "/cache/flickr/10/10915410983.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915410983/", caption: "Hotel Des Mille Collines" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next stop was the Kigali Genocide Museum which was incredibly educational, with great coverage of the atrocities that went on in Rwanda during those 100 days in 1993, and a exhibition upstairs covered another 5 genocides: [The Armenian genocide](http://en.wikipedia.org/wiki/Armenian_Genocide), [The Holocaust](http://en.wikipedia.org/wiki/Holocaust), [Cambodia under the Khemer Rouge](http://en.wikipedia.org/wiki/Khmer_Rouge_rule_of_Cambodia), [The  Namibian Genocide](http://en.wikipedia.org/wiki/Herero_and_Namaqua_Genocide), and [Kosovo](http://en.wikipedia.org/wiki/Kosovo_War). Some of these I'd known about and others I had no idea. Humans can be such horrible creatures."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The most chilling thing I learned was that the number of UN troops involved in the evacuation of UN personal from Rwanda would have been enough to have stopped the genocide, and yet they didn't."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "To get back to Nairobi from Rwanda meant three or four long drive days, back-to-back, punctuated with a few interesting stops."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The first night we stopped at Lake Mburo for a night of camping on the side of the lake, full of hippos. That evening while making dinner we have a number of very bold warthogs come sniffing around in the camp kitchen, only to be shoo'ed off back Mash swinging a chair at them. Cheeky buggers!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10915290914", width: 2296, src: "/cache/flickr/10/10915290914.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915290914/", caption: "Warty sniffing around camp" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally on our 4th and final land crossing of the Equator we stopped for lunch and were able to take some photos."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1728, flickrID: "10915435514", width: 2592, src: "/cache/flickr/10/10915435514.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915435514/", caption: "Equator excitment" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We were stopped by police as we went through Nakuru, who insisted we were speeding even though there are speed bumps on the road every 100 meters or so. We were forced to go to the police station with the cop to \"sort it out\". It was another of those times when a bribe is going to be faster, cheaper and easier than following official process which would have required showing up in court with the possibility of a $1000 fine, so again we paid another $300 bribe in Kenya."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "10915525134", width: 1724, src: "/cache/flickr/10/10915525134.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915525134/", caption: "The cop who claimed we were speeding" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "While at the police station, other overland trucks started showing up, all faced with the same accusations. The level of corruption in Kenya leaves a bad taste in your mouth, but on the up-side, someone on the truck was really sick, and this unplanned stop gave them a chance to visit a travel clinic and get fixed up."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I chose to go mountain biking in Hell's Gate National Park, one of the parks that the Lion King is said to take inspiration from. It's a stunning place to see, with lots of spectacular cliffs and canyons."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 480, flickrID: "11032308933", width: 360, src: "/cache/flickr/11/11032308933.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11032308933/", caption: "Hell's Gate National Park, Stolen from Leigh Bear" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We left the bikes to venture down into the gorge which involved walking along next to some quite big drops, but it was worth it to get to see down the bottom."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 480, flickrID: "11032108345", width: 360, src: "/cache/flickr/11/11032108345.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11032108345/", caption: "Probably not OH&S friendly, Stolen from Leigh Bear" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When we finally made it back to Nairobi, a few of us went to visit the Giraffe sanctuary, where you could feed a giraffe from your mouth so it looked like they were giving you a kiss."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "10915441005", width: 2296, src: "/cache/flickr/10/10915441005.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915441005/", caption: "Giraffe kisses" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "For out last evening in Africa we went and hung out with Pete and Deb one last time at the apartment they had rented. It was a lovely relaxed evening of pizza, drinks, and nature documentaries. Those two are total champions, so lovely and hospitable. I will definitely need to make a trip to Sydney to visit them one day when I'm finally back in Australia."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "10915933703", width: 1632, src: "/cache/flickr/10/10915933703.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/10915933703/", caption: "Hanging out at Pete & Deb's place in Nairobi" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We headed to the airport after midnight for our flight to Turkey, which left at 3:45am. I was so tired that I slept sitting upright in a plastic chair, and when I was finally on the plane and I was asleep again before takeoff."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "title": "Spreepark, Berlin",
+    "date": "2013-12-05 20:11",
+    "oldBlogUrl": "/post/69096515505/spreepark-berlin-2013",
+    "tags": ["Germany", "Berlin", "Abandoned", "Theme Park"],
+    "travel_dates": "",
+    "formattedDate": "December 5th 2013, 8:11:00 pm",
+    "canonicalPath": "/2013/12/05/spreepark-berlin"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "Breaking chronology for a change because I love these photos so much."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224500606", width: 2296, src: "/cache/flickr/11/11224500606.jpg", linkUrl: "/2013/12/05/spreepark-berlin", caption: "Swan boat on the grass with the ferris wheel in the distance" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(
+      "p",
+      null,
+      "Breaking chronology for a change because I love these photos so much."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's a lot of old abandoned things in Berlin; there are entire sites dedicated to what's out there, how to get in, what are the risks, etc. I've always been fascinated seeing old places that would have been someone's home or workplace for years on end, but one day left to rot and let nature start reclaiming. I love seeing photos of such places, and the few abandoned places I have been very cool experiences."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224500606", width: 2296, src: "/cache/flickr/11/11224500606.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224500606/", caption: "Swan boat on the grass with the ferris wheel in the distance" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One of the places in Berlin that really sounded unique was an old theme park, the Spreepark, which existed way back in the days of East German, becoming more westernised after the reunification of Germany. It was abandoned in 2001 and has since become thoroughly derelict. I read that you can get in to the site through gaps in the fence, but there are often security you have to watch out for, possibly with dogs, so when I found out that they'd started doing tours of the place on Sundays I decided to take the easy way out and pay to get in there legitimately."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224505586", width: 2296, src: "/cache/flickr/11/11224505586.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224505586/", caption: "Oranised tours, not truely \"abandoned\" anymore" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The tour was in German, and boy did they have a lot of information/stories/something to share. Each time we'd stop somewhere the guide would talk for like 20 minutes, and to be honest the first two places we stopped weren't intrinsically interesting or photogenic, so all of the non-German speakers started to drift off further along to get a sneak peak until eventually I was no longer \"just a bit ahead\" but instead I was off exploring by myself proper the way I really wanted to do it anyway."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224485935", width: 2296, src: "/cache/flickr/11/11224485935.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224485935/", caption: "Autumn pathway to the mossy queue for the flume ride" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's something vibe killing about being in a group of 40 people at somewhere \"abandoned\", so I was very happy to get lost and find myself in parts of the park where I couldn't see or hear another person. The one sounds were the wind, the birds and the creaking of the old Ferris wheel as the wind made it turn. Very eery!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1839, flickrID: "11224549924", width: 1381, src: "/cache/flickr/11/11224549924.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224549924/", caption: "Creepy old ferris wheel, turning in the wind" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One security guy was still doing laps of the park on a bike, but I managed to avoid him for the most part. The one time I did get spotted by him I was actually near some other people, and because we had the tour passes on he just friendlily herded us back to the tour group. That pass was pretty much a get out of jail free card! Soon enough I wandered off again to explore without the herd."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was an old flume ride, now with the track mostly full of leaves."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224517726", width: 2296, src: "/cache/flickr/11/11224517726.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224517726/", caption: "These boats have seen better days" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Crazy old cars on rails made to look like faces, with various moustaches."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224634333", width: 2296, src: "/cache/flickr/11/11224634333.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224634333/", caption: "Abandoned Hitler moustace car, slightly off the rails" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Sad and busted up old dinosaurs, fallen over and missing limbs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1210, flickrID: "11224647483", width: 1612, src: "/cache/flickr/11/11224647483.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224647483/", caption: "That T-Rex doesnt scare me... much" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were swan boats that had managed to free themselves from the tyranny of their traditional canals, now floating free next to pirate ships."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224573566", width: 2296, src: "/cache/flickr/11/11224573566.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224573566/", caption: "The swan boats actually float, for realsy" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This lonely old couch, left to rot in the middle of an old market square, would have some good stories to tell about how it even got there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224671753", width: 2296, src: "/cache/flickr/11/11224671753.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224671753/", caption: "Lonely couch in the middle of another market square" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were the rotting cabinets of old arcade machines, long ago fallen over in the not-very-water-tight food court."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224694173", width: 2296, src: "/cache/flickr/11/11224694173.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224694173/", caption: "These used to be arcade machines" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was a roller coaster, complete with giant rainbow dragon-face tunnel."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1391, flickrID: "11224593885", width: 1853, src: "/cache/flickr/11/11224593885.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224593885/", caption: "Big scary rollercoaster face" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Every single bridge I could find to the island with the wheel on it had rotten through and collapsed, so I never did get to see the base of it."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224658656", width: 2296, src: "/cache/flickr/11/11224658656.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224658656/", caption: "Another collapsed bridge" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm always intrigued by the final series of events when a place gets abandoned. Did they know at the time that they weren't going to return, or was it just closing for a short period? How did all the swan boats get out of their canal? Where were all they dinosaurs originally, and why?"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "11224795935", width: 2296, src: "/cache/flickr/11/11224795935.jpg", linkUrl: "http://www.flickr.com/photos/lucasthenomad/11224795935/", caption: "Eery lit up booth at the entrance" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "So many questions that will never be answers, but so many beautiful examples of a place being reclaimed by entropy and nature."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As usual, there are lots more images in the full galleries on ",
+      _react2.default.createElement(
+        "a",
+        { href: "https://www.facebook.com/media/set/?set=a.10153541824110274.1073741849.876765273&type=1&l=d02a09c700" },
+        "Facebook"
+      ),
+      " and ",
+      _react2.default.createElement(
+        "a",
+        { href: "http://www.flickr.com/photos/lucasthenomad/sets/72157638384420535/" },
+        "Flickr"
+      ),
+      "."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
     "title": "A New Blog For The New Year",
     "date": "2014-01-01 14:13",
-    "tags": ["blog"],
+    "tags": ["Blog"],
     "travel_dates": "",
     "formattedDate": "January 1st 2014, 2:13:00 pm",
     "canonicalPath": "/2014/01/01/a-new-blog-for-the-new-year"
@@ -496,11 +6647,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 9 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -704,11 +6855,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 10 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -971,13 +7122,9 @@ module.exports =
       "As I approach the beach it looks brown and pretty unappealing, but as I reach the water I find the water moving over the sand actually makes the sand sparkle like gold glitter. It's extremely pretty, but not an effect that translated very well to still photos, or even video, but trust me I tried!"
     ),
     _react2.default.createElement(
-      "p",
-      null,
-      _react2.default.createElement(
-        "div",
-        { className: "videowrapper" },
-        _react2.default.createElement("iframe", { width: "640", height: "480", src: "//www.youtube.com/embed/7hRSuxPWIrM?rel=0", frameBorder: "0", allowFullScreen: true })
-      )
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "640", height: "480", src: "//www.youtube.com/embed/7hRSuxPWIrM?rel=0", frameBorder: "0", allowFullScreen: true })
     ),
     _react2.default.createElement(
       "p",
@@ -1060,11 +7207,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 11 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1280,11 +7427,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 12 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1685,11 +7832,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 13 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1885,11 +8032,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 14 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2098,11 +8245,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 15 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2334,11 +8481,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 16 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2627,11 +8774,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 17 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2658,7 +8805,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-05-13 14:46",
     "title": "Happy travel birthday to me!",
-    "tags": ["humblebrag", "retrospective"],
+    "tags": ["Humblebrag", "Retrospective"],
     "travel_dates": "",
     "formattedDate": "May 13th 2014, 2:46:00 pm",
     "canonicalPath": "/2014/05/13/happy-travel-birthday-to-me"
@@ -2747,11 +8894,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 18 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3109,11 +9256,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 19 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3369,11 +9516,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 20 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3547,13 +9694,9 @@ module.exports =
       "For my birthday, New Years Eve, we got some tickets to go and see a chap-hop rapper, Professor Elemental. For those who've never heard of chap-hop, it's a hilarious genre of hip-hop performed by very proper, steam-punk-esk British gentlemen, rapping about important things like tea, being British and fighting trousers. Here's a video clip to give you an idea of what it's like:"
     ),
     _react2.default.createElement(
-      "p",
-      null,
-      _react2.default.createElement(
-        "div",
-        { className: "videowrapper" },
-        _react2.default.createElement("iframe", { width: "640", height: "480", src: "http://www.youtube.com/embed/eELH0ivexKA?rel=0", frameBorder: "0", allowFullScreen: true })
-      )
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "640", height: "480", src: "http://www.youtube.com/embed/eELH0ivexKA?rel=0", frameBorder: "0", allowFullScreen: true })
     ),
     _react2.default.createElement(
       "p",
@@ -3744,11 +9887,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 21 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3775,7 +9918,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-07-01 20:35",
     "title": "Poi Love Camp",
-    "tags": ["Costa-Rica", "Finca-Mia", "Poi", "retreat"],
+    "tags": ["Costa Rica", "Finca Mia", "Poi", "Retreat"],
     "travel_dates": "2014-01-12 - 2014-01-27",
     "formattedDate": "July 1st 2014, 8:35:00 pm",
     "canonicalPath": "/2014/07/01/poi-love-camp"
@@ -3918,13 +10061,9 @@ module.exports =
       "Nick had a set of [Pyroterra Visual Poi](http://lighttoys.pyroterra.cz/visual-poi-staff-v3/) at the retreat which he was kind enough to let me have a go of. From the first time I saw these on a video on Youtube I've been in awe, and then when I saw the $1500 price I was in even more awe. Getting to actually spin them was amazingly, fun and kind of disorienting (they're super bright), but also kind of terrifying. I'm sure they're probably pretty tough, but the though of having to pay for them if they got broken meant I was probably more worried spinning them than I've ever been with fire."
     ),
     _react2.default.createElement(
-      "p",
-      null,
-      _react2.default.createElement(
-        "div",
-        { className: "videowrapper" },
-        _react2.default.createElement("iframe", { width: "640", height: "480", src: "http://www.youtube.com/embed/rXfYzFGL99Q?rel=0", frameBorder: "0", allowFullScreen: true })
-      )
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "640", height: "480", src: "http://www.youtube.com/embed/rXfYzFGL99Q?rel=0", frameBorder: "0", allowFullScreen: true })
     ),
     _react2.default.createElement(
       "p",
@@ -3938,13 +10077,9 @@ module.exports =
       "We made a couple of excursions out into the local area. One day we made a visit to the nearby hot springs. There's natural warm water coming down the hill, but it's been routed into some concrete pools to make the bodies of water big enough to really swim it. It was a very relaxing way to spend a few hours just hanging out enjoying the water."
     ),
     _react2.default.createElement(
-      "p",
-      null,
-      _react2.default.createElement(
-        "div",
-        { className: "videowrapper" },
-        _react2.default.createElement("iframe", { width: "1280", height: "720", src: "//www.youtube.com/embed/DPQi4KNHonM?rel=0", frameBorder: "0", allowFullScreen: true })
-      )
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "1280", height: "720", src: "//www.youtube.com/embed/DPQi4KNHonM?rel=0", frameBorder: "0", allowFullScreen: true })
     ),
     _react2.default.createElement(
       "p",
@@ -3952,13 +10087,9 @@ module.exports =
       "We got invited to come along to a local festival and rodeo where the group performed in the bull ring with LED poi. The PA did not have any way to connect an iPod so we ended up spinning to their selection of music, some Latin-American pop music songs from the charts. The crowd loved it and some people were even actually asking afterwards about getting the group to perform at other events. It was my first time in front of a big crowd and it was heaps of fun."
     ),
     _react2.default.createElement(
-      "p",
-      null,
-      _react2.default.createElement(
-        "div",
-        { className: "videowrapper" },
-        _react2.default.createElement("iframe", { width: "640", height: "480", src: "http://www.youtube.com/embed/6n_n9iDN5Do?rel=0", frameBorder: "0", allowFullScreen: true })
-      )
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "640", height: "480", src: "http://www.youtube.com/embed/6n_n9iDN5Do?rel=0", frameBorder: "0", allowFullScreen: true })
     ),
     _react2.default.createElement(
       "p",
@@ -3992,11 +10123,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 22 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4023,7 +10154,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-07-18 16:54",
     "title": "Corcovado National Park, Costa Rica",
-    "tags": ["Corcovado", "Costa-Rica", "Hiking"],
+    "tags": ["Corcovado", "Costa Rica", "Hiking"],
     "travel_dates": "2014-02-29 - 2014-03-02",
     "formattedDate": "July 18th 2014, 4:54:00 pm",
     "canonicalPath": "/2014/07/18/corcovado-national-park-costa-rica"
@@ -4365,11 +10496,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 23 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4396,7 +10527,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-07-29 08:57",
     "title": "Uvita, Costa Rica",
-    "tags": ["Costa-rica", "Uvita", "festivals", "diving", "cano-island"],
+    "tags": ["Costa Rica", "Uvita", "Festivals", "Diving", "Cano Island"],
     "travel_dates": "2014-02-05 - 2014-02-10",
     "formattedDate": "July 29th 2014, 8:57:00 am",
     "canonicalPath": "/2014/07/29/uvita-costa-rica"
@@ -4580,11 +10711,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 24 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4611,7 +10742,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-07-31 21:39",
     "title": "Nicoya Peninsula, Costa Rica",
-    "tags": ["Nicoya-Peninsula", "Costa-Rica", "Montezuma", "Santa-Teresa", "Surfing"],
+    "tags": ["Nicoya Peninsula", "Costa Rica", "Montezuma", "Santa Teresa", "Surfing"],
     "travel_dates": "2014-02-11 - 2014-02-19",
     "formattedDate": "July 31st 2014, 9:39:00 pm",
     "canonicalPath": "/2014/07/31/nicoya-peninsula-costa-rica"
@@ -4767,11 +10898,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 25 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4798,7 +10929,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-09-10 10:09",
     "title": "La Mariposa Spanish School, Nicaragua",
-    "tags": ["Nicaragua", "Spanish-schools", "homestay", "volcanoes", "dogs", "monkeys", "La-mariposa"],
+    "tags": ["Nicaragua", "Spanish Schools", "Homestay", "Volcanoes", "Dogs", "Monkeys", "La Mariposa"],
     "travel_dates": "2014-02-20 - 2014-03-24",
     "formattedDate": "September 10th 2014, 10:09:00 am",
     "canonicalPath": "/2014/09/10/la-mariposa-spanish-school-nicaragua"
@@ -4986,11 +11117,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 26 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5017,7 +11148,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-10-09 19:44",
     "title": "Excursion highlights from La Mariposa",
-    "tags": ["Granada", "Volcan-Masaya", "La-Boquita", "horseback-riding", "Managua", "Leon", "Laguna-Apoyo", "la-mariposa", "Nicaragua", "spanish-schools"],
+    "tags": ["Granada", "Volcan Masaya", "La Boquita", "Horseback Riding", "Managua", "Leon", "Laguna Apoyo", "La Mariposa", "Nicaragua", "Spanish Schools"],
     "travel_dates": "2014-02-22 - 2014-03-24",
     "formattedDate": "October 9th 2014, 7:44:00 pm",
     "canonicalPath": "/2014/10/09/excursion-highlights-from-la-mariposa"
@@ -5338,11 +11469,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 27 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5370,7 +11501,7 @@ module.exports =
     "date": "2014-10-30 19:13",
     "title": "Nicaragua, all over the place",
     "travel_dates": "2014-03-22 - 2014-05-??",
-    "tags": ["Ometepe", "Jinotega", "Somoto-Canyon", "Nicaragua"],
+    "tags": ["Ometepe", "Jinotega", "Somoto Canyon", "Nicaragua"],
     "formattedDate": "October 30th 2014, 7:13:00 pm",
     "canonicalPath": "/2014/10/30/nicaragua-all-over-the-place"
   };
@@ -5505,11 +11636,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 28 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5537,7 +11668,7 @@ module.exports =
     "date": "2014-11-17 20:42",
     "title": "Little Corn Island, Leon, And A Visa Run",
     "travel_dates": "2014-04-21 - 2014-05-10",
-    "tags": ["Little-Corn-Island", "Leon", "Visa-run", "Nicaragua", "Costa-Rica"],
+    "tags": ["Little Corn Island", "Leon", "Visa Run", "Nicaragua", "Costa Rica"],
     "formattedDate": "November 17th 2014, 8:42:00 pm",
     "canonicalPath": "/2014/11/17/little-corn-island-leon-and-a-visa-run"
   };
@@ -5835,11 +11966,11 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 29 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5866,7 +11997,7 @@ module.exports =
   var metadata = exports.metadata = {
     "date": "2014-12-16 21:02",
     "title": "The Bay Islands of Honduras",
-    "tags": ["diving", "Utila", "Roatan", "Honduras"],
+    "tags": ["Diving", "Utila", "Roatan", "Honduras"],
     "travel_dates": "2014-05-11 - 2014-05-25",
     "formattedDate": "December 16th 2014, 9:02:00 pm",
     "canonicalPath": "/2014/12/16/the-bay-islands-of-honduras"
@@ -5919,13 +12050,9 @@ module.exports =
       "One night I was in a bar (ok, nearly every night... often it feels like more people are on Utila for the parties than the diving) and I got talking with some guys who turned out to have a set of fire poi and some kerosene, so we all headed to the beach to spin fire. It was my first time spinning with real flames in about a year, but it was also the first time I know of that I've been videoed, so I can actually show more than just still images for a change."
     ),
     _react2.default.createElement(
-      "p",
-      null,
-      _react2.default.createElement(
-        "div",
-        { className: "videowrapper" },
-        _react2.default.createElement("iframe", { width: "420", height: "315", src: "//www.youtube.com/embed/LMa0Ox5I3N4", frameBorder: "0", allowFullScreen: true })
-      )
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "420", height: "315", src: "//www.youtube.com/embed/LMa0Ox5I3N4", frameBorder: "0", allowFullScreen: true })
     ),
     _react2.default.createElement(
       "p",
@@ -6033,17 +12160,2404 @@ module.exports =
   var blogPages = [];
 
   exports.default = function () {
-    return _react2.default.createElement(_BlogPost2.default, { intro: intro, body: body });
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
   };
 
 /***/ },
-/* 30 */
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-01-03 17:22",
+    "title": "FireDrums 2014 and San Francisco",
+    "tags": ["Poi", "Festivals", "Graffiti", "San Francisco", "USA"],
+    "travel_dates": "2014-05-27 - 2014-06-04",
+    "formattedDate": "January 3rd 2015, 5:22:00 pm",
+    "canonicalPath": "/2015/01/03/firedrums-2014-and-san-francisco"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "15419365423", width: 2296, src: "/cache/flickr/15/15419365423.jpg", linkUrl: "/2015/01/03/firedrums-2014-and-san-francisco", caption: "FireDrums 2014 Fire Circle" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "15419365423", width: 2296, src: "/cache/flickr/15/15419365423.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15419365423/in/set-72157647464916314", caption: "FireDrums 2014 Fire Circle" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Way back in January at [Poi Love Camp](/2014/07/01/poi-love-camp/) I'd asked Jonathan Alvarez what he thought the best flow festival was during them summer in the USA, and he told me he thought FireDrums was number one, so I put it in my calendar and mostly forgot about it. Much later I realised it was only a few weeks away, and decided to impulse buy a ticket, sort out some flights and get my self along to see it for myself."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15853206187", width: 1632, src: "/cache/flickr/15/15853206187.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853206187", caption: "Best row on the plane!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I flew from San Pedro Sula (aka. Murderville) to San Francisco, with a brief stopover in Houston, but a delayed flight meant that I was arriving at 11pm instead of 9pm like I had intended, so it was very late by the time I left the airport, which meant I got the royal introduction from San Francisco wackos, from the crazy guy on BART who was laughing and ranting, telling everyone that he wasn't dead, and that he'd killed Elvis, to the super friendly homeless guy on the bus who was very insistent that I had to visit Pier 39 while I'm in town to see the real San Francisco."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 480, flickrID: "16013228826", width: 640, src: "/cache/flickr/16/16013228826.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16013228826/in/set-72157647472845853", caption: "Camille, my couchsufing host" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I was staying with some people I'd gotten in touch with through couchsurfing, a very hospitable girl named Camille and her lovely house mate Rose. They were awesome! They even had a little dinner party one night; I couldn't have asked for better hosts."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I had a day in San Francisco to sort out things I needed for FireDrums (sleeping bag, camp mat, food. I was lucky enough to get offered a lift and a spot in someone's tent which saved me a whole lot of hassle), but I started off the day by exploring some of the mission street, one of the oldest and longest streets in the city."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "15853224077", width: 2296, src: "/cache/flickr/15/15853224077.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853224077/in/set-72157647472845853", caption: "Awesome alley of murals" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I found some cool little alleyways full of murals, Clarion Alley in particular."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "During the day I ended up walking nearly the entire length of Mission street right down to the ferry building (I switched over to Market at some point when Mission got too seedy for me, I think it was about the time I saw a deaf woman gesturing blowjobs at passing cars, then at me), with a quick detour to the camping shop to pick up the stuff I needed and a quick stop in at Chez Maman, a restaurant that pretty much everyone I know from Melbourne who's been to San Francisco seems to rave about."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15853233307", width: 1632, src: "/cache/flickr/15/15853233307.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853233307/in/set-72157647472845853", caption: "Super fancy burger at Chez Maman" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Chez Maman was a tiny little place, mostly just counter seating along the grill. I got a basic burger with goats cheese, and it was pretty good, but that and a beer came out to $25 with taxes and the tip so it was more than I would have liked to spend just on lunch. Maybe I'd feel better about it if I still had an income."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15851877370", width: 1632, src: "/cache/flickr/15/15851877370.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15851877370/in/set-72157647464916314", caption: "Holy fuck these trees are big" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning my ride to FireDrums, a friendly bloke named Peter, showed up in his truck and we headed a few hours north to Navarro; the beautiful FireDrums site fully of enormous redwood trees. Peter was kind enough to offer me not just a ride, but also some space to sleep in his tent which made flying in for the event a whole lot easier than it could have been. Thanks again mate!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "16039011385", width: 1224, src: "/cache/flickr/16/16039011385.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16039011385/in/set-72157647464916314", caption: "Completed teserect" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On arrival we quickly put up Peter's tent, then went off to work our first volunteer shifts. As part of keeping costs down, everyone attending FireDrums is expected to help out by doing a few volunteer shifts. I volunteered for one of the setup shifts, which resulted in me working on putting together the stand for the Teserect, a magical mirror filled box that belongs to Prometheatrics. Prometheatrics happens to be the burning man camp I was lined up to camp with, so as a bonus I got to meet a few people from the camp, TeaFaerie, Sean and Spin, all of whom are lovely."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Wandering around later that afternoon I ran into Tim and Lou, two more spinners I'd briefly met back home in Oz, who were touring around the USA hitting all the bit flow festivals. Nice to see some familiar faces and hear some accents from home."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I also bumped into Jonathan who gave me a super excited welcome as though I was flow-famous or something. That guy is so damn friendly!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 918, flickrID: "15853254257", width: 1632, src: "/cache/flickr/15/15853254257.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853254257/in/set-72157647464916314", caption: "Opening ceremony" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The event opened with an opening ceremony around the fire circle, led by Sky (?) and Ben Drexler, yet another person who made a huge number of youtube tutorials I've watched."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16013259326", width: 2296, src: "/cache/flickr/16/16013259326.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16013259326/in/set-72157647464916314", caption: "Timmy teaching tapedeck torrids" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Each day of FireDrums was cram packed with workshops for all different kinds of things, from poi to staffs, hoop to juggling, footwork to flexibility. I took some great classes about all different kinds of poi throws and tosses which I feel add a bit of a club juggling flair to spinning poi; classes on different advanced stalls, Tim's classes on iso-pendulums and tape-desk toroids, and a bunch more. With some many workshops each day, you really had to accept you couldn't go to all of the ones you wanted to, and if you went to one in every timeslot you were thoroughly burnt out with information overload for the day."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "15851750940", width: 2296, src: "/cache/flickr/15/15851750940.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15851750940/in/set-72157647464916314", caption: "Burn night one" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'd been wanting to purchase my first set of fire poi for a while, and so had been looking around at all the market stalls and had narrowed it down to just a few different types of wicks. After the fire circle started up the first night, I managed to find some people with the kind I was looking at who were kind enough to let me have a go with them lit up, so I could get a better idea of how they differed."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ended up splashing out for some twista style wicks, glow-in-the-dark soft pom grips, and fancy new Technora fire resistant rope leashes instead of the traditional chains, so that my fire poi and my LED poi feel a bit more similar. I got in a good number of burns each night and have been extremely happy with the new poi."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16037105091", width: 2296, src: "/cache/flickr/16/16037105091.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16037105091/in/set-72157647464916314", caption: "Performance night" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One evening their was a showcase of performers getting up on the stage of the amphitheatre to show off their skills. There was some fantastic partner acts and one of the most amazing hoopers I've ever seen. An epic display of talent on show."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "16013285546", width: 2296, src: "/cache/flickr/16/16013285546.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16013285546/in/set-72157647464916314", caption: "Burn night two" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My other volunteer shift was a fire safety shift, relieving a pretty girl named Leora of her post. Being a fire safety pretty much involves sitting at the edge of the fire circle with a blanket of fireproof material called Duvetyne, watching people spin, keeping an out out for any clothing that catches alight and letting the wearer know (and help them put it out if needed. My shift was pretty trouble free, mostly just putting out peoples props who were done spinning, although I did need to put the back of one dudes pants out that had caught on fire."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I should stop and say the fire circle was pretty crazy. Never before have I seen so many people spinning fire in one place, and so much talent. Even with all the safeties around, it almost felt like there was too much going on for everyone to have someone keeping an eye on them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "16037109191", width: 2296, src: "/cache/flickr/16/16037109191.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16037109191/in/set-72157647464916314", caption: "Burn night two" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I find the contrast between Australian and USA approaches to safety really interesting. In the USA white gas is the fuel of choice, while in Australia it's frowned upon because it's quite a bit more dangerous and people prefer fuels with kerosene-like properties. Kerosene burns cooler, and it needs a wick to burn, which means that fuel spraying off or being spilt are less dangerous (but still not good). You can drop a lit match into a bucket of kerosene-like fuel and it will go out. Do the same with a bucket of white gas and you have a huge problem. Kerosene-like fuels do have the downsides that they don't burn as cleanly or as brightly."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Now the interesting part is (perhaps because of these choices in fuel), I've gotten the impression that people from the USA are far more conscientious about having a dedicated fire safety person around when people spin, with proper equipment around to put out fires. Maybe it's just me being unobservant, but I feel like I've spun fire, or seen people spinning fire back home in oz a load of times but I'd never been or seen a fire safety for anyone. I don't recall seeing Duvetyne in real life before going to the USA; at most I've heard of people using wet towels. It's funny how each country seems to have focused on optimizing one aspect of safety, but ignores another aspect."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "15851788020", width: 2296, src: "/cache/flickr/15/15851788020.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15851788020/in/set-72157647464916314", caption: "Burn night two" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Anyway, after sitting in the cold, being a fire safety for 2 hours, I went out and had another few burns with my new poi to warm up again. On my last burn of the night, I was offered some titanium powder, a substance you can apply to your props that makes them throw off little firefly like sparkles, especially when they stop abruptly, like in a spiral wrap. Wanting to see sparkles, I did a spiral wrap (perhaps too early in the burn with too much excess white gas, or perhaps the heat from the burning titanium?), and when the spiral unwrapped the top of my hand was on fire. I patted it out and kept spinning until the fuel on the poi burned out, after which I noticed it was actually quite a painful burn so I headed to first aid who gave me some antibiotic cream and told me to expect blisters."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1086, flickrID: "15419500053", width: 1086, src: "/cache/flickr/15/15419500053.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15419500053/in/set-72157647464916314", caption: "My first spin related burn" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The pain was pretty nasty, so I ended up taking some painkillers and some sleeping tablets and went to bed just so I didn't have to put up with it any longer. Anyway, it's a lesson I wont soon forget in being careless with new fuels that I'm not familiar with; both the titanium powder and the white gas."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day we got up and packed down the tent, and Peter mentioned he'd organized to give some chick a lift back with us to San Francisco, who turned out to be Leora from fire safety the night before."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Peter was very keen to go to some hot springs on the way back called Harbin that were \"clothing optional.\" I think I saw one maybe person wearing pants. You'd be the strange one if you weren't naked."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Leora seemed equally hesitant as me to strip off, but I figured YOLO and we all stripped off and went and bathed in the springs. For the most part, me and Leora stuck together, so it was really good to have a “not-completely-comfortable-with-this” buddy there with me to share the experience with. Peter on the other hand seemed completely in his element. To be honest it was actually a lot less awkward/uncomfortable than I had imagined it might be. When everyone is naked it doesn't seem like such a big deal at all."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was a super hot “meditation” pool, a hot “quiet” pool” a warm pool, an icy cold pool and a big swimming pool. We went into the hot pool for a little bit, then the super hot pool for all of about 30 seconds before it was too hot, then the icy pool, then the warm pool again, then the swimming pool... and then back and forth a bit more. It was a rather enjoyable way to relax for a few hours."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "16038304292", width: 1224, src: "/cache/flickr/16/16038304292.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16038304292/in/set-72157647464916314", caption: "The Golden Gate on the way there, didn't think to take a fog photo" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Coming back into San Francisco the bay was crazy foggy; a stark contrast from when we left in the other direction and it was clear blue skies. You couldn't even see the top of the Golden Gate bridge as we drove over it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We dropped Leora off at the airport then headed back to Peter's place where he'd been kind enough to offer me his couch for a few nights."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent the few days before my flight exploring various places around San Francisco, some touristy, some of very little interest to most people."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15851882220", width: 1632, src: "/cache/flickr/15/15851882220.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15851882220/in/set-72157647472845853", caption: "Powell St, Muni sickout meant no cable cars" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I walked up telegraph hill because the trams were still on strike."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15853402697", width: 1632, src: "/cache/flickr/15/15853402697.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853402697/in/set-72157647472845853", caption: "WWDC. This is how far I got before security asked me for my pass" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went and had a look at Mission Dolores park. I went over to the Moscone centre, and asked some WWDC attendees about the new announcements this year."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15419515283", width: 1632, src: "/cache/flickr/15/15419515283.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15419515283/in/set-72157647472845853", caption: "Github HQ" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I fan-stalked past Github HQ. I made a visit to one of the regular spin jams that take place at the Vulcan, home to a bunch of San Francisco's amazing poi spinners."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15419533953", width: 1632, src: "/cache/flickr/15/15419533953.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15419533953/in/set-72157647472845853", caption: "I may have spun poi in the Exploratorium to try and make pretty patterns" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went and checked out the Exploratorium, a huge hands on science museum that I would have loved as a kid (and was still awesome as an adult)."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16038488492", width: 2296, src: "/cache/flickr/16/16038488492.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16038488492/in/set-72157647472845853", caption: "Sea lions at pier 39" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went over to pier 39 to see the sea lions"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 783, flickrID: "15851916080", width: 1043, src: "/cache/flickr/15/15851916080.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15851916080/in/set-72157647472845853", caption: "Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "and got my first glimpse of Alcatraz."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "15853157229", width: 2296, src: "/cache/flickr/15/15853157229.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853157229/in/set-72157647472845853", caption: "Lombard Street" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I even walked up the hill to Lombard st, the crookedest street in the world. I went and had a quick walk around Golden Gate park, and quickly realised I'd need to come back with more time up my sleeve."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15419596263", width: 1632, src: "/cache/flickr/15/15419596263.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15419596263/in/set-72157647472845853", caption: "Growl!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This visit was just a teasing taste of San Francisco, but it was enough for me to know I want to spend a lot more time there."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-02-26 18:12",
+    "title": "Honduras Mainland - Lago Yejoa, Copan",
+    "travel_dates": "2014-06-05 - 2014-06-13",
+    "tags": ["Lago Yejoa", "Waterfalls", "Copan", "Ruins", "Honduras"],
+    "formattedDate": "February 26th 2015, 6:12:00 pm",
+    "canonicalPath": "/2015/02/26/honduras-mainland-lago-yejoa-copan"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "15852033030", width: 2296, src: "/cache/flickr/15/15852033030.jpg", linkUrl: "/2015/02/26/honduras-mainland-lago-yejoa-copan", caption: "Waterfall near Lago Yejoa" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "15852033030", width: 2296, src: "/cache/flickr/15/15852033030.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15852033030/in/set-72157649787007102", caption: "Waterfall near Lago Yejoa" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a cram packed week up in the USA, I felt like I really needed a bit of a rest, so once I got back down to Honduras I headed directly down to Lago Yejoa, the home of the D&D Brewery."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The brewery is attached to a hostel set on a little forested block of land, both of which are run by Bobby, the late-20s American owner. He tells me he runs the brewery as a bit of fun, and to provide some jobs for the locals. Apparently the area wasn't really on the tourist circuit at all back before he started up here, and now lots of people are coming to the area specifically to visit the brewery and then are told about the local natural attractions around to visit."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Bobby makes some pretty tasty beers, from memory there were maybe 5-6 different ones on tap but I've neglected to keep any notes about what they were. They're made in a sort of large scale home brew manner, using malt extracts and hops. I asked Bobby if he's thought about doing it with actual grains (the all-grain homebrewer in my past believes it's the only way to make exception beers), and he told me he'd originally bought a pallet of grain with the intention of doing it all that way, but the humidity in the area makes it near impossible to store the stuff without it spoiling and growing mould, which seems like a pretty fair reason for doing it the way he does."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The place has a nice little restaurant that makes pretty good burritos and baliadas, but their most impressive menu option is the blueberry pancakes which have a very generous portion of fresh blueberries cooked into them. I think I ate them for breakfast nearly every morning I was there. They're so good I'd probably recommend going their for the pancakes even if you don't like beer!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One night I got talking with an Irish guy named Johnny who is one of the most interesting people I've met on the road so far. He's an Irish bloke who makes his living as a travel blogger, travelling 9 months out of every year and living in Thailand the other 3."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "15852046620", width: 1632, src: "/cache/flickr/15/15852046620.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15852046620/in/set-72157649787007102", caption: "Johnny and the lake" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The guy is like one of those self made success stories you'd read about in a magazine. He started off with a travel blog, and then worked out how to make very decent money online through SEO marketing. He had visited 114 countries when I met him (now 141 with the slow rate I update my blog), and plans to visit every country in the world in the next few years. I'll chuck in a plug for [his website](http://onestep4ward.com) in case you want to see for yourself."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was really interesting to talk to someone who's been on the road so long, a whole lot more insightful than the average backpacker about the difficulties and challenges of truly living life on the road, as opposed to just living overseas."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16038626042", width: 1632, src: "/cache/flickr/16/16038626042.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16038626042/in/set-72157649787007102", caption: "D&D Brewery" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Johnny and myself did a hike up to a nearby lookout the next morning, and we were half way up when my flip-flops decided to tear through the toe strap, leaving me to do the rest of the way up and the way back barefoot. The view from the top was pretty nice and my feet held up surprisingly well, although I did get some nasty ant bites and found it very hard coming down hill through all the mud."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "15853267539", width: 2296, src: "/cache/flickr/15/15853267539.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/15853267539/in/set-72157649787007102", caption: "Me and the view" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After nearly a week at D&D I was feeling re-energised and so I got the chicken bus to Copan via San Pedro Sula, during which I had the closest thing to a bad experience I had in Honduras.  At one point a man got on, stood up at the front of the bus and asked me in English where I was from. After a little bit of small talk he switched to Spanish and started yelling something at the bus, then started digging around in his bag for something. I thought for sure we were being hijacked and he was about to pull out a gun, but then he actually pulled out a bible and continued to yell at the bus for 15 minutes, before taking of his shirt and showing that he was covered in religious (prison?) tattoos. A huge sense of relief washed over me when I realised he was a preacher and not a hijacker."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Once I'd arrived in Copan and found somewhere to stay, me and a few guys from the hostel went to check out (probably) the only authentic German brewery in Honduras. We'd gone there at 3pm in the afternoon to have a beer or two and get something to eat, but ended up staying until about 11pm and drinking many beers."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The brewery is run by an older German guy named Thomas, who's imported all the shiny brewery equipment from Germany himself, and has big temperature controlled fridges for fermenting his 120 litre batches. He imports all the German malts himself and mostly brews adhering to the [Reinheitsgebot](http://en.wikipedia.org/wiki/Reinheitsgebot) (German beer purity law), although he tells me he does make a hefeweizen with cacao beans in it which sounds like it would be delicious! Getting shown around the back room and all the brewery bling had me reminiscing about my years as an all-grain homebrewer throughout university."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16453437188", width: 1724, src: "/cache/flickr/16/16453437188.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16453437188/in/set-72157650622765828", caption: "Thomas who runs the only German brewery in Honduras" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The two beers on tap while I was there were a hefeweizen and a red lager. I really enjoyed the hefe, but everyone else seemed to prefer the lager. One thing is certain, Thomas definitely makes some of the best beer in all of Honduras!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I headed to a place called Macaw Mountain, a private bird reserve aiming at repopulating the Macaws in the local area. They also have a bunch of other exotic Central American birds such as toucans, and parrots, all of which have been donated by pet owners who no longer wanted them, or confiscated from bird smugglers."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16018395964", width: 2296, src: "/cache/flickr/16/16018395964.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16018395964/in/set-72157650622765828", caption: "Me and a bunch of macaws" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's a big interactive area where you could get a photo taken with a bunch of the Macaws; they'd perch on you and then you'd twist your wrist a little and the birds would spread their wings for the photo!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They were actually keeping a whole lot of macaws at Copan Ruins to try and get them used to the area, and then later opened their cages releasing them into the wild, in an effort to repopulate the Macaws the feature so heavily in the carvings there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1180, flickrID: "16639283661", width: 1572, src: "/cache/flickr/16/16639283661.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16639283661/in/set-72157650622765828", caption: "Toe biting toucan. What a little bastard" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was also a very naughty toucan, for some reason missing his tail feathers, that hopped around on the ground trying to peck at toes. I was initially running away from him every time he hopped up to me, then I decided maybe I was being silly and let him get me... it was quite a painful peck. Cheeky little bastard!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I couldn't visit Copan without visiting the ruins that the place is named after, so I headed out there the next day and grouped up with a big family (half Americans, half Hondurans) and got a guide to show us around the site."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16639405781", width: 2296, src: "/cache/flickr/16/16639405781.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16639405781/in/set-72157650622765828", caption: "Copan main steps" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The ruins were vertically very tall, but it really wasn't that big of a site. The “amazing detail” that people had been telling me about actually seemed kind of plain, especially compared to other ruins like Angkor Wat (although now having seen other Mayan ruins, Copan really is quite detailed compared to other Mayan sites)."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16018478584", width: 2296, src: "/cache/flickr/16/16018478584.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16018478584/in/set-72157650622765828", caption: "Copan" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's lots of work that's been done reconstructing many of the building of Copan. Our guide pointed our a few odd shaped hills and told us that that is how they all were when the site was found, with tree roots tearing the structures apart, dirt filling in the gaps and eventually just looking like a pile of rubble. It's actually quite incredible they're able to figure out how to put them back together at all."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16454733849", width: 2296, src: "/cache/flickr/16/16454733849.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16454733849/in/set-72157650622765828", caption: "Standing over Copan" }),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16433620557", width: 2296, src: "/cache/flickr/16/16433620557.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16433620557/in/set-72157650622765828", caption: "Partially restored building" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I also found out that the biggest structures actually used the previous buildings on the same site inside them as foundations. Modern tunnels have being dug into the buildings to get a look at some of the enclosed previous temples. Not exposed to the weather, there is a lot more preserved details. There were lots of great carved statues of macaw's faces statues in the tunnels, but it is a shame it's so narrow in there and they've fenced off a lot of it now so you have glass between you and statues, because previous visitors couldn't keep their damn hands to themselves."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a long day looking at ruins, I headed back to town and went back to Thomas' brewery for a few last beers in Honduras, before I started heading into Guatemala the next day."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-03-30 18:24",
+    "title": "Antigua Guatemala",
+    "travel_dates": "2014-06-13 - 2014-06-17",
+    "tags": ["Antigua", "Guatemala", "Ruins", "Volcanoes"],
+    "formattedDate": "March 30th 2015, 6:24:00 pm",
+    "canonicalPath": "/2015/03/30/antigua-guatemala"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16337477493", width: 1724, src: "/cache/flickr/16/16337477493.jpg", linkUrl: "/2015/03/30/antigua-guatemala", caption: "Markets in front of epic ruins" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16337477493", width: 1724, src: "/cache/flickr/16/16337477493.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16337477493/in/set-72157651649474182", caption: "Markets in front of epic ruins" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next stop for me was Antigua Guatemala, the original capital of Guatemala until they got sick of all the earthquakes knocking it over every few decades. It's a very beautiful city, littered with ruins of majestic old ruins of buildings that the government doesn't have enough funds to do preservation works to, so most of them are fenced off without so much as a plaque to say what it was."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16769941680", width: 2296, src: "/cache/flickr/16/16769941680.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16769941680/in/set-72157651649474182", caption: "Wax candles" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My first day in Antigua, I went with an Aussie couple I met at the hostel to explore some of the markets in the city. We went to the \"real\" market and a few of the tourist ones and the differences were striking. The real markets were busy, noisy places, each shop seems to specialise in selling only one type of things, largely stuff I wouldn't need but it was interesting to see and made for some nice photos. The tourist markets on the other hand were big places with pretty much no one in them but the shop owners, filled with hundreds of shops all selling the same kitsch crap."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16337486063", width: 1632, src: "/cache/flickr/16/16337486063.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16337486063/in/set-72157651649474182", caption: "Egg McFuckin' Muffin & Advil please" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped for lunch at a place that my Aussie friends had heard was good and they had a pretty amusing menu featuring an egg mcfuckin' muffin and free Advil!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16770116540", width: 1724, src: "/cache/flickr/16/16770116540.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16770116540/in/set-72157651649474182", caption: "How the Egg McFuckin' Muffin comes" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ordered myself the egg mcfuckin and thought it seemed like a good deal coming with a free cocktail. I was pretty surprised when it came out and the muffin, fries and fruit came out on skewers in the cocktail, like cocktail stirrers!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16956446822", width: 1724, src: "/cache/flickr/16/16956446822.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16956446822/in/set-72157651649474182", caption: "It was a short muddy walk to the top" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I booked myself in for a trip up ",
+      _react2.default.createElement(
+        "a",
+        {
+          href: "http://en.wikipedia.org/wiki/Pacaya" },
+        "Volcan Pacaya"
+      ),
+      ", one of Guatemala more active volcanoes that last seriously erupted in 2010, blowing ash so high that it even rained down on the modern day capital Guatemala City."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16770337980", width: 2296, src: "/cache/flickr/16/16770337980.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16770337980/in/set-72157651649474182", caption: "These guys followed us trying to get us to ride their horses up. Doubly anoying for me as they set off my horse allergy" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The walk up wasn't too challenging, there were a few steep parts with very fine (thankfully damp) gravel-ish soil, but for the most part it was an easy walk up a hill. There were some guys with horses that insisted on following us and trying to coerce us into paying to ride a horse up instead, shouting \"taxi\" at us over and over. Annoying on a bunch of levels, making the nature we were surrounded by feel as obnoxious as a city street, covering the trail in horse shit, and triggering my allergy to horses pretty severely."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16771637859", width: 2296, src: "/cache/flickr/16/16771637859.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16771637859/in/set-72157651649474182", caption: "It was like the surface of some other planet" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When we got to the top, it was like looking at the surface of another planet. An huge hill of jagged black volcanic rocks, steam vents letting out steam all over the place."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16363276783", width: 1724, src: "/cache/flickr/16/16363276783.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16363276783/in/set-72157651649474182", caption: "The lava store/tourist trap" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was a little shop up there selling souvenirs, working under the novel pretence of being a shop on a volcano."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1414, flickrID: "16982473711", width: 1884, src: "/cache/flickr/16/16982473711.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16982473711/in/set-72157651649474182", caption: "Marshmallow taco" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "However, the highlight was being able to roast marshmallows over invisible volcanic heat vents. They were some of the tastiest roasted marshmallows I've ever had; we even toasted a few tortillas and made a marshmallow taco!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1590, flickrID: "16363293653", width: 2118, src: "/cache/flickr/16/16363293653.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16363293653/in/set-72157651649474182", caption: "Turns out dogs love marshmallows" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We actually had a dog follow us up the hill the whole way, and found there were a whole bunch of them at the vents where people roast marshmallows, who had apparently developed a taste for marshmallows."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "While in Antigua I also took advantage of some of the free salsa lessons on offer around the city. I was absolutely terrible to start off, and didn't improve very quickly, but I could feel a lot of similarities in the learning with the way I have to learn new poi moves; repetition of the basics over and over until I no longer have to think \"ok, what's next\" and can free up my mind to concentrate on the more complicated aspects. I do wish rhythm came a bit more naturally to me."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16363383863", width: 2296, src: "/cache/flickr/16/16363383863.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16363383863/in/set-72157651649474182", caption: "This part of the wall fell a long way from the rest of it" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I explored a few of the more maintained ruins around the city, but the most impressive one for me was ",
+      _react2.default.createElement(
+        "a",
+        {
+          href: "http://en.wikipedia.org/wiki/La_Recolección_Architectural_Complex" },
+        "Convento La Recolección"
+      ),
+      ", an old cathedral and monastery/convent. I'd barely entered the site and a grounds keeper approached me and started showing me around as a bit of a tour guide, all in Spanish which was good practice but may mean I have some mistranslations."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16797269099", width: 2296, src: "/cache/flickr/16/16797269099.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16797269099/in/set-72157651649474182", caption: "Ruined courtyard" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The level of the soil is apparently now about 3 metres higher than it was, so big parts are now buried. He showed me around a few of the courtyards with tons of rooms leading off them which I think the inhabitants used to live in."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16982080292", width: 1724, src: "/cache/flickr/16/16982080292.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16982080292/in/set-72157651649474182", caption: "Danger" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then went to a little room with a big locked door with \"Danger\" written on it in Spanish, that he proceeded to unlock and lead me in. Inside was a chapel, one of the less destroyed parts of the site. I went down a little hole in the ground down a ladder and into the catacombs where it was pitch black. There was a dark tunnel leading off that I was told was an ancient secret passage between here and one of the churches over in the middle of the city. Amazing! I wish I'd had a better flashlight than my iPhone."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1290, flickrID: "16361062454", width: 968, src: "/cache/flickr/16/16361062454.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16361062454/in/set-72157651649474182", caption: "Secret garden" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The chapel was beautiful, a beautiful example of nature reclaiming man made structures. Green moss growing over most of the surfaces, a hole in the roof letting light stream in on top of a little garden of ferns. I really wish I'd had a tripod to take a series of shots of varied exposures to have a go at some proper HDR shots, but I made do with what I had and got some nice shots anyway."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1166, flickrID: "16361094544", width: 5400, src: "/cache/flickr/16/16361094544.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16361094544/in/set-72157651649474182", caption: "Epic ruinage of the monastery of the recollection" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The last part he showed me was the cathedral itself, which must have had 30-40 meter high ceilings and walls several meters thick, now largely in huge chunks on the floor. The earthquakes must have been incredible to knock this place down so thoroughly."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16797299179", width: 1724, src: "/cache/flickr/16/16797299179.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16797299179/in/set-72157651649474182", caption: "Convent of the order of mercy fountain" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Other highlights where the massive fountain inside ",
+      _react2.default.createElement(
+        "a",
+        {
+          href: "http://en.wikipedia.org/wiki/La_Merced_Church" },
+        "Iglesia La Merced"
+      ),
+      ", 27 metres across and set inside a huge courtyard."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16796052590", width: 1724, src: "/cache/flickr/16/16796052590.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16796052590/in/set-72157651649474182", caption: "Antigua Cathedral ruins" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "And the cathedral next to central park. From the outside I didn't even realise it was a ruin, but inside all of the domes of the ceilings are gone and a few other bits have collapsed, making some stunning natural skylights. I heard that this one wasn't actually a victim of the earthquakes, but rather collapsed because of a lack of maintenance."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-04-20 14:24",
+    "title": "San Marcos La Laguna, Lake Atitlan, Guatemala",
+    "travel_dates": "2014-06-30 - 2014-07-05",
+    "tags": ["Meditation", "Yoga", "San Marcos", "San Juan", "Santa Cruz", "San Pedro", "Lake Atitlan", "Guatemala"],
+    "formattedDate": "April 20th 2015, 2:24:00 pm",
+    "canonicalPath": "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17002133052", width: 1632, src: "/cache/flickr/17/17002133052.jpg", linkUrl: "/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala", caption: "Cramped taxi boat" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17002133052", width: 1632, src: "/cache/flickr/17/17002133052.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17002133052/in/set-72157651692973941", caption: "Cramped taxi boat" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After leaving San Pedro, I made the long and arduous journey across the lake, braving the calm freshwater sea couped up in a little boat for all of 10 minutes, finally arriving at the hippy shores of San Marco La Laguna."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Where San Pedro has a reputation as being the party village on the lake, San Marcos is a much quieter, sleepy hippy town. The main part of the village is all just narrow walking tracks, without taxi drivers harassing you every time you try and walk down the street. It's known for yoga, meditation and new age healing, and I figured I would try some new things and see if my scepticism was well merited."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16817219649", width: 1632, src: "/cache/flickr/16/16817219649.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16817219649/in/set-72157651692973941", caption: "My dorm loft" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ended up staying at a place called \"La Paz\", hidden away in lots of green gardens with little A-frame dorms where I scored the loft at the top largely to myself for the duration I was there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17002050022", width: 1632, src: "/cache/flickr/17/17002050022.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17002050022/in/set-72157651692973941", caption: "Yoga space at my hostel, perfect for poi practice too" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It also had a great yoga space in the back garden which was mostly only used in the mornings, so I repurposed it as a poi play space for a few hours most days and noticed some large improvements in my flow."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The restaurant at the hostel, and most restaurants in San Marcos, had a vegetarian menu. I'm a big fan of meat, but after being deprived of any real vegetables for 6 months, tasty vegetarian food was a welcome change. The place made an awesome veggie burrito, and had some delicious French toast on the breakfast menu."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17002522301", width: 1632, src: "/cache/flickr/17/17002522301.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17002522301/in/set-72157651692973941", caption: "Elephant staircase" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I made it along to the hostel's yoga classes most mornings, and was pleasantly surprised with how good the yogi there, Charlie, was. I used to do a lot of Yoga back in my university days and I used to love it, but every other time I've done it since then the yogi's have all fallen short and the classes have felt dull and uninteresting, and usually they seem to have every pose requiring ultra flexible hamstrings (which I don't have), so I usually end up feeling like I'm not stretching/working anything else."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Charlie's classes however were much more similar to what I remembered from uni, a good level of challenge and more varied poses, so at the end of it I would feel like I'd used a lot more of my body. I found out she lived in India for a number of years doing yoga before she'd had her first child, as had my yogi from university, so perhaps that's why their styles seemed more in tune with what I like."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16977483096", width: 1632, src: "/cache/flickr/16/16977483096.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16977483096/in/set-72157651692973941", caption: "Little hippy pyramid" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's a mediation place in San Marcos called Las Piramides (The pyramids) where all the accommodation cabins are pyramids, the garden is full of pyramids frames, and they have a giant pyramid that they conduct meditation course in. The place had a very new-age vibe to it with lots of references to meta-physical this and that, and I figured if I'm going to try it, why not throw myself in the deep end."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They run a four week meditation course where the students spend the entire fourth week not speaking or making a sound.  I wasn't about to sign up for that, but it was apparently ok to go along just for the day, so I did. They were up to week 3 of the current course, so perhaps it wasn't the best place to start but I gave it a go anyway."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "/images/sanmarcos/tumblr_lw1ymvkD9W1qh2i8s.jpg", width: "800", height: "601", alt: "Lake Atitlan", className: "img-responsive" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "A stolen photo of the big meditation pyramid"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The big pyramid temple has a strange entrance where you go down steps underground, then back up steps into the temple through a hole in the floor. Once everyone is inside the floor folds over the entrance like a cellar, so you're in a sealed up pyramid. There were some windows higher up letting in light, but there's no chance of leaving early."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "/images/sanmarcos/one-of-the-meditation.jpg", width: "800", height: "601", alt: "Lake Atitlan", className: "img-responsive" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "A stolen photo of pyramids within pyramids"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In each corner of the pyramid, there were smaller pyramids, and in the centre of the room there was a bigger one covered over by a piece of cloth. Once the session started the cloth was removed, revealing a crystal ball mounted in the top of the centre pyramid. New age mystical!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were about 25 people in the room, sitting around the edges facing in, each with a little padded mat and a little wooden slanted stool to sit on."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      _react2.default.createElement(
+        "p",
+        { className: "flickr-image-container" },
+        _react2.default.createElement(
+          "span",
+          { className: "polaroid" },
+          _react2.default.createElement("img", { src: "/images/sanmarcos/contact.jpg", width: "800", height: "601", alt: "Lake Atitlan", className: "img-responsive" }),
+          _react2.default.createElement(
+            "em",
+            null,
+            "A stolen photo of inside the pyramid"
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The session started with 30 minutes of silent meditation, where we were told to focus on our breathing. It was quite a challenge for someone who's never tried it before; after about 15 minutes one of my legs was completely numb. I tried to manoeuvre it so the blood would flow again but it just wouldn't wake up. After 20 minutes I didn't care any more and made a bunch of noise switching my legs around so the numbness would stop."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next up we all lay on our backs, feet to the wall, heads towards the middle of the room, and again focused on breathing. Breathing in 5 seconds, holding for 3, then out for 5 seconds. Then 7-3-7, 9-3-9, 11-3-11 and finally 13-3-13. By about the 9 second breaths, I was really struggling to stretch out my breaths any longer."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16977610346", width: 2296, src: "/cache/flickr/16/16977610346.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16977610346/in/set-72157651692973941", caption: "Lake Atitlan" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Then there was some “ohm” chanting for about 5 minutes. It was kind of neat to hear the room in chorus, with different people running out of breath at different times and starting again, and how it affected the harmony. After a while my face kind of felt a bit funny from all the vibrations."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Then there was some talking about finding your “life mission”, which was defined as the thing that makes you happy. It seemed a bit simplistic to me."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "16977620066", width: 1224, src: "/cache/flickr/16/16977620066.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16977620066/in/set-72157651692973941", caption: "This cat decided to take the bed next to mine" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally we did 7 more deep breaths, then rolled onto our sides, followed 7 more breaths, then sitting up cross legged again while candles all around the room got put out one by one."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "During these last breaths I actually did feel like my mind was a lot clearer than it had been at the start, a lot calmer with less jumping from thought to thought. I can't say I had any life changing revelations, but thinking about such mechanical things are breathing, and “ohm”ing really did seem to clear my mind, for a while at least."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16815786538", width: 2296, src: "/cache/flickr/16/16815786538.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16815786538/in/set-72157651692973941", caption: "Mayan artifact" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I saw a flyer somewhere for a \"meditation for dummies\" class that was one while I was around, so I called the number and signed myself up, to see what a more beginner levels meditation class would be like."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It turned out I was the only person who signed up, so it was just a one-on-one class with a woman named Edith. It started off with her telling me about all different kinds of meditation: walking meditation, writing meditation, dancing meditation, humming meditation, heart meditation... it all sounded a bit overwhelming for a meditation noobie like myself."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17002593151", width: 1632, src: "/cache/flickr/17/17002593151.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17002593151/in/set-72157651692973941", caption: "Lake reclaiming houses" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We did some heart meditation, which was kind of like Tai Chi to music. We started with our hands in front of our chests, slowly pushing our hands forward and drawing them back in time with the music, apparently pushing out bad energy and pulling in good energy. Then out to the sides and back, then pushing out behind us and drawing back. To be completely honest, I felt stupid doing this and didn't feel like I got anything at all from it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next up was humming meditation. We hummed to \"music\" (a seemingly random composition of drums, cymbals and other sounds) for about 40 minutes. This was actually pretty intense on my throat; I was struggling to keep a hum going and my lips were going numb. After humming, we did some more arm movements, pushing out bad stuff like insecurity, jealousy and hatred, and bringing in good things like happiness, confidence and gratitude. Strangely, this actually felt like it calmed me down a lot. Or maybe I was just happy to not be humming any more... who knows?"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16796198627", width: 2296, src: "/cache/flickr/16/16796198627.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16796198627/in/set-72157651692973941", caption: "I dont even know" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Then we did some numerology stuff based on my birthday that apparently said some positive things that were vague enough that they could apply to just about anyone. Yep, I'm totally sceptic about that BS."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next we did some writing meditation, which was basically writing out a bunch of affirmations. I don't doubt that affirmations can be helpful, but this didn't seem very sedative to me."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally we talked briefly about my poi and juggling, and it sounds like how I've always said that they felt pretty much like meditation to me really isn't far off. I guess I've been meditating in my own way for a lot longer than I realised, and in a way that's a lot more fun. Go me!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17003558065", width: 2296, src: "/cache/flickr/17/17003558065.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17003558065/in/set-72157651692973941", caption: "Check out the crops on that slope" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the end of my first day in San Marcos, Rachel - the Spanish school student I met on my last night in San Pedro, send me a message asking if I wanted to try and walk from San Pedro around the lake to San Marcos with her. I was keen so we met up the next afternoon and gave it a shot, but after asking some people in San Juan about safety on the road between there and San Marcos we were told there were sometimes bandits along there so we ended up getting a tuk-tuk from there instead, along what turned out to be a very hilly long road. I dunno if there used to be a flatter path before the lake level came up so far, but it didn't seem like it would have been a very leisurely walk these days anyway."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1386, flickrID: "16383431423", width: 1846, src: "/cache/flickr/16/16383431423.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16383431423/in/set-72157651692973941", caption: "Rachel and I in front of Volcan San Pedro" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We ended up meeting up nearly every afternoon to go exploring somewhere new, giving us lots of time to talk and get to know one another better. We explored around San Marcos, checking out the park next to the best swimming spot in the lake and up the hill to Mayan altars and some lovely views of the lake and the volcanoes."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "17002659011", width: 1724, src: "/cache/flickr/17/17002659011.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17002659011/in/set-72157651692973941", caption: "Saint Peter (San Pedro)" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We wandered around the streets of San Pedro, allowing me to experience it without quite so much festival craziness going on, and found a nice cafe to sit and have a drink in. We went over to Santa Cruz and walked up the hill along narrow paths as far as the paths would take us, and then back down again."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1536, flickrID: "17002143592", width: 1152, src: "/cache/flickr/17/17002143592.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17002143592/in/set-72157651692973941", caption: "Sarah and Rachel" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Rachel's sister Sarah arrived on the lake late in the week as she was coming down to Guatemala for a few weeks too, so we all went to the swimming spot next to San Marcos for the afternoon and had a nice swim in the lake, before heading up the hill to show Sarah the views and altars."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the end of the week Rachel was finished up at the Spanish school, and her and Sarah were going to head over to Xela, and I felt like I'd tried enough meditation for now and had been planning to go there anyway, so I tagged along with them and we all booked a shuttle from the lake to Xela together."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-04-27 13:12",
+    "title": "Quezaltenango (Xela), Guatemala",
+    "travel_dates": "2014-07-06 - 2014-07-13",
+    "tags": ["Quezaltenango", "Xela", "Guatemala", "Spanish Schools", "Volcanoes", "Salsa", "Hot Springs"],
+    "formattedDate": "April 27th 2015, 1:12:00 pm",
+    "canonicalPath": "/2015/04/27/quezaltenango-xela-guatemala"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1269, flickrID: "16436429083", width: 3096, src: "/cache/flickr/16/16436429083.jpg", linkUrl: "/2015/04/27/quezaltenango-xela-guatemala", caption: "Xela" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1269, flickrID: "16436429083", width: 3096, src: "/cache/flickr/16/16436429083.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16436429083/in/set-72157651783002242", caption: "Xela" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We arrived in Quetzaltenango, or Xela (pronounced sha-la) as pretty much every refers to it, quite late on a Sunday afternoon. Travelling in my usual manner, I showed up without having pre-organised my enrolment at the school, or a place to stay."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Rachel and Sarah had both pre-enrolled and were staying in a home stay organised through the school, Celas Maya, but being late on a Sunday I had my doubts about whether I'd be able to enrol to start the next day, but it turned out that wasn't a problem at all so we were all set to start the next day on most intensive class schedule I've done yet, 5 hours one-on-one a day, 5 days a week."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1152, flickrID: "16839266107", width: 1536, src: "/cache/flickr/16/16839266107.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16839266107/in/set-72157651783002242", caption: "Celas Maya" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After my schooling was sorted I set out to find a place to stay. I ended up getting my own private room at a newly started hostel not too far from school, in an old colonial style house that had a big open courtyard in the middle."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got an much earlier start the next day then planned, with a very strong earthquake hitting nearby at 5:30am that rumbled long enough for me to realise what it was, get out of bed and go stand in the door frame, and still have it keep shaking for another 15-20 seconds while I stood there in just my boxer shorts in the cold as everyone else in the hostel also appeared at their doors around the courtyard in various states of undress. An exciting start to Xela!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17056570565", width: 1632, src: "/cache/flickr/17/17056570565.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17056570565/in/set-72157651783002242", caption: "Parque Central" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was the middle of winter, and Xela is at a fair altitude, so mornings and evenings were actually quite cold, and the middle of the day would heat up and be almost hot, which meant I ended up dressing in layers and wearing zip off pants to deal with the big swings in temperature."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got assigned a teacher named Joel, a friendly younger guy who was into photography, and would bring in photo books for us to look through and discuss the buildings and places he'd taken photos of. It was actually pretty cool."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the start of the week we discussed the stuff I wanted to cover and worked out a basic plan for the tenses I wanted to work on and the areas he thought I should include, and then each day the lessons would be quite varied. Some days was entirely conversation, others I'd be working of a sheet of phrases and changing their personas and tenses verbally on the fly, another day he even had me listen to a song and try and work out the lyrics."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1309, flickrID: "16436572473", width: 1744, src: "/cache/flickr/16/16436572473.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16436572473/in/set-72157651783002242", caption: "Pimped out chicken bus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Rachel, Sarah and myself got permission to take our teachers with us to the market at San Francisco one day in place of classes so we could have a look around and ask questions."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1422, flickrID: "16436471023", width: 1893, src: "/cache/flickr/16/16436471023.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16436471023/in/set-72157651783002242", caption: "Bunny and duck" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We took a chicken bus there and then wandered around through the area where they sell animals and livestock. There was all sort of animals, pigs and piglets, sheep, cows, bunnies, cats, puppies, ducks, roosters and chickens and chicks. A lot of them were super cute, but it was a bit sad to see how some of them are handled, baskets full of chickens with a net tied over it to keep them in with there heads poking out."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "16849237107", width: 2296, src: "/cache/flickr/16/16849237107.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16849237107/in/set-72157651783002242", caption: "Mayan woven fabrics" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We looked around the clothing and fabric section and saw a load of beautiful traditional Mayan fabrics in bright vibrant colours."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16434250184", width: 1724, src: "/cache/flickr/16/16434250184.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16434250184/in/set-72157651783002242", caption: "Rachel on the rooftop" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We visited a church that let us go up onto  the roof to see the view. In the Central American way, there was no real safety or barriers; just us walking around on top of the big rounded rooftop."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17055240912", width: 2296, src: "/cache/flickr/17/17055240912.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17055240912/in/set-72157651783002242", caption: "Grains drying" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went through the food and produce section and saw the open sacks of grains and corn, often with big blankets covered in currently drying grains. Loads of delicious looking fruit, and questionable looking cooked seafood just sitting out in the sun."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I felt the more varied approach to learning at Celas Maya suited me way better than any of the other schools I'd been to, and that my Spanish improved more here than it did at any other point. It's easily the best school I've been to yet. By the end of the week though, I was feeling completely burnt out. Not so much by the challenge, but being an introvert and having to spend 5 hours a day having somewhat forced feeling conversation."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16426463073", width: 2296, src: "/cache/flickr/16/16426463073.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16426463073/in/set-72157651783002242", caption: "Fuentes Georginas" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One afternoon, we went on an excursion with the school to some natural hot springs called Fuentes Georginas set high up in the hills. It was a beautiful site with lush green plants all around it, and the heat of the pools helped add to the mist that sort of hung over the place."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17045793041", width: 2296, src: "/cache/flickr/17/17045793041.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17045793041/in/set-72157651783002242", caption: "Fuentes Georginas" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There were three pools of water, each a little cooler than the one before it. The hottest one I could barely cope with even just my knees in the water, the middle one was still too hot to be comfortable, and the coolest one was much better, but still too warm to stay in for long."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "A lot of other afternoon I organised to take some private salsa lessons at a dance studio with a great teacher named Nestor. While other lessons I'd taken had focused entirely on actual dance steps, Nestor took the first lesson just to work on actual stepping techniques, balance and weight shifting and gave me some exercise drills to practice to try and develop smoother flow. It felt a lot more productive than than just being told \"loosen up.\""
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16860332189", width: 1632, src: "/cache/flickr/16/16860332189.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16860332189/in/set-72157651783002242", caption: "Musik" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We did cover actual dance steps too, but instead of just teaching a sequence Nestor explained the ways to silently communicate to your partner what you're about to do. A gentle push to the hip here, raising a hand across their body, all sorts of subtle hints like that."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On the weekend we did two more excursions through the school, although Rachel, Sarah and I were the only ones who signed up so they were basically private tours."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16870562269", width: 2296, src: "/cache/flickr/16/16870562269.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16870562269/in/set-72157651783002242", caption: "Me above Laguna Chicabal crater" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One morning we met up at with our guide at school at 6am, and then got a colectivo over to the town at the bottom of the old volcano that contains Chicabal Laguna. We hiked up the long road through the forest to the rim of the crater were we had a lovely view of the Laguna."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1435, flickrID: "17030833636", width: 2296, src: "/cache/flickr/17/17030833636.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17030833636/in/set-72157651783002242", caption: "Flowers by the laguna" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then went down a long flight to stair to get down to the edge of the Laguna and hiked around it before heading back up a different route and then back down the long road to town to get a colectivo back to Xela."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17030887806", width: 2296, src: "/cache/flickr/17/17030887806.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17030887806/in/set-72157651783002242", caption: "In the hills near Xela somewhere" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The other morning we were up at 4:15am to go and see Volcan Santiaguito, one of the most active volcanoes in Guatemala, often erupting every half-hour or so. We got a minibus to the start of the hike, then hiked for a few hours through fields surrounded by thick green forests to the lookout to Santiaguito."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16849499117", width: 2296, src: "/cache/flickr/16/16849499117.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16849499117/in/set-72157651783002242", caption: "Me and Volcan Santiaguito erupting" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It erupted quite soon after we arrived with a thick plume of smoke, and then after a slight delay there was a huge booming thunder as the sound of the eruption reached us. It was really quite impressive to see and hear from so close."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16869375800", width: 1724, src: "/cache/flickr/16/16869375800.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16869375800/in/set-72157651783002242", caption: "It was rather cold and miserable up there" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We waited for nearly an hour in the hope we'd get to see it go off again, but alas, it lay dormant after that first eruption, and we were all far too cold to want to hang around waiting much longer."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-05-04 15:47",
+    "title": "Revisiting Antigua and Earth Lodge",
+    "travel_dates": "2014-07-13 - 2014-07-20",
+    "tags": ["Antigua", "Guatemala", "Earth Lodge", "Ruins", "Chicken Buses"],
+    "formattedDate": "May 4th 2015, 3:47:00 pm",
+    "canonicalPath": "/2015/05/04/revisiting-antigua-and-earth-lodge"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16870814889", width: 2296, src: "/cache/flickr/16/16870814889.jpg", linkUrl: "/2015/05/04/revisiting-antigua-and-earth-lodge", caption: "Pimped chickenbus, got a wave from the conductor" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16870814889", width: 2296, src: "/cache/flickr/16/16870814889.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16870814889/in/set-72157651649474182", caption: "Pimped chickenbus, got a wave from the conductor" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the end of our week in Xela, Rachel, Sarah and I headed back to Antigua. Sarah had to fly home from Guatemala City in a few days time, and I was happy to go back and share the amazing ruins with them and explore a few more."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1302, flickrID: "16436785383", width: 2083, src: "/cache/flickr/16/16436785383.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16436785383/in/set-72157651649474182", caption: "The Monastery of the Recollection" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went to The Monastery of the Recollection convent again, and were lucky enough to get another another tour from the same ground keeper. I was really please he was there, it would not have been anywhere as good without being able to get into the restricted parts again."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17056955075", width: 2296, src: "/cache/flickr/17/17056955075.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17056955075/in/set-72157651649474182", caption: "Me climbing up places where I probably shouldn't" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I noticed a decent improvement in my understanding of his Spanish this time around and the lighting was a little better this time around so I got to take some more photos of the place."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16849641287", width: 2296, src: "/cache/flickr/16/16849641287.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16849641287/in/set-72157651649474182", caption: "Cathedral from central park" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We went on the walking tour led by a guy named Alexander, telling us about Antigua's history and some of it's ruins. It was from him that I found out how the “public service” preservation of ruins is the reason so many of them are just fenced off without any info or maintenance, and the lack of public funds to change that."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17057053095", width: 2296, src: "/cache/flickr/17/17057053095.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057053095/in/set-72157651649474182", caption: "Epic building facade from central park" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Many of Antigua's old buildings are just their façades now, with either nothing behind them, or completely new buildings built behind them. It was also from him that I learned that the Cathedral off central park didn't actually fall from the earthquake, but rather from lack of maintenance. He told us that some work is done now to stop it decaying any further, but they wont be restoring it.  We learned how colonial style architecture in this area meant super thick walls to withstand earthquakes, which also means generally dark building without windows."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The tour stopped in at a jade factory, where we were told how the Mayan empire had collapsed because of their indulgent greed and decoration, and then at the end we were pressured to try and get us to buy super expensive jade jewellery. I think the irony was lost on them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16869314508", width: 1724, src: "/cache/flickr/16/16869314508.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16869314508/in/set-72157651649474182", caption: "A spiral of bells" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The tour finished up at a old ruin that is privately owned, San Jeronimo, which now functions as a pretty great museum. We were told that because they don't have the UNESCO restrictions that the publicly maintained ones do, they're able to do things their own way and thus it's in much better condition than pretty much any of the other ones. Full of beautiful gardens and classy looking old room, it's apparently used for a lot of weddings."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1508, flickrID: "17056229851", width: 2009, src: "/cache/flickr/17/17056229851.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17056229851/in/set-72157651649474182", caption: "Pimped chickenbus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Another day Rachel and Sarah went to climb Volcan Pacaya; I had wanted to do a tour in Antigua that I found online that visited a bunch of out of the ordinary places including a coffin maker's workshop and a chicken bus factory, but the tour wasn't available during the days I was around. The chicken bus factory was the part that interested me most so I asked at the hostel and got some directions and set out to find it myself."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16437018783", width: 2296, src: "/cache/flickr/16/16437018783.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16437018783/in/set-72157651649474182", caption: "Blue Bird" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As an aside for those in the dark, \"chicken bus\" is the moniker that pretty much everyone in Central America uses for the old USA school buses (often Blue Birds) that have been refitted and painted up, often with very bright and colourful paint jobs and nearly always with lots of biblical passages as decals on the windows."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "17057143345", width: 1724, src: "/cache/flickr/17/17057143345.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057143345/in/set-72157651649474182", caption: "Painting a new chickenbus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got on a chicken bus that took me to Ciudad Vieja (old city), a much more authentically Guatemalan city next to Antigua. When I got off the bus, I had no idea where to go, and just a scrap of paper with the name of the workshop written on it. I asked in a little food shop and he gave me a general direction to head in, and eventually I found the place I was looking for."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "17055673102", width: 1724, src: "/cache/flickr/17/17055673102.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17055673102/in/set-72157651649474182", caption: "Inside a stripped out chickenbus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It turned out there was a whole cluster of places clumped together that all did work on chicken buses so I visited a few of them. The first one had a lot of old American school buses being painted and refitted, lots of people busy working. There were a bit confused why a gringo would want to look around, but let me walk through and see some shiny newly painted buses being worked on."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17057161215", width: 2296, src: "/cache/flickr/17/17057161215.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057161215/in/set-72157651649474182", caption: "Modern chassis chickenbus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The place that I'd been given the name of by the hostel, Taller Horacios de Camionetas, appeared closed when I arrived.  I knocked on the door anyway and a guy who actually spoke a decent amount of English answered the door. He was happy to let me come in for a look and told me a bunch about how they also make new buses out of trucks, stripping them down and pretty much building entirely new vehicles out of them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16870929509", width: 2296, src: "/cache/flickr/16/16870929509.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16870929509/in/set-72157651649474182", caption: "Chicken bus workshop" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Apparently buses take about 40-60 days to fit-out, and start from about 50,000 Quetzales ($6,500 USD) for a basic fit-out, but can cost a whole lot more if you want lots of fancy lights and stuff. Depending on where the bus is going to be used, they will actually shorten them so they'll be able to get around tight corners in that city, put in more powerful engines to deal with hills in the area, change them over to have manual transmissions, or upgrade the engine computers with ones from trucks in order to get more power from the engines. It was fascinating to find out how unique each bus on the road must end up being."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1254, flickrID: "17057227455", width: 2816, src: "/cache/flickr/17/17057227455.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057227455/in/set-72157651649474182", caption: "Earth Lodge panorama" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning we got up to say goodbye to Sarah at 4am before going back to bed to sleep until a more sane time to start the day. After we'd had breakfast, we got picked up by a shuttle to take us up into the hills above Antigua to an eco-lodge and avocado farm called Earth Lodge where we were booked to stay for a few days. It was a really nice location with a fantastic view looking out towards Volcan de Agua and Volcan Fuego, surrounded by farmers fields and green forests."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16869677300", width: 1632, src: "/cache/flickr/16/16869677300.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16869677300/in/set-72157651649474182", caption: "Smiling Rachel in a hammock" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We spent many hours in Earth Lodge's numerous hammocks looking out that view of the volcanoes, talking about everything and nothing, and got in a lot of reading too."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16869700660", width: 1632, src: "/cache/flickr/16/16869700660.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16869700660/in/set-72157651649474182", caption: "Fuego erupting yet again" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "During the period we were there Volcan Fuego seemed to be quite active, blowing out plumes of smoke several times a day. It kind of made the effort we'd put in to see Santiaguito erupt seem unnecessary, although I still think it was worthwhile to actually hear the boom from up close."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17057304895", width: 1632, src: "/cache/flickr/17/17057304895.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057304895/in/set-72157651649474182", caption: "Rachel in a farmers field" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Most days we went on hikes further up into the hills to get some exercise, passing a lot of farms that seemed to be growing flowers, and along trails through the forest."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 918, flickrID: "17057314095", width: 1632, src: "/cache/flickr/17/17057314095.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057314095/in/set-72157651649474182", caption: "Earth Lodge sunrise" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Being an avocado farm, the kitchen's menu was well packed with meals that included deliciously ripe avocado. They also made terrific fruit smoothies, so I tried all kinds of strange combinations. I think my favourite combination was strawberry and avocado."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1291, flickrID: "17055820802", width: 2296, src: "/cache/flickr/17/17055820802.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17055820802/in/set-72157651649474182", caption: "Dry lightning storm" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One night, possibly the last one we were there, there was an epic lightning storm. Lightning was streaking across the sky every few seconds lighting up the clouds, and thunder was booming, but interestingly there was not a drop of rain to go with it so we got to sit outside and enjoy the show. Nature is amazing!"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-05-11 17:37",
+    "title": "More Schooling in Xela",
+    "travel_dates": "2014-07-20 - 2014-07-27",
+    "tags": ["Xela", "Quezaltenango", "Guatemala", "Spanish Schools", "Salsa"],
+    "formattedDate": "May 11th 2015, 5:37:00 pm",
+    "canonicalPath": "/2015/05/11/more-schooling-in-xela"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17031479206", width: 2296, src: "/cache/flickr/17/17031479206.jpg", linkUrl: "/2015/05/11/more-schooling-in-xela", caption: "Xela by night" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17031479206", width: 2296, src: "/cache/flickr/17/17031479206.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17031479206/in/set-72157651783002242", caption: "Xela by night" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The second time around in Xela I was actually pre-enrolled to head back to Celas Maya and this time I'd opted to stay in a home stay family. The difference in living standard between this one and all my previous ones was astounding. They had a computer, a flat screen TV, a real washing machine, and even a marine fish tank in the living room. These people were definitely a lot more well off than previous families."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After finding last time that 5 hours of classes was just too much for me to take, I'd organised this time to only do four hours a day, giving me a bit of extra time to go and do afternoon salsa lessons."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17055976172", width: 1632, src: "/cache/flickr/17/17055976172.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17055976172/in/set-72157651783002242", caption: "Little dog and his little kitty friend" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Unfortunately, I only made it through 2 hours of classes on my first day of school before stomach problems and an aching head had me rushing to the bathroom. I tried to stay for a bit longer but started feeling light headed and decided I should probably go home and rest for the remainder of the day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I made it back to classes the next day, still not feeling fantastic, but well enough to at least concentrate for the 4 hours. I decided I wasn't well enough to bother with salsa, so I hung out in a cafe and had a nice drink and worked on uploading stuff for my blog and did some homework."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16869557998", width: 2296, src: "/cache/flickr/16/16869557998.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16869557998/in/set-72157651783002242", caption: "Rachel working a backstrap loom" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "By day three I was finally feeling more normal again. Classes went much better and I organised a salsa lesson for late in the afternoon with Nestor. After lunch, I went to visit Rachel who had enrolled in a backstrap weaving workshop for her afternoons. It was interesting to see the looms in action, pulled tight between a pole and the weavers back, with little rods to move back and forward to alternate the weave between threads."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Dance lessons went well, teaching some foot patterns to side step and pull your partner through to swap places, although I imagine that doesn't make for very interesting blog material."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16850011597", width: 1632, src: "/cache/flickr/16/16850011597.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16850011597/in/set-72157651783002242", caption: "Colourful graves stacked four high" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One afternoon I made a visit to the huge cemetery near my house to explore. The place was enormous and colourful, with many of the plots being stacked 4-5 tombs high. The place was also surprisingly busy with people wandering around. One of the stranger things I saw there was an ice cream vendor selling ice cream in the cemetery. Bizarre!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I found the family I stayed with far less friendly than previous homestays. Conversations never got beyond pleasantries even though my Spanish was the best it had ever been. Meals seemed to be served at very late and inconvenient hours. The room I was in was much smaller than any other homestay too surprisingly, with barely enough space to open the door with a bed, a card table and a little plastic stool that needed to be moved out of the way to open or close the door; not exactly a good study environment. I felt like this family was only taking homestay students for the money (however little). In the end when I left, Marvin Jr (the teenage son), was the only person around so I said goodbye and thank you to him. I felt so little connection to the whole family that I really didn't give a shit if I said goodbye to them or not."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16869918290", width: 2296, src: "/cache/flickr/16/16869918290.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16869918290/in/set-72157651783002242", caption: "Delicious fondue dinner" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On my last night in Xela, Rachel, myself and another girl from Celas Maya went out and had dinner at the Swiss place on top of the hill called panorama. The place had great views of the city lights and had delicious spiced gluhwein. We shared a big tasty cheese fondue, then followed it up with an amazing chocolate fondue for desert."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "This visit to Xela was far less eventful than last time, largely because of me feeling unwell for half the week. Not so many stories or photos to show for it."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-05-13 14:33",
+    "title": "Two Years Later",
+    "travel_dates": "2015-05-13",
+    "tags": ["Retrospective"],
+    "formattedDate": "May 13th 2015, 2:33:00 pm",
+    "canonicalPath": "/2015/05/13/two-years-later"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 968, flickrID: "17568248432", width: 1548, src: "/cache/flickr/17/17568248432.jpg", linkUrl: "/2015/05/13/two-years-later", caption: "Roatan Sunset" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "So today marks two years since ",
+      _react2.default.createElement(
+        "a",
+        { href: "/2013/05/12/its-go-time/" },
+        "I last set foot in Australia"
+      ),
+      "."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 968, flickrID: "17568248432", width: 1548, src: "/cache/flickr/17/17568248432.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17568248432", caption: "Roatan Sunset" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "So today marks two years since ",
+      _react2.default.createElement(
+        "a",
+        { href: "/2013/05/12/its-go-time/" },
+        "I last set foot in Australia"
+      ),
+      "."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I can't claim it's been two years of real travelling, since I've been stopped in the one place since January, but Roatan is a holiday island so my life still has the same feel to it. People are always coming and going, which means meeting new friends and having to say goodbye to them sooner than I'd like. I'm just no longer the one having to lug my bag along to somewhere new all the time."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Looking back and thinking about all the beautiful places I've been in those two years, the incredible things I've been lucky enough to do, and the amazing people that I've gotten to meet, it's fair enough to say that I have no regrets about the sacrifices I had to make to make this all possible."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I've gotten to dive all along the Mesoameican Barrier Reef. I've climbed volcanoes and seen them erupt with my own eyes. I've swam in the lakes of now extinct volcano craters. I've made massive progress towards some day being properly bi-lingual. I've been to my first Burning Man and spent 8 days in the desert. I've explored some of the most raved about Cities in the USA. I've wandered through the ruins of a bunch of ancient civilisations. I've dived in the cenotes of the Yucatan. I've eaten the cheapest tacos from the dodgiest looking street vendors you can imagine. I ate a cooked spider; on purpose. I've been to the most extravagant Day of the Dead celebrations in Mexico. I got to see Cuba before the trade embargo lifts and rode around in beautiful cars nearly twice my age. I've lived on a beautiful Caribbean island and gotten paid to dive. I've made some life-long friends from all over the world who I look forward to visiting some day (or yet again!). It's been a wonderful year! Some day I hope I'll catch up on writing about it all :P"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Nothing lasts forever, but the changes can always be seen in a positive light. I can feel this trip beginning to draw to a close, so I'll probably be seeing a lot of my Australian friends again in the not too distant future. I'd love to hold out just long enough to miss Melbourne's winter, but I'm not sure that I'm going be able to make it that far. I see challenges in my future readjusting to life in Australia and the ridiculously high price of everything, finding a new place to live, a new job to keep me busy, and trying to fit back into a friendship circle that has evolved so much since I last saw them; but those are all bridges I will cross as I come to them. For now I'm still relishing the last few months of this amazing journey. Thanks for following along the ride!"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-05-21 17:29",
+    "title": "Back To Lake Atitlan",
+    "travel_dates": "2014-07-27 - 2014-08-04",
+    "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"],
+    "formattedDate": "May 21st 2015, 5:29:00 pm",
+    "canonicalPath": "/2015/05/21/back-to-lake-atitlan"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1222, flickrID: "16437387213", width: 3128, src: "/cache/flickr/16/16437387213.jpg", linkUrl: "/2015/05/21/back-to-lake-atitlan", caption: "Lake Atitlan at dusk" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1222, flickrID: "16437387213", width: 3128, src: "/cache/flickr/16/16437387213.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16437387213/in/set-72157651692973941", caption: "Lake Atitlan at dusk" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent most of the week staying back at the same hostel in San Marcos, but this time I got put in a different dorm. The place was basically a huge two level cottage with just six single beds, three upstairs and three downstairs. There was so much space it was crazy! It even had an upstairs balcony."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Charlie, the yoga teacher that I clicked with last time, was away on holidays the whole week and the replacements were really varied. Some did a very gentle practice, some were much more challenging. One in particular I had zero faith in. Part of her practice involved wildly throwing your arms in uncontrolled windmills as fast as you can... a great way to fuck up a shoulders in my experience."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 827, flickrID: "17031608116", width: 1102, src: "/cache/flickr/17/17031608116.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17031608116/in/set-72157651692973941", caption: "Got enough tuk-tuks for a village with barely any roads?" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I spent some time shopping for some pants in various towns around the lake, and continually ran into the same issue. You'd go into a store where nothing is sorted by size, look through their stock and pick out a pair you like. They of course wouldn't fit, and then you'd be shown a dozen other pairs of pants that share nothing in common with the ones you like. Pick out some nice looking black pants with grey stripes, be shown some awful pastel pink ones as a substitute. It seemed bizarre that I would see so many pretty fabrics at the markets, but they seem to choose the most gaudy fabrics to make most of the clothes from. If I'd been going home after Guatemala I probably would have just bought a bunch of fabrics and figured out how to make clothes from them myself."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1215, flickrID: "17057533565", width: 1620, src: "/cache/flickr/17/17057533565.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17057533565/in/set-72157651692973941", caption: "Panajachel Cathedral facade" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I visited Panajachel one afternoon, supposedly the most touristy place on the lake, but because I hadn't done any research and refuse to get taxi's when I can walk just fine I actually completely missed the touristy parts of the town and wandered aimlessly through some rather dirty and grimy parts of the place. I barely saw another gringo the whole time I was there, and I saw basically no shops selling the usual tourist souvenir trash. Goes to show how different your impression of a place can be depending on where you go there."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Another day I visited Santiago, one of the bigger towns on the lake and one that I hadn't met anyone else who had really been to. I happened to be there on a market day and the place was crazy. Market stalls lining the roads all the way from the dock right up into the centre of town, where a bunch of rides and food stalls were set up in front of a church. This place surprised me in feeling way more of a tourist trap than Panajachel, but maybe that was just because it was market day."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The highlight of the week for me was going back to Santa Cruz to scuba dive in the lake. I stayed at the hostel attached to the dive shop, La Iguana Perdida, where I was put in a very nice dorm but not long after check-in I was told they had made a mistake and needed the bed in that dorm for a big group that was arriving. I said no problem, but when they showed me the second dorm it was horribly crammed full of beds, with only top bunks left and the top bunks were so close to the ceiling I couldn't even sit up, and no lockers to secure away valuables. I complained about the difference in quality between the two dorms hoping to get a discount or something, but instead they upgraded me to a nice little private double room. Winning!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16871322949", width: 2296, src: "/cache/flickr/16/16871322949.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16871322949/in/set-72157651692973941", caption: "La Iguana Perdida" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning I got up and had some breakfast at the restaurant then went out diving with Oli, the instructor at ATI divers on Lake Atitlan. This was my first time diving at altitude, and in fresh water, and in a collapsed volcanic crater from 80,000 years ago. The lake is 1.5km above sea level, and most lakes at this height would be damn cold, but geothermal activity in the crater actually heats the lake to a much more comfortable temperature."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got given a 2 piece farmer-john style wetsuit, 7mm thick plus a hood (meaning 14mm of neoprene on my torso), and the water temps were about 22-24ºC so I was toasty warm for both the dives."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The dive boat was a tiny little fibreglass boat, small enough that when we did out backward rolls entries we needed to go at the same time on opposite sides so as not to flip the boat."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "First dive site was in front of a hotel where the bottom part is now fully submerged underwater. We descended down over a flight of stairs, then dropped off the side down to the floor below. it was very surreal to be swimming around past all these obviously man made structures while 15M underwater. There were benches and steps and other landscaping features all around. At one point we come to a place where there is a still working tap underwater. We turned it on and you could hear the water flow and see particles on the floor move, and feel the much colder water come flowing from the tap."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16870005000", width: 1724, src: "/cache/flickr/16/16870005000.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16870005000/in/set-72157651692973941", caption: "Volcan San Pedro framed in plants" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At points throughout the dives we turned over rocks and saw these strange little insects with three forks of their body, which are apparently the baby versions of the beautiful blue dragonflies you see everywhere. Crazy to think they start out their life living under rocks at the bottom of the lake."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We poked out heads up through a gap in the ceiling up to the surface of the water and there was a little boy standing there who first asked if we could hear him, then told us his mum had dropped her prescription glasses and his dad had dropped a torch and asked if we could look for them. At first I wondered if he was just messing with us, or if Oli had staged it or something, but we had a quick scan around and I managed to quickly locate both of them and pass them pass up to the kid. Search and recovery win!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We saw lots of purple crabs that would extend out their arms and open their claws wide, trying to look bigger and scare us off, very cute. We also swam through a bunch of dead reads that looked like rotting bamboo."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1222, flickrID: "17031555756", width: 2656, src: "/cache/flickr/17/17031555756.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17031555756/in/set-72157651692973941", caption: "Lake Atitlan, from Santa Cruz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a nice long surface interval, dive two went went out to a site called agua caliente, where we went down above an underwater swimming pool about 3M under water, then followed the natural slope of the lake down where there was lots of really fine silt. Putting your hands in at various places you could find huge variances in temperature, but with everywhere being warmer than the lake water."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We came up to some rocks that covered geothermal vents, where you could see the water shimmering where the hot water mixed up with the colder water. Oli cracked open an egg and sat it on the vent, the flow of which pulled bits of egg out and sent them off separately in little chunks, definitely coagulating but not cooking as thoroughly as I had imagined it might."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We came up a bit shallower to a steeper slope and set off some underwater landslides of silt, which stirred up amazingly beautiful clouds of dust flowing down the slope."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We stopped and lay on the bottom, trying not to blow too many bubbles and had a bunch of fish come over and investigate. Fresh water fish all look the same to me, but it was cool to see them none-the-less."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Apparently most of the fish in the lake are introduced; Some by the Mayan people long ago for food, others by people trying to control a pest in the lake. Like every time you hear a story like that, they had no predators so they thrived, changing the environment and driving a bird that used to live in the lake to extinction. Way to go humans."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Next we found a sauna, which I swam in through the hole where the heating barrel would have once been. Inside looking up it was cool to see where all the air had caught in a big bubble on the ceiling with some sort of a cord switch hanging from the centre of the roof."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went out the door and we headed in to the bottom floor of another hotel where there was a small bar with a few beer bottles which we pretended to cheers and have a drink. There was an air pocket above us so we could dump the water out of the bottles and bring them down with some air in them, so they’d float as we spun them upside-down. Turning them right way up the air gurgled out making some very strange sounds."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Visibility was probably only about 5M, and there was a fair bit of muck and algae in the water, but it was much warmer than I had been expecting. All up it was a very unique diving experience and made a lot of firsts for me. First altitude dive, first fresh water dive, first dive in a volcano, first search and recovery dive, first underwater exploration of a building. I couldn't see myself wanting to stay and dive here daily like I can at ocean sites, but as a two-off experience I loved it."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16435125674", width: 1632, src: "/cache/flickr/16/16435125674.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16435125674/in/set-72157651692973941", caption: "Rachel weaving" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I didn't see very much of Rachel this week since she was studying another week of Spanish at a little school in San Juan where she was the only student, and her afternoons were all tied up doing more weaving at another women's cooperative. I did drop by to visit her a few times and see her while she was weaving."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16870048470", width: 1632, src: "/cache/flickr/16/16870048470.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16870048470/in/set-72157651692973941", caption: "Final Lake Atitlan sunset" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the end of the week she did come over and stay in San Marcos at La Paz for two nights, so we got one last day to just hang out and wander around together. We had a sad goodbye on my final day on the lake when we parted ways. After travelling together for 6 weeks I was actually pretty scared about going back to solo travel; losing the safe comfort of a friend that I'd gotten to know pretty well and venturing back into the realm of meeting new people every day, usually only for a few days at most, and all the repetitive small talk associated with that. The perils of being an introvert while living a life like this."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-05-26 12:41",
+    "title": "Semuc Champey",
+    "travel_dates": "2014-08-05 - 2014-08-07",
+    "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"],
+    "formattedDate": "May 26th 2015, 12:41:00 pm",
+    "canonicalPath": "/2015/05/26/semuc-champey"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16883863607", width: 2296, src: "/cache/flickr/16/16883863607.jpg", linkUrl: "/2015/05/26/semuc-champey", caption: "Semuc Champey" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight."
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16883863607", width: 2296, src: "/cache/flickr/16/16883863607.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16883863607/in/set-72157651450903798", caption: "Semuc Champey" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The shuttle from Antigua to Lanquin was probably the most uncomfortable 10 hours in all my travels in Central America. The very old minibus was crammed packed full, even the shitty fold down seats were in use. Even the regular seats were worn thin with pretty much no padding or structure left to them. It seemed like pretty much everyone on the shuttle was Israeli, all speaking Hebrew amongst themselves, so I felt like I was in an little isolated bubble even though I was crammed in shoulder to shoulder between someone and a very hard window. These are the experiences nobody thinks about when they're romanticising travel."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "When I finally got to Lanquin, the shuttle dropped us off and there were pickup trucks with hyper-aggressive touts trying to get you to come and stay at their hostels. It seemed like everyone on the bus already had their hostels decided, so the crowd of idiots swarming the door of the minibus did little other than block us from getting off. Nobody else from my bus was staying at the same hostel as me, but I met a nice couple from England, Cathy and Dave, in the back of the pickup truck taking us to our hostel right at the entrance to Semuc Champey."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16904991839", width: 2296, src: "/cache/flickr/16/16904991839.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16904991839/in/set-72157651450903798", caption: "Looking down from the hostel restaurant" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I had breakfast and met the group I would be doing the tour with; a nice mix of British, Canadian, Austrian and Israeli people."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Semuc Champey itself is an incredible natural water feature, where the very fast flowing Cahabón River has carved out an underground river underneath a large rock shelf. The rock shelf actually forms a bunch of beautiful aqua coloured pools that you can swim in. Apparently towards the end of the wet season the river level can get so high that it rises up and flows both over and underneath the rock shelf."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 887, flickrID: "17091267205", width: 666, src: "/cache/flickr/17/17091267205.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17091267205/in/set-72157651450903798", caption: "Me above Semuc Champey" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The tour first took us up a long muddy, quite slippery path to a lookout to see the view of Semuc Champey that would be on all the post cards. Not having been in hot humidity in a few months I was entirely not acclimatised and sweated until everything I was wearing was dripping wet, but it really is a breath taking view from up there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16883933287", width: 2296, src: "/cache/flickr/16/16883933287.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16883933287/in/set-72157651450903798", caption: "The river sinking down below Semuc Champey" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We then went down a different path that led us to the point where the river plunges underground. Seeing the force of the water pounding down and the rate it was flowing was a bit intimidating, with only a rope fence to stop you from slipping down from the pools we were standing in and falling down into the turbulent water."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After we'd checked that out, we went to an area where they had lockable boxes where we could leave out cameras and clothes, after which we went and swam in the pools."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16471302003", width: 2296, src: "/cache/flickr/16/16471302003.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16471302003/in/set-72157651450903798", caption: "Semuc Champey pools" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Our guide led us around, showing us the best places to jump down from pool to pool. In one place he showed us a natural slide where there were some slippery rocks you could sit down on and slide down to the next pool. It was actually pretty bumpy and jarred the hell out of my poor tail bone. I would rather have just jumped down from the high ledge he later showed us."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the other end of the pools we got to see where the river returns out from underground. Our guide told us that someone had been drunk and tried to go through the underground route in a tire tube, and that their body had come out the other side without a head or legs. The jagged rocks and the powerful water had just ripped the guy apart. Thanks for cleaning up the gene pool guy!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17089914432", width: 2296, src: "/cache/flickr/17/17089914432.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17089914432/in/set-72157651450903798", caption: "The edges of the pools" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We we shown some hidden little caves at the edge of one pool, where you were neck deep in water and had to tilt you head back to keep your mouth above water in the tiny air space inside. It continued along sideways for a few metres like that and was surprisingly well lit via light reflections through the water. At the other end you had to duck down underwater and swim out for 3-4 meters with blind faith that you would come back out to the open air at the other end."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After out swim we went back to the hostel to have lunch before the second part of the tour, the Kambuci Caves. The Kambuci caves are a long cave that has been carved out over thousands of years by the underground river flowing slowly through it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the entrance to the caves we were each given a wax candle with which to light our way. The river starts off being about waist deep with a rope to help guide you along the way. There were a few parts where there were ladders to climb up and over steep rock faces, challenging to climb with a candle in one hand, and the rock face against the ladder preventing you from putting your foot securely through the rungs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16903838580", width: 2296, src: "/cache/flickr/16/16903838580.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16903838580/in/set-72157651450903798", caption: "The edges of the pools" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After a while we got to parts where the water was too deep to stand, so we were swimming along with one hand in the air trying to keep our candles dry and lit, feeling like we were Indiana Jones. We would look for hand holds along to wall to grab onto and let us be a bit lazier with the swim."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The guide had a waterproof head torch, but I quite enjoyed the challenge of keeping the candles going, and you could always get a light of someone else if yours did go out."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We came to a bit where you could climb up a fairly fast flowing waterfall with a rope, kind of like abseiling in reverse. There was also a ladder next to it for those who didn't want to go the hard way. I almost didn't try because I wasn't sure if I would have the strength to do it, but I was pleasantly surprised to find it much easier than it looked. I did manage to have both contact lens come out of place from all the water smashing into my face. I managed to blink one back into position but the other was lost under my eyelid somewhere for the rest of the day. There was no way up the waterfall without having your candle go out, but once we were past that part the guide helped us light them all again."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "At the end of the caves there was a part where you could climb up and jump down about 3 meters into a pool of dark black water. The pool was actually a bit shallow, so you did hit the sandy bottom although not with great force."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16883736257", width: 2296, src: "/cache/flickr/16/16883736257.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16883736257/in/set-72157651450903798", caption: "The Cahabón River" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After backtracking out of the caves, we set off on the third adventure of the day. We all got given tire inner tubes and walked back to where the Cahabón River comes out from underground again, jumped in and floated gently down the river for about half an hour. A nice relaxing way to round out a great day of adventuring!"
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-06-01 19:40",
+    "title": "Tikal",
+    "travel_dates": "2014-08-07 - 2014-08-09",
+    "tags": ["Tikal", "Flores", "Guatemala", "Ruins"],
+    "formattedDate": "June 1st 2015, 7:40:00 pm",
+    "canonicalPath": "/2015/06/01/tikal"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1657, flickrID: "17225779282", width: 2207, src: "/cache/flickr/17/17225779282.jpg", linkUrl: "/2015/06/01/tikal", caption: "Temple V at Tikal" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1657, flickrID: "17225779282", width: 2207, src: "/cache/flickr/17/17225779282.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17225779282/in/set-72157652039835056", caption: "Temple V at Tikal" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning I was picked up by another shuttle that took me in to Tikal itself. I had opted to stay a night at one of the hotels situated right at the entrance to the park to enable me to do the sunrise tour without having to get up at quite such a ridiculous hour to travel the hour or so from Flores to the park and still make it for sunrise. My room was one of the cheapest ones, so it was situated away from the fancy part of the hotel near the pool, down a long path out into the jungle. I think I'd actually prefer this over the ones in the upmarket part of the hotel as it was a bit more private feeling and got the sounds of nature after dark."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17041100829", width: 2296, src: "/cache/flickr/17/17041100829.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17041100829/in/set-72157652039835056", caption: "The back of Templo del gran jaguar" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After checking in I went and did some solo exploring of Tikal. It seemed like a long walk before I saw any sign of ruins, then suddenly I was next to an enormous pyramid!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17041182279", width: 2296, src: "/cache/flickr/17/17041182279.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17041182279/in/set-72157652039835056", caption: "Hard to even identify that this is an unrestored temple" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was amazing to see the scale of the site and the structures on it. Even more so when you realise pretty much every hill you see is actually an unrestored structure of some sort or another."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17226783401", width: 2296, src: "/cache/flickr/17/17226783401.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17226783401/in/set-72157652039835056", caption: "Maler's Palace" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The structures themselves weren't particularly imagination provoking for me. They're huge, but they just feel like giant piles of bricks. I have trouble imagining how people would live in them, or guessing what they would use them for, which makes it hard for me to wonder much about their lives. Maybe I've just got ruin fatigue, although I've only seen two Mayan ruins so far."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "16605028094", width: 1724, src: "/cache/flickr/16/16605028094.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16605028094/in/set-72157652039835056", caption: "The unrestored side of Temple V" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was interesting to see on Temple V how different the sides that aren't restored look compared to the one that is. The ones that aren't restored just look like very steep hills covered in trees, while the one that is has a giant staircase surrounded by terraces. The original archaeologists would have needed much better imaginations than mine to realise what was actually there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17041195609", width: 2296, src: "/cache/flickr/17/17041195609.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17041195609/in/set-72157652039835056", caption: "Me at the top of Temple IV" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I climbed up to the top of Temple IV and the view was epic, endless jungle with the tops of temples poking out here and there. This was the temple that we would be climbing for the sunrise tour, so I was excited about how pretty this vista might be."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17226751361", width: 2296, src: "/cache/flickr/17/17226751361.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17226751361/in/set-72157652039835056", caption: "Half of the Grand Plaza" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The Grand Plaza was pretty monumental, surrounded on two sides by enormous pyramids, and on the other two sides by the acropolis and the palace, littered with stela and alters."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1723, flickrID: "17225895322", width: 2295, src: "/cache/flickr/17/17225895322.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17225895322/in/set-72157652039835056", caption: "Templo de las mascaras" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Since I was in the park overnight anyway, I also decided to go on the hotel's sunset tour which turned out to be a bit of a disappointment. The tour was supposed to be in English, but the guide's English was extremely poor. I noticed at one point that on his official guide badge it only listed Spanish as the language he was permitted to provide his services in. This led to it not being very informative at all, and I got little more from having a guide than I had from wandering around by myself."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17227402405", width: 2296, src: "/cache/flickr/17/17227402405.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17227402405/in/set-72157652039835056", caption: "Unrestored corner of a pyramid" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It was a three hour tour, but the guide kept stopping in plazas and giving us 30 minutes of \"free time\" to explore by ourselves while he sat and talked to other guides. Having already explored most of the site that morning, I felt like this was pretty crummy. All up the tour was maybe 45 minutes of actual tour and a lot of waiting."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17039994880", width: 2296, src: "/cache/flickr/17/17039994880.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17039994880/in/set-72157652039835056", caption: "Sunset happening behind the clouds" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "For sunset itself, our guide told us that the Acropolis is the best place to view it, but really it wasn't a very good view for a sunset, the Acropolis itself and Temple II blocked most of the view, Temple IV was tiny and in the distance. There weren't many other people around, so I'm guessing there's somewhere better to view it from that all the other groups had gone to, maybe further into the park meaning a longer walk out."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17227539765", width: 2296, src: "/cache/flickr/17/17227539765.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17227539765/in/set-72157652039835056", caption: "Amazing clouds" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As the sun came down there were some amazing clouds formations appeared in the sky and some thunder. They were beautiful when they were off to the south, less pretty when they blew over and blocked the actual setting of the sun and didn't even give us pretty colours. Ah well, you can't always get ideal weather."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After returning from the tour, I showered and then had dinner at the hotel with a couple from Singapore who love to travel and told me all sorts of great stories about their travels in Cuba and Columbia. After dinner I walked along the long path towards my room with my head torch on, and could see hundreds of little dots reflecting light brightly back at me all over the ground. As I got close enough to see what they were I found that there were hundreds and hundreds of wolf spiders just chilling about on the grass and on the path way, so I walked carefully and tried to avoid stepping anywhere near any of them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17041367049", width: 2296, src: "/cache/flickr/17/17041367049.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17041367049/in/set-72157652039835056", caption: "Dawn at the top of Temple IV" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next morning I got up at just before 4am to meet up at the hotel reception with my sunrise tour group and have a coffee. It was a dark morning and we could see so many stars out. As we walked the long walk from the hotel over to Temple IV a fog started to rise, and by the time we climbed the stairs at the back of the temple to sit up on top of it the fog had truly taken over."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "16605114694", width: 2296, src: "/cache/flickr/16/16605114694.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16605114694/in/set-72157652039835056", caption: "Fog rising, but the sun is already up" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We waited for ages for it to become light, but the heavy fog meant we couldn't even see the closest temples until the sun was well and truly up, and we never saw any pretty colours or evidence of the sunrise. Such a tease after being up so early, especially after it had been so clear earlier. 0 out of 2 solar events witnessed. Screw you weather!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "17039620178", width: 2296, src: "/cache/flickr/17/17039620178.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17039620178/in/set-72157652039835056", caption: "Part of the lost world" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the failed sunrise we went on a short tour, and this guide was much better than the first one. We went over to the Lost World and heard how the structures were built as a sort of calendar with the sunrise lining up with various buildings on the longest, middle and shortest days. I wish I'd had this guide the first day and could have learnt more about the other areas of the park."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1632, flickrID: "17225960332", width: 1224, src: "/cache/flickr/17/17225960332.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17225960332/in/set-72157652039835056", caption: "Old photo of Temple of the Masks" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After the tour I headed back to the hotel for breakfast, checked out and stashed my bags, then went and visited a few of the museums around the entrance of the park. One of them was super interesting, with lots of historical photos showing the state that all of the temples were found in (after they'd be cleared of trees at least). Interestingly there were photos of some of the temples that now have massive trees growing out of them that showed they had once been cleared in the past. It seems irresponsible not to keep them free from trees to prevent further damage, even if they are not restored."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "16607590753", width: 1632, src: "/cache/flickr/16/16607590753.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16607590753/in/set-72157652039835056", caption: "Crocodile in a pond" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Wandering near a little lake I saw a sign warning there were crocodiles, so I spent some time looking and found two of them lurking near the surface. They were only little fellas, but I still wouldn't want one of them biting me."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17040271970", width: 1632, src: "/cache/flickr/17/17040271970.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17040271970/in/set-72157652039835056", caption: "The lake at Flores is also rising" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In the afternoon I got a shuttle back to Flores where I was spending the night, but this time I arrived with enough time to actually explore a bit. I tried to walk around the street that circles the island, but one side was cut off by the lake where it's broken its bank. It seems like there's a lot of lakes with rising water levels in Guatemala."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 704, flickrID: "16605391994", width: 528, src: "/cache/flickr/16/16605391994.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/16605391994/in/set-72157652039835056", caption: "Big doggie getting a bath" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Flores didn't really seem like a very interesting place. Everything there was a hotel, a restaurant or a souvenir shop, with more souvenir shops per square km than Antigua by a long shot. I was pretty glad I only had the afternoon there, it seemed like plenty, and I had a bus booked to take me down to Rio Dulce the next morning."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 70 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-06-11 10:03",
+    "title": "Rio Dulce, Livingston, and trying to leave Guatemala",
+    "travel_dates": "2014-08-10 - 2014-08-15",
+    "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"],
+    "formattedDate": "June 11th 2015, 10:03:00 am",
+    "canonicalPath": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18502735689", width: 2296, src: "/cache/flickr/18/18502735689.jpg", linkUrl: "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", caption: "The Rio Dulce" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18502735689", width: 2296, src: "/cache/flickr/18/18502735689.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18502735689/in/set-72157654310348526", caption: "The Rio Dulce" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "18688927345", width: 1632, src: "/cache/flickr/18/18688927345.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18688927345/in/set-72157654310348526", caption: "Working by the river at Kangaroo Hostel" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I got a boat from the town to the hostel I was staying at, the Kangaroo Hostel, a nice little place accessible only by the water, run by a very Aussie Australian and his Mexican wife. It was a little weird to be in Guatemala, surrounded by kitsch Aussie memorabilia, but the menu had some pretty good Mexican options on it."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18501188978", width: 2296, src: "/cache/flickr/18/18501188978.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18501188978/in/set-72157654310348526", caption: "Castillo San Felipe" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "My travel agent had booked me on a boat trip along the river to go out to Livingston on the Caribbean coast and back. The boat ride was pretty nice; so lush and green on either side. First we looped around to see Castillo San Felipe."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18689003105", width: 2296, src: "/cache/flickr/18/18689003105.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18689003105/in/set-72157654310348526", caption: "A girl coming to try and sell us trinkets" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Then a bit later we stopped at a place so little girls could paddle out to us with canoes full of trinkets to try and sell to us, then further down the diver we stopped at a place with a hot spring along the edge of the river."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18068393673", width: 2296, src: "/cache/flickr/18/18068393673.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18068393673/in/set-72157654310348526", caption: "So pretty and green!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Finally we got to the part were the river is cutting through the limestone canyons, which were super steep with loads of beautiful untouched vegetation growing all over it."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "On our arrival at Livingston we had a bunch of black guys come out to meet the boat shouting \"welcome to Africa\" then trying to take us to hostels. One guy was even trying to sell us weed."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18689167105", width: 2296, src: "/cache/flickr/18/18689167105.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18689167105/in/set-72157654310348526", caption: "The \"beach\"" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Livingston itself didn't have very much to offer, the town was tiny, dusty and stinking hot. I went exploring with a newly-wed Israeli couple and we went and saw two of the nearby beaches. They had dark brown mud-like sand, grass growing right to the edge, the water was a dirty brown, and there was tons of rubbish dumped along them. They were more like a polluted river bank, but even less scenic."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "18501469350", width: 2296, src: "/cache/flickr/18/18501469350.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18501469350/in/set-72157654310348526", caption: "Pelicans trying to get an easy lunch" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We found a place to have a beer while watching local fishermen circle their nets, with heaps and heaps of pelicans flying over, looking for an easy lunch."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "For lunch we went and tried the local traditional food, Garifuna tapado, a coconut seafood curry with plantains. It was epic, easily the best part of going to Livingston for me. There was a whole fried fish, a whole crab split in two and 6 or so prawns, all in delicious coconut soup."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "18691575921", width: 1632, src: "/cache/flickr/18/18691575921.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/18691575921/in/set-72157654310348526", caption: "Yachts along the river" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We got the boat back along the river to the hostel and I spent the evening hanging out with people drinking and eating Mexican food."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The next day I got a bus to Guatemala City to stay the night in a hostel before my early flight to SF the next day. The hostel was a bit strange, occupying several separate apartments in an apartment building."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17335751295", width: 1632, src: "/cache/flickr/17/17335751295.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17335751295/in/set-72157651863523397", caption: "The Pinata district" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The day of my flight went really smoothly. I got a transfer from my hostel to the airport with plenty of time to check in; the check-in lines flowed quickly as did clearing security and immigration. People boarded the plane like they actually knew what they were doing for a change. We taxied out to the runway and waited for our slot to take off."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17309817516", width: 1632, src: "/cache/flickr/17/17309817516.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17309817516/in/set-72157651863523397", caption: "After taxing back to the gate :(" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Then we got told there was a \"light fault\", and we were taxied back to the gate where we waited while the engineers checked it out. I was thinking \"what does it matter if a light isn't working for a day time flight?\", but after about half an hour they announced that there was problem with an engine and I realised that \"light fault\" must have meant a warning light in the cockpit was on and it suddenly sounded much more serious."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After about an hour on the plane we were told the plane wasn't going anywhere and we all de-boarded out into the gate again, where we were led out of the airport, straight through immigration again without even being stopped, to collect our bags after which we had to leave the airport entirely and reenter the departures section of the airport to queue up and be rebooked on new flights."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17128366767", width: 1632, src: "/cache/flickr/17/17128366767.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17128366767/in/set-72157651863523397", caption: "The line to rebook flights" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The line to rebook the entire flight was horrendously long and slow moving. United only had two staff on to deal with it, so in the end I was waiting in line for about four hours, only to be told that because of earlier cancellations that week they couldn't book me to fly tomorrow either, and that I was stuck in Guatemala City for the next two nights."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17149596009", width: 1632, src: "/cache/flickr/17/17149596009.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17149596009/in/set-72157651863523397", caption: "Fancy hotel pool" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They booked me into a hotel and gave me some vouchers to buy meals there. The hotel was pretty nice, far fancier than anywhere else I've stayed on this trip, but it was in a pretty seedy feeling part of town. I was disappointed to find out that the vouchers they gave me were for $7 per meal, but the hotel only had a buffet on offer for lunch and dinner, and the buffet cost $14. Tightwads! I could have easily eaten for $7 a meal if they'd given me cash and I'd gone out for food."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17149738129", width: 1632, src: "/cache/flickr/17/17149738129.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17149738129/in/set-72157651863523397", caption: "Plaza fountain" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Since I had a full day in Guatemala City, I decided to explore the city a bit. I'd heard that Guatemala City was like every other capital in Central America, a big, dirty, dangerous place, with little to offer aside from it's airport, but the central part of the city was actually pretty nice."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17149622929", width: 1632, src: "/cache/flickr/17/17149622929.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17149622929/in/set-72157651863523397", caption: "Impressive architecture" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I went to the huge central park and wandered about looking at the very impressive façades of old buildings, the palace, the national library and the cathedral. The architecture was really pretty impressive."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "17347665961", width: 1632, src: "/cache/flickr/17/17347665961.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/17347665961/in/set-72157651863523397", caption: "Statue of a bull" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I ended up walking back towards the hotel along 6th Avenida, the pedestrian street leading out from the central park. The whole strip felt modern, fairly wealthy and quite safe; It didn't really feel like any other part of Guatemala that I'd been to. I ended up walking the several kilometres back to the hotel and even the seedy area the hotel was located in felt pretty safe, even if every second building seemed to be a strip club. I guess they target the businessmen using the hotel's convention centre."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Attempt two at leaving Guatemala went smoothly, with no issues about having a passport that was already stamped out of Guatemala and never back in again, and I was off on my flight to San Francisco to get myself organised before Burning Man."
+    )
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.body = exports.intro = exports.metadata = undefined;
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _FlickrImageLegacy = __webpack_require__(3);
+
+  var _FlickrImageLegacy2 = _interopRequireDefault(_FlickrImageLegacy);
+
+  var _BlogPost = __webpack_require__(2);
+
+  var _BlogPost2 = _interopRequireDefault(_BlogPost);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var metadata = exports.metadata = {
+    "date": "2015-08-17 14:10",
+    "title": "San Francisco, before the burn",
+    "travel_dates": "2015-08-15 - 2015-08-23",
+    "tags": ["San Francisco", "USA", "Museums", "Alcatraz"],
+    "formattedDate": "August 17th 2015, 2:10:00 pm",
+    "canonicalPath": "/2015/08/17/san-francisco-before-the-burn"
+  };
+
+  var intro = exports.intro = _react2.default.createElement(
+    "div",
+    { className: "postIntro" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1287, flickrID: "19918806662", width: 2288, src: "/cache/flickr/19/19918806662.jpg", linkUrl: "/2015/08/17/san-francisco-before-the-burn", caption: "SF from the water" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!"
+    )
+  );
+
+  var body = exports.body = _react2.default.createElement(
+    "div",
+    { className: "postBody" },
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1287, flickrID: "19918806662", width: 2288, src: "/cache/flickr/19/19918806662.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19918806662/in/album-72157653894545484/", caption: "SF from the water" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1414, flickrID: "20378247679", width: 2121, src: "/cache/flickr/20/20378247679.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/20378247679/in/dateposted-public/", caption: "Chad, Sarah and Me" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I contacted anyone and everyone I could think of that lived in the bay area, trying to find someone who had a couch I could stay on for a while, and I was saved by Sarah, Rachel's sister who I met in Guatemala. Her and her husband Chad had just bought a condo, were in the process of moving in from their old place and were happy to have me come stay in their new spare room."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Chad is even a bit of a Burning Man veteran, he's been going for a long time and now volunteers as a ranger each year, so it was fantastic for me to have someone who could answer my questions about what was and wasn't important stuff to take, and tell me tales of past years events."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1824, flickrID: "20395641339", width: 2736, src: "/cache/flickr/20/20395641339.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/20395641339/in/dateposted-public/", caption: "River saying hello to the camera" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Sarah and Chad's condo is a beautiful big place right near the mission district, really spacious and light. They have an awesome dog named River, an American bulldog, who seemed to take an instant shine to me, howling with excitement when I arrived, wagging her tail like mad and trying to jump up on me. Such a lovely natured dog!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Since Sarah and Chad were still in the process of moving, I got to be helpful by going and helping to pack some boxes at the old place (just two blocks away), and moving them down and up stairs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19900195976", width: 2296, src: "/cache/flickr/19/19900195976.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19900195976/in/set-72157653894545484", caption: "Golden Gate bridge being covered by Karl the fog" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One of the nights not long after I arrived, there was a 15th anniversary screening of ",
+      _react2.default.createElement(
+        "a",
+        { href: "http://www.imdb.com/title/tt0151804/" },
+        "Office Space"
+      ),
+      "happening at the Castro theatre that Sarah and Chad were going to, so I grabbed a ticket and went along too. The Castro Theatre is one of those historic old places that only plays arthouse movies and cult classics, and for the 15th anniversary of Office Space, they actually had Stephen Root (who played Milton with the Swingline stapler) there to talk at the beginning and do a Q&A afterwards. It was just as funny as it was when it came out, and it felt kind of surreal to be in a theatre full of people who loved the movie so much and even a member of the cast!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1168, flickrID: "19931147451", width: 1279, src: "/cache/flickr/19/19931147451.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19931147451/in/set-72157653894545484", caption: "SF Grafitti" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "As I mentioned before, I'd planned to get to SF early to sort out my Burning Man prep, but between booking my flights and arriving, I had actually been lucky enough to be put in contact with a guy named Peter from the theme camp I was going to stay with, who had an RV and was looking for someone to share it with. This was a huge blessing, as it saved me blowing a bunch of money on a tent, camp mat, sleeping bag, etc, that I would only have to give away afterward anyway. Even more awesome was Peter's offer to handle acquisition of food and water in exchange for money and a shopping list. My stresses about how I was going to transport a weeks worth of food and water in when I was arriving by bus were completely solved! I can't thank Pete enough."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "19737829488", width: 1632, src: "/cache/flickr/19/19737829488.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19737829488/in/set-72157653894545484", caption: "These were the best Oreos ever. I love you America!" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "With so much of the prep taken care of already, I got to spend a lot of my time in San Francisco seeing touristy stuff instead. I also did do a lot of buying stuff on Amazon , making good use of an Amazon Prime trial for free fast shipping. After so long in Central America without easy access to a lot of things, having things arrive at the house after just a few clicks online felt like I was living in the future!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One day I went over to check out the SF cable car museum. I'd planned to actually take the cable car up Nob hill from Powell and Market, but the lines to get on were absurd so I just walked up instead. The museum was pretty neat, it's actually in the same building where they pull the cables from and you can see the giant motors and the big wheels they use to pull the cables through the network."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1224, flickrID: "19303206874", width: 1632, src: "/cache/flickr/19/19303206874.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19303206874/in/set-72157653894545484", caption: "The wheels that pull the cable for SFs cable cars" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There's also a subterranean bit where you can see how they manage to navigate the cable around corners, and a lot of information about how the drivers have to release the cable at certain corners or intersections in order to pass other cables that cross the one that's pulling their car. It was all really interesting to see and learn about."
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There was a big section of the museum about the 1906 earthquakes that flattened most of the city, destroying a lot of the old cable car lines, but also starting fires while simultaneously knocking out the water pressure, leaving the fire department unable to fight the fires and huge areas of the city just burning to the ground. It's incredible to think that San Francisco has been completely devastated by earthquakes twice in the same century."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1435, flickrID: "19925926025", width: 2296, src: "/cache/flickr/19/19925926025.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19925926025/in/set-72157653894545484", caption: "Berkley campus" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Another day I went over to the East Bay and had a walk around Berkeley, checking out the very imposing building of the university there and some of the trendy streets nearby."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19304964153", width: 2296, src: "/cache/flickr/19/19304964153.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19304964153/in/set-72157653894545484", caption: "Berkley pier from the far end" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Then I headed over to the Berkeley pier, and walked out along it to get another view of the bay. The pier extends out about a kilometre into the bay, but from the end of the pier you can see remnants of the old pier which was apparently nearly 6km long!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1313, flickrID: "19900066716", width: 1748, src: "/cache/flickr/19/19900066716.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19900066716/in/set-72157653894545484", caption: "California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Another day I got a bus over to the California Academy of Science museum. It's quite a cool building with a grassy, hilly rooftop, with lots of hardy plants up there, that insulate the building keeping the temperatures more stable. There's also a bunch of solar panels around the edge providing some of the buildings power needs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19738160348", width: 2296, src: "/cache/flickr/19/19738160348.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19738160348/in/set-72157653894545484", caption: "California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Inside the building is split up into various sections about different areas and topics. The basement houses a fairly large aquarium, with many of the tanks also being viewable from above. From the top you can see the brightly coloured fish swimming around, and in a shallow pool there was a number of pretty rays gliding."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 719, flickrID: "19931180611", width: 958, src: "/cache/flickr/19/19931180611.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19931180611/in/set-72157653894545484", caption: "Colourful fish at California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The aquarium was split up between marine and freshwater fish, and then again into regions of the globe. The prettiest tanks were the two giant marine tanks for the Phillipines and the California coast. Interesting fact, what they call a leopard shark in the USA is completely different from a leopard shark back in Australia."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19899902666", width: 2296, src: "/cache/flickr/19/19899902666.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19899902666/in/set-72157653894545484", caption: "Octopus in a jar at California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "In the fresh water and swamp section they had some of the biggest freshwater fish I've ever seen, and probably the biggest in the aquarium. I don't recall the type, but they were enormous. Strange, I never think of fresh water fish as having any real mass to them."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19931190841", width: 2296, src: "/cache/flickr/19/19931190841.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19931190841/in/set-72157653894545484", caption: "Leafy sea dragons at California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They had some leafy and weedy sea dragons, along with pot belly seahorses. I miss those guys from the piers around Port Philip Bay!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19305260263", width: 2296, src: "/cache/flickr/19/19305260263.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19305260263/in/set-72157653894545484", caption: "Rainforest dome at California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There is a big sealed up rainforest zone, which has the temperature and humidity of a real rainforest. I sped through a good chunk at the start because it was all the animals I'd gotten used to seeing regularly in Central America. In the later parts there were some neat creatures from South America, and lots of tiny very poisonous pretty frogs."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19926261105", width: 2296, src: "/cache/flickr/19/19926261105.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19926261105/in/set-72157653894545484", caption: "Whale skeleton at California Academy of Science" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "There is also a big section about earthquakes, with info about SF's big quakes, and a simulator that roughly shows what it would have been like to be in both of them. It was kind of cool, but the fear that you get in a real earthquake (like the one I felt in Xela, in buildings of unknown structural soundness) just wasn't there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19305318023", width: 2296, src: "/cache/flickr/19/19305318023.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19305318023/in/set-72157653894545484", caption: "Golden Gate poking over the hills" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "After I finished up at the museum, I found out you could go up the tower across the way at the de Young museum and get a good view of the city, so I did."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19739660489", width: 2296, src: "/cache/flickr/19/19739660489.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19739660489/in/set-72157653894545484", caption: "Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I wanted to go and see Alcatraz, but I'd heard you usually have to book at least a few days in advance, and for the night tours, sometimes months in advance. I looked into it a few days before I wanted to go and most of the times were pretty crappy and the night tour was full, but then I looked again the next day and now there was one ticket available for the night tour, so I booked that. Glad I procrastinated booking that one or I would have missed out!"
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19931463481", width: 2296, src: "/cache/flickr/19/19931463481.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19931463481/in/set-72157653894545484", caption: "Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The beautiful weather that day held out into the afternoon, so when I got the boat went over to Alcatraz I got a great view of the Golden Gate bridge, followed by a nice loop around the rock itself."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1667, flickrID: "19900199966", width: 2220, src: "/cache/flickr/19/19900199966.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19900199966/in/set-72157653894545484", caption: "Welcome to Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Since it was the night tour, we were given some extra commentary by a live speaker on the boat over. Once we landed we had another short tour with some more stories and history about the place, leading us up to prison where we were given audio guide that led us around the prison, telling us about the guards in the inmates who had lived there."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19739786029", width: 2296, src: "/cache/flickr/19/19739786029.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19739786029/in/set-72157653894545484", caption: "Entry showers at Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "It started in the showers, and then led us up and around through the various cell blocks, the library, into the administration section, out to the wardens house (where paused it and ducked over to get another look at the bridge with the sun set), then back through the cell blocks, past \"time square\" (the prison clock) and into the mess hall."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 2296, flickrID: "19918985892", width: 1724, src: "/cache/flickr/19/19918985892.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19918985892/in/set-72157653894545484", caption: "Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I saw the dummy heads used in the escape of three prisoners, completely with human hair. Later a guest guide gave a story about that escape, how the guys involved had worked out there were vents in the maintenance shaft between the cells, because of one part of the prison that had been remodeled, leaving a vent showing in open roof."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19303872484", width: 2296, src: "/cache/flickr/19/19303872484.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19303872484/in/set-72157653894545484", caption: "Alcatraz cells" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "He told us how they were working painting the ceilings, and claimed that they wanted to paint the whole way through (inside maintenance shafts too). They kicked a lot of dust off while there were in there, which then went into prisoner cells making a lot of people unhappy, and so they were allowed to put up painters drop sheets, providing them with the cover they needed to work on their escape."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19305597653", width: 2296, src: "/cache/flickr/19/19305597653.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19305597653/in/set-72157653894545484", caption: "Alcatraz control room" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "We heard how they'd steal spoons, since the knives were carefully counted and one missing would have resulted in everyone having to go through a metal detector, but spoons weren't considered a dangerous weapon. We were told how they carved out the vents in their rooms, hiding their work with art they had painted; and how after they escaped, they were never seen again, their bodies never found. To this day it's a mystery as to their fate."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1403, flickrID: "19738609208", width: 1869, src: "/cache/flickr/19/19738609208.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19738609208/in/set-72157653894545484", caption: "Administration building" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Another guide told us a story about the final escape at the prison. A guy who had always acted like a model prisoner got promoted to the store room. He then stacked boxes in front of a window until it was well obscured, then spent a year cutting through the bars inside the window."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1428, flickrID: "19900451196", width: 1902, src: "/cache/flickr/19/19900451196.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19900451196/in/set-72157653894545484", caption: "Alcatraz" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "The outer bars were softer steal, so eventually he made a break for it, cutting through them in just one night. He then blew up rubber gloves and stuffed them in his shirt to make himself a floatation device and headed out into the bay, but he got caught in the tide and missed all the piers he had aimed to end up at. He ended up landing at Presidio, which was at the time a military base, where he was recaptured immediately."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19919141252", width: 2296, src: "/cache/flickr/19/19919141252.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19919141252/in/set-72157653894545484", caption: "Alcatraz infirmary" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Other perks of the night tour were that there were lots more talks and presentations than normal, and several parts of the prison were open that are not normally open such as the rec yard and the hospital. Unfortunately, the talks were all great, and back to back, so I didn't actually get much time to explore the hospital and didn't get to the rec yard at all. I would have loved another 2-3 hours to explore, and a tripod to have a go at some real HDR photos."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1290, flickrID: "19931823731", width: 2294, src: "/cache/flickr/19/19931823731.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19931823731/in/set-72157653894545484", caption: "Alcatraz cell corridor at night" }),
+    _react2.default.createElement(
+      "p",
+      null,
+      "One of the coolest things on the night tour was the slamming of the cell doors, a presentation where they opened and closed the doors of a row of cells, telling us how that booming sound was specifically designed to communicate to the prisoners who was in control. There is a big metal cover over the doors machinery and the doors actually work just fine without it, but nearly silently instead of the loud booming sounds."
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "videoWrapper" },
+      _react2.default.createElement("iframe", { width: "560", height: "315", src: "https://www.youtube.com/embed/twecNQlzBW4", frameBorder: "0", allowFullScreen: true })
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "They told us that the sound of those doors has been sampled and used in lots of movies, for example Jurassic Park and The Empire Strikes Back. It's a pretty iconic sound."
+    ),
+    _react2.default.createElement(_FlickrImageLegacy2.default, { height: 1724, flickrID: "19931836531", width: 2296, src: "/cache/flickr/19/19931836531.jpg", linkUrl: "https://www.flickr.com/photos/lucasthenomad/19931836531/in/set-72157653894545484", caption: "Last view of Alcatraz" })
+  );
+  var blogPages = [];
+
+  exports.default = function () {
+    return _react2.default.createElement(_BlogPost2.default, { metadata: metadata, body: body });
+  };
+
+/***/ },
+/* 72 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/ExecutionEnvironment");
 
 /***/ },
-/* 31 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6060,7 +14574,7 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(46);
+  __webpack_require__(81);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6083,7 +14597,7 @@ module.exports =
   exports.default = BlogLink;
 
 /***/ },
-/* 32 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6096,9 +14610,76 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(50);
+  __webpack_require__(83);
 
-  var _Navigation = __webpack_require__(33);
+  var _Link = __webpack_require__(4);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  var _BlogLink = __webpack_require__(73);
+
+  var _BlogLink2 = _interopRequireDefault(_BlogLink);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var BlogPostSummary = function BlogPostSummary(_ref) {
+    var path = _ref.path;
+    var title = _ref.title;
+    var formattedDate = _ref.formattedDate;
+    var content = _ref.content;
+    return _react2.default.createElement(
+      "div",
+      { className: "blogPostSummary" },
+      _react2.default.createElement(
+        _BlogLink2.default,
+        { path: path },
+        title
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "date" },
+        formattedDate
+      ),
+      content,
+      _react2.default.createElement(
+        "div",
+        { className: "moreLink" },
+        _react2.default.createElement(
+          _Link2.default,
+          { to: path },
+          "Read More..."
+        )
+      ),
+      _react2.default.createElement("hr", { className: "divider" })
+    );
+  };
+
+  BlogPostSummary.propTypes = {
+    path: _react.PropTypes.string.isRequired,
+    title: _react.PropTypes.string.isRequired,
+    formattedDate: _react.PropTypes.string.isRequired,
+    content: _react.PropTypes.node.isRequired
+  };
+
+  exports.default = BlogPostSummary;
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(85);
+
+  var _Navigation = __webpack_require__(76);
 
   var _Navigation2 = _interopRequireDefault(_Navigation);
 
@@ -6117,11 +14698,7 @@ module.exports =
         children
       )
     );
-  } /**
-     * React Static Boilerplate
-     * https://github.com/koistya/react-static-boilerplate
-     * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-     */
+  }
 
   Layout.propTypes = {
     children: _react.PropTypes.element.isRequired
@@ -6130,7 +14707,7 @@ module.exports =
   exports.default = Layout;
 
 /***/ },
-/* 33 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6143,7 +14720,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(52);
+  __webpack_require__(87);
 
   var _Link = __webpack_require__(4);
 
@@ -6159,15 +14736,10 @@ module.exports =
       { className: "navigationLink", to: href },
       children
     );
-  }; /**
-      * React Static Boilerplate
-      * https://github.com/koistya/react-static-boilerplate
-      * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-      */
-
+  };
   NavLink.propTypes = {
     href: _react.PropTypes.string.isRequired,
-    children: _react.PropTypes.object.isRequired
+    children: _react.PropTypes.node.isRequired
   };
 
   function Navigation() {
@@ -6231,7 +14803,7 @@ module.exports =
   exports.default = Navigation;
 
 /***/ },
-/* 34 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6252,11 +14824,7 @@ module.exports =
 
   function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  */
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _class = function (_Component) {
     _inherits(_class, _Component);
@@ -6293,7 +14861,7 @@ module.exports =
   exports.default = _class;
 
 /***/ },
-/* 35 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6314,11 +14882,7 @@ module.exports =
 
   function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  */
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _class = function (_Component) {
     _inherits(_class, _Component);
@@ -6358,7 +14922,7 @@ module.exports =
   exports.default = _class;
 
 /***/ },
-/* 36 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6371,7 +14935,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _BlogPostSummary = __webpack_require__(5);
+  var _BlogPostSummary = __webpack_require__(74);
 
   var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
 
@@ -6379,13 +14943,14 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
+  var _TagCloud = __webpack_require__(5);
+
+  var _TagCloud2 = _interopRequireDefault(_TagCloud);
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  var pageData = { "blogPosts": [{ "file": "2014-12-16-the-bay-islands-of-honduras.jsx", "formattedDate": "December 16th 2014, 9:02:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16036987811", "linkUrl": "/2014/12/16/the-bay-islands-of-honduras", "caption": "Utila's beach" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After making a one night stay in San Pedro Sula, home of the worlds worst murder rate, I headed over to the coast and got a ferry to Utila; one of the Bay Islands of Honduras." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/12/16/the-bay-islands-of-honduras", "tags": ["diving", "Utila", "Roatan", "Honduras"], "title": "The Bay Islands of Honduras" }, { "file": "2014-11-17-little-corn-island-leon-and-a-visa-run.jsx", "formattedDate": "November 17th 2014, 8:42:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15613692069", "linkUrl": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "caption": "Tall tall palms" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After I was done hiding out in Esteli over easter, trying to avoid the masses of locals who apparently usually head to the coasts and cause a ruckus, I booked a flight from Managua to Big Corn Island. This was the most last minute flight I've booked thus far, less than 24 hours before the time of the flight, although it made no difference at all to the cost. Hooray for fixed price flights!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/11/17/little-corn-island-leon-and-a-visa-run", "tags": ["Little-Corn-Island", "Leon", "Visa-run", "Nicaragua", "Costa-Rica"], "title": "Little Corn Island, Leon, And A Visa Run" }, { "file": "2014-10-30-nicaragua-all-over-the-place.jsx", "formattedDate": "October 30th 2014, 7:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "15614210236", "linkUrl": "/2014/10/30/nicaragua-all-over-the-place", "caption": "Volcan Concepcion from Finca Magdelena" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After leaving La Mariposa, I headed to the island of Ometepe and met up with some friends from La Mariposa who were staying at an old farm house called Finca Magdelena. It was just $6 a night for a private room, and they made amazing French toast that I had for breakfast most days." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/30/nicaragua-all-over-the-place", "tags": ["Ometepe", "Jinotega", "Somoto-Canyon", "Nicaragua"], "title": "Nicaragua, all over the place" }, { "file": "2014-10-09-excursion-highlights-from-la-mariposa.jsx", "formattedDate": "October 9th 2014, 7:44:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14735306339", "linkUrl": "/2014/10/09/excursion-highlights-from-la-mariposa", "caption": "Laguna Apoyo" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "While studying at La Mariposa I got to take advantage of a lot of free excursions to cool places around Nicaragua. Here's a few of my favourites from the month there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/10/09/excursion-highlights-from-la-mariposa", "tags": ["Granada", "Volcan-Masaya", "La-Boquita", "horseback-riding", "Managua", "Leon", "Laguna-Apoyo", "la-mariposa", "Nicaragua", "spanish-schools"], "title": "Excursion highlights from La Mariposa" }, { "file": "2014-09-10-la-mariposa-spanish-school-nicaragua.jsx", "formattedDate": "September 10th 2014, 10:09:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14734597870", "linkUrl": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "caption": "Another path through the gardens" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "One of the goal I set for myself that I wanted to achieve in my travels was to learn a second language. Years ago, right after living in Europe (where every other person you meet seems to speak 4 languages) I had a go at learning Spanish in Melbourne but I never found the opportunity to practice outside of class and my interest waned. Being in Latin America it seemed like a good time to try again." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/09/10/la-mariposa-spanish-school-nicaragua", "tags": ["Nicaragua", "Spanish-schools", "homestay", "volcanoes", "dogs", "monkeys", "La-mariposa"], "title": "La Mariposa Spanish School, Nicaragua" }], "pageNo": 1, "nextPage": "/page/2", "previousPage": null, "lastPageNo": 5 }; /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    */
+  var pageData = { "blogPosts": [{ "file": "2015-08-17-san-francisco-before-the-burn.jsx", "formattedDate": "August 17th 2015, 2:10:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "19918806662", "linkUrl": "/2015/08/17/san-francisco-before-the-burn", "caption": "SF from the water" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I'd planned to arrive in San Francisco about ten days before Burning Man to give myself plenty of time before hand to sort out all the preparations I would need to make to survive a week in the desert. However I messed up and assumed I would be able to figure out accommodation close to when I got there. By the time I did try and book somewhere, I couldn't find anywhere to stay that was going to be much less than USD$150 a night. This led to a lot of stress!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/08/17/san-francisco-before-the-burn", "tags": ["San Francisco", "USA", "Museums", "Alcatraz"], "title": "San Francisco, before the burn" }, { "file": "2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx", "formattedDate": "June 11th 2015, 10:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "18502735689", "linkUrl": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "caption": "The Rio Dulce" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The next stop in my whirlwind tour of the northern parts of Guatemala was the Rio Dulce. I got a bus (an actual comfortable coach style bus with reclining seats and everything), that left an hour late at Flores, but still somehow got me to Rio Dulce early. I didn't think this was possible in Guatemala so it was a very welcome surprise!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala", "tags": ["Rio Dulce", "Livingston", "Guatemala City", "Guatemala", "Airports", "Flying"], "title": "Rio Dulce, Livingston, and trying to leave Guatemala" }, { "file": "2015-06-01-tikal.jsx", "formattedDate": "June 1st 2015, 7:40:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "17225779282", "linkUrl": "/2015/06/01/tikal", "caption": "Temple V at Tikal" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Semuc Champey I headed to Flores, the city closest to Tikal. It was another long minibus day, 11 hours on the bus, but at least this time I got a single seat near the door without one in front of it, so I had plenty of legroom and nobody taking up the space where my shoulders go. I stayed the night in a hotel where I was the only guest. I really don't think the travel agent made much effort to get me in somewhere cheap as I had to walk past a few different hostels to get there. I made good use of the air conditioning at least!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/06/01/tikal", "tags": ["Tikal", "Flores", "Guatemala", "Ruins"], "title": "Tikal" }, { "file": "2015-05-26-semuc-champey.jsx", "formattedDate": "May 26th 2015, 12:41:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16883863607", "linkUrl": "/2015/05/26/semuc-champey", "caption": "Semuc Champey" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Rachel and I parted ways, I had 10 days left before my flight to the USA and I still hadn't been to Semuc Champey, Tikal or the Rio Dulce, so I enlisted the help of a local travel agent to sort out all the shuttles and buses, places for me to stay, and tours, to make sure I could fit in all that I wanted to see and do and still make it back down to Guatemala City in time for my flight." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/26/semuc-champey", "tags": ["Semuc Champey", "Lanquin", "Guatemala", "Caves", "Outdoors"], "title": "Semuc Champey" }, { "file": "2015-05-21-back-to-lake-atitlan.jsx", "formattedDate": "May 21st 2015, 5:29:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "16437387213", "linkUrl": "/2015/05/21/back-to-lake-atitlan", "caption": "Lake Atitlan at dusk" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After finishing up in Xela for the second time, Rachel and I headed back to Lake Atitlan. I'd wanted to go back and do more yoga in San Marcos and some very novel scuba diving in the lake itself, and she had enrolled for another week of Spanish lessons and weaving in San Juan." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2015/05/21/back-to-lake-atitlan", "tags": ["Diving", "Yoga", "San Marcos", "San Juan", "Panajachel", "Santiago", "Santa Cruz", "Lake Atitlan", "Guatemala"], "title": "Back To Lake Atitlan" }], "pageNo": 1, "nextPage": "/page/2", "previousPage": null, "lastPageNo": 13 };
+  var tags = ["Abandoned", "Africa", "Airplanes", "Airports", "Alcatraz", "Alhambra", "Andalusia", "Antigua", "Athens", "Bags", "Barcelona", "Bath", "Beer", "Berlin", "Bikes", "Blog", "Boats", "Bristol", "Business", "Cambodia", "Cano Island", "Cape Town", "Caves", "Chicken Buses", "Chimpanzees", "Christmas", "Copan", "Corcovado", "Cordoba", "Costa Rica", "Cu Chi Tunnels", "Diving", "Dogs", "Earth Lodge", "Edinburgh", "England", "Festivals", "Finca Mia", "Flores", "Flying", "Germany", "Gorillas", "Graffiti", "Granada", "Greece", "Guatemala", "Guatemala City", "HCMC", "Hiking", "Homestay", "Honduras", "Horseback Riding", "Hot Springs", "Humblebrag", "Ikaria", "India", "Inspiration", "Introspection", "Istanbul", "Jinja", "Jinotega", "Johannesburg", "Kenya", "Koh Tao", "La Boquita", "La Mariposa", "Lago Yejoa", "Laguna Apoyo", "Lake Atitlan", "Lake Nakuru", "Lanquin", "Leon", "Little Corn Island", "Livingston", "London", "Malaga", "Managua", "Masai Mara", "Meditation", "Mediterranean", "Melbourne", "Monkeys", "Montezuma", "Motorbikes", "Mumbai", "Museums", "Mykonos", "NYE", "Ngorongoro Crater", "Nicaragua", "Nicoya Peninsula", "Nottingham", "Ometepe", "Outdoors", "Packing", "Panajachel", "Phu Quoc", "Poi", "Pre Trip", "Quezaltenango", "Quote", "Retreat", "Retrospective", "Rio Dulce", "Roatan", "Ruins", "Rwanda", "Salsa", "Samos", "San Francisco", "San Juan", "San Marcos", "San Pedro", "Santa Cruz", "Santa Teresa", "Santiago", "Scotland", "Security Theater", "Semuc Champey", "Serengeti", "Seville", "Signs", "Singapore", "Somoto Canyon", "South Africa", "Spain", "Spanish Schools", "Stonehenge", "Streamlining", "Surfing", "Syros", "Tanzania", "Tapas", "Thailand", "Theme Park", "Tikal", "Trains", "Travelling", "Turkey", "USA", "Uganda", "Utila", "Uvita", "Victoria Falls", "Vietnam", "Visa Run", "Volcan Masaya", "Volcanoes", "Waterfalls", "White Water Rafting", "Xela", "Yoga", "Zanzibar"];
 
   exports.default = function () {
     return _react2.default.createElement(
@@ -6402,7 +14967,7 @@ module.exports =
           path: path,
           title: title,
           formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
+          content: __webpack_require__(90)("./" + file).intro
         });
       }),
       _react2.default.createElement(
@@ -6413,12 +14978,13 @@ module.exports =
           { to: pageData.nextPage },
           "Older Stories..."
         )
-      )
+      ),
+      _react2.default.createElement(_TagCloud2.default, { tags: tags })
     );
   };
 
 /***/ },
-/* 37 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6431,497 +14997,17 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [{ "file": "2014-07-31-nicoya-peninsula-costa-rica.jsx", "formattedDate": "July 31st 2014, 9:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14535655259", "linkUrl": "/2014/07/31/nicoya-peninsula-costa-rica", "caption": "Montezuma sunset" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So after I was finished in Uvita I headed to the next place along the coast of Costa Rica that seems to get rave reviews, Montezuma. Montezuma is described by guidebooks and Lonely Planet tourists as some beautiful and undiscovered hippy beach town, so I went there expecting maybe something like Byron Bay was 10-15 years ago." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/31/nicoya-peninsula-costa-rica", "tags": ["Nicoya-Peninsula", "Costa-Rica", "Montezuma", "Santa-Teresa", "Surfing"], "title": "Nicoya Peninsula, Costa Rica" }, { "file": "2014-07-29-uvita-costa-rica.jsx", "formattedDate": "July 29th 2014, 8:57:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14720800495", "linkUrl": "/2014/07/29/uvita-costa-rica", "caption": "Pirate dorm at Flutterby Hostel" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop for me was a little town on the Pacific coast of Costa Rica called Uvita. I found a place online called Flutterby hostel and after getting dropped off by the bus I walked to the hostel, which actually turned out to be a reasonably long walk in very hot sun. When I arrived the girl behind the desk said it was pretty gutsy showing up with no reservation, but I was pleased to find they had a bed for me in their pirate tree-house dorm: one of the coolest dorms I've stayed in so far! The dorm doesn't really have any walls; it's pretty much open to nature and then every bed has a mozzie net. So chilled!" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/29/uvita-costa-rica", "tags": ["Costa-rica", "Uvita", "festivals", "diving", "cano-island"], "title": "Uvita, Costa Rica" }, { "file": "2014-07-18-corcovado-national-park-costa-rica.jsx", "formattedDate": "July 18th 2014, 4:54:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14512293446", "linkUrl": "/2014/07/18/corcovado-national-park-costa-rica", "caption": "Puerto Jiminez" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "After Poi Love Camp finished up I ended up travelling around Costa Rica for a while with a guy I'll just call 'T', together with a friend of his from France who I'll just call 'A'. We headed up to San Jose to meet up with 'A' at the airport, then got a very long bus all the way down to the south eastern end of the country to Golfito, where we stayed a night before getting a ferry over to Puerto Jiminez the next day. The ferry was actually a cramped tiny little boat, with so little room that our bags just got put up on the roof with no rope to tie them down or railings to keep them up there. I was very pleased there were still there when we reached the other side." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/18/corcovado-national-park-costa-rica", "tags": ["Corcovado", "Costa-Rica", "Hiking"], "title": "Corcovado National Park, Costa Rica" }, { "file": "2014-07-01-poi-love-camp.jsx", "formattedDate": "July 1st 2014, 8:35:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14327186196", "linkUrl": "/2014/07/01/poi-love-camp", "caption": "Poi Love Camp group shot minus Jonathan" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Poi Love Camp was an 11 day retreat focused on becoming better poi spinners, held in Costa Rica, and run by Nick Woolsey, the man behind [PlayPoi](http://www.playpoi.com). Also teaching there was one of the spinners who has inspired me the most: Jonathan Alvarez, and also the mind-bendingly talented Alien Jon." }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The retreat had been on my radar for a little while, but it wasn't until a few days before Christmas when I decided that I really wanted to get out of the European winter that I started seriously thought about going. A day later I had bought flights and tickets to what ended up being one of the most fun fortnights I've ever had. Impulsive travel planning at it's best." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/07/01/poi-love-camp", "tags": ["Costa-Rica", "Finca-Mia", "Poi", "retreat"], "title": "Poi Love Camp" }, { "file": "2014-06-22-christmas-and-nye-in-the-uk.jsx", "formattedDate": "June 22nd 2014, 5:48:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14109593808", "linkUrl": "/2014/06/22/christmas-and-nye-in-the-uk", "caption": "Scottish breakfast" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "For Christmas 2013, My Melbourne friends Leigh and Nicolette who currently live in Edinburgh kindly offered to have myself and our English mate Matty P come stay with them, so I had sorted out my flight from Spain to go straight there." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/22/christmas-and-nye-in-the-uk", "tags": ["Edinburgh", "Scotland", "Nottingham", "London", "England", "Christmas", "NYE"], "title": "Christmas and NYE in the UK" }], "pageNo": 2, "nextPage": "/page/3", "previousPage": "/", "lastPageNo": 5 }; /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [{ "file": "2014-06-06-spain-the-rest-of-andalusia.jsx", "formattedDate": "June 6th 2014, 6:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "key": null, "ref": null, "props": { "flickrID": "14082912566", "linkUrl": "/2014/06/06/spain-the-rest-of-andalusia", "caption": "Roman bridge of Córdoba" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Next stop in Andalusia was a town named Córdoba that's claim to fame is the Mezquita, a Mosque-Cathedral. I arrived in the evening and explored around a bit, finding the town to be almost completely deserted but did take some nice photos of this Roman era bridge and tower." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/06/06/spain-the-rest-of-andalusia", "tags": ["Spain", "Andalusia", "Cordoba", "Seville", "Malaga"], "title": "Spain, the rest of Andalusia" }, { "file": "2014-05-26-granada.jsx", "formattedDate": "May 26th 2014, 4:59:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "From Barcelona I caught the overnight train to Granada. It left fairly late in the evening and arrived in Granada at about 9am the next morning. I had some sleeping pills and slept as well as is possible on a train, but was still exhausted when I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13916722755", "linkUrl": "/2014/05/26/granada", "caption": "The courtyard at my hostel in Granada" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "I headed straight to a hostel that I'd looked up online beforehand and checked that they had a bed for me. It was too early to check in but they let me lock up my bags in their storage room and allowed me to take advantage of their breakfast buffet." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/26/granada", "tags": ["Granada", "Spain", "Alhambra", "Andalusia", "Tapas"], "title": "Granada" }, { "file": "2014-05-13-happy-travel-birthday-to-me.jsx", "formattedDate": "May 13th 2014, 2:46:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": { "type": "p", "key": null, "ref": null, "props": { "className": "flickr-image-container", "children": { "type": "span", "key": null, "ref": null, "props": { "className": "polaroid", "children": { "type": "img", "key": null, "ref": null, "props": { "src": "/images/first-birthday-cake.jpg", "alt": "birthday cake", "className": "img-responsive" }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} } }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "So today marks my first travel birthday. One year ago today I boarded my first flight of this trip, leaving my home in Melbourne and headed out to see the world. Actually, because time zones are always a pain in the ass, it was actually more like 1 year and 16 hours or something but one year rolls of the tongue better. It's the longest period I've ever been away from Australia by at least a few months now." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/13/happy-travel-birthday-to-me", "tags": ["humblebrag", "retrospective"], "title": "Happy travel birthday to me!" }, { "file": "2014-05-03-barcelona-spain.jsx", "formattedDate": "May 3rd 2014, 2:15:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Even in winter the weather is Barcelona is lovely. As soon as I landed and got through customs, I put my heavy winter jacket away and was quite comfortable in just a T-shirt. It seemed like the warm weather would be great for helping me kick a cold that had been hanging around for my last few weeks in Berlin, which had left me sniffing and congested for far too long." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13809549773", "linkUrl": "/2014/05/03/barcelona-spain", "caption": "La Sagrada Familia" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/05/03/barcelona-spain", "tags": ["Spain", "Barcelona", "Tapas"], "title": "Barcelona, Spain" }, { "file": "2014-04-23-berlin-part-3.jsx", "formattedDate": "April 23rd 2014, 3:05:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "One very cold a miserable morning I went to see Sachsenhausen concentration camp, out at Oranienburg. The camp was about a two kilometre walk from the station in literally freezing cold mist." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13574136123", "linkUrl": "/2014/04/23/berlin-part-3", "caption": "Sachsenhausen concentration camp" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/23/berlin-part-3", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 3" }], "pageNo": 3, "nextPage": "/page/4", "previousPage": null, "lastPageNo": 5 }; /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [{ "file": "2014-04-15-berlin-part-2.jsx", "formattedDate": "April 15th 2014, 7:39:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "I did a huge amount of exploration around Berlin appreciating the street art, probably at least 4-5 days whole days worth in total if you added it all up. I did a few \"self guided\" walking tours (as in I had an itinerary or stuff to look for that I found somewhere online), A ton of randomly wandering after spotting a cool piece by chance, and a \"Real Berlin\" free walking tour that turned out to be quite heavily street art focused." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13567379395", "linkUrl": "/2014/04/15/berlin-part-2", "caption": "Rainbow paint drips" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/15/berlin-part-2", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 2" }, { "file": "2014-04-06-berlin-part-1.jsx", "formattedDate": "April 6th 2014, 4:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Once I'd gotten into Berlin and checked into my hostel I got in contact with my friend Erin, an American who I met in South Africa who lives in Berlin on a semi-regular basis. We arranged to meet up for dinner and she offered to give me an introductory tour of the city. It was pretty lucky timing as Erin was leaving Berlin for a month just a few days after I arrived." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "13575837835", "linkUrl": "/2014/04/06/berlin-part-1", "caption": "Alexanderplatz S-Bahn Station" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "We  walked all around the city, past the museum island, Potsdamer Platz, Brandenburger Tor, The Jewish Memorial, and loads of other sites around the city. It was quite the whirlwind introduction to the city, we even visited a small Christmas market that was up and runing very early and got to have some gluhwein! Delicious spiced wine served hot, perfect for the cold nights leading up to Christmas. It was lovely to see Erin again and it felt like a really nice way to get to know the city being shown around by someone who obviously loves the place." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/04/06/berlin-part-1", "tags": ["Berlin", "Germany"], "title": "Berlin, Part 1" }, { "file": "2014-03-02-england-the-home-of-real-ale.jsx", "formattedDate": "March 2nd 2014, 7:21:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Flying into Manchester from Athens, the first thing that struck me about England was just how lusciously green everything was. Yes, I've been to England before, I even lived there for nearly a year some time ago, but I was still blown away by it. No other country I've been to has rolling fields and hills like England." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12842850784", "linkUrl": "/2014/03/02/england-the-home-of-real-ale", "caption": "The green fields of England" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/03/02/england-the-home-of-real-ale", "tags": ["England", "Beer", "Nottingham", "London", "Stonehenge", "Graffiti", "Bristol", "Bath"], "title": "England, The Home of Real Ale" }, { "file": "2014-02-14-the-greek-islands-and-athens.jsx", "formattedDate": "February 14th 2014, 6:17:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "Leaving Turkey I took a ferry from Selçuk to Samos, the main gateway into the Greek Islands from Turkey. I'd planned on heading straight from there to Ikaria but the ferry to Ikaria didn't run the same day so I stopped on Samos for a day and had a look around. I found a cafe with wifi and looked up some cheap hotels, then made the long walk to one of the nicer looking ones which turned out was even cheaper than the prices I'd seen online because it was low season." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "12374456543", "linkUrl": "/2014/02/14/the-greek-islands-and-athens", "caption": "Samos from the water" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/14/the-greek-islands-and-athens", "tags": ["Greece", "Samos", "Ikaria", "Syros", "Mykonos", "Athens"], "title": "The Greek Islands and Athens" }, { "file": "2014-02-06-turkey.jsx", "formattedDate": "February 6th 2014, 11:03:00 am", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After Istanbul our next stop was in Göreme, where Amanda, Luke, and I, stayed in a fairy chimney hotel. These were rock formation that had been eroded away into conical shapes, that had rooms carved into them, with some brickwork to divide up the space." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11922915693", "linkUrl": "/2014/02/06/turkey", "caption": "Me in front of my cave hotel in Göreme" }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/02/06/turkey", "tags": ["Turkey", "Mediterranean"], "title": "Turkey" }], "pageNo": 4, "nextPage": "/page/5", "previousPage": "/page/3", "lastPageNo": 5 }; /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [{ "file": "2014-01-03-istanbul-turkey.jsx", "formattedDate": "January 3rd 2014, 3:01:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "After flying into Istanbul Attaturk airport we spent the morning hiding out at the airport in the air conditioning and waiting for the time we'd agree to meet at our apartment with our AirBNB host. We got a taxi from the airport and my first impressions of Istanbul proper were that everything appeared so clean, modern and organised. The highways were multi-lane, there was nobody wandering out trying to sell things to passing traffic, traffic flowed very quickly and efficiently, people drove on the correct side of the road and actually stayed in their lanes for the most part. It's amazing how much your direct prior experiences can colour your perceptions of a place, the Turkey we were seeing was at odds to the reputation that the place generally has for it's drivers." }, "_owner": null, "_store": {} }, { "key": null, "ref": null, "props": { "flickrID": "11436642894", "linkUrl": "/2014/01/03/istanbul-turkey", "caption": "The beautiful view of the Bosphorus from our apartment" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "The apartment we stayed in was located very close to Taksim Square, consisting of the whole top floor of the building and a rooftop courtyard and a fantastic view of the Bosporus. Having modern conveniences like a fridge, a washing machine and air conditioning felt very luxurious after having just spent 5 weeks camping in tents." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/03/istanbul-turkey", "tags": ["Turkey", "Istanbul"], "title": "Istanbul, Turkey" }, { "file": "2014-01-01-a-new-blog-for-the-new-year.jsx", "formattedDate": "January 1st 2014, 2:13:00 pm", "intro": { "type": "div", "key": null, "ref": null, "props": { "className": "postIntro", "children": [{ "type": "p", "key": null, "ref": null, "props": { "children": "It's 2014 and you'll probably notice things look quite a bit different. I've done what any good procrastinator would do when faced with little to no internet and a lot of time to spare; I've completely revamped my blog so it's nicer to work with when I dont have internet, and have a copy that works without relying on the existance of tumblr. (Sorry Amanda, I bet you thought I was going to actually have written a post about Turkey at last :P)" }, "_owner": null, "_store": {} }, { "type": "p", "key": null, "ref": null, "props": { "children": "Anyhow, comments from the old site should migrate over in the next 24 hours. Let me know if you notice anything that looks broken." }, "_owner": null, "_store": {} }] }, "_owner": null, "_store": {} }, "path": "/2014/01/01/a-new-blog-for-the-new-year", "tags": ["blog"], "title": "A New Blog For The New Year" }], "pageNo": 5, "nextPage": null, "previousPage": "/page/4", "lastPageNo": 5 }; /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         * React Static Boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         * https://github.com/koistya/react-static-boilerplate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [], "pageNo": 6, "nextPage": null, "previousPage": "/page/5", "lastPageNo": 5 }; /**
-                                                                                                                  * React Static Boilerplate
-                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                  */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 42 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [], "pageNo": 7, "nextPage": null, "previousPage": "/page/6", "lastPageNo": 5 }; /**
-                                                                                                                  * React Static Boilerplate
-                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                  */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [], "pageNo": 8, "nextPage": null, "previousPage": "/page/7", "lastPageNo": 5 }; /**
-                                                                                                                  * React Static Boilerplate
-                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                  */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _BlogPostSummary = __webpack_require__(5);
-
-  var _BlogPostSummary2 = _interopRequireDefault(_BlogPostSummary);
-
-  var _Link = __webpack_require__(4);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var pageData = { "blogPosts": [], "pageNo": 9, "nextPage": null, "previousPage": "/page/8", "lastPageNo": 5 }; /**
-                                                                                                                  * React Static Boilerplate
-                                                                                                                  * https://github.com/koistya/react-static-boilerplate
-                                                                                                                  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-                                                                                                                  */
-
-  exports.default = function () {
-    return _react2.default.createElement(
-      "div",
-      null,
-      pageData.blogPosts && pageData.blogPosts.map(function (_ref, index) {
-        var file = _ref.file;
-        var formattedDate = _ref.formattedDate;
-        var path = _ref.path;
-        var title = _ref.title;
-
-        return _react2.default.createElement(_BlogPostSummary2.default, {
-          key: index,
-          path: path,
-          title: title,
-          formattedDate: formattedDate,
-          content: __webpack_require__(6)("./" + file).intro
-        });
-      }),
-      _react2.default.createElement(
-        "div",
-        { className: "moreLink" },
-        _react2.default.createElement(
-          _Link2.default,
-          { to: pageData.nextPage },
-          "Older Stories..."
-        )
-      )
-    );
-  };
-
-/***/ },
-/* 45 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _reactDom = __webpack_require__(60);
+  var _reactDom = __webpack_require__(97);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  var _ExecutionEnvironment = __webpack_require__(30);
+  var _ExecutionEnvironment = __webpack_require__(72);
 
-  var _Location = __webpack_require__(7);
+  var _Location = __webpack_require__(6);
 
   var _Location2 = _interopRequireDefault(_Location);
 
-  var _Layout = __webpack_require__(32);
+  var _Layout = __webpack_require__(75);
 
   var _Layout2 = _interopRequireDefault(_Layout);
 
@@ -6929,82 +15015,147 @@ module.exports =
 
   function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
 
-  /**
-   * React Static Boilerplate
-   * https://github.com/koistya/react-static-boilerplate
-   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-   */
-  __webpack_require__(55);
-  __webpack_require__(56);
+  __webpack_require__(92);
+  __webpack_require__(93);
 
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(34).default;
+      return __webpack_require__(77).default;
     }, '/500': function _() {
-      return __webpack_require__(35).default;
-    }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
+      return __webpack_require__(78).default;
+    }, '/2013/03/26/twenty-years-from-now': function twentyYearsFromNow() {
+      return __webpack_require__(7).default;
+    }, '/2013/04/08/the-little-things-that-make-up-a-life': function theLittleThingsThatMakeUpALife() {
       return __webpack_require__(8).default;
-    }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
+    }, '/2013/04/22/target-40-litres': function target40Litres() {
       return __webpack_require__(9).default;
-    }, '/2014/02/06/turkey': function turkey() {
+    }, '/2013/05/07/last-minute-bag-choices': function lastMinuteBagChoices() {
       return __webpack_require__(10).default;
-    }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
+    }, '/2013/05/12/it-s-go-time': function itSGoTime() {
       return __webpack_require__(11).default;
-    }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
+    }, '/2013/05/14/day-1-melbourne-to-saigon': function day1MelbourneToSaigon() {
       return __webpack_require__(12).default;
-    }, '/2014/04/06/berlin-part-1': function berlinPart1() {
+    }, '/2013/05/22/day-2-ho-chi-minh-city': function day2HoChiMinhCity() {
       return __webpack_require__(13).default;
-    }, '/2014/04/15/berlin-part-2': function berlinPart2() {
+    }, '/2013/05/22/day-3-cu-chi-tunnels': function day3CuChiTunnels() {
       return __webpack_require__(14).default;
-    }, '/2014/04/23/berlin-part-3': function berlinPart3() {
+    }, '/2013/05/22/day-4-motorbikes-in-hcmc': function day4MotorbikesInHcmc() {
       return __webpack_require__(15).default;
-    }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
+    }, '/2013/05/24/last-day-in-hcmc': function lastDayInHcmc() {
       return __webpack_require__(16).default;
-    }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
+    }, '/2013/05/29/ha-ha-business': function haHaBusiness() {
       return __webpack_require__(17).default;
-    }, '/2014/05/26/granada': function granada() {
+    }, '/2013/05/30/phu-qouc-island-vietnam': function phuQoucIslandVietnam() {
       return __webpack_require__(18).default;
-    }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
+    }, '/2013/06/14/mountain-biking-in-siem-reap': function mountainBikingInSiemReap() {
       return __webpack_require__(19).default;
-    }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
+    }, '/2013/06/27/airport-security-in-india': function airportSecurityInIndia() {
       return __webpack_require__(20).default;
-    }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
+    }, '/2013/06/29/wake-up-call': function wakeUpCall() {
       return __webpack_require__(21).default;
-    }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
+    }, '/2013/06/30/thailand': function thailand() {
       return __webpack_require__(22).default;
-    }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
+    }, '/2013/08/13/frustration-india-part-1': function frustrationIndiaPart1() {
       return __webpack_require__(23).default;
-    }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
+    }, '/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2': function trainStationsPartiesUntilTheLittleHoursOfTheNightIndiaPart2() {
       return __webpack_require__(24).default;
-    }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
+    }, '/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3': function threeGirlsAGuyAndATourGuidePart3() {
       return __webpack_require__(25).default;
-    }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
+    }, '/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4': function indiaFlyingSoloAtOneWithTheChaosIndiaPart4() {
       return __webpack_require__(26).default;
-    }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
+    }, '/2013/09/03/travelling-light-or-not': function travellingLightOrNot() {
       return __webpack_require__(27).default;
-    }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
+    }, '/2013/09/09/johannesburg-to-victoria-falls-and-back': function johannesburgToVictoriaFallsAndBack() {
       return __webpack_require__(28).default;
-    }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
+    }, '/2013/09/16/south-africa': function southAfrica() {
       return __webpack_require__(29).default;
-    }, '/': function _() {
+    }, '/2013/09/23/zanzibar-tanzania': function zanzibarTanzania() {
+      return __webpack_require__(30).default;
+    }, '/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater': function serengetiNationalParkAndTheNgorongoroCrater() {
+      return __webpack_require__(31).default;
+    }, '/2013/10/07/kenya-the-masai-mara-and-lake-nakuru': function kenyaTheMasaiMaraAndLakeNakuru() {
+      return __webpack_require__(32).default;
+    }, '/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans': function ugandaWhiteWaterRaftingTrackingChimpsAndTeachingOrphans() {
+      return __webpack_require__(33).default;
+    }, '/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa': function theSignsAndSightsOfTheStreetsOfEastAfrica() {
+      return __webpack_require__(34).default;
+    }, '/2013/11/24/rwanda-gorillas-genocide': function rwandaGorillasGenocide() {
+      return __webpack_require__(35).default;
+    }, '/2013/12/05/spreepark-berlin': function spreeparkBerlin() {
       return __webpack_require__(36).default;
-    }, '/page/2': function page2() {
+    }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
       return __webpack_require__(37).default;
-    }, '/page/3': function page3() {
+    }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
       return __webpack_require__(38).default;
-    }, '/page/4': function page4() {
+    }, '/2014/02/06/turkey': function turkey() {
       return __webpack_require__(39).default;
-    }, '/page/5': function page5() {
+    }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
       return __webpack_require__(40).default;
-    }, '/page/6': function page6() {
+    }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
       return __webpack_require__(41).default;
-    }, '/page/7': function page7() {
+    }, '/2014/04/06/berlin-part-1': function berlinPart1() {
       return __webpack_require__(42).default;
-    }, '/page/8': function page8() {
+    }, '/2014/04/15/berlin-part-2': function berlinPart2() {
       return __webpack_require__(43).default;
-    }, '/page/9': function page9() {
+    }, '/2014/04/23/berlin-part-3': function berlinPart3() {
       return __webpack_require__(44).default;
+    }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
+      return __webpack_require__(45).default;
+    }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
+      return __webpack_require__(46).default;
+    }, '/2014/05/26/granada': function granada() {
+      return __webpack_require__(47).default;
+    }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
+      return __webpack_require__(48).default;
+    }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
+      return __webpack_require__(49).default;
+    }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
+      return __webpack_require__(50).default;
+    }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
+      return __webpack_require__(51).default;
+    }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
+      return __webpack_require__(52).default;
+    }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
+      return __webpack_require__(53).default;
+    }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
+      return __webpack_require__(54).default;
+    }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
+      return __webpack_require__(55).default;
+    }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
+      return __webpack_require__(56).default;
+    }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
+      return __webpack_require__(57).default;
+    }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
+      return __webpack_require__(58).default;
+    }, '/2015/01/03/firedrums-2014-and-san-francisco': function firedrums2014AndSanFrancisco() {
+      return __webpack_require__(59).default;
+    }, '/2015/02/26/honduras-mainland-lago-yejoa-copan': function hondurasMainlandLagoYejoaCopan() {
+      return __webpack_require__(60).default;
+    }, '/2015/03/30/antigua-guatemala': function antiguaGuatemala() {
+      return __webpack_require__(61).default;
+    }, '/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala': function sanMarcosLaLagunaLakeAtitlanGuatemala() {
+      return __webpack_require__(62).default;
+    }, '/2015/04/27/quezaltenango-xela-guatemala': function quezaltenangoXelaGuatemala() {
+      return __webpack_require__(63).default;
+    }, '/2015/05/04/revisiting-antigua-and-earth-lodge': function revisitingAntiguaAndEarthLodge() {
+      return __webpack_require__(64).default;
+    }, '/2015/05/11/more-schooling-in-xela': function moreSchoolingInXela() {
+      return __webpack_require__(65).default;
+    }, '/2015/05/13/two-years-later': function twoYearsLater() {
+      return __webpack_require__(66).default;
+    }, '/2015/05/21/back-to-lake-atitlan': function backToLakeAtitlan() {
+      return __webpack_require__(67).default;
+    }, '/2015/05/26/semuc-champey': function semucChampey() {
+      return __webpack_require__(68).default;
+    }, '/2015/06/01/tikal': function tikal() {
+      return __webpack_require__(69).default;
+    }, '/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala': function rioDulceLivingstonAndTryingToLeaveGuatemala() {
+      return __webpack_require__(70).default;
+    }, '/2015/08/17/san-francisco-before-the-burn': function sanFranciscoBeforeTheBurn() {
+      return __webpack_require__(71).default;
+    }, '/': function _() {
+      return __webpack_require__(79).default;
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function () {
@@ -7083,49 +15234,55 @@ module.exports =
   exports.default = { route: route, routes: routes };
 
 /***/ },
-/* 46 */
+/* 81 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 47 */
+/* 82 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 48 */
+/* 83 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 49 */
+/* 84 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 50 */
+/* 85 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 51 */
+/* 86 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 52 */
+/* 87 */
 /***/ function(module, exports) {
 
   // removed by extract-text-webpack-plugin
 
 /***/ },
-/* 53 */
+/* 88 */
+/***/ function(module, exports) {
+
+  // removed by extract-text-webpack-plugin
+
+/***/ },
+/* 89 */
 /***/ function(module, exports) {
 
   module.exports = {
@@ -11467,46 +19624,137 @@ module.exports =
   };
 
 /***/ },
-/* 54 */
+/* 90 */
+/***/ function(module, exports, __webpack_require__) {
+
+  var map = {
+  	"./2013-03-26-twenty-years-from-now.jsx": 7,
+  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 8,
+  	"./2013-04-22-target-40-litres.jsx": 9,
+  	"./2013-05-07-last-minute-bag-choices.jsx": 10,
+  	"./2013-05-12-its-go-time.jsx": 11,
+  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 12,
+  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 13,
+  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 14,
+  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 15,
+  	"./2013-05-24-last-day-in-hcmc.jsx": 16,
+  	"./2013-05-29-ha-ha-business.jsx": 17,
+  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 18,
+  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 19,
+  	"./2013-06-27-airport-security-in-india.jsx": 20,
+  	"./2013-06-29-wake-up-call.jsx": 21,
+  	"./2013-06-30-thailand.jsx": 22,
+  	"./2013-08-13-frustration-india-part-1.jsx": 23,
+  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 24,
+  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 25,
+  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 26,
+  	"./2013-09-03-travelling-light-or-not.jsx": 27,
+  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 28,
+  	"./2013-09-16-south-africa.jsx": 29,
+  	"./2013-09-23-zanzibar-tanzania.jsx": 30,
+  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 31,
+  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 32,
+  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 33,
+  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 34,
+  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 35,
+  	"./2013-12-05-spreepark-berlin.jsx": 36,
+  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 37,
+  	"./2014-01-03-istanbul-turkey.jsx": 38,
+  	"./2014-02-06-turkey.jsx": 39,
+  	"./2014-02-14-the-greek-islands-and-athens.jsx": 40,
+  	"./2014-03-02-england-the-home-of-real-ale.jsx": 41,
+  	"./2014-04-06-berlin-part-1.jsx": 42,
+  	"./2014-04-15-berlin-part-2.jsx": 43,
+  	"./2014-04-23-berlin-part-3.jsx": 44,
+  	"./2014-05-03-barcelona-spain.jsx": 45,
+  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 46,
+  	"./2014-05-26-granada.jsx": 47,
+  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 48,
+  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 49,
+  	"./2014-07-01-poi-love-camp.jsx": 50,
+  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 51,
+  	"./2014-07-29-uvita-costa-rica.jsx": 52,
+  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 53,
+  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 54,
+  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 55,
+  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 56,
+  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 57,
+  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 58,
+  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 59,
+  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 60,
+  	"./2015-03-30-antigua-guatemala.jsx": 61,
+  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 62,
+  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 63,
+  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 64,
+  	"./2015-05-11-more-schooling-in-xela.jsx": 65,
+  	"./2015-05-13-two-years-later.jsx": 66,
+  	"./2015-05-21-back-to-lake-atitlan.jsx": 67,
+  	"./2015-05-26-semuc-champey.jsx": 68,
+  	"./2015-06-01-tikal.jsx": 69,
+  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 70,
+  	"./2015-08-17-san-francisco-before-the-burn.jsx": 71
+  };
+  function webpackContext(req) {
+  	return __webpack_require__(webpackContextResolve(req));
+  };
+  function webpackContextResolve(req) {
+  	return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+  };
+  webpackContext.keys = function webpackContextKeys() {
+  	return Object.keys(map);
+  };
+  webpackContext.resolve = webpackContextResolve;
+  module.exports = webpackContext;
+  webpackContext.id = 90;
+
+
+/***/ },
+/* 91 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-loader");
 
 /***/ },
-/* 55 */
+/* 92 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-polyfill");
 
 /***/ },
-/* 56 */
+/* 93 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-register");
 
 /***/ },
-/* 57 */
+/* 94 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 58 */
+/* 95 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 59 */
+/* 96 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 60 */
+/* 97 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
+
+/***/ },
+/* 98 */
+/***/ function(module, exports) {
+
+  module.exports = require("scroll-behavior");
 
 /***/ }
 /******/ ]);
