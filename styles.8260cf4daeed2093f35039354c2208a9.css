@@ -20,10 +20,6 @@ html, body {
   width: 100%;
 }
 
-.fa:hover {
-  text-decoration: none;
-}
-
 a {
   color: #fff;
   text-decoration: none
@@ -31,7 +27,7 @@ a {
 
 a:hover {
   color: #c8c8c8;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .content {
