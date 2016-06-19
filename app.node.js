@@ -445,10 +445,14 @@ module.exports =
           search: undefined.props.state
         });
       } else {
-        _Location2.default.push({
-          pathname: link.pathname,
-          search: link.search
-        });
+        if (link.host === window.location.host) {
+          _Location2.default.push({
+            pathname: link.pathname,
+            search: link.search
+          });
+        } else {
+          window.location = link.href;
+        }
       }
     }
   };
