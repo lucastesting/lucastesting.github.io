@@ -14573,8 +14573,11 @@ module.exports =
         ),
         _react2.default.createElement("img", {
           alt: "avatar",
+          width: "127px",
+          height: "127px",
           src: "/assets/images/avatar.jpg",
-          srcSet: "/assets/images/avatar.jpg 1x, /assets/images/avatar@2x.jpg 2x"
+          srcSet: "/assets/images/avatar.jpg 1x, /assets/images/avatar@2x.jpg 2x",
+          sizes: "127px"
         }),
         _react2.default.createElement(
           "p",
