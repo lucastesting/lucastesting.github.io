@@ -45,8 +45,8 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-  __webpack_require__(275);
-  module.exports = __webpack_require__(104);
+  __webpack_require__(276);
+  module.exports = __webpack_require__(105);
 
 
 /***/ },
@@ -69,21 +69,21 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(260);
+  __webpack_require__(261);
 
   var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  var _TagCloud = __webpack_require__(12);
+  var _TagCloud = __webpack_require__(13);
 
   var _TagCloud2 = _interopRequireDefault(_TagCloud);
 
-  var _BlogLink = __webpack_require__(82);
+  var _BlogLink = __webpack_require__(83);
 
   var _BlogLink2 = _interopRequireDefault(_BlogLink);
 
-  var _DateTime = __webpack_require__(13);
+  var _DateTime = __webpack_require__(14);
 
   var _DateTime2 = _interopRequireDefault(_DateTime);
 
@@ -134,71 +134,71 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   var map = {
-  	"./2013-03-26-twenty-years-from-now.jsx": 16,
-  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 17,
-  	"./2013-04-22-target-40-litres.jsx": 18,
-  	"./2013-05-07-last-minute-bag-choices.jsx": 19,
-  	"./2013-05-12-its-go-time.jsx": 20,
-  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 21,
-  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 22,
-  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 23,
-  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 24,
-  	"./2013-05-24-last-day-in-hcmc.jsx": 25,
-  	"./2013-05-29-ha-ha-business.jsx": 26,
-  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 27,
-  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 28,
-  	"./2013-06-27-airport-security-in-india.jsx": 29,
-  	"./2013-06-29-wake-up-call.jsx": 30,
-  	"./2013-06-30-thailand.jsx": 31,
-  	"./2013-08-13-frustration-india-part-1.jsx": 32,
-  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 33,
-  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 34,
-  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 35,
-  	"./2013-09-03-travelling-light-or-not.jsx": 36,
-  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 37,
-  	"./2013-09-16-south-africa.jsx": 38,
-  	"./2013-09-23-zanzibar-tanzania.jsx": 39,
-  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 40,
-  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 41,
-  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 42,
-  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 43,
-  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 44,
-  	"./2013-12-05-spreepark-berlin.jsx": 45,
-  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 46,
-  	"./2014-01-03-istanbul-turkey.jsx": 47,
-  	"./2014-02-06-turkey.jsx": 48,
-  	"./2014-02-14-the-greek-islands-and-athens.jsx": 49,
-  	"./2014-03-02-england-the-home-of-real-ale.jsx": 50,
-  	"./2014-04-06-berlin-part-1.jsx": 51,
-  	"./2014-04-15-berlin-part-2.jsx": 52,
-  	"./2014-04-23-berlin-part-3.jsx": 53,
-  	"./2014-05-03-barcelona-spain.jsx": 54,
-  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 55,
-  	"./2014-05-26-granada.jsx": 56,
-  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 57,
-  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 58,
-  	"./2014-07-01-poi-love-camp.jsx": 59,
-  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 60,
-  	"./2014-07-29-uvita-costa-rica.jsx": 61,
-  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 62,
-  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 63,
-  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 64,
-  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 65,
-  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 66,
-  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 67,
-  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 68,
-  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 69,
-  	"./2015-03-30-antigua-guatemala.jsx": 70,
-  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 71,
-  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 72,
-  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 73,
-  	"./2015-05-11-more-schooling-in-xela.jsx": 74,
-  	"./2015-05-13-two-years-later.jsx": 75,
-  	"./2015-05-21-back-to-lake-atitlan.jsx": 76,
-  	"./2015-05-26-semuc-champey.jsx": 77,
-  	"./2015-06-01-tikal.jsx": 78,
-  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 79,
-  	"./2015-08-17-san-francisco-before-the-burn.jsx": 80
+  	"./2013-03-26-twenty-years-from-now.jsx": 17,
+  	"./2013-04-08-the-little-things-that-make-up-a-life.jsx": 18,
+  	"./2013-04-22-target-40-litres.jsx": 19,
+  	"./2013-05-07-last-minute-bag-choices.jsx": 20,
+  	"./2013-05-12-its-go-time.jsx": 21,
+  	"./2013-05-14-day-1-melbourne-to-saigon.jsx": 22,
+  	"./2013-05-22-day-2-ho-chi-minh-city.jsx": 23,
+  	"./2013-05-22-day-3-cu-chi-tunnels.jsx": 24,
+  	"./2013-05-22-day-4-motorbikes-in-hcmc.jsx": 25,
+  	"./2013-05-24-last-day-in-hcmc.jsx": 26,
+  	"./2013-05-29-ha-ha-business.jsx": 27,
+  	"./2013-05-30-phu-qouc-island-vietnam.jsx": 28,
+  	"./2013-06-14-mountain-biking-in-siem-reap.jsx": 29,
+  	"./2013-06-27-airport-security-in-india.jsx": 30,
+  	"./2013-06-29-wake-up-call.jsx": 31,
+  	"./2013-06-30-thailand.jsx": 32,
+  	"./2013-08-13-frustration-india-part-1.jsx": 33,
+  	"./2013-08-19-train-stations-parties-until-the-little-hours-of-the.jsx": 34,
+  	"./2013-08-26-three-girls-a-guy-and-a-tour-guide-part-3.jsx": 35,
+  	"./2013-09-02-india-flying-solo-at-one-with-the-chaos-india-part-4.jsx": 36,
+  	"./2013-09-03-travelling-light-or-not.jsx": 37,
+  	"./2013-09-09-johannesburg-to-victoria-falls-and-back.jsx": 38,
+  	"./2013-09-16-south-africa.jsx": 39,
+  	"./2013-09-23-zanzibar-tanzania.jsx": 40,
+  	"./2013-09-30-serengeti-national-park-and-the-ngorongoro-crater.jsx": 41,
+  	"./2013-10-07-kenya-the-masai-mara-and-lake-nakuru.jsx": 42,
+  	"./2013-11-01-uganda-white-water-rafting-tracking-chimps-and.jsx": 43,
+  	"./2013-11-15-the-signs-and-sights-of-the-streets-of-east-africa.jsx": 44,
+  	"./2013-11-24-rwanda-gorillas-genocide.jsx": 45,
+  	"./2013-12-05-spreepark-berlin.jsx": 46,
+  	"./2014-01-01-a-new-blog-for-the-new-year.jsx": 47,
+  	"./2014-01-03-istanbul-turkey.jsx": 48,
+  	"./2014-02-06-turkey.jsx": 49,
+  	"./2014-02-14-the-greek-islands-and-athens.jsx": 50,
+  	"./2014-03-02-england-the-home-of-real-ale.jsx": 51,
+  	"./2014-04-06-berlin-part-1.jsx": 52,
+  	"./2014-04-15-berlin-part-2.jsx": 53,
+  	"./2014-04-23-berlin-part-3.jsx": 54,
+  	"./2014-05-03-barcelona-spain.jsx": 55,
+  	"./2014-05-13-happy-travel-birthday-to-me.jsx": 56,
+  	"./2014-05-26-granada.jsx": 57,
+  	"./2014-06-06-spain-the-rest-of-andalusia.jsx": 58,
+  	"./2014-06-22-christmas-and-nye-in-the-uk.jsx": 59,
+  	"./2014-07-01-poi-love-camp.jsx": 60,
+  	"./2014-07-18-corcovado-national-park-costa-rica.jsx": 61,
+  	"./2014-07-29-uvita-costa-rica.jsx": 62,
+  	"./2014-07-31-nicoya-peninsula-costa-rica.jsx": 63,
+  	"./2014-09-10-la-mariposa-spanish-school-nicaragua.jsx": 64,
+  	"./2014-10-09-excursion-highlights-from-la-mariposa.jsx": 65,
+  	"./2014-10-30-nicaragua-all-over-the-place.jsx": 66,
+  	"./2014-11-17-little-corn-island-leon-and-a-visa-run.jsx": 67,
+  	"./2014-12-16-the-bay-islands-of-honduras.jsx": 68,
+  	"./2015-01-03-firedrums-2014-and-san-francisco.jsx": 69,
+  	"./2015-02-26-honduras-mainland-lago-yejoa-copan.jsx": 70,
+  	"./2015-03-30-antigua-guatemala.jsx": 71,
+  	"./2015-04-20-san-marcos-la-laguna-lake-atitlan-guatemala.jsx": 72,
+  	"./2015-04-27-quezaltenango-xela-guatemala.jsx": 73,
+  	"./2015-05-04-revisiting-antigua-and-earth-lodge.jsx": 74,
+  	"./2015-05-11-more-schooling-in-xela.jsx": 75,
+  	"./2015-05-13-two-years-later.jsx": 76,
+  	"./2015-05-21-back-to-lake-atitlan.jsx": 77,
+  	"./2015-05-26-semuc-champey.jsx": 78,
+  	"./2015-06-01-tikal.jsx": 79,
+  	"./2015-06-11-rio-dulce-livingston-and-trying-to-leave-guatemala.jsx": 80,
+  	"./2015-08-17-san-francisco-before-the-burn.jsx": 81
   };
   function webpackContext(req) {
   	return __webpack_require__(webpackContextResolve(req));
@@ -228,19 +228,19 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _TagCloud = __webpack_require__(12);
+  var _TagCloud = __webpack_require__(13);
 
   var _TagCloud2 = _interopRequireDefault(_TagCloud);
 
-  var _DateTime = __webpack_require__(13);
+  var _DateTime = __webpack_require__(14);
 
   var _DateTime2 = _interopRequireDefault(_DateTime);
 
-  var _DisqusComments = __webpack_require__(83);
+  var _DisqusComments = __webpack_require__(84);
 
   var _DisqusComments2 = _interopRequireDefault(_DisqusComments);
 
-  __webpack_require__(259);
+  __webpack_require__(260);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -296,11 +296,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _flickr_manifest = __webpack_require__(273);
+  var _flickr_manifest = __webpack_require__(274);
 
   var _flickr_manifest2 = _interopRequireDefault(_flickr_manifest);
 
-  var _ResponsiveImage = __webpack_require__(14);
+  var _ResponsiveImage = __webpack_require__(15);
 
   var _ResponsiveImage2 = _interopRequireDefault(_ResponsiveImage);
 
@@ -308,7 +308,7 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(263);
+  __webpack_require__(264);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -329,7 +329,7 @@ module.exports =
       { className: "flickrImage" },
       _react2.default.createElement(
         _Link2.default,
-        { to: linkUrl, className: "flickrImage" },
+        { to: linkUrl },
         _react2.default.createElement(_ResponsiveImage2.default, { baseKey: baseKey, caption: caption, prefix: "flickr", manifest: _flickr_manifest2.default })
       )
     );
@@ -359,9 +359,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(265);
+  __webpack_require__(266);
 
-  var _Location = __webpack_require__(15);
+  var _Location = __webpack_require__(16);
 
   var _Location2 = _interopRequireDefault(_Location);
 
@@ -455,6 +455,10 @@ module.exports =
         }
       }
     }
+  };
+
+  Link.defaultProps = {
+    className: "link"
   };
 
   exports.default = Link;
@@ -555,7 +559,9 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(267);
+  var _Icons = __webpack_require__(12);
+
+  __webpack_require__(268);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -570,7 +576,7 @@ module.exports =
         _Link2.default,
         { to: to },
         "Older Stories ",
-        _react2.default.createElement("i", { style: { marginLeft: "5px" }, className: "fa fa-arrow-right fa-lg" })
+        _react2.default.createElement(_Icons.ArrowRight, { style: { marginLeft: "5px" } })
       )
     );
   };
@@ -598,7 +604,9 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(269);
+  var _Icons = __webpack_require__(12);
+
+  __webpack_require__(270);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -612,7 +620,7 @@ module.exports =
       _react2.default.createElement(
         _Link2.default,
         { to: to },
-        _react2.default.createElement("i", { style: { marginRight: "5px" }, className: "fa fa-arrow-left fa-lg" }),
+        _react2.default.createElement(_Icons.ArrowLeft, { style: { marginRight: "5px" } }),
         " Newer Stories"
       )
     );
@@ -637,7 +645,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _image_manifest = __webpack_require__(274);
+  var _image_manifest = __webpack_require__(275);
 
   var _image_manifest2 = _interopRequireDefault(_image_manifest);
 
@@ -645,11 +653,11 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  var _ResponsiveImage = __webpack_require__(14);
+  var _ResponsiveImage = __webpack_require__(15);
 
   var _ResponsiveImage2 = _interopRequireDefault(_ResponsiveImage);
 
-  __webpack_require__(268);
+  __webpack_require__(269);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -691,16 +699,137 @@ module.exports =
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.InfoCircle = exports.TagsIcon = exports.ArrowLeft = exports.ArrowRight = exports.Clock = exports.Twitter = exports.MapMarker = exports.Flickr = exports.Instagram = exports.Globe = exports.Suitcase = exports.Facebook = undefined;
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
   var _react = __webpack_require__(1);
 
   var _react2 = _interopRequireDefault(_react);
 
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var Svg = function Svg(props) {
+    return _react2.default.createElement(
+      "svg",
+      _extends({}, props, { viewBox: "0 0 1792 1792", xmlns: "http://www.w3.org/2000/svg" }),
+      props.children
+    );
+  };
+  Svg.propTypes = {
+    children: _react.PropTypes.node.isRequired
+  };
+  Svg.defaultProps = {
+    className: "",
+    width: 25
+  };
+
+  var Facebook = exports.Facebook = function Facebook(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1579 128q35 0 60 25t25 60v1366q0 35-25 60t-60 25h-391v-595h199l30-232h-229v-148q0-56 23.5-84t91.5-28l122-1v-207q-63-9-178-9-136 0-217.5 80t-81.5 226v171h-200v232h200v595h-735q-35 0-60-25t-25-60v-1366q0-35 25-60t60-25h1366z" })
+    );
+  };
+  var Suitcase = exports.Suitcase = function Suitcase(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M640 384h512v-128h-512v128zm-352 0v1280h-64q-92 0-158-66t-66-158v-832q0-92 66-158t158-66h64zm1120 0v1280h-1024v-1280h128v-160q0-40 28-68t68-28h576q40 0 68 28t28 68v160h128zm384 224v832q0 92-66 158t-158 66h-64v-1280h64q92 0 158 66t66 158z" })
+    );
+  };
+  var Globe = exports.Globe = function Globe(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm274 521q-2 1-9.5 9.5t-13.5 9.5q2 0 4.5-5t5-11 3.5-7q6-7 22-15 14-6 52-12 34-8 51 11-2-2 9.5-13t14.5-12q3-2 15-4.5t15-7.5l2-22q-12 1-17.5-7t-6.5-21q0 2-6 8 0-7-4.5-8t-11.5 1-9 1q-10-3-15-7.5t-8-16.5-4-15q-2-5-9.5-10.5t-9.5-10.5q-1-2-2.5-5.5t-3-6.5-4-5.5-5.5-2.5-7 5-7.5 10-4.5 5q-3-2-6-1.5t-4.5 1-4.5 3-5 3.5q-3 2-8.5 3t-8.5 2q15-5-1-11-10-4-16-3 9-4 7.5-12t-8.5-14h5q-1-4-8.5-8.5t-17.5-8.5-13-6q-8-5-34-9.5t-33-.5q-5 6-4.5 10.5t4 14 3.5 12.5q1 6-5.5 13t-6.5 12q0 7 14 15.5t10 21.5q-3 8-16 16t-16 12q-5 8-1.5 18.5t10.5 16.5q2 2 1.5 4t-3.5 4.5-5.5 4-6.5 3.5l-3 2q-11 5-20.5-6t-13.5-26q-7-25-16-30-23-8-29 1-5-13-41-26-25-9-58-4 6-1 0-15-7-15-19-12 3-6 4-17.5t1-13.5q3-13 12-23 1-1 7-8.5t9.5-13.5.5-6q35 4 50-11 5-5 11.5-17t10.5-17q9-6 14-5.5t14.5 5.5 14.5 5q14 1 15.5-11t-7.5-20q12 1 3-17-5-7-8-9-12-4-27 5-8 4 2 8-1-1-9.5 10.5t-16.5 17.5-16-5q-1-1-5.5-13.5t-9.5-13.5q-8 0-16 15 3-8-11-15t-24-8q19-12-8-27-7-4-20.5-5t-19.5 4q-5 7-5.5 11.5t5 8 10.5 5.5 11.5 4 8.5 3q14 10 8 14-2 1-8.5 3.5t-11.5 4.5-6 4q-3 4 0 14t-2 14q-5-5-9-17.5t-7-16.5q7 9-25 6l-10-1q-4 0-16 2t-20.5 1-13.5-8q-4-8 0-20 1-4 4-2-4-3-11-9.5t-10-8.5q-46 15-94 41 6 1 12-1 5-2 13-6.5t10-5.5q34-14 42-7l5-5q14 16 20 25-7-4-30-1-20 6-22 12 7 12 5 18-4-3-11.5-10t-14.5-11-15-5q-16 0-22 1-146 80-235 222 7 7 12 8 4 1 5 9t2.5 11 11.5-3q9 8 3 19 1-1 44 27 19 17 21 21 3 11-10 18-1-2-9-9t-9-4q-3 5 .5 18.5t10.5 12.5q-7 0-9.5 16t-2.5 35.5-1 23.5l2 1q-3 12 5.5 34.5t21.5 19.5q-13 3 20 43 6 8 8 9 3 2 12 7.5t15 10 10 10.5q4 5 10 22.5t14 23.5q-2 6 9.5 20t10.5 23q-1 0-2.5 1t-2.5 1q3 7 15.5 14t15.5 13q1 3 2 10t3 11 8 2q2-20-24-62-15-25-17-29-3-5-5.5-15.5t-4.5-14.5q2 0 6 1.5t8.5 3.5 7.5 4 2 3q-3 7 2 17.5t12 18.5 17 19 12 13q6 6 14 19.5t0 13.5q9 0 20 10t17 20q5 8 8 26t5 24q2 7 8.5 13.5t12.5 9.5l16 8 13 7q5 2 18.5 10.5t21.5 11.5q10 4 16 4t14.5-2.5 13.5-3.5q15-2 29 15t21 21q36 19 55 11-2 1 .5 7.5t8 15.5 9 14.5 5.5 8.5q5 6 18 15t18 15q6-4 7-9-3 8 7 20t18 10q14-3 14-32-31 15-49-18 0-1-2.5-5.5t-4-8.5-2.5-8.5 0-7.5 5-3q9 0 10-3.5t-2-12.5-4-13q-1-8-11-20t-12-15q-5 9-16 8t-16-9q0 1-1.5 5.5t-1.5 6.5q-13 0-15-1 1-3 2.5-17.5t3.5-22.5q1-4 5.5-12t7.5-14.5 4-12.5-4.5-9.5-17.5-2.5q-19 1-26 20-1 3-3 10.5t-5 11.5-9 7q-7 3-24 2t-24-5q-13-8-22.5-29t-9.5-37q0-10 2.5-26.5t3-25-5.5-24.5q3-2 9-9.5t10-10.5q2-1 4.5-1.5t4.5 0 4-1.5 3-6q-1-1-4-3-3-3-4-3 7 3 28.5-1.5t27.5 1.5q15 11 22-2 0-1-2.5-9.5t-.5-13.5q5 27 29 9 3 3 15.5 5t17.5 5q3 2 7 5.5t5.5 4.5 5-.5 8.5-6.5q10 14 12 24 11 40 19 44 7 3 11 2t4.5-9.5 0-14-1.5-12.5l-1-8v-18l-1-8q-15-3-18.5-12t1.5-18.5 15-18.5q1-1 8-3.5t15.5-6.5 12.5-8q21-19 15-35 7 0 11-9-1 0-5-3t-7.5-5-4.5-2q9-5 2-16 5-3 7.5-11t7.5-10q9 12 21 2 7-8 1-16 5-7 20.5-10.5t18.5-9.5q7 2 8-2t1-12 3-12q4-5 15-9t13-5l17-11q3-4 0-4 18 2 31-11 10-11-6-20 3-6-3-9.5t-15-5.5q3-1 11.5-.5t10.5-1.5q15-10-7-16-17-5-43 12zm-163 877q206-36 351-189-3-3-12.5-4.5t-12.5-3.5q-18-7-24-8 1-7-2.5-13t-8-9-12.5-8-11-7q-2-2-7-6t-7-5.5-7.5-4.5-8.5-2-10 1l-3 1q-3 1-5.5 2.5t-5.5 3-4 3 0 2.5q-21-17-36-22-5-1-11-5.5t-10.5-7-10-1.5-11.5 7q-5 5-6 15t-2 13q-7-5 0-17.5t2-18.5q-3-6-10.5-4.5t-12 4.5-11.5 8.5-9 6.5-8.5 5.5-8.5 7.5q-3 4-6 12t-5 11q-2-4-11.5-6.5t-9.5-5.5q2 10 4 35t5 38q7 31-12 48-27 25-29 40-4 22 12 26 0 7-8 20.5t-7 21.5q0 6 2 16z" })
+    );
+  };
+  var Instagram = exports.Instagram = function Instagram(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1490 1426v-648h-135q20 63 20 131 0 126-64 232.5t-174 168.5-240 62q-197 0-337-135.5t-140-327.5q0-68 20-131h-141v648q0 26 17.5 43.5t43.5 17.5h1069q25 0 43-17.5t18-43.5zm-284-533q0-124-90.5-211.5t-218.5-87.5q-127 0-217.5 87.5t-90.5 211.5 90.5 211.5 217.5 87.5q128 0 218.5-87.5t90.5-211.5zm284-360v-165q0-28-20-48.5t-49-20.5h-174q-29 0-49 20.5t-20 48.5v165q0 29 20 49t49 20h174q29 0 49-20t20-49zm174-208v1142q0 81-58 139t-139 58h-1142q-81 0-139-58t-58-139v-1142q0-81 58-139t139-58h1142q81 0 139 58t58 139z" })
+    );
+  };
+  var Flickr = exports.Flickr = function Flickr(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1376 128q119 0 203.5 84.5t84.5 203.5v960q0 119-84.5 203.5t-203.5 84.5h-960q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960zm-550 768q0-88-62-150t-150-62-150 62-62 150 62 150 150 62 150-62 62-150zm564 0q0-88-62-150t-150-62-150 62-62 150 62 150 150 62 150-62 62-150z" })
+    );
+  };
+  var MapMarker = exports.MapMarker = function MapMarker(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1152 640q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm256 0q0 109-33 179l-364 774q-16 33-47.5 52t-67.5 19-67.5-19-46.5-52l-365-774q-33-70-33-179 0-212 150-362t362-150 362 150 150 362z" })
+    );
+  };
+  var Twitter = exports.Twitter = function Twitter(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" })
+    );
+  };
+  var Clock = exports.Clock = function Clock(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1024 544v448q0 14-9 23t-23 9h-320q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h224v-352q0-14 9-23t23-9h64q14 0 23 9t9 23zm416 352q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z" })
+    );
+  };
+  var ArrowRight = exports.ArrowRight = function ArrowRight(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293h-704q-52 0-84.5-37.5t-32.5-90.5v-128q0-53 32.5-90.5t84.5-37.5h704l-293-294q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" })
+    );
+  };
+  var ArrowLeft = exports.ArrowLeft = function ArrowLeft(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1664 896v128q0 53-32.5 90.5t-84.5 37.5h-704l293 294q38 36 38 90t-38 90l-75 76q-37 37-90 37-52 0-91-37l-651-652q-37-37-37-90 0-52 37-91l651-650q38-38 91-38 52 0 90 38l75 74q38 38 38 91t-38 91l-293 293h704q52 0 84.5 37.5t32.5 90.5z" })
+    );
+  };
+  var TagsIcon = exports.TagsIcon = function TagsIcon(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M384 448q0-53-37.5-90.5t-90.5-37.5-90.5 37.5-37.5 90.5 37.5 90.5 90.5 37.5 90.5-37.5 37.5-90.5zm1067 576q0 53-37 90l-491 492q-39 37-91 37-53 0-90-37l-715-716q-38-37-64.5-101t-26.5-117v-416q0-52 38-90t90-38h416q53 0 117 26.5t102 64.5l715 714q37 39 37 91zm384 0q0 53-37 90l-491 492q-39 37-91 37-36 0-59-14t-53-45l470-470q37-37 37-90 0-52-37-91l-715-714q-38-38-102-64.5t-117-26.5h224q53 0 117 26.5t102 64.5l715 714q37 39 37 91z" })
+    );
+  };
+  var InfoCircle = exports.InfoCircle = function InfoCircle(props) {
+    return _react2.default.createElement(
+      Svg,
+      props,
+      _react2.default.createElement("path", { d: "M1152 1376v-160q0-14-9-23t-23-9h-96v-512q0-14-9-23t-23-9h-320q-14 0-23 9t-9 23v160q0 14 9 23t23 9h96v320h-96q-14 0-23 9t-9 23v160q0 14 9 23t23 9h448q14 0 23-9t9-23zm-128-896v-160q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v160q0 14 9 23t23 9h192q14 0 23-9t9-23zm640 416q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z" })
+    );
+  };
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _Icons = __webpack_require__(12);
+
   var _Link = __webpack_require__(6);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(272);
+  __webpack_require__(273);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -736,7 +865,7 @@ module.exports =
       noTitle ? null : _react2.default.createElement(
         "div",
         { className: "tagCloud__title" },
-        _react2.default.createElement("i", { className: "fa fa-tags fa-lg fa-fw" }),
+        _react2.default.createElement(_Icons.TagsIcon, { width: 22 }),
         "Tags:"
       ),
       tags.map(function (tag, index) {
@@ -759,40 +888,6 @@ module.exports =
   exports.default = TagCloud;
 
 /***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  __webpack_require__(261);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var DateTime = function DateTime(_ref) {
-    var date = _ref.date;
-    return _react2.default.createElement(
-      "div",
-      { className: "date" },
-      _react2.default.createElement("i", { className: "fa fa-clock-o fa-lg fa-fw" }),
-      " ",
-      date
-    );
-  };
-  DateTime.propTypes = {
-    date: _react.PropTypes.string.isRequired
-  };
-
-  exports.default = DateTime;
-
-/***/ },
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -806,7 +901,42 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(270);
+  var _Icons = __webpack_require__(12);
+
+  __webpack_require__(262);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var DateTime = function DateTime(_ref) {
+    var date = _ref.date;
+    return _react2.default.createElement(
+      "div",
+      { className: "date" },
+      _react2.default.createElement(_Icons.Clock, { width: 13 }),
+      date
+    );
+  };
+  DateTime.propTypes = {
+    date: _react.PropTypes.string.isRequired
+  };
+
+  exports.default = DateTime;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(271);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -866,7 +996,7 @@ module.exports =
   exports.default = ResponsiveImage;
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -875,21 +1005,21 @@ module.exports =
     value: true
   });
 
-  var _ExecutionEnvironment = __webpack_require__(81);
+  var _ExecutionEnvironment = __webpack_require__(82);
 
-  var _createBrowserHistory = __webpack_require__(278);
+  var _createBrowserHistory = __webpack_require__(279);
 
   var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
-  var _createMemoryHistory = __webpack_require__(279);
+  var _createMemoryHistory = __webpack_require__(280);
 
   var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-  var _useQueries = __webpack_require__(280);
+  var _useQueries = __webpack_require__(281);
 
   var _useQueries2 = _interopRequireDefault(_useQueries);
 
-  var _scrollBehavior = __webpack_require__(282);
+  var _scrollBehavior = __webpack_require__(283);
 
   var _scrollBehavior2 = _interopRequireDefault(_scrollBehavior);
 
@@ -900,7 +1030,7 @@ module.exports =
   exports.default = location;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -966,7 +1096,7 @@ module.exports =
   };
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1048,7 +1178,7 @@ module.exports =
   };
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1145,7 +1275,7 @@ module.exports =
   };
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1261,7 +1391,7 @@ module.exports =
   };
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1347,7 +1477,7 @@ module.exports =
   };
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1491,7 +1621,7 @@ module.exports =
   };
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1588,7 +1718,7 @@ module.exports =
   };
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1715,7 +1845,7 @@ module.exports =
   };
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1828,7 +1958,7 @@ module.exports =
   };
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -1904,7 +2034,7 @@ module.exports =
   };
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2008,7 +2138,7 @@ module.exports =
   };
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2233,7 +2363,7 @@ module.exports =
   };
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2418,7 +2548,7 @@ module.exports =
   };
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2576,7 +2706,7 @@ module.exports =
   };
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2707,7 +2837,7 @@ module.exports =
   };
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2924,7 +3054,7 @@ module.exports =
   };
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3153,7 +3283,7 @@ module.exports =
   };
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3320,7 +3450,7 @@ module.exports =
   };
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3487,7 +3617,7 @@ module.exports =
   };
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3703,7 +3833,7 @@ module.exports =
   };
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -3799,7 +3929,7 @@ module.exports =
   };
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4061,7 +4191,7 @@ module.exports =
   };
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4317,7 +4447,7 @@ module.exports =
   };
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4653,7 +4783,7 @@ module.exports =
   };
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -4987,7 +5117,7 @@ module.exports =
   };
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5373,7 +5503,7 @@ module.exports =
   };
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5624,7 +5754,7 @@ module.exports =
   };
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5686,7 +5816,7 @@ module.exports =
   };
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -5971,7 +6101,7 @@ module.exports =
   };
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6147,7 +6277,7 @@ module.exports =
   };
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6212,7 +6342,7 @@ module.exports =
   };
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6420,7 +6550,7 @@ module.exports =
   };
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6778,7 +6908,7 @@ module.exports =
   };
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7004,7 +7134,7 @@ module.exports =
   };
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7445,7 +7575,7 @@ module.exports =
   };
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7651,7 +7781,7 @@ module.exports =
   };
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -7870,7 +8000,7 @@ module.exports =
   };
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8118,7 +8248,7 @@ module.exports =
   };
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8435,7 +8565,7 @@ module.exports =
   };
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8531,7 +8661,7 @@ module.exports =
   };
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -8893,7 +9023,7 @@ module.exports =
   };
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9171,7 +9301,7 @@ module.exports =
   };
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9542,7 +9672,7 @@ module.exports =
   };
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -9802,7 +9932,7 @@ module.exports =
   };
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10175,7 +10305,7 @@ module.exports =
   };
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10355,7 +10485,7 @@ module.exports =
   };
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10542,7 +10672,7 @@ module.exports =
   };
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -10761,7 +10891,7 @@ module.exports =
   };
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11113,7 +11243,7 @@ module.exports =
   };
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11280,7 +11410,7 @@ module.exports =
   };
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11610,7 +11740,7 @@ module.exports =
   };
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -11804,7 +11934,7 @@ module.exports =
   };
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12080,7 +12210,7 @@ module.exports =
   };
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12263,7 +12393,7 @@ module.exports =
   };
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12446,7 +12576,7 @@ module.exports =
   };
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12672,7 +12802,7 @@ module.exports =
   };
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -12858,7 +12988,7 @@ module.exports =
   };
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13026,7 +13156,7 @@ module.exports =
   };
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13136,7 +13266,7 @@ module.exports =
   };
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13229,7 +13359,7 @@ module.exports =
   };
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13412,7 +13542,7 @@ module.exports =
   };
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13565,7 +13695,7 @@ module.exports =
   };
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13738,7 +13868,7 @@ module.exports =
   };
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -13908,7 +14038,7 @@ module.exports =
   };
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14168,13 +14298,13 @@ module.exports =
   };
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/ExecutionEnvironment");
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14191,7 +14321,7 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  __webpack_require__(258);
+  __webpack_require__(259);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14214,7 +14344,7 @@ module.exports =
   exports.default = BlogLink;
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14227,11 +14357,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _config = __webpack_require__(87);
+  var _config = __webpack_require__(88);
 
   var _config2 = _interopRequireDefault(_config);
 
-  __webpack_require__(262);
+  __webpack_require__(263);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14255,7 +14385,7 @@ module.exports =
   exports.default = DisqusComments;
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14268,13 +14398,13 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(264);
+  __webpack_require__(265);
 
-  var _Navigation = __webpack_require__(85);
+  var _Navigation = __webpack_require__(86);
 
   var _Navigation2 = _interopRequireDefault(_Navigation);
 
-  var _Sidebar = __webpack_require__(86);
+  var _Sidebar = __webpack_require__(87);
 
   var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
@@ -14307,85 +14437,6 @@ module.exports =
   exports.default = Layout;
 
 /***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  __webpack_require__(266);
-
-  var _Link = __webpack_require__(6);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var Icon = function Icon(_ref) {
-    var type = _ref.type;
-    return _react2.default.createElement("i", { className: "fa fa-" + type + " fa-lg fa-fw" });
-  };
-  Icon.propTypes = { type: _react.PropTypes.string.isRequired };
-
-  function Navigation() {
-    return _react2.default.createElement(
-      "nav",
-      { className: "navbar", role: "navigation" },
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link", to: "/" },
-        _react2.default.createElement(Icon, { type: "globe" }),
-        "Lucas The Nomad"
-      ),
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link--hideable", to: "https://www.facebook.com/lucasparry" },
-        _react2.default.createElement(Icon, { type: "facebook" }),
-        "Facebook"
-      ),
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link--hideable", to: "https://www.twitter.com/lucas_parry" },
-        _react2.default.createElement(Icon, { type: "twitter" }),
-        "Twitter"
-      ),
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link--hideable", to: "https://www.flickr.com/photos/lucasthenomad/" },
-        _react2.default.createElement(Icon, { type: "flickr" }),
-        "Flickr"
-      ),
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link--hideable", to: "https://instagram.com/lparry" },
-        _react2.default.createElement(Icon, { type: "instagram" }),
-        "Instagram"
-      ),
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link--hideable", to: "https://www.couchsurfing.org/people/lucasthenomad/" },
-        _react2.default.createElement(Icon, { type: "suitcase" }),
-        "Couchsurfing"
-      ),
-      _react2.default.createElement(
-        _Link2.default,
-        { className: "navbar__link--hideable", to: "/map" },
-        _react2.default.createElement(Icon, { type: "map-marker" }),
-        "Map"
-      )
-    );
-  }
-
-  exports.default = Navigation;
-
-/***/ },
 /* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -14399,11 +14450,88 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(271);
+  __webpack_require__(267);
 
-  var _TagCloud = __webpack_require__(12);
+  var _Link = __webpack_require__(6);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  var _Icons = __webpack_require__(12);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function Navigation() {
+    return _react2.default.createElement(
+      "nav",
+      { className: "navbar" },
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link", to: "/" },
+        _react2.default.createElement(_Icons.Globe, { className: "navbar__icon" }),
+        " Lucas The Nomad"
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link--hideable", to: "https://www.facebook.com/lucasparry" },
+        _react2.default.createElement(_Icons.Facebook, { className: "navbar__icon" }),
+        " Facebook"
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link--hideable", to: "https://www.twitter.com/lucas_parry" },
+        _react2.default.createElement(_Icons.Twitter, { className: "navbar__icon" }),
+        " Twitter"
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link--hideable", to: "https://www.flickr.com/photos/lucasthenomad/" },
+        _react2.default.createElement(_Icons.Flickr, { className: "navbar__icon" }),
+        " Flickr"
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link--hideable", to: "https://instagram.com/lparry" },
+        _react2.default.createElement(_Icons.Instagram, { className: "navbar__icon" }),
+        " Instagram"
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link--hideable", to: "https://www.couchsurfing.org/people/lucasthenomad/" },
+        _react2.default.createElement(_Icons.Suitcase, { className: "navbar__icon" }),
+        " Couchsurfing"
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { className: "navbar__link--hideable", to: "/map" },
+        _react2.default.createElement(_Icons.MapMarker, { className: "navbar__icon" }),
+        " Map"
+      )
+    );
+  }
+
+  exports.default = Navigation;
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(272);
+
+  var _TagCloud = __webpack_require__(13);
 
   var _TagCloud2 = _interopRequireDefault(_TagCloud);
+
+  var _Icons = __webpack_require__(12);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14432,7 +14560,7 @@ module.exports =
         _react2.default.createElement(
           "h3",
           null,
-          _react2.default.createElement("i", { className: "fa fa-info-circle fa-lg fa-fw" }),
+          _react2.default.createElement(_Icons.InfoCircle, null),
           " About Lucas"
         ),
         _react2.default.createElement("img", {
@@ -14457,7 +14585,7 @@ module.exports =
         _react2.default.createElement(
           "h3",
           null,
-          _react2.default.createElement("i", { className: "fa fa-tags fa-lg fa-fw" }),
+          _react2.default.createElement(_Icons.TagsIcon, null),
           " Tags"
         ),
         _react2.default.createElement(_TagCloud2.default, { className: "sidebar__tagBox", noTitle: true, tags: allTags })
@@ -14468,7 +14596,7 @@ module.exports =
   exports.default = Sidebar;
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports) {
 
   "use strict";
@@ -14478,14 +14606,14 @@ module.exports =
   });
   exports.default = {
     title: "Lucas The Nomad",
-    description: "oh look, a description",
-    googleAnalyticsId: "UA-XXXXX-X",
+    description: "The story of an irresponsible thirty year old man-child who decided he didn't want to wait until he was old to have a turn at enjoying retirement. Instead of following the common life path of getting married, buying a house, and having two kids, he's chosen to seek out epic adventures, see the …",
+    googleAnalyticsId: "UA-8216018-4",
     disqusShortName: "lucasthenomad",
     perPage: 5
   };
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -14543,7 +14671,7 @@ module.exports =
   exports.default = _class;
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -14604,7 +14732,7 @@ module.exports =
   exports.default = _class;
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14651,7 +14779,7 @@ module.exports =
   };
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14708,7 +14836,7 @@ module.exports =
   };
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14765,7 +14893,7 @@ module.exports =
   };
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14822,7 +14950,7 @@ module.exports =
   };
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14879,7 +15007,7 @@ module.exports =
   };
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14936,7 +15064,7 @@ module.exports =
   };
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -14993,7 +15121,7 @@ module.exports =
   };
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15050,7 +15178,7 @@ module.exports =
   };
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15107,7 +15235,7 @@ module.exports =
   };
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15164,7 +15292,7 @@ module.exports =
   };
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15221,7 +15349,7 @@ module.exports =
   };
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15278,7 +15406,7 @@ module.exports =
   };
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15335,7 +15463,7 @@ module.exports =
   };
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15387,7 +15515,7 @@ module.exports =
   };
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -15400,17 +15528,17 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(281);
+  var _reactDom = __webpack_require__(282);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  var _ExecutionEnvironment = __webpack_require__(81);
+  var _ExecutionEnvironment = __webpack_require__(82);
 
-  var _Location = __webpack_require__(15);
+  var _Location = __webpack_require__(16);
 
   var _Location2 = _interopRequireDefault(_Location);
 
-  var _Layout = __webpack_require__(84);
+  var _Layout = __webpack_require__(85);
 
   var _Layout2 = _interopRequireDefault(_Layout);
 
@@ -15418,479 +15546,479 @@ module.exports =
 
   function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
 
-  __webpack_require__(276);
   __webpack_require__(277);
+  __webpack_require__(278);
 
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(88).default;
-    }, '/500': function _() {
       return __webpack_require__(89).default;
-    }, '/2013/03/26/twenty-years-from-now': function twentyYearsFromNow() {
-      return __webpack_require__(16).default;
-    }, '/2013/04/08/the-little-things-that-make-up-a-life': function theLittleThingsThatMakeUpALife() {
-      return __webpack_require__(17).default;
-    }, '/2013/04/22/target-40-litres': function target40Litres() {
-      return __webpack_require__(18).default;
-    }, '/2013/05/07/last-minute-bag-choices': function lastMinuteBagChoices() {
-      return __webpack_require__(19).default;
-    }, '/2013/05/12/it-s-go-time': function itSGoTime() {
-      return __webpack_require__(20).default;
-    }, '/2013/05/14/day-1-melbourne-to-saigon': function day1MelbourneToSaigon() {
-      return __webpack_require__(21).default;
-    }, '/2013/05/22/day-2-ho-chi-minh-city': function day2HoChiMinhCity() {
-      return __webpack_require__(22).default;
-    }, '/2013/05/22/day-3-cu-chi-tunnels': function day3CuChiTunnels() {
-      return __webpack_require__(23).default;
-    }, '/2013/05/22/day-4-motorbikes-in-hcmc': function day4MotorbikesInHcmc() {
-      return __webpack_require__(24).default;
-    }, '/2013/05/24/last-day-in-hcmc': function lastDayInHcmc() {
-      return __webpack_require__(25).default;
-    }, '/2013/05/29/ha-ha-business': function haHaBusiness() {
-      return __webpack_require__(26).default;
-    }, '/2013/05/30/phu-qouc-island-vietnam': function phuQoucIslandVietnam() {
-      return __webpack_require__(27).default;
-    }, '/2013/06/14/mountain-biking-in-siem-reap': function mountainBikingInSiemReap() {
-      return __webpack_require__(28).default;
-    }, '/2013/06/27/airport-security-in-india': function airportSecurityInIndia() {
-      return __webpack_require__(29).default;
-    }, '/2013/06/29/wake-up-call': function wakeUpCall() {
-      return __webpack_require__(30).default;
-    }, '/2013/06/30/thailand': function thailand() {
-      return __webpack_require__(31).default;
-    }, '/2013/08/13/frustration-india-part-1': function frustrationIndiaPart1() {
-      return __webpack_require__(32).default;
-    }, '/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2': function trainStationsPartiesUntilTheLittleHoursOfTheNightIndiaPart2() {
-      return __webpack_require__(33).default;
-    }, '/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3': function threeGirlsAGuyAndATourGuidePart3() {
-      return __webpack_require__(34).default;
-    }, '/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4': function indiaFlyingSoloAtOneWithTheChaosIndiaPart4() {
-      return __webpack_require__(35).default;
-    }, '/2013/09/03/travelling-light-or-not': function travellingLightOrNot() {
-      return __webpack_require__(36).default;
-    }, '/2013/09/09/johannesburg-to-victoria-falls-and-back': function johannesburgToVictoriaFallsAndBack() {
-      return __webpack_require__(37).default;
-    }, '/2013/09/16/south-africa': function southAfrica() {
-      return __webpack_require__(38).default;
-    }, '/2013/09/23/zanzibar-tanzania': function zanzibarTanzania() {
-      return __webpack_require__(39).default;
-    }, '/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater': function serengetiNationalParkAndTheNgorongoroCrater() {
-      return __webpack_require__(40).default;
-    }, '/2013/10/07/kenya-the-masai-mara-and-lake-nakuru': function kenyaTheMasaiMaraAndLakeNakuru() {
-      return __webpack_require__(41).default;
-    }, '/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans': function ugandaWhiteWaterRaftingTrackingChimpsAndTeachingOrphans() {
-      return __webpack_require__(42).default;
-    }, '/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa': function theSignsAndSightsOfTheStreetsOfEastAfrica() {
-      return __webpack_require__(43).default;
-    }, '/2013/11/24/rwanda-gorillas-genocide': function rwandaGorillasGenocide() {
-      return __webpack_require__(44).default;
-    }, '/2013/12/05/spreepark-berlin': function spreeparkBerlin() {
-      return __webpack_require__(45).default;
-    }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
-      return __webpack_require__(46).default;
-    }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
-      return __webpack_require__(47).default;
-    }, '/2014/02/06/turkey': function turkey() {
-      return __webpack_require__(48).default;
-    }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
-      return __webpack_require__(49).default;
-    }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
-      return __webpack_require__(50).default;
-    }, '/2014/04/06/berlin-part-1': function berlinPart1() {
-      return __webpack_require__(51).default;
-    }, '/2014/04/15/berlin-part-2': function berlinPart2() {
-      return __webpack_require__(52).default;
-    }, '/2014/04/23/berlin-part-3': function berlinPart3() {
-      return __webpack_require__(53).default;
-    }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
-      return __webpack_require__(54).default;
-    }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
-      return __webpack_require__(55).default;
-    }, '/2014/05/26/granada': function granada() {
-      return __webpack_require__(56).default;
-    }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
-      return __webpack_require__(57).default;
-    }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
-      return __webpack_require__(58).default;
-    }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
-      return __webpack_require__(59).default;
-    }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
-      return __webpack_require__(60).default;
-    }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
-      return __webpack_require__(61).default;
-    }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
-      return __webpack_require__(62).default;
-    }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
-      return __webpack_require__(63).default;
-    }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
-      return __webpack_require__(64).default;
-    }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
-      return __webpack_require__(65).default;
-    }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
-      return __webpack_require__(66).default;
-    }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
-      return __webpack_require__(67).default;
-    }, '/2015/01/03/firedrums-2014-and-san-francisco': function firedrums2014AndSanFrancisco() {
-      return __webpack_require__(68).default;
-    }, '/2015/02/26/honduras-mainland-lago-yejoa-copan': function hondurasMainlandLagoYejoaCopan() {
-      return __webpack_require__(69).default;
-    }, '/2015/03/30/antigua-guatemala': function antiguaGuatemala() {
-      return __webpack_require__(70).default;
-    }, '/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala': function sanMarcosLaLagunaLakeAtitlanGuatemala() {
-      return __webpack_require__(71).default;
-    }, '/2015/04/27/quezaltenango-xela-guatemala': function quezaltenangoXelaGuatemala() {
-      return __webpack_require__(72).default;
-    }, '/2015/05/04/revisiting-antigua-and-earth-lodge': function revisitingAntiguaAndEarthLodge() {
-      return __webpack_require__(73).default;
-    }, '/2015/05/11/more-schooling-in-xela': function moreSchoolingInXela() {
-      return __webpack_require__(74).default;
-    }, '/2015/05/13/two-years-later': function twoYearsLater() {
-      return __webpack_require__(75).default;
-    }, '/2015/05/21/back-to-lake-atitlan': function backToLakeAtitlan() {
-      return __webpack_require__(76).default;
-    }, '/2015/05/26/semuc-champey': function semucChampey() {
-      return __webpack_require__(77).default;
-    }, '/2015/06/01/tikal': function tikal() {
-      return __webpack_require__(78).default;
-    }, '/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala': function rioDulceLivingstonAndTryingToLeaveGuatemala() {
-      return __webpack_require__(79).default;
-    }, '/2015/08/17/san-francisco-before-the-burn': function sanFranciscoBeforeTheBurn() {
-      return __webpack_require__(80).default;
-    }, '/': function _() {
-      return __webpack_require__(103).default;
-    }, '/map': function map() {
+    }, '/500': function _() {
       return __webpack_require__(90).default;
-    }, '/page/10': function page10() {
+    }, '/2013/03/26/twenty-years-from-now': function twentyYearsFromNow() {
+      return __webpack_require__(17).default;
+    }, '/2013/04/08/the-little-things-that-make-up-a-life': function theLittleThingsThatMakeUpALife() {
+      return __webpack_require__(18).default;
+    }, '/2013/04/22/target-40-litres': function target40Litres() {
+      return __webpack_require__(19).default;
+    }, '/2013/05/07/last-minute-bag-choices': function lastMinuteBagChoices() {
+      return __webpack_require__(20).default;
+    }, '/2013/05/12/it-s-go-time': function itSGoTime() {
+      return __webpack_require__(21).default;
+    }, '/2013/05/14/day-1-melbourne-to-saigon': function day1MelbourneToSaigon() {
+      return __webpack_require__(22).default;
+    }, '/2013/05/22/day-2-ho-chi-minh-city': function day2HoChiMinhCity() {
+      return __webpack_require__(23).default;
+    }, '/2013/05/22/day-3-cu-chi-tunnels': function day3CuChiTunnels() {
+      return __webpack_require__(24).default;
+    }, '/2013/05/22/day-4-motorbikes-in-hcmc': function day4MotorbikesInHcmc() {
+      return __webpack_require__(25).default;
+    }, '/2013/05/24/last-day-in-hcmc': function lastDayInHcmc() {
+      return __webpack_require__(26).default;
+    }, '/2013/05/29/ha-ha-business': function haHaBusiness() {
+      return __webpack_require__(27).default;
+    }, '/2013/05/30/phu-qouc-island-vietnam': function phuQoucIslandVietnam() {
+      return __webpack_require__(28).default;
+    }, '/2013/06/14/mountain-biking-in-siem-reap': function mountainBikingInSiemReap() {
+      return __webpack_require__(29).default;
+    }, '/2013/06/27/airport-security-in-india': function airportSecurityInIndia() {
+      return __webpack_require__(30).default;
+    }, '/2013/06/29/wake-up-call': function wakeUpCall() {
+      return __webpack_require__(31).default;
+    }, '/2013/06/30/thailand': function thailand() {
+      return __webpack_require__(32).default;
+    }, '/2013/08/13/frustration-india-part-1': function frustrationIndiaPart1() {
+      return __webpack_require__(33).default;
+    }, '/2013/08/19/train-stations-parties-until-the-little-hours-of-the-night-india-part-2': function trainStationsPartiesUntilTheLittleHoursOfTheNightIndiaPart2() {
+      return __webpack_require__(34).default;
+    }, '/2013/08/26/three-girls-a-guy-and-a-tour-guide-part-3': function threeGirlsAGuyAndATourGuidePart3() {
+      return __webpack_require__(35).default;
+    }, '/2013/09/02/india-flying-solo-at-one-with-the-chaos-india-part-4': function indiaFlyingSoloAtOneWithTheChaosIndiaPart4() {
+      return __webpack_require__(36).default;
+    }, '/2013/09/03/travelling-light-or-not': function travellingLightOrNot() {
+      return __webpack_require__(37).default;
+    }, '/2013/09/09/johannesburg-to-victoria-falls-and-back': function johannesburgToVictoriaFallsAndBack() {
+      return __webpack_require__(38).default;
+    }, '/2013/09/16/south-africa': function southAfrica() {
+      return __webpack_require__(39).default;
+    }, '/2013/09/23/zanzibar-tanzania': function zanzibarTanzania() {
+      return __webpack_require__(40).default;
+    }, '/2013/09/30/serengeti-national-park-and-the-ngorongoro-crater': function serengetiNationalParkAndTheNgorongoroCrater() {
+      return __webpack_require__(41).default;
+    }, '/2013/10/07/kenya-the-masai-mara-and-lake-nakuru': function kenyaTheMasaiMaraAndLakeNakuru() {
+      return __webpack_require__(42).default;
+    }, '/2013/11/01/uganda-white-water-rafting-tracking-chimps-and-teaching-orphans': function ugandaWhiteWaterRaftingTrackingChimpsAndTeachingOrphans() {
+      return __webpack_require__(43).default;
+    }, '/2013/11/15/the-signs-and-sights-of-the-streets-of-east-africa': function theSignsAndSightsOfTheStreetsOfEastAfrica() {
+      return __webpack_require__(44).default;
+    }, '/2013/11/24/rwanda-gorillas-genocide': function rwandaGorillasGenocide() {
+      return __webpack_require__(45).default;
+    }, '/2013/12/05/spreepark-berlin': function spreeparkBerlin() {
+      return __webpack_require__(46).default;
+    }, '/2014/01/01/a-new-blog-for-the-new-year': function aNewBlogForTheNewYear() {
+      return __webpack_require__(47).default;
+    }, '/2014/01/03/istanbul-turkey': function istanbulTurkey() {
+      return __webpack_require__(48).default;
+    }, '/2014/02/06/turkey': function turkey() {
+      return __webpack_require__(49).default;
+    }, '/2014/02/14/the-greek-islands-and-athens': function theGreekIslandsAndAthens() {
+      return __webpack_require__(50).default;
+    }, '/2014/03/02/england-the-home-of-real-ale': function englandTheHomeOfRealAle() {
+      return __webpack_require__(51).default;
+    }, '/2014/04/06/berlin-part-1': function berlinPart1() {
+      return __webpack_require__(52).default;
+    }, '/2014/04/15/berlin-part-2': function berlinPart2() {
+      return __webpack_require__(53).default;
+    }, '/2014/04/23/berlin-part-3': function berlinPart3() {
+      return __webpack_require__(54).default;
+    }, '/2014/05/03/barcelona-spain': function barcelonaSpain() {
+      return __webpack_require__(55).default;
+    }, '/2014/05/13/happy-travel-birthday-to-me': function happyTravelBirthdayToMe() {
+      return __webpack_require__(56).default;
+    }, '/2014/05/26/granada': function granada() {
+      return __webpack_require__(57).default;
+    }, '/2014/06/06/spain-the-rest-of-andalusia': function spainTheRestOfAndalusia() {
+      return __webpack_require__(58).default;
+    }, '/2014/06/22/christmas-and-nye-in-the-uk': function christmasAndNyeInTheUk() {
+      return __webpack_require__(59).default;
+    }, '/2014/07/01/poi-love-camp': function poiLoveCamp() {
+      return __webpack_require__(60).default;
+    }, '/2014/07/18/corcovado-national-park-costa-rica': function corcovadoNationalParkCostaRica() {
+      return __webpack_require__(61).default;
+    }, '/2014/07/29/uvita-costa-rica': function uvitaCostaRica() {
+      return __webpack_require__(62).default;
+    }, '/2014/07/31/nicoya-peninsula-costa-rica': function nicoyaPeninsulaCostaRica() {
+      return __webpack_require__(63).default;
+    }, '/2014/09/10/la-mariposa-spanish-school-nicaragua': function laMariposaSpanishSchoolNicaragua() {
+      return __webpack_require__(64).default;
+    }, '/2014/10/09/excursion-highlights-from-la-mariposa': function excursionHighlightsFromLaMariposa() {
+      return __webpack_require__(65).default;
+    }, '/2014/10/30/nicaragua-all-over-the-place': function nicaraguaAllOverThePlace() {
+      return __webpack_require__(66).default;
+    }, '/2014/11/17/little-corn-island-leon-and-a-visa-run': function littleCornIslandLeonAndAVisaRun() {
+      return __webpack_require__(67).default;
+    }, '/2014/12/16/the-bay-islands-of-honduras': function theBayIslandsOfHonduras() {
+      return __webpack_require__(68).default;
+    }, '/2015/01/03/firedrums-2014-and-san-francisco': function firedrums2014AndSanFrancisco() {
+      return __webpack_require__(69).default;
+    }, '/2015/02/26/honduras-mainland-lago-yejoa-copan': function hondurasMainlandLagoYejoaCopan() {
+      return __webpack_require__(70).default;
+    }, '/2015/03/30/antigua-guatemala': function antiguaGuatemala() {
+      return __webpack_require__(71).default;
+    }, '/2015/04/20/san-marcos-la-laguna-lake-atitlan-guatemala': function sanMarcosLaLagunaLakeAtitlanGuatemala() {
+      return __webpack_require__(72).default;
+    }, '/2015/04/27/quezaltenango-xela-guatemala': function quezaltenangoXelaGuatemala() {
+      return __webpack_require__(73).default;
+    }, '/2015/05/04/revisiting-antigua-and-earth-lodge': function revisitingAntiguaAndEarthLodge() {
+      return __webpack_require__(74).default;
+    }, '/2015/05/11/more-schooling-in-xela': function moreSchoolingInXela() {
+      return __webpack_require__(75).default;
+    }, '/2015/05/13/two-years-later': function twoYearsLater() {
+      return __webpack_require__(76).default;
+    }, '/2015/05/21/back-to-lake-atitlan': function backToLakeAtitlan() {
+      return __webpack_require__(77).default;
+    }, '/2015/05/26/semuc-champey': function semucChampey() {
+      return __webpack_require__(78).default;
+    }, '/2015/06/01/tikal': function tikal() {
+      return __webpack_require__(79).default;
+    }, '/2015/06/11/rio-dulce-livingston-and-trying-to-leave-guatemala': function rioDulceLivingstonAndTryingToLeaveGuatemala() {
+      return __webpack_require__(80).default;
+    }, '/2015/08/17/san-francisco-before-the-burn': function sanFranciscoBeforeTheBurn() {
+      return __webpack_require__(81).default;
+    }, '/': function _() {
+      return __webpack_require__(104).default;
+    }, '/map': function map() {
       return __webpack_require__(91).default;
-    }, '/page/11': function page11() {
+    }, '/page/10': function page10() {
       return __webpack_require__(92).default;
-    }, '/page/12': function page12() {
+    }, '/page/11': function page11() {
       return __webpack_require__(93).default;
-    }, '/page/13': function page13() {
+    }, '/page/12': function page12() {
       return __webpack_require__(94).default;
-    }, '/page/2': function page2() {
+    }, '/page/13': function page13() {
       return __webpack_require__(95).default;
-    }, '/page/3': function page3() {
+    }, '/page/2': function page2() {
       return __webpack_require__(96).default;
-    }, '/page/4': function page4() {
+    }, '/page/3': function page3() {
       return __webpack_require__(97).default;
-    }, '/page/5': function page5() {
+    }, '/page/4': function page4() {
       return __webpack_require__(98).default;
-    }, '/page/6': function page6() {
+    }, '/page/5': function page5() {
       return __webpack_require__(99).default;
-    }, '/page/7': function page7() {
+    }, '/page/6': function page6() {
       return __webpack_require__(100).default;
-    }, '/page/8': function page8() {
+    }, '/page/7': function page7() {
       return __webpack_require__(101).default;
-    }, '/page/9': function page9() {
+    }, '/page/8': function page8() {
       return __webpack_require__(102).default;
+    }, '/page/9': function page9() {
+      return __webpack_require__(103).default;
     }, '/tags/abandoned': function tagsAbandoned() {
-      return __webpack_require__(105).default;
-    }, '/tags/africa': function tagsAfrica() {
       return __webpack_require__(106).default;
-    }, '/tags/airplanes': function tagsAirplanes() {
+    }, '/tags/africa': function tagsAfrica() {
       return __webpack_require__(107).default;
-    }, '/tags/airports': function tagsAirports() {
+    }, '/tags/airplanes': function tagsAirplanes() {
       return __webpack_require__(108).default;
-    }, '/tags/alcatraz': function tagsAlcatraz() {
+    }, '/tags/airports': function tagsAirports() {
       return __webpack_require__(109).default;
-    }, '/tags/alhambra': function tagsAlhambra() {
+    }, '/tags/alcatraz': function tagsAlcatraz() {
       return __webpack_require__(110).default;
-    }, '/tags/andalusia': function tagsAndalusia() {
+    }, '/tags/alhambra': function tagsAlhambra() {
       return __webpack_require__(111).default;
-    }, '/tags/antigua': function tagsAntigua() {
+    }, '/tags/andalusia': function tagsAndalusia() {
       return __webpack_require__(112).default;
-    }, '/tags/athens': function tagsAthens() {
+    }, '/tags/antigua': function tagsAntigua() {
       return __webpack_require__(113).default;
-    }, '/tags/bags': function tagsBags() {
+    }, '/tags/athens': function tagsAthens() {
       return __webpack_require__(114).default;
-    }, '/tags/barcelona': function tagsBarcelona() {
+    }, '/tags/bags': function tagsBags() {
       return __webpack_require__(115).default;
-    }, '/tags/bath': function tagsBath() {
+    }, '/tags/barcelona': function tagsBarcelona() {
       return __webpack_require__(116).default;
-    }, '/tags/beer': function tagsBeer() {
+    }, '/tags/bath': function tagsBath() {
       return __webpack_require__(117).default;
-    }, '/tags/berlin': function tagsBerlin() {
+    }, '/tags/beer': function tagsBeer() {
       return __webpack_require__(118).default;
-    }, '/tags/bikes': function tagsBikes() {
+    }, '/tags/berlin': function tagsBerlin() {
       return __webpack_require__(119).default;
-    }, '/tags/blog': function tagsBlog() {
+    }, '/tags/bikes': function tagsBikes() {
       return __webpack_require__(120).default;
-    }, '/tags/boats': function tagsBoats() {
+    }, '/tags/blog': function tagsBlog() {
       return __webpack_require__(121).default;
-    }, '/tags/bristol': function tagsBristol() {
+    }, '/tags/boats': function tagsBoats() {
       return __webpack_require__(122).default;
-    }, '/tags/business': function tagsBusiness() {
+    }, '/tags/bristol': function tagsBristol() {
       return __webpack_require__(123).default;
-    }, '/tags/cambodia': function tagsCambodia() {
+    }, '/tags/business': function tagsBusiness() {
       return __webpack_require__(124).default;
-    }, '/tags/cano-island': function tagsCanoIsland() {
+    }, '/tags/cambodia': function tagsCambodia() {
       return __webpack_require__(125).default;
-    }, '/tags/cape-town': function tagsCapeTown() {
+    }, '/tags/cano-island': function tagsCanoIsland() {
       return __webpack_require__(126).default;
-    }, '/tags/caves': function tagsCaves() {
+    }, '/tags/cape-town': function tagsCapeTown() {
       return __webpack_require__(127).default;
-    }, '/tags/chicken-buses': function tagsChickenBuses() {
+    }, '/tags/caves': function tagsCaves() {
       return __webpack_require__(128).default;
-    }, '/tags/chimpanzees': function tagsChimpanzees() {
+    }, '/tags/chicken-buses': function tagsChickenBuses() {
       return __webpack_require__(129).default;
-    }, '/tags/christmas': function tagsChristmas() {
+    }, '/tags/chimpanzees': function tagsChimpanzees() {
       return __webpack_require__(130).default;
-    }, '/tags/copan': function tagsCopan() {
+    }, '/tags/christmas': function tagsChristmas() {
       return __webpack_require__(131).default;
-    }, '/tags/corcovado': function tagsCorcovado() {
+    }, '/tags/copan': function tagsCopan() {
       return __webpack_require__(132).default;
-    }, '/tags/cordoba': function tagsCordoba() {
+    }, '/tags/corcovado': function tagsCorcovado() {
       return __webpack_require__(133).default;
-    }, '/tags/costa-rica': function tagsCostaRica() {
+    }, '/tags/cordoba': function tagsCordoba() {
       return __webpack_require__(134).default;
-    }, '/tags/cu-chi-tunnels': function tagsCuChiTunnels() {
+    }, '/tags/costa-rica': function tagsCostaRica() {
       return __webpack_require__(135).default;
-    }, '/tags/diving': function tagsDiving() {
+    }, '/tags/cu-chi-tunnels': function tagsCuChiTunnels() {
       return __webpack_require__(136).default;
-    }, '/tags/dogs': function tagsDogs() {
+    }, '/tags/diving': function tagsDiving() {
       return __webpack_require__(137).default;
-    }, '/tags/earth-lodge': function tagsEarthLodge() {
+    }, '/tags/dogs': function tagsDogs() {
       return __webpack_require__(138).default;
-    }, '/tags/edinburgh': function tagsEdinburgh() {
+    }, '/tags/earth-lodge': function tagsEarthLodge() {
       return __webpack_require__(139).default;
-    }, '/tags/england': function tagsEngland() {
+    }, '/tags/edinburgh': function tagsEdinburgh() {
       return __webpack_require__(140).default;
-    }, '/tags/festivals': function tagsFestivals() {
+    }, '/tags/england': function tagsEngland() {
       return __webpack_require__(141).default;
-    }, '/tags/finca-mia': function tagsFincaMia() {
+    }, '/tags/festivals': function tagsFestivals() {
       return __webpack_require__(142).default;
-    }, '/tags/flores': function tagsFlores() {
+    }, '/tags/finca-mia': function tagsFincaMia() {
       return __webpack_require__(143).default;
-    }, '/tags/flying': function tagsFlying() {
+    }, '/tags/flores': function tagsFlores() {
       return __webpack_require__(144).default;
-    }, '/tags/germany': function tagsGermany() {
+    }, '/tags/flying': function tagsFlying() {
       return __webpack_require__(145).default;
-    }, '/tags/gorillas': function tagsGorillas() {
+    }, '/tags/germany': function tagsGermany() {
       return __webpack_require__(146).default;
-    }, '/tags/graffiti': function tagsGraffiti() {
+    }, '/tags/gorillas': function tagsGorillas() {
       return __webpack_require__(147).default;
-    }, '/tags/granada': function tagsGranada() {
+    }, '/tags/graffiti': function tagsGraffiti() {
       return __webpack_require__(148).default;
-    }, '/tags/greece': function tagsGreece() {
+    }, '/tags/granada': function tagsGranada() {
       return __webpack_require__(149).default;
-    }, '/tags/guatemala-city': function tagsGuatemalaCity() {
+    }, '/tags/greece': function tagsGreece() {
       return __webpack_require__(150).default;
-    }, '/tags/guatemala': function tagsGuatemala() {
+    }, '/tags/guatemala-city': function tagsGuatemalaCity() {
       return __webpack_require__(151).default;
-    }, '/tags/hcmc': function tagsHcmc() {
+    }, '/tags/guatemala': function tagsGuatemala() {
       return __webpack_require__(152).default;
-    }, '/tags/hiking': function tagsHiking() {
+    }, '/tags/hcmc': function tagsHcmc() {
       return __webpack_require__(153).default;
-    }, '/tags/homestay': function tagsHomestay() {
+    }, '/tags/hiking': function tagsHiking() {
       return __webpack_require__(154).default;
-    }, '/tags/honduras': function tagsHonduras() {
+    }, '/tags/homestay': function tagsHomestay() {
       return __webpack_require__(155).default;
-    }, '/tags/horseback-riding': function tagsHorsebackRiding() {
+    }, '/tags/honduras': function tagsHonduras() {
       return __webpack_require__(156).default;
-    }, '/tags/hot-springs': function tagsHotSprings() {
+    }, '/tags/horseback-riding': function tagsHorsebackRiding() {
       return __webpack_require__(157).default;
-    }, '/tags/humblebrag': function tagsHumblebrag() {
+    }, '/tags/hot-springs': function tagsHotSprings() {
       return __webpack_require__(158).default;
-    }, '/tags/ikaria': function tagsIkaria() {
+    }, '/tags/humblebrag': function tagsHumblebrag() {
       return __webpack_require__(159).default;
-    }, '/tags/india': function tagsIndia() {
+    }, '/tags/ikaria': function tagsIkaria() {
       return __webpack_require__(160).default;
-    }, '/tags/inspiration': function tagsInspiration() {
+    }, '/tags/india': function tagsIndia() {
       return __webpack_require__(161).default;
-    }, '/tags/introspection': function tagsIntrospection() {
+    }, '/tags/inspiration': function tagsInspiration() {
       return __webpack_require__(162).default;
-    }, '/tags/istanbul': function tagsIstanbul() {
+    }, '/tags/introspection': function tagsIntrospection() {
       return __webpack_require__(163).default;
-    }, '/tags/jinja': function tagsJinja() {
+    }, '/tags/istanbul': function tagsIstanbul() {
       return __webpack_require__(164).default;
-    }, '/tags/jinotega': function tagsJinotega() {
+    }, '/tags/jinja': function tagsJinja() {
       return __webpack_require__(165).default;
-    }, '/tags/johannesburg': function tagsJohannesburg() {
+    }, '/tags/jinotega': function tagsJinotega() {
       return __webpack_require__(166).default;
-    }, '/tags/kenya': function tagsKenya() {
+    }, '/tags/johannesburg': function tagsJohannesburg() {
       return __webpack_require__(167).default;
-    }, '/tags/koh-tao': function tagsKohTao() {
+    }, '/tags/kenya': function tagsKenya() {
       return __webpack_require__(168).default;
-    }, '/tags/la-boquita': function tagsLaBoquita() {
+    }, '/tags/koh-tao': function tagsKohTao() {
       return __webpack_require__(169).default;
-    }, '/tags/la-mariposa': function tagsLaMariposa() {
+    }, '/tags/la-boquita': function tagsLaBoquita() {
       return __webpack_require__(170).default;
-    }, '/tags/lago-yejoa': function tagsLagoYejoa() {
+    }, '/tags/la-mariposa': function tagsLaMariposa() {
       return __webpack_require__(171).default;
-    }, '/tags/laguna-apoyo': function tagsLagunaApoyo() {
+    }, '/tags/lago-yejoa': function tagsLagoYejoa() {
       return __webpack_require__(172).default;
-    }, '/tags/lake-atitlan': function tagsLakeAtitlan() {
+    }, '/tags/laguna-apoyo': function tagsLagunaApoyo() {
       return __webpack_require__(173).default;
-    }, '/tags/lake-nakuru': function tagsLakeNakuru() {
+    }, '/tags/lake-atitlan': function tagsLakeAtitlan() {
       return __webpack_require__(174).default;
-    }, '/tags/lanquin': function tagsLanquin() {
+    }, '/tags/lake-nakuru': function tagsLakeNakuru() {
       return __webpack_require__(175).default;
-    }, '/tags/leon': function tagsLeon() {
+    }, '/tags/lanquin': function tagsLanquin() {
       return __webpack_require__(176).default;
-    }, '/tags/little-corn-island': function tagsLittleCornIsland() {
+    }, '/tags/leon': function tagsLeon() {
       return __webpack_require__(177).default;
-    }, '/tags/livingston': function tagsLivingston() {
+    }, '/tags/little-corn-island': function tagsLittleCornIsland() {
       return __webpack_require__(178).default;
-    }, '/tags/london': function tagsLondon() {
+    }, '/tags/livingston': function tagsLivingston() {
       return __webpack_require__(179).default;
-    }, '/tags/malaga': function tagsMalaga() {
+    }, '/tags/london': function tagsLondon() {
       return __webpack_require__(180).default;
-    }, '/tags/managua': function tagsManagua() {
+    }, '/tags/malaga': function tagsMalaga() {
       return __webpack_require__(181).default;
-    }, '/tags/masai-mara': function tagsMasaiMara() {
+    }, '/tags/managua': function tagsManagua() {
       return __webpack_require__(182).default;
-    }, '/tags/meditation': function tagsMeditation() {
+    }, '/tags/masai-mara': function tagsMasaiMara() {
       return __webpack_require__(183).default;
-    }, '/tags/mediterranean': function tagsMediterranean() {
+    }, '/tags/meditation': function tagsMeditation() {
       return __webpack_require__(184).default;
-    }, '/tags/melbourne': function tagsMelbourne() {
+    }, '/tags/mediterranean': function tagsMediterranean() {
       return __webpack_require__(185).default;
-    }, '/tags/monkeys': function tagsMonkeys() {
+    }, '/tags/melbourne': function tagsMelbourne() {
       return __webpack_require__(186).default;
-    }, '/tags/montezuma': function tagsMontezuma() {
+    }, '/tags/monkeys': function tagsMonkeys() {
       return __webpack_require__(187).default;
-    }, '/tags/motorbikes': function tagsMotorbikes() {
+    }, '/tags/montezuma': function tagsMontezuma() {
       return __webpack_require__(188).default;
-    }, '/tags/mumbai': function tagsMumbai() {
+    }, '/tags/motorbikes': function tagsMotorbikes() {
       return __webpack_require__(189).default;
-    }, '/tags/museums': function tagsMuseums() {
+    }, '/tags/mumbai': function tagsMumbai() {
       return __webpack_require__(190).default;
-    }, '/tags/mykonos': function tagsMykonos() {
+    }, '/tags/museums': function tagsMuseums() {
       return __webpack_require__(191).default;
-    }, '/tags/ngorongoro-crater': function tagsNgorongoroCrater() {
+    }, '/tags/mykonos': function tagsMykonos() {
       return __webpack_require__(192).default;
-    }, '/tags/nicaragua': function tagsNicaragua() {
+    }, '/tags/ngorongoro-crater': function tagsNgorongoroCrater() {
       return __webpack_require__(193).default;
-    }, '/tags/nicoya-peninsula': function tagsNicoyaPeninsula() {
+    }, '/tags/nicaragua': function tagsNicaragua() {
       return __webpack_require__(194).default;
-    }, '/tags/nottingham': function tagsNottingham() {
+    }, '/tags/nicoya-peninsula': function tagsNicoyaPeninsula() {
       return __webpack_require__(195).default;
-    }, '/tags/nye': function tagsNye() {
+    }, '/tags/nottingham': function tagsNottingham() {
       return __webpack_require__(196).default;
-    }, '/tags/ometepe': function tagsOmetepe() {
+    }, '/tags/nye': function tagsNye() {
       return __webpack_require__(197).default;
-    }, '/tags/outdoors': function tagsOutdoors() {
+    }, '/tags/ometepe': function tagsOmetepe() {
       return __webpack_require__(198).default;
-    }, '/tags/packing': function tagsPacking() {
+    }, '/tags/outdoors': function tagsOutdoors() {
       return __webpack_require__(199).default;
-    }, '/tags/panajachel': function tagsPanajachel() {
+    }, '/tags/packing': function tagsPacking() {
       return __webpack_require__(200).default;
-    }, '/tags/phu-quoc': function tagsPhuQuoc() {
+    }, '/tags/panajachel': function tagsPanajachel() {
       return __webpack_require__(201).default;
-    }, '/tags/poi': function tagsPoi() {
+    }, '/tags/phu-quoc': function tagsPhuQuoc() {
       return __webpack_require__(202).default;
-    }, '/tags/pre-trip': function tagsPreTrip() {
+    }, '/tags/poi': function tagsPoi() {
       return __webpack_require__(203).default;
-    }, '/tags/quezaltenango': function tagsQuezaltenango() {
+    }, '/tags/pre-trip': function tagsPreTrip() {
       return __webpack_require__(204).default;
-    }, '/tags/quote': function tagsQuote() {
+    }, '/tags/quezaltenango': function tagsQuezaltenango() {
       return __webpack_require__(205).default;
-    }, '/tags/retreat': function tagsRetreat() {
+    }, '/tags/quote': function tagsQuote() {
       return __webpack_require__(206).default;
-    }, '/tags/retrospective': function tagsRetrospective() {
+    }, '/tags/retreat': function tagsRetreat() {
       return __webpack_require__(207).default;
-    }, '/tags/rio-dulce': function tagsRioDulce() {
+    }, '/tags/retrospective': function tagsRetrospective() {
       return __webpack_require__(208).default;
-    }, '/tags/roatan': function tagsRoatan() {
+    }, '/tags/rio-dulce': function tagsRioDulce() {
       return __webpack_require__(209).default;
-    }, '/tags/ruins': function tagsRuins() {
+    }, '/tags/roatan': function tagsRoatan() {
       return __webpack_require__(210).default;
-    }, '/tags/rwanda': function tagsRwanda() {
+    }, '/tags/ruins': function tagsRuins() {
       return __webpack_require__(211).default;
-    }, '/tags/salsa': function tagsSalsa() {
+    }, '/tags/rwanda': function tagsRwanda() {
       return __webpack_require__(212).default;
-    }, '/tags/samos': function tagsSamos() {
+    }, '/tags/salsa': function tagsSalsa() {
       return __webpack_require__(213).default;
-    }, '/tags/san-francisco': function tagsSanFrancisco() {
+    }, '/tags/samos': function tagsSamos() {
       return __webpack_require__(214).default;
-    }, '/tags/san-juan': function tagsSanJuan() {
+    }, '/tags/san-francisco': function tagsSanFrancisco() {
       return __webpack_require__(215).default;
-    }, '/tags/san-marcos': function tagsSanMarcos() {
+    }, '/tags/san-juan': function tagsSanJuan() {
       return __webpack_require__(216).default;
-    }, '/tags/san-pedro': function tagsSanPedro() {
+    }, '/tags/san-marcos': function tagsSanMarcos() {
       return __webpack_require__(217).default;
-    }, '/tags/santa-cruz': function tagsSantaCruz() {
+    }, '/tags/san-pedro': function tagsSanPedro() {
       return __webpack_require__(218).default;
-    }, '/tags/santa-teresa': function tagsSantaTeresa() {
+    }, '/tags/santa-cruz': function tagsSantaCruz() {
       return __webpack_require__(219).default;
-    }, '/tags/santiago': function tagsSantiago() {
+    }, '/tags/santa-teresa': function tagsSantaTeresa() {
       return __webpack_require__(220).default;
-    }, '/tags/scotland': function tagsScotland() {
+    }, '/tags/santiago': function tagsSantiago() {
       return __webpack_require__(221).default;
-    }, '/tags/security-theater': function tagsSecurityTheater() {
+    }, '/tags/scotland': function tagsScotland() {
       return __webpack_require__(222).default;
-    }, '/tags/semuc-champey': function tagsSemucChampey() {
+    }, '/tags/security-theater': function tagsSecurityTheater() {
       return __webpack_require__(223).default;
-    }, '/tags/serengeti': function tagsSerengeti() {
+    }, '/tags/semuc-champey': function tagsSemucChampey() {
       return __webpack_require__(224).default;
-    }, '/tags/seville': function tagsSeville() {
+    }, '/tags/serengeti': function tagsSerengeti() {
       return __webpack_require__(225).default;
-    }, '/tags/signs': function tagsSigns() {
+    }, '/tags/seville': function tagsSeville() {
       return __webpack_require__(226).default;
-    }, '/tags/singapore': function tagsSingapore() {
+    }, '/tags/signs': function tagsSigns() {
       return __webpack_require__(227).default;
-    }, '/tags/somoto-canyon': function tagsSomotoCanyon() {
+    }, '/tags/singapore': function tagsSingapore() {
       return __webpack_require__(228).default;
-    }, '/tags/south-africa': function tagsSouthAfrica() {
+    }, '/tags/somoto-canyon': function tagsSomotoCanyon() {
       return __webpack_require__(229).default;
-    }, '/tags/spain': function tagsSpain() {
+    }, '/tags/south-africa': function tagsSouthAfrica() {
       return __webpack_require__(230).default;
-    }, '/tags/spanish-schools': function tagsSpanishSchools() {
+    }, '/tags/spain': function tagsSpain() {
       return __webpack_require__(231).default;
-    }, '/tags/stonehenge': function tagsStonehenge() {
+    }, '/tags/spanish-schools': function tagsSpanishSchools() {
       return __webpack_require__(232).default;
-    }, '/tags/streamlining': function tagsStreamlining() {
+    }, '/tags/stonehenge': function tagsStonehenge() {
       return __webpack_require__(233).default;
-    }, '/tags/surfing': function tagsSurfing() {
+    }, '/tags/streamlining': function tagsStreamlining() {
       return __webpack_require__(234).default;
-    }, '/tags/syros': function tagsSyros() {
+    }, '/tags/surfing': function tagsSurfing() {
       return __webpack_require__(235).default;
-    }, '/tags/tanzania': function tagsTanzania() {
+    }, '/tags/syros': function tagsSyros() {
       return __webpack_require__(236).default;
-    }, '/tags/tapas': function tagsTapas() {
+    }, '/tags/tanzania': function tagsTanzania() {
       return __webpack_require__(237).default;
-    }, '/tags/thailand': function tagsThailand() {
+    }, '/tags/tapas': function tagsTapas() {
       return __webpack_require__(238).default;
-    }, '/tags/theme-park': function tagsThemePark() {
+    }, '/tags/thailand': function tagsThailand() {
       return __webpack_require__(239).default;
-    }, '/tags/tikal': function tagsTikal() {
+    }, '/tags/theme-park': function tagsThemePark() {
       return __webpack_require__(240).default;
-    }, '/tags/trains': function tagsTrains() {
+    }, '/tags/tikal': function tagsTikal() {
       return __webpack_require__(241).default;
-    }, '/tags/travelling': function tagsTravelling() {
+    }, '/tags/trains': function tagsTrains() {
       return __webpack_require__(242).default;
-    }, '/tags/turkey': function tagsTurkey() {
+    }, '/tags/travelling': function tagsTravelling() {
       return __webpack_require__(243).default;
-    }, '/tags/uganda': function tagsUganda() {
+    }, '/tags/turkey': function tagsTurkey() {
       return __webpack_require__(244).default;
-    }, '/tags/usa': function tagsUsa() {
+    }, '/tags/uganda': function tagsUganda() {
       return __webpack_require__(245).default;
-    }, '/tags/utila': function tagsUtila() {
+    }, '/tags/usa': function tagsUsa() {
       return __webpack_require__(246).default;
-    }, '/tags/uvita': function tagsUvita() {
+    }, '/tags/utila': function tagsUtila() {
       return __webpack_require__(247).default;
-    }, '/tags/victoria-falls': function tagsVictoriaFalls() {
+    }, '/tags/uvita': function tagsUvita() {
       return __webpack_require__(248).default;
-    }, '/tags/vietnam': function tagsVietnam() {
+    }, '/tags/victoria-falls': function tagsVictoriaFalls() {
       return __webpack_require__(249).default;
-    }, '/tags/visa-run': function tagsVisaRun() {
+    }, '/tags/vietnam': function tagsVietnam() {
       return __webpack_require__(250).default;
-    }, '/tags/volcan-masaya': function tagsVolcanMasaya() {
+    }, '/tags/visa-run': function tagsVisaRun() {
       return __webpack_require__(251).default;
-    }, '/tags/volcanoes': function tagsVolcanoes() {
+    }, '/tags/volcan-masaya': function tagsVolcanMasaya() {
       return __webpack_require__(252).default;
-    }, '/tags/waterfalls': function tagsWaterfalls() {
+    }, '/tags/volcanoes': function tagsVolcanoes() {
       return __webpack_require__(253).default;
-    }, '/tags/white-water-rafting': function tagsWhiteWaterRafting() {
+    }, '/tags/waterfalls': function tagsWaterfalls() {
       return __webpack_require__(254).default;
-    }, '/tags/xela': function tagsXela() {
+    }, '/tags/white-water-rafting': function tagsWhiteWaterRafting() {
       return __webpack_require__(255).default;
-    }, '/tags/yoga': function tagsYoga() {
+    }, '/tags/xela': function tagsXela() {
       return __webpack_require__(256).default;
-    }, '/tags/zanzibar': function tagsZanzibar() {
+    }, '/tags/yoga': function tagsYoga() {
       return __webpack_require__(257).default;
+    }, '/tags/zanzibar': function tagsZanzibar() {
+      return __webpack_require__(258).default;
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function () {
@@ -15969,7 +16097,7 @@ module.exports =
   exports.default = { route: route, routes: routes };
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16015,7 +16143,7 @@ module.exports =
   };
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16061,7 +16189,7 @@ module.exports =
   };
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16107,7 +16235,7 @@ module.exports =
   };
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16153,7 +16281,7 @@ module.exports =
   };
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16199,7 +16327,7 @@ module.exports =
   };
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16245,7 +16373,7 @@ module.exports =
   };
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16291,7 +16419,7 @@ module.exports =
   };
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16337,7 +16465,7 @@ module.exports =
   };
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16383,7 +16511,7 @@ module.exports =
   };
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16429,7 +16557,7 @@ module.exports =
   };
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16475,7 +16603,7 @@ module.exports =
   };
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16521,7 +16649,7 @@ module.exports =
   };
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16567,7 +16695,7 @@ module.exports =
   };
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16613,7 +16741,7 @@ module.exports =
   };
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16659,7 +16787,7 @@ module.exports =
   };
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16705,7 +16833,7 @@ module.exports =
   };
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16751,7 +16879,7 @@ module.exports =
   };
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16797,7 +16925,7 @@ module.exports =
   };
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16843,7 +16971,7 @@ module.exports =
   };
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16889,7 +17017,7 @@ module.exports =
   };
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16935,7 +17063,7 @@ module.exports =
   };
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -16981,7 +17109,7 @@ module.exports =
   };
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17027,7 +17155,7 @@ module.exports =
   };
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17073,7 +17201,7 @@ module.exports =
   };
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17119,7 +17247,7 @@ module.exports =
   };
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17165,7 +17293,7 @@ module.exports =
   };
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17211,7 +17339,7 @@ module.exports =
   };
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17257,7 +17385,7 @@ module.exports =
   };
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17303,7 +17431,7 @@ module.exports =
   };
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17349,7 +17477,7 @@ module.exports =
   };
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17395,7 +17523,7 @@ module.exports =
   };
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17441,7 +17569,7 @@ module.exports =
   };
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17487,7 +17615,7 @@ module.exports =
   };
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17533,7 +17661,7 @@ module.exports =
   };
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17579,7 +17707,7 @@ module.exports =
   };
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17625,7 +17753,7 @@ module.exports =
   };
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17671,7 +17799,7 @@ module.exports =
   };
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17717,7 +17845,7 @@ module.exports =
   };
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17763,7 +17891,7 @@ module.exports =
   };
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17809,7 +17937,7 @@ module.exports =
   };
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17855,7 +17983,7 @@ module.exports =
   };
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17901,7 +18029,7 @@ module.exports =
   };
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17947,7 +18075,7 @@ module.exports =
   };
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -17993,7 +18121,7 @@ module.exports =
   };
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18039,7 +18167,7 @@ module.exports =
   };
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18085,7 +18213,7 @@ module.exports =
   };
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18131,7 +18259,7 @@ module.exports =
   };
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18177,7 +18305,7 @@ module.exports =
   };
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18223,7 +18351,7 @@ module.exports =
   };
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18269,7 +18397,7 @@ module.exports =
   };
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18315,7 +18443,7 @@ module.exports =
   };
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18361,7 +18489,7 @@ module.exports =
   };
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18407,7 +18535,7 @@ module.exports =
   };
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18453,7 +18581,7 @@ module.exports =
   };
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18499,7 +18627,7 @@ module.exports =
   };
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18545,7 +18673,7 @@ module.exports =
   };
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18591,7 +18719,7 @@ module.exports =
   };
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18637,7 +18765,7 @@ module.exports =
   };
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18683,7 +18811,7 @@ module.exports =
   };
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18729,7 +18857,7 @@ module.exports =
   };
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18775,7 +18903,7 @@ module.exports =
   };
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18821,7 +18949,7 @@ module.exports =
   };
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18867,7 +18995,7 @@ module.exports =
   };
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18913,7 +19041,7 @@ module.exports =
   };
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -18959,7 +19087,7 @@ module.exports =
   };
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19005,7 +19133,7 @@ module.exports =
   };
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19051,7 +19179,7 @@ module.exports =
   };
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19097,7 +19225,7 @@ module.exports =
   };
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19143,7 +19271,7 @@ module.exports =
   };
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19189,7 +19317,7 @@ module.exports =
   };
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19235,7 +19363,7 @@ module.exports =
   };
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19281,7 +19409,7 @@ module.exports =
   };
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19327,7 +19455,7 @@ module.exports =
   };
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19373,7 +19501,7 @@ module.exports =
   };
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19419,7 +19547,7 @@ module.exports =
   };
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19465,7 +19593,7 @@ module.exports =
   };
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19511,7 +19639,7 @@ module.exports =
   };
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19557,7 +19685,7 @@ module.exports =
   };
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19603,7 +19731,7 @@ module.exports =
   };
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19649,7 +19777,7 @@ module.exports =
   };
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19695,7 +19823,7 @@ module.exports =
   };
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19741,7 +19869,7 @@ module.exports =
   };
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19787,7 +19915,7 @@ module.exports =
   };
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19833,7 +19961,7 @@ module.exports =
   };
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19879,7 +20007,7 @@ module.exports =
   };
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19925,7 +20053,7 @@ module.exports =
   };
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -19971,7 +20099,7 @@ module.exports =
   };
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20017,7 +20145,7 @@ module.exports =
   };
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20063,7 +20191,7 @@ module.exports =
   };
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20109,7 +20237,7 @@ module.exports =
   };
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20155,7 +20283,7 @@ module.exports =
   };
 
 /***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20201,7 +20329,7 @@ module.exports =
   };
 
 /***/ },
-/* 197 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20247,7 +20375,7 @@ module.exports =
   };
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20293,7 +20421,7 @@ module.exports =
   };
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20339,7 +20467,7 @@ module.exports =
   };
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20385,7 +20513,7 @@ module.exports =
   };
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20431,7 +20559,7 @@ module.exports =
   };
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20477,7 +20605,7 @@ module.exports =
   };
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20523,7 +20651,7 @@ module.exports =
   };
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20569,7 +20697,7 @@ module.exports =
   };
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20615,7 +20743,7 @@ module.exports =
   };
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20661,7 +20789,7 @@ module.exports =
   };
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20707,7 +20835,7 @@ module.exports =
   };
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20753,7 +20881,7 @@ module.exports =
   };
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20799,7 +20927,7 @@ module.exports =
   };
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20845,7 +20973,7 @@ module.exports =
   };
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20891,7 +21019,7 @@ module.exports =
   };
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20937,7 +21065,7 @@ module.exports =
   };
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -20983,7 +21111,7 @@ module.exports =
   };
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21029,7 +21157,7 @@ module.exports =
   };
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21075,7 +21203,7 @@ module.exports =
   };
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21121,7 +21249,7 @@ module.exports =
   };
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21167,7 +21295,7 @@ module.exports =
   };
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21213,7 +21341,7 @@ module.exports =
   };
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21259,7 +21387,7 @@ module.exports =
   };
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21305,7 +21433,7 @@ module.exports =
   };
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21351,7 +21479,7 @@ module.exports =
   };
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21397,7 +21525,7 @@ module.exports =
   };
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21443,7 +21571,7 @@ module.exports =
   };
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21489,7 +21617,7 @@ module.exports =
   };
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21535,7 +21663,7 @@ module.exports =
   };
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21581,7 +21709,7 @@ module.exports =
   };
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21627,7 +21755,7 @@ module.exports =
   };
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21673,7 +21801,7 @@ module.exports =
   };
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21719,7 +21847,7 @@ module.exports =
   };
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21765,7 +21893,7 @@ module.exports =
   };
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21811,7 +21939,7 @@ module.exports =
   };
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21857,7 +21985,7 @@ module.exports =
   };
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21903,7 +22031,7 @@ module.exports =
   };
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21949,7 +22077,7 @@ module.exports =
   };
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -21995,7 +22123,7 @@ module.exports =
   };
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22041,7 +22169,7 @@ module.exports =
   };
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22087,7 +22215,7 @@ module.exports =
   };
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22133,7 +22261,7 @@ module.exports =
   };
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22179,7 +22307,7 @@ module.exports =
   };
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22225,7 +22353,7 @@ module.exports =
   };
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22271,7 +22399,7 @@ module.exports =
   };
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22317,7 +22445,7 @@ module.exports =
   };
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22363,7 +22491,7 @@ module.exports =
   };
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22409,7 +22537,7 @@ module.exports =
   };
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22455,7 +22583,7 @@ module.exports =
   };
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22501,7 +22629,7 @@ module.exports =
   };
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22547,7 +22675,7 @@ module.exports =
   };
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22593,7 +22721,7 @@ module.exports =
   };
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22639,7 +22767,7 @@ module.exports =
   };
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22685,7 +22813,7 @@ module.exports =
   };
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22731,7 +22859,7 @@ module.exports =
   };
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22777,7 +22905,7 @@ module.exports =
   };
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22823,7 +22951,7 @@ module.exports =
   };
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22869,7 +22997,7 @@ module.exports =
   };
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22915,7 +23043,7 @@ module.exports =
   };
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -22961,7 +23089,7 @@ module.exports =
   };
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -23007,7 +23135,7 @@ module.exports =
   };
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(7)();
@@ -23021,7 +23149,7 @@ module.exports =
 
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(7)();
@@ -23035,7 +23163,7 @@ module.exports =
 
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(7)();
@@ -23049,20 +23177,6 @@ module.exports =
 
 
 /***/ },
-/* 261 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(7)();
-  // imports
-
-
-  // module
-  exports.push([module.id, ".date {\n  font-size: x-small;\n  margin-top: -15px;\n  margin-left: 10px;\n  margin-bottom: 25px;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
 /* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -23071,7 +23185,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.disqusComments {\n}\n", ""]);
+  exports.push([module.id, ".date {\n  font-size: x-small;\n  margin-top: -15px;\n  margin-left: 10px;\n  margin-bottom: 25px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n}\n.date svg {\n  margin-right: 5px;\n}\n", ""]);
 
   // exports
 
@@ -23085,7 +23199,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.flickrImage {\n  text-align: center;\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.disqusComments {\n}\n", ""]);
 
   // exports
 
@@ -23099,7 +23213,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #272B30;\n  color: #c8c8c8;\n  font-family: 'Roboto','Helvetica',sans-serif;\n  height: 100%;\n  width: 100%;\n}\n\na {\n  color: #fff;\n  text-decoration: none\n}\n\na:hover {\n  color: #c8c8c8;\n  text-decoration: none;\n}\n\n.root {\n  width: 100vw;\n  height: 100%;\n}\n\n.content {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  padding: 30px;\n}\n\n.layout {\n  margin: 0 auto 0 auto;\n}\n\n.videoWrapper {\n  position: relative;\n  padding-bottom: 56.25%; /* 16:9 */\n  padding-top: 25px;\n  height: 0;\n  margin: auto 27px auto 27px;\n}\n\n.videoWrapper iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 1px;\n  box-shadow: 2px 2px 2px 0px #111;\n  background-color: white;\n}\n\n.excerpt {\n  padding: 0 50px 0 20px;\n  font-style: italic;\n}\n\n.quote {\n  padding: 0 50px 0 20px;\n  font-style: italic;\n}\n\n.quote-attribution {\n  margin-right: 100px;\n  text-align: right\n}\n\n.quote-attribution:before {\n  content: \"\\2014   \";\n}\n\n.layout {\n  width: calc(1280px - 30px);\n}\n\n.layout img {\n  max-width: calc(1280px - 80px);\n}\n\n@media (max-width: 768px) {\n  .layout {\n    width: calc(768px - 22px);\n  }\n  .layout img {\n    max-width: calc(768px - 80px);\n  }\n}\n\n@media (max-width: 375px) {\n  .layout {\n    width: 100vw;\n  }\n  .layout img {\n    max-width: calc(100vw - 40px);\n  }\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.flickrImage {\n  text-align: center;\n}\n", ""]);
 
   // exports
 
@@ -23113,7 +23227,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, ".Link {\n\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #272B30;\n  color: #c8c8c8;\n  font-family: 'Roboto','Helvetica',sans-serif;\n  height: 100%;\n  width: 100%;\n}\n\nhtml svg path, body svg path {\n  fill: #c8c8c8;\n}\n\n.root {\n  width: 100vw;\n  height: 100%;\n}\n\n.content {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  padding: 30px;\n}\n\n.layout {\n  margin: 0 auto 0 auto;\n}\n\n.videoWrapper {\n  position: relative;\n  padding-bottom: 56.25%; /* 16:9 */\n  padding-top: 25px;\n  height: 0;\n  margin: auto 27px auto 27px;\n}\n\n.videoWrapper iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 1px;\n  box-shadow: 2px 2px 2px 0px #111;\n  background-color: white;\n}\n\n.excerpt {\n  padding: 0 50px 0 20px;\n  font-style: italic;\n}\n\n.quote {\n  padding: 0 50px 0 20px;\n  font-style: italic;\n}\n\n.quote-attribution {\n  margin-right: 100px;\n  text-align: right\n}\n\n.quote-attribution:before {\n  content: \"\\2014   \";\n}\n\n.layout {\n  width: calc(1280px - 30px);\n}\n\n.layout img {\n  max-width: calc(1280px - 80px);\n}\n\n@media (max-width: 768px) {\n  .layout {\n    width: calc(768px - 22px);\n  }\n  .layout img {\n    max-width: calc(768px - 80px);\n  }\n}\n\n@media (max-width: 375px) {\n  .layout {\n    width: 100vw;\n  }\n  .layout img {\n    max-width: calc(100vw - 40px);\n  }\n}\n", ""]);
 
   // exports
 
@@ -23127,7 +23241,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.navbar {\n  background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);\n  height: 50px;\n  color: #c8c8c8;\n  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);\n  font-weight: 700;\n  font-size: 18px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n}\n\n.navbar__link {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n  padding: 0;\n  color: #c8c8c8;\n  text-decoration: none;\n  height: 100%;\n  white-space: nowrap\n}\n\n.navbar__link:hover {\n  color: white;\n}\n\n.navbar__link--hideable {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n  padding: 0;\n  color: #c8c8c8;\n  text-decoration: none;\n  height: 100%;\n  white-space: nowrap;\n  border-left: #717171 1px solid\n}\n\n.navbar__link--hideable:hover {\n  color: white;\n}\n\n@media (max-width: 768px) {\n  .navbar__link--hideable {\n    display: none;\n  }\n\n  .navbar__link {\n    -ms-flex-pack: start;\n        justify-content: flex-start;\n    overflow: hidden;\n    padding-left: 10px;\n  }\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.link {\n  color: #fff;\n  text-decoration: none;\n}\n\n.link svg path {\n  fill: #fff;\n}\n\n.link:hover {\n  color: #c8c8c8;\n  text-decoration: none;\n}\n\n.link:hover svg path {\n  fill: #c8c8c8;\n}\n", ""]);
 
   // exports
 
@@ -23141,7 +23255,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.nextLink {\n  float: right;\n  margin: 40px;\n}\n\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.navbar {\n  background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);\n  height: 50px;\n  color: #c8c8c8;\n  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);\n  font-weight: 700;\n  font-size: 18px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n}\n\n.navbar__link {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n  padding: 0;\n  color: #c8c8c8;\n  text-decoration: none;\n  height: 100%;\n  white-space: nowrap\n}\n\n.navbar__link:hover {\n  color: white;\n}\n\n.navbar__link:hover .navbar__icon path {\n  fill: white;\n}\n\n.navbar__link--hideable {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n  padding: 0;\n  color: #c8c8c8;\n  text-decoration: none;\n  height: 100%;\n  white-space: nowrap;\n  border-left: #717171 1px solid\n}\n\n.navbar__link--hideable:hover {\n  color: white;\n}\n\n.navbar__link--hideable:hover .navbar__icon path {\n  fill: white;\n}\n\n.navbar__icon {\n  -webkit-filter: drop-shadow( 1px 1px 1px rgba(0,0,0,0.3));\n          filter: drop-shadow( 1px 1px 1px rgba(0,0,0,0.3));\n  margin-right: 5px;\n}\n\n.navbar__icon path {\n  fill: #c8c8c8;\n}\n\n@media (max-width: 768px) {\n  .navbar__link--hideable {\n    display: none;\n  }\n\n  .navbar__link {\n    -ms-flex-pack: start;\n        justify-content: flex-start;\n    overflow: hidden;\n    padding-left: 10px;\n  }\n}\n", ""]);
 
   // exports
 
@@ -23155,7 +23269,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.photo {\n  text-align: center;\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.nextLink {\n  float: right;\n  margin: 40px;\n}\n\n.nextLink a {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n", ""]);
 
   // exports
 
@@ -23169,7 +23283,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.previousLink {\n  float: left;\n  margin: 40px;\n}\n\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.photo {\n  text-align: center;\n}\n", ""]);
 
   // exports
 
@@ -23183,7 +23297,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.responsiveImage {\n  display: inline-block;\n  margin: 0 0 20px 0;\n}\n\n.responsiveImage img {\n  background: white;\n  padding: 1px;\n  box-shadow: 2px 2px 2px 0px #111;\n}\n\n.responsiveImage__caption {\n  margin-top: -56px;\n  font-family: 'Swanky and Moo Moo', fantasy, cursive;\n  text-decoration: none;\n  // text-shadow: 0px 0px 10px #fff;\n  color: #c8c8c8;\n  text-shadow:  1px  1px 0.5px black,\n               -1px -1px 0.5px black,\n                1px -1px 0.5px black,\n               -1px  1px 0.5px black;\n  font-size: x-large;\n  font-style: italic;\n  text-align: center;\n}\n\n@media (max-width: 768px) {\n  .responsiveImage {\n    margin: 0;\n  }\n  .responsiveImage__caption {\n    margin-top: 0;\n  }\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.previousLink {\n  float: left;\n  margin: 40px;\n}\n\n.previousLink a {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n", ""]);
 
   // exports
 
@@ -23197,7 +23311,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.sidebar {\n  display: -ms-flexbox;\n  display: flex;\n  min-height: 100%;\n  margin: 0 auto;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-align: start;\n      align-items: flex-start;\n  max-width: 20%;\n  min-width: 300px;\n}\n\n.sidebar__well {\n  padding: 20px;\n  border-radius: 10px;\n  border-color: black;\n  border-style: solid;\n  border-width: 1px;\n  background-color: #1C1E22;\n  margin: 20px 0;\n}\n\n.sidebar__well h3 {\n  margin-top: 0px;\n}\n\n.sidebar__tagBox {\n  width: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.sidebar__about p {\n  clear: left;\n  font-size: smaller;\n  text-align: justify;\n}\n\n.sidebar__about h3 {\n  float: left;\n  white-space: nowrap;\n}\n\n.sidebar__about img {\n  float: right;\n  margin: 0 0 0 15px;\n  border-radius: 15px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: grey;\n}\n\n@media (max-width: 1622px) {\n  .sidebar {\n    -ms-flex-direction: row-reverse;\n        flex-direction: row-reverse;\n    max-width: 100%;\n    min-width: 100px;\n  }\n\n  .sidebar__well {\n    margin: 10px;\n    -ms-flex-positive: 1;\n        flex-grow: 1;\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n  }\n}\n\n@media (max-width: 768px) {\n  .sidebar {\n    -ms-flex-direction: column;\n        flex-direction: column;\n    max-width: 100%;\n    min-width: 100px;\n  }\n}\n\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.responsiveImage {\n  display: inline-block;\n  margin: 0 0 20px 0;\n}\n\n.responsiveImage img {\n  background: white;\n  padding: 1px;\n  box-shadow: 2px 2px 2px 0px #111;\n}\n\n.responsiveImage__caption {\n  margin-top: -56px;\n  font-family: 'Swanky and Moo Moo', fantasy, cursive;\n  text-decoration: none;\n  // text-shadow: 0px 0px 10px #fff;\n  color: #c8c8c8;\n  text-shadow:  1px  1px 0.5px black,\n               -1px -1px 0.5px black,\n                1px -1px 0.5px black,\n               -1px  1px 0.5px black;\n  font-size: x-large;\n  font-style: italic;\n  text-align: center;\n}\n\n@media (max-width: 768px) {\n  .responsiveImage {\n    margin: 0;\n  }\n  .responsiveImage__caption {\n    margin-top: 0;\n  }\n}\n", ""]);
 
   // exports
 
@@ -23211,13 +23325,27 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.tagCloud__tags {\n  padding: 20px;\n}\n\n.tagCloud__title {\n  font-size: medium;\n  margin-right: 3px;\n  display: inline-block\n}\n\n.tagCloud__tag {\n  display: inline-block;\n  font-size: small;\n  padding: 0px 3px;\n  margin: 2px;\n  background: grey;\n  border-radius: 3px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: #5d5d5d\n}\n\n.tagCloud__tag:hover {\n  background: black;\n}\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.sidebar {\n  display: -ms-flexbox;\n  display: flex;\n  min-height: 100%;\n  margin: 0 auto;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-align: start;\n      align-items: flex-start;\n  max-width: 20%;\n  min-width: 300px;\n}\n\n.sidebar__well {\n  padding: 20px;\n  border-radius: 10px;\n  border-color: black;\n  border-style: solid;\n  border-width: 1px;\n  background-color: #1C1E22;\n  margin: 20px 0;\n}\n\n.sidebar__well h3 {\n  margin-top: 0px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n.sidebar__well h3 svg {\n  margin-right: 7px;\n  margin-left: 3px;\n  margin-top: 1px;\n}\n\n.sidebar__tagBox {\n  width: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.sidebar__about p {\n  clear: left;\n  font-size: smaller;\n  text-align: justify;\n}\n\n.sidebar__about h3 {\n  float: left;\n  white-space: nowrap;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n.sidebar__about h3 svg {\n  margin-right: 7px;\n  margin-left: 3px;\n  margin-top: 1px;\n}\n\n.sidebar__about img {\n  float: right;\n  margin: 0 0 0 15px;\n  border-radius: 15px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: grey;\n}\n\n@media (max-width: 1622px) {\n  .sidebar {\n    -ms-flex-direction: row-reverse;\n        flex-direction: row-reverse;\n    max-width: 100%;\n    min-width: 100px;\n  }\n\n  .sidebar__well {\n    margin: 10px;\n    -ms-flex-positive: 1;\n        flex-grow: 1;\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n  }\n}\n\n@media (max-width: 768px) {\n  .sidebar {\n    -ms-flex-direction: column;\n        flex-direction: column;\n    max-width: 100%;\n    min-width: 100px;\n  }\n}\n\n", ""]);
 
   // exports
 
 
 /***/ },
 /* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(7)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.tagCloud__tags {\n  padding: 20px;\n}\n\n.tagCloud__title {\n  font-size: medium;\n  margin-right: 5px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  float: left;\n}\n\n.tagCloud__title svg {\n  margin-right: 4px;\n  margin-bottom: -3px;\n}\n\n.tagCloud__tag {\n  display: inline-block;\n  font-size: small;\n  padding: 0px 3px;\n  margin: 2px;\n  background: grey;\n  border-radius: 3px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: #5d5d5d\n}\n\n.tagCloud__tag:hover {\n  background: black;\n}\n", ""]);
+
+  // exports
+
+
+/***/ },
+/* 274 */
 /***/ function(module, exports) {
 
   module.exports = {
@@ -27559,7 +27687,7 @@ module.exports =
   };
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports) {
 
   module.exports = {
@@ -27896,49 +28024,49 @@ module.exports =
   };
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-loader");
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-polyfill");
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-register");
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports) {
 
   module.exports = require("scroll-behavior");
